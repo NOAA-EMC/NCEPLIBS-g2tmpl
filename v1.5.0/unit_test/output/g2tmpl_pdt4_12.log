@@ -1,0 +1,30 @@
+Original PRODUCT TEMPLATE 4. 11 :  0 4 4 0 107 0 0 1 6 103 0 2 255 0 0 1 10 2017 3 9 0 0 0 1 0 2 2 1 6 255 0
+  
+  Compiled with NEW g2tmpl library 
+  for  new PDT 4.12                
+  weighted_mean_all_mem = 1 
+  
+  NEW    PRODUCT TEMPLATE 4. 11 :  0 4 4 0 107 0 0 1 6 103 0 2 255 0 0 1 10 2017 3 9 0 0 0 1 0 2 2 1 6 255 0
+  
+  PASS 
+  
+Original PRODUCT TEMPLATE 4. 11 :  0 4 4 0 107 0 0 1 6 103 0 2 255 0 0 1 10 2017 3 9 0 0 0 1 0 2 2 1 6 255 0
+  
+  Compiled with NEW g2tmpl library 
+  for  new PDT 4.12                
+  unweighted_mean_all_mem = 0 
+  
+  NEW    PRODUCT TEMPLATE 4. 11 :  0 4 4 0 107 0 0 1 6 103 0 2 255 0 0 0 10 2017 3 9 0 0 0 1 0 2 2 1 6 255 0
+  
+  PASS 
+  
+Original PRODUCT TEMPLATE 4. 11 :  0 4 4 0 107 0 0 1 6 103 0 2 255 0 0 1 10 2017 3 9 0 0 0 1 0 2 2 1 6 255 0
+  
+  Compiled with NEW g2tmpl library 
+  for  new PDT 4.12                
+  std_devn_res_cluster_mean = 2 
+  
+  NEW    PRODUCT TEMPLATE 4. 11 :  0 4 4 0 107 0 0 1 6 103 0 2 255 0 0 2 10 2017 3 9 0 0 0 1 0 2 2 1 6 255 0
+  
+  PASS 
+  

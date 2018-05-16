@@ -1,0 +1,40 @@
+
+6. Test plan
+
+The test plan for g2tmpl_v1.5.0 files are in EMC SVN repository:
+    https://svnemc.ncep.noaa.gov/projects/nceplibs/g2tmpl/branches/v1.5.0/unit_test/
+
+These unit_test programs need to compile with g2tmpl v1.5.0 as follows:
+
+cd to ./v1.5.0/unit_test
+run script  compile_all_unit_test_g2tmpl_lib.sh       intel
+                                                      (craype-sandybridge)
+ or
+run script  compile_all_unit_test_g2tmpl_lib.sh       wcoss
+                                                      (Tide or Gyre)
+Then, run all executable on WCOSS or CRAY: 
+run  script run_all_test.sh
+or
+Run individual executable     
+ 1. test_g2tmpl_table_233
+ 2. test_g2tmpl_pdt4_1
+ 3. test_g2tmpl_pdt4_11
+ 4. Test_g2tmpl_pdt4_12
+ 5. Test_g2tmpl_pdt4_8
+ 6. Test_params_grib2_tbl_new
+
+The result of  all tests g2tmpl v1.5.0  as belows: 	 	 	
+
+Running test g2tmpl_pdt4_1... done ---> PASS
+--> Please view /global/save/Boi.Vuong/g2tmpl/v1.5.0/unit_test/output/g2tmpl_pdt4_1.log
+Running test g2tmpl_pdt4_11... done ---> PASS
+--> Please view /global/save/Boi.Vuong/g2tmpl/v1.5.0/unit_test/output/g2tmpl_pdt4_11.log
+Running test g2tmpl_pdt4_12... done ---> PASS
+--> Please view /global/save/Boi.Vuong/g2tmpl/v1.5.0/unit_test/output/g2tmpl_pdt4_12.log
+Running test g2tmpl_pdt4_8... done ---> PASS
+--> Please view /global/save/Boi.Vuong/g2tmpl/v1.5.0/unit_test/output/g2tmpl_pdt4_8.log
+Running test g2tmpl_table_233... done ---> PASS
+--> Please view /global/save/Boi.Vuong/g2tmpl/v1.5.0/unit_test/output/g2tmpl_table_233.log
+Running test params_grib2_tbl_new... done ---> PASS
+--> Please view /global/save/Boi.Vuong/g2tmpl/v1.5.0/unit_test/output/params_grib2_tbl_new.log
+

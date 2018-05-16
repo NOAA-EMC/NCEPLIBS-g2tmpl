@@ -1,0 +1,48 @@
+#%Module######################################################################
+## Eugene Mirvis RAL/NCAR-EMC/NOAA
+## Xiaoxue Wang NCO-PMB/NOAA modified to vertical structure
+## Kit Menlove NCO-PMB/NOAA modified for phase 2
+##    g2tmpl v1.5.0
+
+proc ModulesHelp { } {
+  puts "Set environment variables for g2tmpl library, including G2TMPL_SRC, G2TMPL_INC, and G2TMPL_LIB"
+}
+
+# Obtain the package name and version
+#if { [ regexp {([^/]+)/(v\d+\.\d+\.\d+)$} [module-info name] -> lname ver ] != 1 } {
+#  global ModulesCurrentModulefile
+#  if { [ regexp {([^/]+)/(v\d+\.\d+\.\d+)$} $ModulesCurrentModulefile -> lname ver ] != 1 } {
+#    puts stderr "Error: unable to parse module name and version from '$module_name'"
+#    puts stderr "Module path:  $ModulesCurrentModulefile"
+#    break
+#  }
+#}
+
+set NCEPLIBS      /usrx/local/nceplibs
+set lname g2tmpl
+set ver v1.5.0
+
+# Make sure another version of the same package is not already loaded
+conflict $lname
+
+# Determine the root directory of the module being loaded
+#global ModulesCurrentModulefile
+#if { [ regexp {/(nw[^/]+)} $ModulesCurrentModulefile -> NCEPROOT ] != 1 } {
+#  puts stderr "Error: unable to determine library's root directory"
+#  break
+#}
+#set NCEPLIBS /$NCEPROOT/lib
+
+# Set other necessary variables
+#set sys    [uname sysname]
+set dlib   $NCEPLIBS/$lname/$ver
+set bname  [string toupper $lname] 
+
+# Export environment variables
+setenv COMP intel
+setenv ${bname}_SRC $dlib/src
+setenv ${bname}_INC $dlib/include/${lname}_${ver}
+setenv ${bname}_LIB $dlib/lib${lname}_${ver}.a 
+#setenv LIB_NAME ${bname} 
+setenv ${bname}_VER $ver
+

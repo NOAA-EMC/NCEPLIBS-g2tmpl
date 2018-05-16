@@ -1,0 +1,12 @@
+  
+  Compiled with NEW g2tmpl v1.5.0 library to test
+  4 new type of Arosols in table 233. 
+  They are following:  
+  black_carbon_hydrophilic and code value = 62013  
+  black_carbon_hydrophobic and code value = 62014  
+  particulate_org_matter_hydrophilic and code value = 62015  
+  particulate_org_matter_hydrophobic and code value = 62016  
+  
+  
+  PASS 
+  
