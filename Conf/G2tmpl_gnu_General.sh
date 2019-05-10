@@ -19,10 +19,12 @@
  export MPIFC=mpigfortran
 
  export DEBUG="-g -O0"
- export CFLAGS="-O3 -DUNDERSCORE -fPIC"
- export FFLAGS="-O3 -ffree-form -g -fPIC"
+ export CFLAGS="-O3 -fPIC"
+ export FFLAGS="-O3 -fPIC"
+ export FREEFORM="-ffree-form"
+ export FPPCPP="-cpp"
  export CPPFLAGS="-P -traditional-cpp"
- export MPICFLAGS="-O3 -DUNDERSCORE -DLINUX -fPIC"
+ export MPICFLAGS="-O3 -fPIC"
  export MPIFFLAGS="-O3 -fPIC"
  export MODPATH="-J"
  export I4R4=""
@@ -30,7 +32,7 @@
  export I8R8="-fdefault-integer-8 -fdefault-real-8"
 
  export CPPDEFS=""
- export CFLAGSDEFS=""
+ export CFLAGSDEFS="-DUNDERSCORE -DLINUX"
  export FFLAGSDEFS="-fno-range-check"
 
  export USECC="YES"
