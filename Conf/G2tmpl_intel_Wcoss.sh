@@ -1,6 +1,6 @@
 # *** for WCOSS IBM phase1/phase2 (intel) ***
  module load ics/17.0.3
- module load g2tmpl/v1.3.0
+ module load g2tmpl/v1.5.0
  module load jasper/v1.900.1
  module load libpng/v1.2.44
  module load zlib/v1.2.11

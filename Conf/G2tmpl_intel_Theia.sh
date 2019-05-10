@@ -1,6 +1,6 @@
 # *** for Theia (intel) ***
  module load intel/18.1.163
- module load dev/g2tmpl/v1.3.0
+ module load dev/g2tmpl/1.5.0
  module load dev/jasper/v1.900.1
  module load dev/libpng/v1.2.44
  module load dev/zlib/v1.2.11

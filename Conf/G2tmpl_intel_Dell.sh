@@ -1,7 +1,7 @@
 # *** for WCOSS Dell (intel) ***
  module load EnvVars/1.0.2
  module load ips/18.0.1.163
- module load g2tmpl/1.3.0
+ module load g2tmpl/1.5.0
  module load jasper/1.900.1
  module load libpng/1.2.44
  module load zlib/1.2.11
