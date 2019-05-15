@@ -1,9 +1,16 @@
 # *** for Theia (intel) ***
- module load intel/18.1.163
+ WORKDIR=/scratch3/NCEPDEV/nwprod/IPS
+ MODULEPATH=/apps/lmod/lmod/modulefiles/Core
+ module use -a $WORKDIR/modulefiles/core_third
+ module load EnvVars/1.0.2
+ module load ips/18.0.1.163
+ module load jasper/1.900.1
+ module load libpng/1.2.44
+ module load zlib/1.2.11
+
  module load dev/g2tmpl/1.5.0
- module load dev/jasper/v1.900.1
- module load dev/libpng/v1.2.44
- module load dev/zlib/v1.2.11
+ new_ver=1.3.0
+ reset_version g2tmpl $new_ver
 
  export CC=icc
  export FC=ifort

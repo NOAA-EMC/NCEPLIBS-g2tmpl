@@ -31,6 +31,11 @@
    [[ ${3,,} == installonly ]] && { inst=true; skip=true; }
    [[ ${3,,} == localinstallonly ]] && { local=true; inst=true; skip=true; }
  }
+
+ source ./Conf/Collect_info.sh
+ source ./Conf/Gen_cfunction.sh
+ source ./Conf/Reset_version.sh
+
  if [[ ${sys} == "intel_general" ]]; then
    sys6=${sys:6}
    source ./Conf/G2tmpl_${sys:0:5}_${sys6^}.sh
@@ -44,9 +49,6 @@
    echo "??? G2TMPL: module/environment not set."
    exit 1
  }
-
- source ./Conf/Collect_info.sh
- source ./Conf/Gen_cfunction.sh
 
 set -x
  g2tmplLib=$(basename $G2TMPL_LIB)
@@ -77,14 +79,22 @@ set -x
 #
 #     Install libraries and source files
 #
-   $local && { LIB_DIR=..; } || { LIB_DIR=$(dirname ${G2TMPL_LIB}); }
-   [ -d $LIB_DIR ] || mkdir -p $LIB_DIR
-   INCP_DIR=$(dirname $G2TMPL_INC)
-   [ -d $G2TMPL_INC ] && rm -rf $G2TMPL_INC || mkdir -p $INCP_DIR
-   SRC_DIR=$G2TMPL_SRC
-   $local && SRC_DIR=
-   [ -d $SRC_DIR ] || mkdir -p $SRC_DIR
+   $local && {
+              LIB_DIR=..
+              INCP_DIR=..
+              SRC_DIR=
+             } || {
+              LIB_DIR=$(dirname $G2TMPL_LIB)
+              INCP_DIR=$(dirname $G2TMPL_INC)
+              SRC_DIR=$G2TMPL_SRC
+              [ -d $LIB_DIR ] || mkdir -p $LIB_DIR
+              [ -d $G2TMPL_INC ] && { rm -rf $G2TMPL_INC; } \
+                                 || { mkdir -p $INCP_DIR; }
+              [ -z $SRC_DIR ] || { [ -d $SRC_DIR ] || mkdir -p $SRC_DIR; }
+             }
+
    make clean LIB=
    make install LIB=$g2tmplLib MOD=$g2tmplInc \
                 LIB_DIR=$LIB_DIR INC_DIR=$INCP_DIR SRC_DIR=$SRC_DIR
  }
+
