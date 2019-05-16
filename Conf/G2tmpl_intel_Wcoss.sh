@@ -4,7 +4,7 @@
  module load jasper/v1.900.1
  module load png/v1.2.44
  module load z/v1.2.6
- module load g2tmpl/v1.5.0
+ module load g2tmpl/v1.3.0
 
  export CC=icc
  export FC=ifort
