@@ -7,10 +7,7 @@
  module load jasper/1.900.1
  module load libpng/1.2.44
  module load zlib/1.2.11
-
  module load dev/g2tmpl/1.5.0
- new_ver=v1.3.0
- reset_version g2tmpl $new_ver
 
  export CC=icc
  export FC=ifort

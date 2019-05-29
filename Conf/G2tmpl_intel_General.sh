@@ -6,7 +6,7 @@
 
  ANCHORDIR=..
  export COMP=ips
- export G2TMPL_VER=v1.3.0
+ export G2TMPL_VER=v1.5.0
  export G2TMPL_SRC=
  export G2TMPL_INC=$ANCHORDIR/include/g2tmpl_${G2TMPL_VER}
  export G2TMPL_LIB=$ANCHORDIR/libg2tmpl_${G2TMPL_VER}.a
