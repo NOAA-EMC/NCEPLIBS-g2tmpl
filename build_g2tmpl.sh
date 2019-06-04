@@ -1,14 +1,14 @@
 #!/bin/bash
 
  (( $# == 0 )) && {
-   echo "*** Usage: $0 wcoss|dell|cray|theia|intel_general|gnu_general [debug|build] [[local]install[only]]"
+   echo "*** Usage: $0 wcoss|dell|cray|theia|intel_general|gnu_general [debug|build] [[local]install[only]]" >&2
    exit 1
  }
 
  sys=${1,,}
  [[ $sys == wcoss || $sys == dell || $sys == cray ||\
     $sys == theia || $sys == intel_general || $sys == gnu_general ]] || {
-   echo "*** Usage: $0 wcoss|dell|cray|theia|intel_general|gnu_general [debug|build] [[local]install[only]]"
+   echo "*** Usage: $0 wcoss|dell|cray|theia|intel_general|gnu_general [debug|build] [[local]install[only]]" >&2
    exit 1
  }
  debg=false
@@ -45,8 +45,12 @@
  else
    source ./Conf/G2tmpl_intel_${sys^}.sh
  fi
+ $CC --version &> /dev/null || {
+   echo "??? G2TMPL: compilers not set." >&2
+   exit 1
+ }
  [[ -z $G2TMPL_VER || -z $G2TMPL_LIB ]] && {
-   echo "??? G2TMPL: module/environment not set."
+   echo "??? G2TMPL: module/environment not set." >&2
    exit 1
  }
 
@@ -82,6 +86,7 @@ set -x
    $local && {
               LIB_DIR=..
               INCP_DIR=../include
+              [ -d $INCP_DIR ] || { mkdir -p $INCP_DIR; }
               SRC_DIR=
              } || {
               LIB_DIR=$(dirname $G2TMPL_LIB)

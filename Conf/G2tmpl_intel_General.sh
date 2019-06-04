@@ -1,12 +1,20 @@
 # *** manually set environments (for intel compiler) of g2tmpl ***
 
-# !!! module environment (*THEIA*) !!!
- module load intel/18.1.163
-#module load ics/17.0.3
+ : ${USERMODE:=false}  # user mode (USERMODE) is closed by default
+                       # set env var USERMODE to "true" to active it
+ ${USERMODE} && {
+    echo "Environment set by user"
+# On theia/cray, user can load environment
+#   module load intel/18.0.1.163
+# Or set environment on specific platform
+    intel_version=2018.1.163
+    intel_topdir=/apps/intel/compilers_and_libraries_$intel_version
+    source $intel_topdir/linux/bin/compilervars.sh intel64
+ }
 
  ANCHORDIR=..
  export COMP=ips
- export G2TMPL_VER=v1.5.0
+ export G2TMPL_VER=v1.3.0
  export G2TMPL_SRC=
  export G2TMPL_INC=$ANCHORDIR/include/g2tmpl_${G2TMPL_VER}
  export G2TMPL_LIB=$ANCHORDIR/libg2tmpl_${G2TMPL_VER}.a
