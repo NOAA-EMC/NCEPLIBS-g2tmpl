@@ -4,7 +4,7 @@
  module load png-gnu-haswell/1.2.49
  module load zlib-gnu-haswell/1.2.7
  module load intel/18.1.163
- module load g2tmpl-intel/1.3.0
+ module load g2tmpl-intel/1.5.0
 
  export CC=icc
  export FC=ifort
