@@ -5,7 +5,7 @@
  module load zlib-gnu-haswell/1.2.7
  module load PrgEnv-intel
  module load craype-sandybridge
- module load g2tmpl-intel/1.3.0
+ module load g2tmpl-intel/1.5.0
 
  export CC=cc
  export FC=ftn
