@@ -5,19 +5,8 @@
  ${USERMODE} && {
     echo "Environment set by user"
 # On theia/cray, user can load environment
-#   module load intel/18.0.1.163
-# Or set environment on specific platform
-    intel_version=2018.1.163
-    intel_topdir=/apps/intel/compilers_and_libraries_$intel_version
-    source $intel_topdir/linux/bin/compilervars.sh intel64
+    module load intel/18.0.1.163
  }
-
- ANCHORDIR=..
- export COMP=ips
- export G2TMPL_VER=v1.5.0
- export G2TMPL_SRC=
- export G2TMPL_INC=$ANCHORDIR/include/g2tmpl_${G2TMPL_VER}
- export G2TMPL_LIB=$ANCHORDIR/libg2tmpl_${G2TMPL_VER}.a
 
  export CC=icc
  export FC=ifort

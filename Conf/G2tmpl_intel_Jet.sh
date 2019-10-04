@@ -1,21 +1,21 @@
-# *** for WCOSS Cray (intel) ***
+# *** for Theia/Gaea/Jet (intel) ***
 
- export CC=cc
- export FC=ftn
+ export CC=icc
+ export FC=ifort
  export CPP=cpp
  export OMPCC="$CC -qopenmp"
  export OMPFC="$FC -qopenmp"
- export MPICC=$CC
- export MPIFC=$FC
+ export MPICC=mpiicc
+ export MPIFC=mpiifort
 
  export DEBUG="-g -traceback -O0"
- export CFLAGS="-g -traceback -O3 -axCORE-AVX2 -fPIC"
- export FFLAGS="-g -traceback -O3 -axCORE-AVX2 -fPIC"
+ export CFLAGS="-g -O3 -traceback -xHOST -fPIC"
+ export FFLAGS="-g -O3 -traceback -xHOST -fPIC"
  export FPPCPP="-cpp"
  export FREEFORM="-free"
  export CPPFLAGS="-P -traditional-cpp"
- export MPICFLAGS=$CFLAGS
- export MPIFFLAGS=$FFLAGS
+ export MPICFLAGS="-g -O3 -traceback -xHOST -fPIC"
+ export MPIFFLAGS="-g -O3 -traceback -xHOST -fPIC"
  export MODPATH="-module "
  export I4R4="-integer-size 32 -real-size 32"
  export I4R8="-integer-size 32 -real-size 64"
