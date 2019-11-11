@@ -496,7 +496,7 @@
    0   6    18   0 TCOLWO
 !  Commented (parameter deprecated) in 10/21/2019
    0   6    19   0 TCOLIO
-   0   6    20   0 TCOLCO
+   0   6    20   0 TCOLC
    0   6    21   0 FICE
    0   6    22   0 CDCC
    0   6    23   0 CDCIMR
@@ -571,15 +571,11 @@
 !  Added more parameters in 7/2/2019
    0   7   201   1 BNEGELAY
    0   7   202   1 BPOSELAY
-!  Added more parameters in 7/2/2019
-   0   7   203   1 BLCAPE
-   0   7   204   1 BLCIN
-   0   7   205   1 MUCAPE
-   0   7   206   1 MUCIN
-   0   7   207   1 DCAPE
-   0   7   208   1 EFHL
-   0   7   209   1 ESP
-   0   7   210   1 CANGLE
+!  Added more parameters in 11/4/2019
+   0   7   203   1 DCAPE
+   0   7   204   1 EFHL
+   0   7   205   1 ESP
+   0   7   206   1 CANGLE
 !
 ! GRIB2 - TABLE 4.2-0-13 PARAMETERS FOR DISCIPLINE 0 CATEGORY 13
 !
