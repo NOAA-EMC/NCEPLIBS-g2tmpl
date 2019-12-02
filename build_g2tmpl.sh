@@ -81,7 +81,7 @@ set -x
        G2TMPL_INC=$INCP_DIR/$G2TMPL_INC
        [ -d $G2TMPL_INC ] && { rm -rf $G2TMPL_INC; } \
                           || { mkdir -p $INCP_DIR; }
-       SRC_DIR=$instloc/src
+       SRC_DIR=$instloc/src/${libver}
      }
      [ -d $LIB_DIR ] || mkdir -p $LIB_DIR
      [ -z $SRC_DIR ] || { [ -d $SRC_DIR ] || mkdir -p $SRC_DIR; }
