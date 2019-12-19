@@ -11,9 +11,11 @@
  if [[ ${sys} == "intel_general" ]]; then
    sys6=${sys:6}
    source ./Conf/G2tmpl_${sys:0:5}_${sys6^}.sh
+   rinst=false
  elif [[ ${sys} == "gnu_general" ]]; then
    sys4=${sys:4}
    source ./Conf/G2tmpl_${sys:0:3}_${sys4^}.sh
+   rinst=false
  else
    source ./Conf/G2tmpl_intel_${sys^}.sh
  fi
@@ -21,9 +23,14 @@
    echo "??? G2TMPL: compilers not set." >&2
    exit 1
  }
- [[ -z $G2TMPL_VER || -z $G2TMPL_LIB ]] && {
-   echo "??? G2TMPL: module/environment not set." >&2
-   exit 1
+ [[ -z ${G2TMPL_VER+x} || -z ${G2TMPL_LIB+x} ]] && {
+   [[ -z ${libver+x} || -z ${libver} ]] && {
+     echo "??? G2TMPL: \"libver\" not set." >&2
+     exit
+   }
+   G2TMPL_INC=${libver}
+   G2TMPL_LIB=lib${libver}.a
+   G2TMPL_VER=v${libver##*_v} 
  }
 
 set -x
@@ -34,7 +41,6 @@ set -x
  cd src
 #################
 
- $skip || {
 #-------------------------------------------------------------------
 # Start building libraries
 #
@@ -49,7 +55,6 @@ set -x
    $debg && make debug FFLAGS="$FFLAGS" LIB=$g2tmplLib &> $g2tmplInfo \
          || make build FFLAGS="$FFLAGS" LIB=$g2tmplLib &> $g2tmplInfo
    make message MSGSRC="$(gen_cfunction $g2tmplInfo OneLine LibInfo)" LIB=$g2tmplLib
- }
 
  $inst && {
 #
@@ -57,24 +62,28 @@ set -x
 #
    $local && {
      instloc=..
-     LIB_DIR=$instloc
+     LIB_DIR=$instloc/lib
      INCP_DIR=$instloc/include
+     [ -d $LIB_DIR ] || { mkdir -p $LIB_DIR; }
      [ -d $INCP_DIR ] || { mkdir -p $INCP_DIR; }
      SRC_DIR=
    } || {
-     [[ $instloc == --- ]] && {
+     $rinst && {
        LIB_DIR=$(dirname $G2TMPL_LIB)
        INCP_DIR=$(dirname $G2TMPL_INC)
+       [ -d $G2TMPL_INC ] && { rm -rf $G2TMPL_INC; } \
+                          || { mkdir -p $INCP_DIR; }
        SRC_DIR=$G2TMPL_SRC
      } || {
-       LIB_DIR=$instloc
+       LIB_DIR=$instloc/lib
        INCP_DIR=$instloc/include
-       SRC_DIR=$instloc/src
        [[ $instloc == .. ]] && SRC_DIR=
+       G2TMPL_INC=$INCP_DIR/$G2TMPL_INC
+       [ -d $G2TMPL_INC ] && { rm -rf $G2TMPL_INC; } \
+                          || { mkdir -p $INCP_DIR; }
+       SRC_DIR=$instloc/src/${libver}
      }
      [ -d $LIB_DIR ] || mkdir -p $LIB_DIR
-     [ -d $G2TMPL_INC ] && { rm -rf $G2TMPL_INC; } \
-                        || { mkdir -p $INCP_DIR; }
      [ -z $SRC_DIR ] || { [ -d $SRC_DIR ] || mkdir -p $SRC_DIR; }
    }
 

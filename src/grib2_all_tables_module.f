@@ -17,6 +17,7 @@ module grib2_all_tables_module
 !   2015/09/02   Boi Vuong   Added 4 type of aerosols in table4_233 
 !   2017/03/01   Boi Vuong   Added generating process model (HREF and Great lake 
 !                            short range model in table on388_tablea  
+!   2019/11/11   Boi Vuong   Commented out lines second level of fixed surface 
 !------------------------------------------------------------------------------
 implicit none
 integer, parameter :: MAXSUBCEN=100
@@ -1371,9 +1372,9 @@ contains
      enddo
 
      value=table4_5(66)%fixedsurfacetypesval
-           print *,'get_g2_fixedsurfacetypes key: ', trim(key), value,  &
-                   ' not found.'
-           ierr=9
+!           print *,'get_g2_fixedsurfacetypes key: ', trim(key), value,  &
+!                   ' not found.'
+!           ierr=9
            return
      end subroutine get_g2_fixedsurfacetypes
 !
