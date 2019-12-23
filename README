@@ -1,6 +1,6 @@
 Code manager: Boi Vuong
 
-libver='g2tmpl_v1.5.2'
+libver='g2tmpl_v1.6.0'
 
 =======================================================================
 
@@ -26,7 +26,4 @@ g2tmpl_v1.5.0       -Mar  09 2017       - Added more parameters in grib2 table 4
 g2tmpl_v1.5.2       -Nov  10 2019       - fixed issues in error messages
 
 g2tmpl_v1.6.0       -Dec  11 2019       - Removed "qsort" in routine process_4dot2.c
-                                        - to save lots of memory for POST.
                                         - Added more parameters
-
-
