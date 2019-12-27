@@ -1,15 +1,22 @@
 
 GRIB2 - TABLE 4.2-0-0 PARAMETERS FOR DISCIPLINE 0 CATEGORY 0
 
-GRIB2 parameter table for all disciplines and categories
-The fields in order are:
-grib2_discipline  grib2_category grib2_parameter_number grib2_table_information (0 for the parameter
-from the WMO table and 1 for the parameter from the NCEP local table)
-grib2_NCEP_mnemonic (locally defined at NCEP). WMO parameters have values
-ranging from 0 to 191 and NCEP local table parameters have values from 192
-to 254 and the parameter value 255 is a missing or undefined.
+GRIB2 parameter table for all disciplines and categories and parameter. These fields are 
+in order as below:
+grib2_disc#  grib2_cat#  grib2_param# local_flg#     Mnemonic
+Where:
+grib2_disc#      grib2_discipline  
+grib2_cat#       grib2_category 
+grib2_param#     grib2_parameter_number
+                 WMO parameters have values ranging from 0 to 191
+                 and NCEP local table parameters have values from 192a to 254
+                 the parameter value 255 is a missing or undefined.
+local_flg#       grib2_table_flag information (0 for the parameter from the WMO table
+                 and 1 for the parameter from the NCEP local table)
 
-GRIB2  TABLE 4.2-0-0 PARAMETERS FOR DISCIPLINE 0 CATEGORY 0
+Mnemonic         grib2_NCEP_mnemonic (locally defined at NCEP). 
+
+Example:    An entry of paramter TEMPERATURE in grib2 table 4.2
 grib2_disc#  grib2_cat#  grib2_param# local_flg#     Mnemonic
     0             0           0            0            TMP
 
@@ -21,9 +28,9 @@ grib2_disc#  grib2_cat#  grib2_param# local_flg#     Mnemonic
                          is 1 = locally defined at NCEP
       NAME               is Mnemonic  
 
-After you added parameters, You need to run executable program sort_params_grib2_tbl to sort 
-the contents of GRIB2 "params_grib2_tbl_new" file will be sorted in a format suitable for
-subsequent reading via the open_and_read_4dot2() function.
+After you added parameters, You need to run executable program sort_params_grib2_tbl to 
+write output "params_grib2_tbl_new" SORTED file in a format suitable for subsequent 
+reading via the open_and_read_4dot2() function.
 
 NOTE:   DO NOT use UNIX command "sort" to sort params_grib2_tbl_new file
 
