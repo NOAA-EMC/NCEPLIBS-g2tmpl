@@ -1,7 +1,7 @@
 SHELL=/bin/sh
 
 module purge
-set -x
+
 mac=$(hostname | cut -c1-1)
 mac2=$(hostname | cut -c1-2)
 
@@ -26,6 +26,7 @@ elif [ $mac = l -o $mac = s ] ; then             #    wcoss_c (i.e. luna and sur
 fi
 
 #
+set -x
 module list
 
 BASE=`pwd`
@@ -33,5 +34,3 @@ BASE=`pwd`
 #####################################
 cd ${BASE}
 make -f makefile_sort_params_table
-
-exit 0
