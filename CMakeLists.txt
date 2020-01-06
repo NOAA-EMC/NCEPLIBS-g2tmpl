@@ -24,10 +24,6 @@ STRING(COMPARE EQUAL ${CMAKE_BUILD_TYPE} "PRODUCTION" BUILD_PRODUCTION)
 STRING(COMPARE EQUAL ${CMAKE_BUILD_TYPE} "DEBUG" BUILD_DEBUG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-find_package( Jasper )
-find_package( PNG )
-find_package( ZLIB )
-
 if( (BUILD_RELEASE) OR (BUILD_PRODUCTION) )
   if(IntelComp)
     message("setting intel flags")
