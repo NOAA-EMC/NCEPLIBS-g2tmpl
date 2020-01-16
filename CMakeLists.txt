@@ -1,12 +1,14 @@
-cmake_minimum_required(VERSION 2.6)
-project(g2tmpl)
-set(VERSION v1.5.0)
+cmake_minimum_required(VERSION 3.16)
+project(g2tmpl VERSION 1.5.0)
+set(${PROJECT_NAME}_VERSION ${PROJECT_VERSION} CACHE INTERNAL "${PROJECT_NAME} version number")
 enable_language (Fortran)
+
 if (NOT CMAKE_BUILD_TYPE)
-    set (CMAKE_BUILD_TYPE RELEASE CACHE STRING
-        "Choose the type of build, options are: PRODUCTION Debug Release."
-        FORCE)
+  set (CMAKE_BUILD_TYPE RELEASE CACHE STRING
+    "Choose the type of build, options are: PRODUCTION Debug Release."
+    FORCE)
 endif()
+
 if(CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
   message("setting intel true")
   set(IntelComp true )
@@ -15,7 +17,7 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU*" OR CMAKE_CXX_COMPILER_ID MATCHES "Cl
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "pgc*")
   set(PGIComp true )
 endif()
-MESSAGE(${CMAKE_CURRENT_SOURCE_DIR})
+
 STRING(COMPARE EQUAL ${CMAKE_BUILD_TYPE} "RelWithDebInfo" BUILD_RELEASE)
 if(NOT BUILD_RELEASE)
   STRING(COMPARE EQUAL ${CMAKE_BUILD_TYPE} "RELEASE" BUILD_RELEASE)
@@ -24,20 +26,21 @@ STRING(COMPARE EQUAL ${CMAKE_BUILD_TYPE} "PRODUCTION" BUILD_PRODUCTION)
 STRING(COMPARE EQUAL ${CMAKE_BUILD_TYPE} "DEBUG" BUILD_DEBUG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
+set(defs "UNDERSCORE")
 if( (BUILD_RELEASE) OR (BUILD_PRODUCTION) )
   if(IntelComp)
-    message("setting intel flags")
-    set(CMAKE_C_FLAGS "-c -O3 -axCore-AVX2 -g -DUNDERSCORE" CACHE INTERNAL "" )
-    set(CMAKE_Fortran_d_FLAGS "-c -O3 -axCore-AVX2 -g -free " CACHE INTERNAL "" )
+    set(c_flags "-O3" "-axCore-AVX2" "-g")
+    set(fortran_flags "-O3" "-axCore-AVX2" "-g" "-free")
   elseif(GNUComp)
-    set(CMAKE_C_FLAGS "-c -O3 -ggdb -Wall -g -DUNDERSCORE" CACHE INTERNAL "" )
-    set(CMAKE_Fortran_d_FLAGS "-c -O3 -g -ffree-form -funroll-loops -ggdb -Wall " CACHE INTERNAL "" )
+    set(c_flags "-O3" "-ggdb" "-Wall" "-g")
+    set(fortran_flags "-O3" "-g" "-ffree-form" "-funroll-loops" "-ggdb" "-Wall")
   elseif(PGIComp)
-    set(CMAKE_C_FLAGS "-g -fast -DUNDERSCORE -DLINUX " CACHE INTERNAL "" )
-    set(CMAKE_Fortran_d_FLAGS "-g -fast " CACHE INTERNAL "" )
+    set(c_flags "-g" "-fast")
+    set(fortran_flags "-g" "-fast")
   else()
     message("unknown compiler!")
     exit()
   endif()
 endif()
+
 add_subdirectory(src) 
