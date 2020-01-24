@@ -1,4 +1,3 @@
-
 set(lib_name ${PROJECT_NAME}_d)
 set(versioned_lib_name ${PROJECT_NAME}_v${PROJECT_VERSION}_d)
 
@@ -9,6 +8,8 @@ set_source_files_properties(${c_src} PROPERTIES COMPILE_OPTIONS "${c_flags}")
 set_source_files_properties(${fortran_src} PROPERTIES COMPILE_OPTIONS "${fortran_flags}")
 
 add_library(${lib_name} STATIC ${fortran_src} ${c_src})
+
+target_compile_definitions(${lib_name} PRIVATE ${defs})
 
 set(module_dir "${CMAKE_CURRENT_BINARY_DIR}/include_d")
 set_target_properties(${lib_name} PROPERTIES Fortran_MODULE_DIRECTORY "${module_dir}")
