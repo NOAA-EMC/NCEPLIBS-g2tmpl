@@ -1,20 +1,27 @@
-cmake_minimum_required(VERSION 2.6)
-set(LIBNAME ${CMAKE_PROJECT_NAME}_${VERSION}_d)
-file(GLOB LIB_d_SRC ${CMAKE_CURRENT_SOURCE_DIR}/../src/*.f)
-file(GLOB LIB_C_SRC ${CMAKE_CURRENT_SOURCE_DIR}/../src/*.c)
-include_directories( ${ZLIB_INCLUDE_DIRS} ${PNG_INCLUDE_DIRS} ${JASPER_INCLUDE_DIR})
-set_source_files_properties( ${LIB_C_SRC} PROPERTIES COMPILE_FLAGS ${CMAKE_C_FLAGS} )
-set_source_files_properties( ${LIB_d_SRC} PROPERTIES COMPILE_FLAGS ${CMAKE_Fortran_d_FLAGS} )
-add_library(${LIBNAME} STATIC ${LIB_d_SRC} ${LIB_C_SRC} )
-set(CMAKE_INCLUDE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/include_d")
-set_target_properties(${LIBNAME} PROPERTIES Fortran_MODULE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/include_d")
-target_include_directories(${LIBNAME} PUBLIC "${CMAKE_CURRENT_BINARY_DIR}/include_d")
+set(lib_name ${PROJECT_NAME}_d)
+set(versioned_lib_name ${PROJECT_NAME}_v${PROJECT_VERSION}_d)
 
-file(MAKE_DIRECTORY ${CMAKE_INCLUDE_OUTPUT_DIRECTORY})
+file(GLOB fortran_src ${CMAKE_CURRENT_SOURCE_DIR}/*.f)
+file(GLOB c_src ${CMAKE_CURRENT_SOURCE_DIR}/*.c)
 
-install(TARGETS ${LIBNAME}
-        RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
-        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
-        ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib) 
-install(DIRECTORY ${CMAKE_INCLUDE_OUTPUT_DIRECTORY}/ DESTINATION include_d )
+set_source_files_properties(${c_src} PROPERTIES COMPILE_OPTIONS "${c_flags}")
+set_source_files_properties(${fortran_src} PROPERTIES COMPILE_OPTIONS "${fortran_flags}")
 
+add_library(${lib_name} STATIC ${fortran_src} ${c_src})
+
+target_compile_definitions(${lib_name} PRIVATE ${defs})
+
+set(module_dir "${CMAKE_CURRENT_BINARY_DIR}/include_d")
+set_target_properties(${lib_name} PROPERTIES Fortran_MODULE_DIRECTORY "${module_dir}")
+
+target_include_directories(${lib_name} PUBLIC
+  $<BUILD_INTERFACE:${module_dir}>
+  $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include_d}>)
+
+install(TARGETS ${lib_name}
+  EXPORT ${PROJECT_NAME}-config
+  RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
+  LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib) 
+install(DIRECTORY ${module_dir} DESTINATION ${CMAKE_INSTALL_PREFIX})
+install(EXPORT ${PROJECT_NAME}-config DESTINATION ${CMAKE_INSTALL_PREFIX})
