@@ -17,7 +17,12 @@ module grib2_all_tables_module
 !   2015/09/02   Boi Vuong   Added 4 type of aerosols in table4_233 
 !   2017/03/01   Boi Vuong   Added generating process model (HREF and Great lake 
 !                            short range model in table on388_tablea  
-!   2019/11/11   Boi Vuong   Commented out lines second level of fixed surface 
+!   2019/06/25   Boi Vuong   Corrected tablec sub-center:
+!                            Changed name: ncep_hpc to ncep_wpc; ncep_tpc to ncep_nhc;
+!                            sec - swpc and aded new sub-center: esrl - 17    
+!                            Added new entries in table4_3,table4_5 and added 
+!                            new table4_8,table4_9,table 4_201         
+!                            Added generating process model table on388_tablea
 !------------------------------------------------------------------------------
 implicit none
 integer, parameter :: MAXSUBCEN=100
@@ -33,13 +38,16 @@ integer, parameter :: MAXUNITOFTIMERANGE=30
 integer, parameter :: MAXGENPROC=250
 integer, parameter :: MAXORIGINCENTERS=500
 integer, parameter :: MAXTYPEOFORIGFIELDVAL=15
-integer, parameter :: MAXTYPEOFCOMPRESSION=5
-integer, parameter :: MAXTYPEOFPACKINGMETHOD=15
+integer, parameter :: MAXTYPEOFCOMPRESSION=50
+integer, parameter :: MAXTYPEOFPACKINGMETHOD=50
 integer, parameter :: MAXSTATPROCESSTYPES=50
-integer, parameter :: MAXTYPEOFTIMEINTVLS=15
+integer, parameter :: MAXTYPEOFTIMEINTVLS=50
+integer, parameter :: MAXTYPEOFPROB=100
+integer, parameter :: MAXTYPEOFPRECIP=100
+integer, parameter :: MAXTYPEOFCLUSTER=100
 integer, parameter :: MAXTYPEOFAEROSOL=200
-integer, parameter :: MAXTYPEOFINTVLS=13
-integer, parameter :: MAXORDOFSPTDIFF=3
+integer, parameter :: MAXTYPEOFINTVLS=50
+integer, parameter :: MAXORDOFSPTDIFF=50
 
 type subcenters
      character(len=20) :: subcenkey
@@ -52,18 +60,22 @@ data tablec(1) /subcenters('ncep_reanl',1)/
 data tablec(2) /subcenters('ncep_ensem',2)/
 data tablec(3) /subcenters('ncep_nco',3)/
 data tablec(4) /subcenters('ncep_emc',4)/
-data tablec(5) /subcenters('ncep_hpc',5)/
+data tablec(5) /subcenters('ncep_wpc',5)/
 data tablec(6) /subcenters('ncep_opc',6)/
 data tablec(7) /subcenters('ncep_cpc',7)/
 data tablec(8) /subcenters('ncep_awc',8)/
 data tablec(9) /subcenters('ncep_spc',9)/
-data tablec(10) /subcenters('ncep_tpc',10)/
+data tablec(10) /subcenters('ncep_nhc',10)/
 data tablec(11) /subcenters('nws_tdl',11)/
 data tablec(12) /subcenters('nesdis_ora',12)/
 data tablec(13) /subcenters('faa',13)/
 data tablec(14) /subcenters('nws_mdl',14)/
 data tablec(15) /subcenters('narr',15)/
-data tablec(16) /subcenters('sec',16)/
+data tablec(16) /subcenters('swpc',16)/
+!
+!   Added Sub-Center (06/26/2019)
+!
+data tablec(17) /subcenters('esrl',17)/
 
 type version_no
      character(len=20) :: verskey
@@ -183,6 +195,8 @@ type type_of_gen_proc
      integer :: typeofgenprocval
 end type type_of_gen_proc
 !   2015/09/02   Boi Vuong   Added 4 type of aerosols in table4_233 
+!   2019/06/25   Boi Vuong   Added new entries 197,198,199 in table4_3
+
 !
 type(type_of_gen_proc),dimension(MAXTYPEOFGENPROC) :: table4_3
 
@@ -211,6 +225,12 @@ data table4_3(22) /type_of_gen_proc('prob_matched_mean',193)/
 data table4_3(23) /type_of_gen_proc('neighborhood_prob',194)/
 data table4_3(24) /type_of_gen_proc('bias_corrected_downscale',195)/
 data table4_3(25) /type_of_gen_proc('perturbed_analysis',196)/
+!
+!   Added Generating Process (06/26/2019)
+!
+data table4_3(26) /type_of_gen_proc('ens_scale_prob',197)/
+data table4_3(27) /type_of_gen_proc('post_dew_fcst',198)/
+data table4_3(28) /type_of_gen_proc('ens_fcst_base',199)/
 !
 !
 type unit_of_time_range
@@ -334,6 +354,17 @@ data table4_5(89) /fixed_surface_types('covection_conden_level',15)/
 data table4_5(90) /fixed_surface_types('level_neutral_buoy',16)/
 data table4_5(91) /fixed_surface_types('soil_level',151)/
 !
+!   Added fixed surface levels (06/26/2019)
+!
+data table4_5(92) /fixed_surface_types('lowest_mass_den',21)/
+data table4_5(93) /fixed_surface_types('highest_mass_den',22)/
+data table4_5(94) /fixed_surface_types('lowest_air_con',23)/
+data table4_5(95) /fixed_surface_types('highest_air_con',24)/
+data table4_5(96) /fixed_surface_types('highest_rref',25)/
+data table4_5(97) /fixed_surface_types('log_hyb_lev',113)/
+data table4_5(98) /fixed_surface_types('snow_lev',114)/
+data table4_5(100) /fixed_surface_types('sigma_hi_lev',115)/
+!
 !
 type type_of_ens_fcst
      character(len=50) :: typeofensfcstkey
@@ -375,6 +406,39 @@ data table4_7(15) /type_of_derive_fcst('stat_decide_mem',196)/
 data table4_7(16) /type_of_derive_fcst('clim_percentile',197)/
 data table4_7(17) /type_of_derive_fcst('deviation_ens_mean',198)/
 data table4_7(18) /type_of_derive_fcst('extream_forecast_index',199)/
+!
+!
+!  Added Clustering Method Table 4.8 (06/26/2019)
+!
+type type_of_cluster
+     character(len=80) :: typeofclusterkey
+     integer :: typeofclusterval
+end type type_of_cluster
+!
+type(type_of_cluster),dimension(MAXTYPEOFCLUSTER) :: table4_8
+
+data table4_8(1) /type_of_cluster('anomoly_correlation',0)/
+data table4_8(2) /type_of_cluster('root_mean_square',1)/
+!
+!
+!  Added Probability Type Table 4.9 (06/26/2019)
+!
+type type_of_prob
+     character(len=80) :: typeofprobkey
+     integer :: typeofprobval
+end type type_of_prob
+!
+type(type_of_prob),dimension(MAXTYPEOFPROB) :: table4_9
+
+data table4_9(1) /type_of_prob('prob_below_lower_limit',0)/
+data table4_9(2) /type_of_prob('prob_above_upper_limit',1)/
+data table4_9(3) /type_of_prob('prob_between_upper_lower_limit',2)/
+data table4_9(4) /type_of_prob('prob_above_lower_limit',3)/
+data table4_9(5) /type_of_prob('prob_below_upper_limit',4)/
+data table4_9(6) /type_of_prob('prob_equal_lower_limit',5)/
+data table4_9(7) /type_of_prob('prob_above_normal_cat',6)/
+data table4_9(8) /type_of_prob('prob_near_normal_cat',7)/
+data table4_9(9) /type_of_prob('prob_below_normal_cat',8)/
 !
 !
 type statistical_processing_types
@@ -458,6 +522,29 @@ data table4_91(10) /type_of_intervals('smaller_or_equal_second_limit',9)/
 data table4_91(11) /type_of_intervals('between_first_second_limit_noincl1stlmt',10)/
 data table4_91(12) /type_of_intervals('equall_to_first_limit',11)/
 data table4_91(13) /type_of_intervals('missing',255)/
+!
+!  Added Precipitation Table 4.201 (06/26/2019)
+!
+type type_of_precip
+     character(len=80) :: typeofprecipkey
+     integer :: typeofprecipval
+end type type_of_precip
+!
+type(type_of_precip),dimension(MAXTYPEOFPRECIP) :: table4_201
+
+data table4_201(1) /type_of_precip('reserved',0)/
+data table4_201(2) /type_of_precip('rain',1)/
+data table4_201(3) /type_of_precip('thunderstorm',2)/
+data table4_201(4) /type_of_precip('freezing_rain',3)/
+data table4_201(51) /type_of_precip('mixed_ice',4)/
+data table4_201(61) /type_of_precip('snow',5)/
+data table4_201(7) /type_of_precip('wet_snow',6)/
+data table4_201(8) /type_of_precip('mixture_rain_snow',7)/
+data table4_201(91) /type_of_precip('ice_pellets',8)/
+data table4_201(10) /type_of_precip('graupel',9)/
+data table4_201(11) /type_of_precip('hail',10)/
+data table4_201(12) /type_of_precip('drizzle',11)/
+data table4_201(12) /type_of_precip('freezing_drizzle',12)/
 !
 !
 type type_of_aerosol
@@ -881,6 +968,11 @@ type(origin_centers),dimension(MAXORIGINCENTERS) :: on388_table0
         data on388_table0(215) /origin_centers('eumetsat_op_cen',254)/
         data on388_table0(216) /origin_centers('missing',255)/
 !
+!       Added original center (06/26/2019)
+!
+        data on388_table0(217) /origin_centers('ncsa_argentina',147)/
+        data on388_table0(218) /origin_centers('brazilian_decea',148)/
+!
 !
 type gen_proc
      character(len=30) :: genprockey
@@ -927,7 +1019,7 @@ data on388_tablea(35) /gen_proc('t62l28mrf',80)/
 data on388_tablea(36) /gen_proc('anal_gfs',81)/
 data on388_tablea(37) /gen_proc('anal_gdas',82)/
 data on388_tablea(38) /gen_proc('meso_nam12km',84)/
-data on388_tablea(39) /gen_proc('ruc_fsl_isen_60km_40n',86)/
+data on388_tablea(39) /gen_proc('early_hur_wind_speed_prob',86)/
 data on388_tablea(40) /gen_proc('cac_ensem_fcsts_spect',87)/
 data on388_tablea(41) /gen_proc('nww3_owm',88)/
 data on388_tablea(42) /gen_proc('nmm_8km',89)/
@@ -999,6 +1091,16 @@ data on388_tablea(107) /gen_proc('extratropical_storm_surge',14)/
 data on388_tablea(108) /gen_proc('nearshore_wave_prediction',15)/
 data on388_tablea(109) /gen_proc('href',132)/
 data on388_tablea(110) /gen_proc('great_lakes_short_range_mod',133)/
+!
+!   Added new entires in tablea (06/27/2019)
+!
+data on388_tablea(111) /gen_proc('extra_trop_storm_surge',16)/
+data on388_tablea(112) /gen_proc('extra_trop_storm_surge_pacific',17)/
+data on388_tablea(113) /gen_proc('prob_extra_trop_storm_surge',18)/
+data on388_tablea(114) /gen_proc('linmit_fine_mesh_anal',19)/
+data on388_tablea(115) /gen_proc('extra_trop_storm_surge_micronesia',20)/
+data on388_tablea(116) /gen_proc('hur_weather_res_and_fcst',71)/
+data on388_tablea(117) /gen_proc('hur_non-hydro_multi',72)/
 
 contains
 !
@@ -1040,7 +1142,7 @@ contains
         endif
      enddo
            print *,'get_g2_subcenters key: ', key,   &
-                   ' not found.'
+                   ' not found in ON-388 table C'
            ierr=9
            return
      end subroutine get_g2_subcenters
@@ -1081,7 +1183,7 @@ contains
         endif
      enddo
            print *,'get_g2_versionno key: ', key,   &
-                   ' not found.'
+                   ' not found in table 1.0'
            ierr=9
            return
      end subroutine get_g2_versionno
@@ -1122,7 +1224,7 @@ contains
         endif
      enddo
            print *,'get_g2_loctabversno key: ', key,   &
-                   ' not found.'
+                   ' not found in table 1.1'
            ierr=9
            return
      end subroutine get_g2_loctabversno
@@ -1164,7 +1266,7 @@ contains
         endif
      enddo
            print *,'get_g2_sigreftime key: ', key,   &
-                   ' not found.'
+                   ' not found in table 1.2'
            ierr=9
            return
      end subroutine get_g2_sigreftime
@@ -1205,7 +1307,7 @@ contains
         endif
      enddo
            print *,'get_g2_prodstatus key: ', key,   &
-                   ' not found.'
+                   ' not found in table 1.3'
            ierr=9
            return
      end subroutine get_g2_prodstatus
@@ -1246,7 +1348,7 @@ contains
         endif
      enddo
            print *,'get_g2_typeofdata key: ', key,   &
-                   ' not found.'
+                   ' not found in table 1.4'
            ierr=9
            return
      end subroutine get_g2_typeofdata
@@ -1287,7 +1389,7 @@ contains
         endif
      enddo
            print *,'get_g2_typeofgenproc key}: ', key,   &
-                   ' not found.'
+                   ' not found in table 4.3'
            ierr=9
            return
      end subroutine get_g2_typeofgenproc
@@ -1330,7 +1432,7 @@ contains
 
      value=255
            print *,'get_g2_unitoftimerange key: ', key,   &
-                   ' not found.'
+                   ' not found in table 4.4'
            ierr=9
            return
      end subroutine get_g2_unitoftimerange
@@ -1373,7 +1475,7 @@ contains
 
      value=table4_5(66)%fixedsurfacetypesval
 !           print *,'get_g2_fixedsurfacetypes key: ', trim(key), value,  &
-!                   ' not found.'
+!                   ' not found in table 4.5'
 !           ierr=9
            return
      end subroutine get_g2_fixedsurfacetypes
@@ -1419,7 +1521,7 @@ contains
         endif
      enddo
            print *,'get_g2_statprocesstypes key: ', key,   &
-                   ' not found.'
+                   ' not found in table 4.10'
            ierr=9
            return
      end subroutine get_g2_statprocesstypes
@@ -1462,7 +1564,7 @@ contains
         endif
      enddo
            print *,'get_g2_typeoftimeintervals key: ', key,   &
-                   ' not found.'
+                   ' not found in table 4.11'
            ierr=9
            return
      end subroutine get_g2_typeoftimeintervals
@@ -1509,7 +1611,7 @@ contains
        return
      endif
            print *,'get_g2_typeofintervals key: ', key,   &
-                   ' not found.'
+                   ' not found in table 4.91'
            ierr=9
            return
      end subroutine get_g2_typeofintervals
@@ -1557,7 +1659,7 @@ contains
        return
      endif
            print *,'get_g2_typeofaerosol key: ', key,   &
-                   ' not found.'
+                   ' not found in table 4.233'
            ierr=9
            return
      end subroutine get_g2_typeofaerosol
@@ -1599,7 +1701,7 @@ contains
         endif
      enddo
            print *,'get_g2_on388origincenters key: ', key,   &
-                   ' not found.'
+                   ' not found in ON-388 - table 0'
            ierr=9
            return
      end subroutine get_g2_on388origincenters
@@ -1641,7 +1743,7 @@ contains
         endif
      enddo
            print *,'get_g2_on388genproc key: ', key,   &
-                   ' not found.'
+                   ' not found in ON-388 - table A'
            ierr=9
            return
      end subroutine get_g2_on388genproc
@@ -1683,7 +1785,7 @@ contains
      enddo
 
            print *,'get_g2_typeoforigfieldvals key: ', key,   &
-                   ' not found.'
+                   ' not found in table 5.1'
            ierr=9
            return
      end subroutine get_g2_typeoforigfieldvals
@@ -1725,7 +1827,7 @@ contains
         endif
      enddo
            print *,'get_g2_ordofsptdiffvals key: ', key,   &
-                   ' not found.'
+                   ' not found in table 5.6'
            ierr=9
            value=1
            return
@@ -1768,7 +1870,7 @@ contains
         endif
      enddo
            print *,'get_g2_typeofcompression key: ', key,   &
-                   ' not found.'
+                   ' not found in table 5.40'
            ierr=9
            return
      end subroutine get_g2_typeofcompression
@@ -1811,7 +1913,7 @@ contains
         endif
      enddo
      print *,'get_g2_sec5packingmethod key: ', key,   &
-             ' not found.'
+             ' not found in table 5.0'
      ierr=9
      return
      end subroutine get_g2_sec5packingmethod
@@ -2469,7 +2571,7 @@ contains
         endif
      enddo
            print *,'get_g2_typeofensfcst key: ', key,   &
-                   ' not found.'
+                   ' not found in table 4.6'
            ierr=9
            return
      end subroutine get_g2_typeofensfcst
@@ -2510,7 +2612,7 @@ contains
         endif
      enddo
            print *,'get_g2_typeofderivefcst key: ', key,   &
-                   ' not found.'
+                   ' not found in table 4.7'
            ierr=9
            return
      end subroutine get_g2_typeofderivefcst
@@ -2738,6 +2840,126 @@ contains
 !
      ifield5(7) = 255 
      end subroutine g2sec5_temp40
+
+     subroutine get_g2_typeofcluster(key,value,ierr)
+!$$$  SUBPROGRAM DOCUMENTATION BLOCK
+!                .      .    .                                       .
+! SUBPROGRAM:    get_g2_typeofcluster
+!   PRGMMR: Boi Vuong         ORG: EMC/EIB    DATE: 2019-07-01
+!
+! ABSTRACT: This subroutine returns the corresponding GRIB2 type of
+!   clustering method for a given short key name based on Table 4.8
+!
+! PROGRAM HISTORY LOG:
+! 2019-07-01 Boi Vuong
+!
+! USAGE:    CALL get_g2_typeofcluster(key,value,ierr)
+!   INPUT ARGUMENT LIST:
+!     key      - GRIB2 character short key for type of clustering method
+!
+!   OUTPUT ARGUMENT LIST:
+!     value    - corresponding GRIB2 type of cluster value from table 4.8
+!     ierr     - error messages
+!
+! ATTRIBUTES:
+!   LANGUAGE: Fortran 90
+!   MACHINE:  IBM SP
+!
+!$$$
+     character(len=*) :: key
+     integer :: value,n,ierr
+!
+     do n=1,MAXTYPEOFCLUSTER
+        if (trim(table4_8(n)%typeofclusterkey).eq.trim(key)) then
+            value=table4_8(n)%typeofclusterval
+            return
+        endif
+     enddo
+        print *,'get_g2_typeofcluster key: ', key,   &
+                ' not found in table 4.8'
+        ierr=9
+        return
+     end subroutine get_g2_typeofcluster
+
+     subroutine get_g2_typeofprob(key,value,ierr)
+!$$$  SUBPROGRAM DOCUMENTATION BLOCK
+!                .      .    .                                       .
+! SUBPROGRAM:    get_g2_typeofprob
+!   PRGMMR: Boi Vuong         ORG: EMC/EIB    DATE: 2019-07-01
+!
+! ABSTRACT: This subroutine returns the corresponding GRIB2 type of
+!   probability for a given short key name based on Table 4.9
+!
+! PROGRAM HISTORY LOG:
+! 2019-07-01 Boi Vuong
+!
+! USAGE:    CALL get_g2_typeofprob(key,value,ierr)
+!   INPUT ARGUMENT LIST:
+!     key      - GRIB2 character short key for type of probability
+!
+!   OUTPUT ARGUMENT LIST:
+!     value    - corresponding GRIB2 type of probability value from table 4.9
+!     ierr     - error messages
+!
+! ATTRIBUTES:
+!   LANGUAGE: Fortran 90
+!   MACHINE:  IBM SP
+!
+!$$$
+     character(len=*) :: key
+     integer :: value,n,ierr
+!
+     do n=1,MAXTYPEOFPROB
+        if (trim(table4_9(n)%typeofprobkey).eq.trim(key)) then
+            value=table4_9(n)%typeofprobval
+            return
+        endif
+     enddo
+        print *,'get_g2_typeofprob key: ', key,   &
+                ' not found in table 4.9'
+        ierr=9
+        return
+     end subroutine get_g2_typeofprob
+
+     subroutine get_g2_typeofprecip(key,value,ierr)
+!$$$  SUBPROGRAM DOCUMENTATION BLOCK
+!                .      .    .                                       .
+! SUBPROGRAM:    get_g2_typeofprecip
+!   PRGMMR: Boi Vuong         ORG: EMC/EIB    DATE: 2019-07-01
+!
+! ABSTRACT: This subroutine returns the corresponding GRIB2 type of
+!   precipitation for a given short key name based on Table 4.201
+! PROGRAM HISTORY LOG:
+! 2019-07-01 Boi Vuong
+!
+! USAGE:    CALL get_g2_typeofprecip(key,value,ierr)
+!   INPUT ARGUMENT LIST:
+!     key      - GRIB2 character short key for type of precipitation
+!
+!   OUTPUT ARGUMENT LIST:
+!     value    - corresponding GRIB2 type of precipitation value from table 4.201
+!     ierr     - error messages
+!
+! ATTRIBUTES:
+!   LANGUAGE: Fortran 90
+!   MACHINE:  IBM SP
+!
+!$$$
+     character(len=*) :: key
+     integer :: value,n,ierr
+!
+     do n=1,MAXTYPEOFPRECIP
+        if (trim(table4_201(n)%typeofprecipkey).eq.trim(key)) then
+            value=table4_201(n)%typeofprecipval
+            return
+        endif
+     enddo
+        print *,'get_g2_typeofprecip key: ', key,   &
+                ' not found in table 4.201'
+        ierr=9
+        return
+     end subroutine get_g2_typeofprecip
+
 
 !=======================================================================
 end module grib2_all_tables_module
