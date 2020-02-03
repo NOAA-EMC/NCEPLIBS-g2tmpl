@@ -9,6 +9,8 @@ set_source_files_properties(${fortran_src} PROPERTIES COMPILE_OPTIONS "${fortran
 
 add_library(${lib_name} STATIC ${fortran_src} ${c_src})
 
+set_target_properties(${lib_name} PROPERTIES OUTPUT_NAME "${versioned_lib_name}")
+
 target_compile_definitions(${lib_name} PRIVATE ${defs})
 
 set(module_dir "${CMAKE_CURRENT_BINARY_DIR}/include_d")
