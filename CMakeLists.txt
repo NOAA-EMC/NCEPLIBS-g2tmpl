@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.15)
 
+file(STRINGS "VERSION" pVersion)
+
 project(
   g2tmpl
-  VERSION 1.5.0
+  VERSION ${pVersion}
   LANGUAGES C Fortran)
 
 if(NOT CMAKE_BUILD_TYPE MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)$")
@@ -26,12 +28,17 @@ elseif(UNIX)
 endif()
 
 if(CMAKE_C_COMPILER_ID MATCHES "^(Intel)$")
-  set(CMAKE_C_FLAGS "-O3 -axCore-AVX2 -g")
-  set(CMAKE_Fortran_FLAGS "-g -O3 -axCore-AVX2 -free")
+  set(CMAKE_C_FLAGS "-g")
+  set(CMAKE_C_FLAGS_RELEASE "-O3")
+  set(CMAKE_Fortran_FLAGS "-g -free")
+  set(CMAKE_Fortran_FLAGS_RELEASE "-O3")
 elseif(CMAKE_C_COMPILER_ID MATCHES "^(GNU|Clang|AppleClang)$")
-  set(CMAKE_C_FLAGS "-O3 -g -ggdb -Wall")
-  set(CMAKE_Fortran_FLAGS
-      "-O3 -g -ggdb -Wall -ffree-form -fbacktrace -funroll-loops")
+  set(CMAKE_C_FLAGS "-g")
+  set(CMAKE_C_FLAGS_RELEASE "-O3")
+  set(CMAKE_C_FLAGS_DEBUG "-ggdb -Wall")
+  set(CMAKE_Fortran_FLAGS "-g -ffree-form -fbacktrace -funroll-loops")
+  set(CMAKE_Fortran_FLAGS_RELEASE "-O3")
+  set(CMAKE_Fortran_FLAGS_DEBUG "-ggdb -Wall")
 elseif(CMAKE_C_COMPILER_ID MATCHES "^(PGI)$")
   set(CMAKE_C_FLAGS "-g -fast")
   set(CMAKE_Fortran_FLAGS "-g -fast")
@@ -51,7 +58,7 @@ set_target_properties(${lib_name} PROPERTIES Fortran_MODULE_DIRECTORY
                                              ${module_dir})
 target_include_directories(
   ${lib_name} PUBLIC $<BUILD_INTERFACE:${module_dir}>
-                     $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include_d}>)
+                     $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include_d>)
 
 install(
   TARGETS ${lib_name}
