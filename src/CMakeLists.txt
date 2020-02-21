@@ -1,5 +1,5 @@
-set(lib_name ${PROJECT_NAME}_d)
-set(versioned_lib_name ${PROJECT_NAME}_v${PROJECT_VERSION}_d)
+set(lib_name ${PROJECT_NAME})
+set(versioned_lib_name ${PROJECT_NAME}_v${PROJECT_VERSION})
 
 file(GLOB fortran_src ${CMAKE_CURRENT_SOURCE_DIR}/*.f)
 file(GLOB c_src ${CMAKE_CURRENT_SOURCE_DIR}/*.c)
@@ -13,12 +13,12 @@ set_target_properties(${lib_name} PROPERTIES OUTPUT_NAME "${versioned_lib_name}"
 
 target_compile_definitions(${lib_name} PRIVATE ${defs})
 
-set(module_dir "${CMAKE_CURRENT_BINARY_DIR}/include_d")
+set(module_dir "${CMAKE_CURRENT_BINARY_DIR}/include")
 set_target_properties(${lib_name} PROPERTIES Fortran_MODULE_DIRECTORY "${module_dir}")
 
 target_include_directories(${lib_name} PUBLIC
   $<BUILD_INTERFACE:${module_dir}>
-  $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include_d}>)
+  $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include}>)
 
 install(TARGETS ${lib_name}
   EXPORT ${PROJECT_NAME}-config
