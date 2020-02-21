@@ -48,9 +48,9 @@ set(fortran_src src/g2sec4_temp11.f src/g2sec4_temp1.f
                 src/grib2_all_tables_module.f src/g2sec4_temp12.f src/gdtsec3.f)
 set(c_src src/process_4dot2.c)
 
-set(lib_name ${PROJECT_NAME}_d)
-set(versioned_lib_name ${PROJECT_NAME}_v${PROJECT_VERSION}_d)
-set(module_dir ${CMAKE_CURRENT_BINARY_DIR}/include_d)
+set(lib_name ${PROJECT_NAME})
+set(versioned_lib_name ${PROJECT_NAME}_v${PROJECT_VERSION})
+set(module_dir ${CMAKE_CURRENT_BINARY_DIR}/include)
 
 add_library(${lib_name} STATIC ${fortran_src} ${c_src})
 set_target_properties(${lib_name} PROPERTIES OUTPUT_NAME ${versioned_lib_name})
@@ -58,7 +58,7 @@ set_target_properties(${lib_name} PROPERTIES Fortran_MODULE_DIRECTORY
                                              ${module_dir})
 target_include_directories(
   ${lib_name} PUBLIC $<BUILD_INTERFACE:${module_dir}>
-                     $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include_d>)
+                     $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include>)
 
 install(
   TARGETS ${lib_name}
