@@ -16,7 +16,7 @@ if(NOT CMAKE_BUILD_TYPE MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)$")
                                                "MinSizeRel" "RelWithDebInfo")
 endif()
 
-if(NOT CMAKE_C_COMPILER_ID MATCHES "^(Intel|GNU|Clang|AppleClang|PGI)$")
+if(NOT CMAKE_C_COMPILER_ID MATCHES "^(Intel|GNU|Clang|AppleClang)$")
   message(WARNING "Compiler not officially supported: ${CMAKE_C_COMPILER_ID}")
 endif()
 
@@ -39,9 +39,6 @@ elseif(CMAKE_C_COMPILER_ID MATCHES "^(GNU|Clang|AppleClang)$")
   set(CMAKE_Fortran_FLAGS "-g -ffree-form -fbacktrace -funroll-loops")
   set(CMAKE_Fortran_FLAGS_RELEASE "-O3")
   set(CMAKE_Fortran_FLAGS_DEBUG "-ggdb -Wall")
-elseif(CMAKE_C_COMPILER_ID MATCHES "^(PGI)$")
-  set(CMAKE_C_FLAGS "-g -fast")
-  set(CMAKE_Fortran_FLAGS "-g -fast")
 endif()
 
 set(fortran_src src/g2sec4_temp11.f src/g2sec4_temp1.f
