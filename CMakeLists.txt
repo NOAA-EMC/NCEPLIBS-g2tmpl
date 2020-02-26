@@ -65,5 +65,7 @@ install(
   ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 install(DIRECTORY ${module_dir} DESTINATION ${CMAKE_INSTALL_PREFIX})
 
+install(FILES src/params_grib2_tbl_new DESTINATION ${CMAKE_INSTALL_PREFIX}/share)
+
 install(EXPORT ${PROJECT_NAME}-config
         DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME})
