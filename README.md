@@ -1,11 +1,13 @@
 # G2TMPL
 
-Performs something rather!
+Utilities for GRIB2 templates
+
+Code Manager: Boi Vuong
 
 
 ### Prerequisites
 
-Compilers: GNU | Intel | Clang | AppleClang | PGI
+Compilers: GNU | Intel | Clang | AppleClang 
 
 
 ### Installing
@@ -21,9 +23,9 @@ make install
 
 ### Version
 
-1.5.0
+1.7.0
 
 
 ### Authors
 
-* **[NCEP/EMC](NCEP.List.EMC.nceplibs.Developers@noaa.gov)**
+* **[NCEP/EMC](mailto:NCEP.List.EMC.nceplibs.Developers@noaa.gov)** 
