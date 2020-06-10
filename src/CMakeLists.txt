@@ -8,19 +8,19 @@ endif()
 if(CMAKE_C_COMPILER_ID MATCHES "^(Intel)$")
   set(CMAKE_C_FLAGS "-g")
   set(CMAKE_C_FLAGS_RELEASE "-O3")
-  set(CMAKE_Fortran_FLAGS "-g -free")
+  set(CMAKE_Fortran_FLAGS "-g")
   set(CMAKE_Fortran_FLAGS_RELEASE "-O3")
 elseif(CMAKE_C_COMPILER_ID MATCHES "^(GNU|Clang|AppleClang)$")
   set(CMAKE_C_FLAGS "-g")
   set(CMAKE_C_FLAGS_RELEASE "-O3")
   set(CMAKE_C_FLAGS_DEBUG "-ggdb -Wall")
-  set(CMAKE_Fortran_FLAGS "-g -ffree-form -fbacktrace -funroll-loops")
+  set(CMAKE_Fortran_FLAGS "-g -fbacktrace -funroll-loops")
   set(CMAKE_Fortran_FLAGS_RELEASE "-O3")
   set(CMAKE_Fortran_FLAGS_DEBUG "-ggdb -Wall")
 endif()
 
-set(fortran_src g2sec4_temp11.f g2sec4_temp1.f
-                grib2_all_tables_module.f g2sec4_temp12.f gdtsec3.f)
+set(fortran_src g2sec4_temp11.f90 g2sec4_temp1.f90
+                grib2_all_tables_module.f90 g2sec4_temp12.f90 gdtsec3.f90)
 set(c_src process_4dot2.c)
 
 set(lib_name ${PROJECT_NAME})
