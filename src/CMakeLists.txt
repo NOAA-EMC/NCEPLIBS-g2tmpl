@@ -35,7 +35,7 @@ add_library(${PROJECT_NAME}::${lib_name} ALIAS ${lib_name})
 set_target_properties(${lib_name} PROPERTIES Fortran_MODULE_DIRECTORY ${module_dir})
 target_include_directories(${lib_name} PUBLIC
   $<BUILD_INTERFACE:${module_dir}>
-  $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include>)
+  $<INSTALL_INTERFACE:include>)
 
 install(DIRECTORY ${module_dir} DESTINATION ${CMAKE_INSTALL_PREFIX})
 
