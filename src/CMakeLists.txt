@@ -19,10 +19,6 @@ elseif(CMAKE_C_COMPILER_ID MATCHES "^(GNU|Clang|AppleClang)$")
   set(CMAKE_Fortran_FLAGS_DEBUG "-ggdb -Wall")
 endif()
 
-if(${CMAKE_Fortran_COMPILER_ID} MATCHES "^(GNU)$" AND ${CMAKE_Fortran_COMPILER_VERSION} VERSION_GREATER_EQUAL 10)
-  set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -w -fallow-argument-mismatch -fallow-invalid-boz")
-endif()
-
 set(fortran_src g2sec4_temp11.f90 g2sec4_temp1.f90
                 grib2_all_tables_module.f90 g2sec4_temp12.f90 gdtsec3.f90)
 set(c_src process_4dot2.c)
