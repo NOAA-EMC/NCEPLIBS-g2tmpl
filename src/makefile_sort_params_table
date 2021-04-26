@@ -1,6 +1,8 @@
 SHELL=/bin/sh
 #
-SRCS=sort_params_grib2_tbl.f
+.SUFFIXES: .f90 .o
+
+SRCS=sort_params_grib2_tbl.f90
 OBJS=sort_params_grib2_tbl.o
 
 # Tunable parameters
@@ -23,7 +25,7 @@ LIBS= ${G2TMPL_LIB}
 # LIBS=./libg2tmpl_v1.6.0.a
 
 CMD =		sort_params_grib2_tbl
-PROFLIB =	-lprof
+# PROFLIB =	-lprof
 
 # To perform the default compilation, use the first line
 # To compile with flowtracing turned on, use the second line
@@ -43,21 +45,18 @@ LDFLAGS =
 #
 all:		$(CMD)
 
+.f90.o :
+	$(FC) $(FFLAGS) -c -C $<
+
 $(CMD):		$(OBJS)
 	$(FC) $(LDFLAGS) -o $(@) $(OBJS) $(LIBS)
-	rm -f *.o
-
-# Make the profiled version of the command and call it a.out.prof
-#
-$(CMD).prof:	$(OBJS)
-	$(FC) $(LDFLAGS) -o $(@) $(OBJS) $(PROFLIB) $(LIBS)
 	rm -f *.o
 
 clean:
 	-rm -f $(OBJS)
 
 clobber:	clean
-	-rm -f $(CMD) $(CMD).prof
+	-rm -f $(CMD)
 
 void:	clobber
 	-rm -f $(SRCS) makefile

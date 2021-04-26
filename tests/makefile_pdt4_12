@@ -1,6 +1,8 @@
 SHELL=/bin/sh
 #
-SRCS=test_g2tmpl_pdt4_12.f 
+.SUFFIXES: .f90 .o
+
+SRCS=test_g2tmpl_pdt4_12.f90 
 OBJS=test_g2tmpl_pdt4_12.o
 
 # Tunable parameters
@@ -13,7 +15,7 @@ OBJS=test_g2tmpl_pdt4_12.o
 #
 FC =		ifort
 
-# For testing with new g2tmpl v1.5.0
+# For testing with new g2tmpl library
 INC= ${G2TMPL_INC}
 LIBS= ${G2TMPL_LIB}
 
@@ -38,14 +40,12 @@ LDFLAGS =
 #
 all:		$(CMD)
 
+.f90.o :
+	$(FC) $(FFLAGS) -c -C $<
+
+
 $(CMD):		$(OBJS)
 	$(FC) $(LDFLAGS) -o $(@) $(OBJS) $(LIBS)
-	rm -f *.o
-
-# Make the profiled version of the command and call it a.out.prof
-#
-$(CMD).prof:	$(OBJS)
-	$(FC) $(LDFLAGS) -o $(@) $(OBJS) $(PROFLIB) $(LIBS)
 	rm -f *.o
 
 clean:
