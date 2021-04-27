@@ -23,6 +23,7 @@ module grib2_all_tables_module
 !                            Added new entries in table4_3,table4_5 and added 
 !                            new table4_8,table4_9,table 4_201         
 !                            Added generating process model table on388_tablea
+!   2021/04/20   Boi Vuong   Updated table 4.3, 4.5,4.7 and on388_tablea 
 !------------------------------------------------------------------------------
 implicit none
 integer, parameter :: MAXSUBCEN=100
@@ -232,6 +233,10 @@ data table4_3(26) /type_of_gen_proc('ens_scale_prob',197)/
 data table4_3(27) /type_of_gen_proc('post_dew_fcst',198)/
 data table4_3(28) /type_of_gen_proc('ens_fcst_base',199)/
 !
+!   Added Generating Process (04/20/2021)
+!
+data table4_3(29) /type_of_gen_proc('local_prob_match_mean',200)/
+!
 !
 type unit_of_time_range
      character(len=30) :: unitoftimerangekey
@@ -365,6 +370,15 @@ data table4_5(97) /fixed_surface_types('log_hyb_lev',113)/
 data table4_5(98) /fixed_surface_types('snow_lev',114)/
 data table4_5(100) /fixed_surface_types('sigma_hi_lev',115)/
 !
+!   Added fixed surface levels (04/20/2021)
+!
+data table4_5(101) /fixed_surface_types('ocean_model_level',168)/
+data table4_5(102) /fixed_surface_types('ocean_level_water_density',169)/
+data table4_5(103) /fixed_surface_types('ocean_level_water_potential_temp',170)/
+data table4_5(104) /fixed_surface_types('eff_layer_top_level',216)/
+data table4_5(105) /fixed_surface_types('eff_layer_bottom_level',217)/
+data table4_5(106) /fixed_surface_types('eff_layer',218)/
+!
 !
 type type_of_ens_fcst
      character(len=50) :: typeofensfcstkey
@@ -406,6 +420,14 @@ data table4_7(15) /type_of_derive_fcst('stat_decide_mem',196)/
 data table4_7(16) /type_of_derive_fcst('clim_percentile',197)/
 data table4_7(17) /type_of_derive_fcst('deviation_ens_mean',198)/
 data table4_7(18) /type_of_derive_fcst('extream_forecast_index',199)/
+!
+!   Added type of derive forecast (04/20/2021)
+!
+data table4_7(19) /type_of_derive_fcst('equally_weighted_mean',200)/
+data table4_7(20) /type_of_derive_fcst('percentile_value_5',201)/
+data table4_7(21) /type_of_derive_fcst('percentile_value_25',202)/
+data table4_7(22) /type_of_derive_fcst('percentile_value_75',203)/
+data table4_7(23) /type_of_derive_fcst('percentile_value_95',204)/
 !
 !
 !  Added Clustering Method Table 4.8 (06/26/2019)
@@ -1033,8 +1055,8 @@ data on388_tablea(49) /gen_proc('gfs_avn',96)/
 data on388_tablea(50) /gen_proc('cfs_t62l64_l40mom3',98)/
 data on388_tablea(51) /gen_proc('misc_test_id',99)/
 data on388_tablea(52) /gen_proc('ruc_sanal_60km_40n',100)/
-data on388_tablea(53) /gen_proc('ruc_sanal_40km_40n',101)/
-data on388_tablea(54) /gen_proc('ruc_fsl_isen_20km_40n',105)/
+data on388_tablea(53) /gen_proc('core',101)/
+data on388_tablea(54) /gen_proc('rap',105)/
 data on388_tablea(55) /gen_proc('gefs',107)/
 data on388_tablea(56) /gen_proc('lamp',108)/
 data on388_tablea(57) /gen_proc('rtma',109)/
@@ -1092,7 +1114,7 @@ data on388_tablea(108) /gen_proc('nearshore_wave_prediction',15)/
 data on388_tablea(109) /gen_proc('href',132)/
 data on388_tablea(110) /gen_proc('great_lakes_short_range_mod',133)/
 !
-!   Added new entires in tablea (06/27/2019)
+!   Added new entries in tablea (06/27/2019)
 !
 data on388_tablea(111) /gen_proc('extra_trop_storm_surge',16)/
 data on388_tablea(112) /gen_proc('extra_trop_storm_surge_pacific',17)/
@@ -1101,6 +1123,10 @@ data on388_tablea(114) /gen_proc('linmit_fine_mesh_anal',19)/
 data on388_tablea(115) /gen_proc('extra_trop_storm_surge_micronesia',20)/
 data on388_tablea(116) /gen_proc('hur_weather_res_and_fcst',71)/
 data on388_tablea(117) /gen_proc('hur_non-hydro_multi',72)/
+!
+!   Added new entries in tablea (03/11/2021)
+!
+data on388_tablea(118) /gen_proc('rrfs',134)/
 
 contains
 !
