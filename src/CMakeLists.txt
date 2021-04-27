@@ -20,7 +20,7 @@ elseif(CMAKE_C_COMPILER_ID MATCHES "^(GNU|Clang|AppleClang)$")
 endif()
 
 set(fortran_src g2sec4_temp11.f90 g2sec4_temp1.f90
-                grib2_all_tables_module.f90 g2sec4_temp12.f90 gdtsec3.f90)
+                grib2_all_tables_module.f90 g2sec4_temp12.f90 )
 set(c_src process_4dot2.c)
 
 set(lib_name ${PROJECT_NAME})
