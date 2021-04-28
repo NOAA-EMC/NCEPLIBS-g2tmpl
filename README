@@ -28,6 +28,6 @@ g2tmpl_v1.5.2       -Nov  10 2019       - fixed issues in error messages
 g2tmpl_v1.6.0       -Dec  11 2019       - Removed "qsort" in routine process_4dot2.c
                                         - Added more parameters
 
-g2tmpl_v1.9.0       -Apr  22 2021       - Added more parameters
+g2tmpl_v1.10.0      -Apr  28 2021       - Added more parameters
                                         - Added generating process ID for models: RRFS and CORE
                                         - Removed routine gdtsec3.f (obsolete)
