@@ -378,7 +378,8 @@
    0   3    18   0 HPBL
    0   3    19   0 5WAVA
    0   3    20   0 SDSGSO
-   0   3    21   0 ASGSO
+!  Changed ASGSO to AOSGSO in 4/28/2021
+   0   3    21   0 AOSGSO
    0   3    22   0 SSGSO
    0   3    23   0 GWD
    0   3    24   0 ASGSO
@@ -600,9 +601,6 @@
    0   7   210   1 SCCP    
    0   7   211   1 SIGT     
    0   7   212   1 MLFC
-!
-! GRIB2 - TABLE 4.2-0-11 PARAMETERS FOR DISCIPLINE 0 CATEGORY 11
-   0  11     1   0 MSTAV
 !
 ! GRIB2 - TABLE 4.2-0-13 PARAMETERS FOR DISCIPLINE 0 CATEGORY 13
 !
@@ -1396,7 +1394,8 @@
   10   0    14   0 WWSDIR
   10   0    15   0 MWSPER
   10   0    16   0 CDWW
-  10   0    17   0 FRICV
+! Changed FRICV to FRICVW 4/28/2021
+  10   0    17   0 FRICVW
   10   0    18   0 WSTR
   10   0    19   0 NWSTR
   10   0    20   0 MSSW
