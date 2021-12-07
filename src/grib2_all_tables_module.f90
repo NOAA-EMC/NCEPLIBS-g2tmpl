@@ -1127,6 +1127,10 @@ data on388_tablea(117) /gen_proc('hur_non-hydro_multi',72)/
 !   Added new entries in tablea (03/11/2021)
 !
 data on388_tablea(118) /gen_proc('rrfs',134)/
+!
+!   Added new entries in tablea (06/01/2021)
+!
+data on388_tablea(119) /gen_proc('hafs',135)/
 
 contains
 !
