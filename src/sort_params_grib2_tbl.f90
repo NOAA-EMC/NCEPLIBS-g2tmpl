@@ -1,9 +1,11 @@
+!> @file
+!> @brief Read and sort params_grib2_tbl_new.text.
+!> @author ???
+
+!> This program reads params_grib2_tbl_new.text and writes the output
+!> file will be sorted with a format suitable for subsequent reading
+!> via the open_and_read_4dot2() function.
         Program  sort_params_grib2_tbl
-!
-!       This program reads params_grib2_tbl_new.text and  writes the output file 
-!       will be sorted with a format suitable for subsequent reading via the 
-!       open_and_read_4dot2() function.
-!       
         use grib2_all_tables_module
         integer idisc,icatg,iparm,locflg
         character*255 fl_nametbl

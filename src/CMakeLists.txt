@@ -1,3 +1,8 @@
+# This is the CMake file for the src directory of the NCEPLIBS-g2tmpl
+# project.
+#
+# Kyle Gerheiser, Mark Potts
+
 add_compile_definitions(UNDERSCORE)
 if(APPLE)
   add_compile_definitions(APPLE)
