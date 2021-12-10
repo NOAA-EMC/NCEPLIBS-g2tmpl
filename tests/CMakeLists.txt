@@ -16,6 +16,5 @@ g2tmpl_test(test_g2tmpl_pdt4_1)
 g2tmpl_test(test_g2tmpl_pdt4_8)
 g2tmpl_test(test_g2tmpl_pdt4_11)
 g2tmpl_test(test_g2tmpl_pdt4_12)
-g2tmpl_test(test_g2tmpl_table_233)
 
  
