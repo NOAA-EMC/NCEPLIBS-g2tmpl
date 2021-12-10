@@ -1,29 +1,27 @@
 ![Status](https://github.com/NOAA-EMC/NCEPLIBS-sp/workflows/Build%20and%20Test/badge.svg)
 
-# G2TMPL
+# The NCEPLIBS-g2tmpl Library
 
 Utilities for GRIB2 templates. This is part of the
 [NCEPLIBS](https://github.com/NOAA-EMC/NCEPLIBS) project.
+
+For more detailed documentation see
+https://noaa-emc.github.io/NCEPLIBS-g2tmpl/. For the NCEP WMO GRIB2
+Documentation see
+https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/.
 
 ## Authors
 
 NCEP/EMC Developers
 
-Code Manager: Boi Vuong
-
-## Status
-
-This library is deprecated and will not be included in the next
-release of NCEPLIBS. The functionality in this library will be
-migrated to the [NCEPLIBS-g2](https://github.com/NOAA-EMC/NCEPLIBS-g2)
-project.
+Code Manager: Ed Hartnett, Hang Lei
 
 ## Installing
 
 ```
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=/path/to/install /path/to/NCEPLIBS-g2tmpl
+cmake ..
 make -j2
 make install
 ```

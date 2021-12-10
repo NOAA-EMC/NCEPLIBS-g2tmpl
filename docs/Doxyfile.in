@@ -791,7 +791,7 @@ WARN_NO_PARAMDOC       = YES
 # a warning is encountered.
 # The default value is: NO.
 
-WARN_AS_ERROR          = NO
+WARN_AS_ERROR          = YES
 
 # The WARN_FORMAT tag determines the format of the warning messages that doxygen
 # can produce. The string should contain the $file, $line, and $text tags, which
@@ -850,6 +850,8 @@ INPUT_ENCODING         = UTF-8
 
 FILE_PATTERNS          = *.f \
                          *.F \
+                         *.f90 \
+                         *.F90 \
                          *.c
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
