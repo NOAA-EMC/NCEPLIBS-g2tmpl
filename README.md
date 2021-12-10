@@ -12,7 +12,8 @@ https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/.
 
 ## Authors
 
-NCEP/EMC Developers
+V. Krishna Kumar, Jun Wang, Boi Vuong, Jeff Ator, other NCEP/EMC
+Developers
 
 Code Manager: Ed Hartnett, Hang Lei
 
