@@ -22,7 +22,7 @@
 !> @author Jun Wang @date 2012/01/25
 module grib2_all_tables_module
 implicit none
-integer, parameter :: MAXSUBCEN=100
+integer, parameter :: MAXSUBCEN=100 !>< Max sub cen
 integer, parameter :: MAXVER=100
 integer, parameter :: MAXLOCVER=20
 integer, parameter :: MAXREFTIME=15,MAXPRODSTATUS=17
