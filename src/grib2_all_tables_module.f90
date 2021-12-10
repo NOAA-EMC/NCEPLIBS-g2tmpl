@@ -1049,130 +1049,134 @@ module grib2_all_tables_module
   !> ON 388 Table A
   type(gen_proc),dimension(MAXGENPROC) :: on388_tablea
 
-  data on388_tablea(1) /gen_proc('res',0)/
-  data on388_tablea(2) /gen_proc('uvim',2)/
-  data on388_tablea(3) /gen_proc('ncep_arl_tdm',3)/
-  data on388_tablea(4) /gen_proc('ncep_arl_smoke',4)/
-  data on388_tablea(5) /gen_proc('sat_der_prec_temp',5)/
-  data on388_tablea(6) /gen_proc('gwind_wave_mod',10)/
-  data on388_tablea(7) /gen_proc('multi_grid_wave_mod',11)/
-  data on388_tablea(8) /gen_proc('prob_st_surg',12)/
-  data on388_tablea(9) /gen_proc('lfm_anal',19)/
-  data on388_tablea(10) /gen_proc('snow_cov_anal',25)/
-  data on388_tablea(11) /gen_proc('for_gen_field',30)/
-  data on388_tablea(12) /gen_proc('val_add_post_proc_field',31)/
-  data on388_tablea(13) /gen_proc('ngm',39)/
-  data on388_tablea(14) /gen_proc('goi_gfs',42)/
-  data on388_tablea(15) /gen_proc('goi_fnl',43)/
-  data on388_tablea(16) /gen_proc('ssta',44)/
-  data on388_tablea(17) /gen_proc('coast_ocm',45)/
-  data on388_tablea(18) /gen_proc('hycom_glob',46)/
-  data on388_tablea(19) /gen_proc('hycom_npb',47)/
-  data on388_tablea(20) /gen_proc('hycom_nab',48)/
-  data on388_tablea(21) /gen_proc('ozone_anal_tiros',49)/
-  data on388_tablea(22) /gen_proc('ozone_anal_nimbus',52)/
-  data on388_tablea(23) /gen_proc('lfm_fofm',53)/
-  data on388_tablea(24) /gen_proc('roi',64)/
-  data on388_tablea(25) /gen_proc('t80l18gfs',68)/
-  data on388_tablea(26) /gen_proc('t80l18mrf',69)/
-  data on388_tablea(27) /gen_proc('qlm',70)/
-  data on388_tablea(28) /gen_proc('fogfm_opc',73)/
-  data on388_tablea(29) /gen_proc('gulf_of_mex_wind_wave',74)/
-  data on388_tablea(30) /gen_proc('gulf_of_alas_wind_wave',75)/
-  data on388_tablea(31) /gen_proc('bias_corr_mrf',76)/
-  data on388_tablea(32) /gen_proc('t126l28gfs',77)/
-  data on388_tablea(33) /gen_proc('t126l28mrf',78)/
-  data on388_tablea(34) /gen_proc('backup_from_prev_run',79)/
-  data on388_tablea(35) /gen_proc('t62l28mrf',80)/
-  data on388_tablea(36) /gen_proc('anal_gfs',81)/
-  data on388_tablea(37) /gen_proc('anal_gdas',82)/
-  data on388_tablea(38) /gen_proc('meso_nam12km',84)/
-  data on388_tablea(39) /gen_proc('early_hur_wind_speed_prob',86)/
-  data on388_tablea(40) /gen_proc('cac_ensem_fcsts_spect',87)/
-  data on388_tablea(41) /gen_proc('nww3_owm',88)/
-  data on388_tablea(42) /gen_proc('nmm_8km',89)/
-  data on388_tablea(43) /gen_proc('t62l28extmrf',90)/
-  data on388_tablea(44) /gen_proc('t62l28extgfs',91)/
-  data on388_tablea(45) /gen_proc('t62l28mrffnl',92)/
-  data on388_tablea(46) /gen_proc('t62l28gdasmrf',93)/
-  data on388_tablea(47) /gen_proc('t170l42mrf',94)/
-  data on388_tablea(48) /gen_proc('t126l42mrf',95)/
-  data on388_tablea(49) /gen_proc('gfs_avn',96)/
-  data on388_tablea(50) /gen_proc('cfs_t62l64_l40mom3',98)/
-  data on388_tablea(51) /gen_proc('misc_test_id',99)/
-  data on388_tablea(52) /gen_proc('ruc_sanal_60km_40n',100)/
-  data on388_tablea(53) /gen_proc('core',101)/
-  data on388_tablea(54) /gen_proc('rap',105)/
-  data on388_tablea(55) /gen_proc('gefs',107)/
-  data on388_tablea(56) /gen_proc('lamp',108)/
-  data on388_tablea(57) /gen_proc('rtma',109)/
-  data on388_tablea(58) /gen_proc('nam_15k',110)/
-  data on388_tablea(59) /gen_proc('nam_gen_sref',111)/
-  data on388_tablea(60) /gen_proc('wrf_nmm_ncep',112)/
-  data on388_tablea(61) /gen_proc('prod_ncep_sref',113)/
-  data on388_tablea(62) /gen_proc('naefs_prod_ncep_cmc',114)/
-  data on388_tablea(63) /gen_proc('down_scal_gfs_nam_ext',115)/
-  data on388_tablea(64) /gen_proc('wrf_em_ncar_arwrf',116)/
-  data on388_tablea(65) /gen_proc('ice_conc_anal',120)/
-  data on388_tablea(66) /gen_proc('wna_reg_wav_mod',121)/
-  data on388_tablea(67) /gen_proc('alas_wat_reg_wav_mod',122)/
-  data on388_tablea(68) /gen_proc('na_hurr_wav_mod',123)/
-  data on388_tablea(69) /gen_proc('enp_reg_wav_mod',124)/
-  data on388_tablea(70) /gen_proc('np_hurr_wav_mod',125)/
-  data on388_tablea(71) /gen_proc('sea_ice_fcst_mod',126)/
-  data on388_tablea(72) /gen_proc('lake_ice_fcst_mod',127)/
-  data on388_tablea(73) /gen_proc('glob_oce_fcst_mod',128)/
-  data on388_tablea(74) /gen_proc('godas',129)/
-  data on388_tablea(75) /gen_proc('merge_fields_ruc_nam_gfs',130)/
-  data on388_tablea(76) /gen_proc('great_lakes_wave_mod',131)/
-  data on388_tablea(77) /gen_proc('narr',140)/
-  data on388_tablea(78) /gen_proc('ldafs',141)/
-  data on388_tablea(79) /gen_proc('nwsrfs',150)/
-  data on388_tablea(80) /gen_proc('nwsffgs',151)/
-  data on388_tablea(81) /gen_proc('wsr_88d_s2_prec_anal',152)/
-  data on388_tablea(82) /gen_proc('wsr_88d_s3_prec_anal',153)/
-  data on388_tablea(83) /gen_proc('qpf_ncep',180)/
-  data on388_tablea(84) /gen_proc('rfcqpf_ncep',181)/
-  data on388_tablea(85) /gen_proc('rfcqpe_ncep',182)/
-  data on388_tablea(86) /gen_proc('ndfd_ncep_hpc',183)/
-  data on388_tablea(87) /gen_proc('ncwd_ncep_awc',190)/
-  data on388_tablea(88) /gen_proc('cipap_ncep_awc',191)/
-  data on388_tablea(89) /gen_proc('anal_ncep_awc',192)/
-  data on388_tablea(90) /gen_proc('fcst_ncep_awc',193)/
-  data on388_tablea(91) /gen_proc('cdas2',195)/
-  data on388_tablea(92) /gen_proc('cdas2_regen',196)/
-  data on388_tablea(93) /gen_proc('cdas',197)/
-  data on388_tablea(94) /gen_proc('cdas_regen',198)/
-  data on388_tablea(95) /gen_proc('cfsr_t382l64_l40mom4',199)/
-  data on388_tablea(96) /gen_proc('cpc_man_fcst',200)/
-  data on388_tablea(97) /gen_proc('cpc_auto_prod',201)/
-  data on388_tablea(98) /gen_proc('epa_usne',210)/
-  data on388_tablea(99) /gen_proc('epa_use',211)/
-  data on388_tablea(100) /gen_proc('spc_man_fcst',215)/
-  data on388_tablea(101) /gen_proc('ncep_opc_auto_prod',220)/
-  data on388_tablea(102) /gen_proc('missing',255)/
-  data on388_tablea(103) /gen_proc('ngac',117)/
-  data on388_tablea(104) /gen_proc('hrrr',83)/
-  data on388_tablea(105) /gen_proc('ncep_arl_dust',6)/
-  data on388_tablea(106) /gen_proc('hrricane_mult_wave',13)/
-  data on388_tablea(107) /gen_proc('extratropical_storm_surge',14)/
-  data on388_tablea(108) /gen_proc('nearshore_wave_prediction',15)/
-  data on388_tablea(109) /gen_proc('href',132)/
-  data on388_tablea(110) /gen_proc('great_lakes_short_range_mod',133)/
-  !
-  !   Added new entries in tablea (06/27/2019)
-  !
-  data on388_tablea(111) /gen_proc('extra_trop_storm_surge',16)/
-  data on388_tablea(112) /gen_proc('extra_trop_storm_surge_pacific',17)/
-  data on388_tablea(113) /gen_proc('prob_extra_trop_storm_surge',18)/
-  data on388_tablea(114) /gen_proc('linmit_fine_mesh_anal',19)/
-  data on388_tablea(115) /gen_proc('extra_trop_storm_surge_micronesia',20)/
-  data on388_tablea(116) /gen_proc('hur_weather_res_and_fcst',71)/
-  data on388_tablea(117) /gen_proc('hur_non-hydro_multi',72)/
-  !
-  !   Added new entries in tablea (03/11/2021)
-  !
-  data on388_tablea(118) /gen_proc('rrfs',134)/
+data on388_tablea(1) /gen_proc('res',0)/
+data on388_tablea(2) /gen_proc('uvim',2)/
+data on388_tablea(3) /gen_proc('ncep_arl_tdm',3)/
+data on388_tablea(4) /gen_proc('ncep_arl_smoke',4)/
+data on388_tablea(5) /gen_proc('sat_der_prec_temp',5)/
+data on388_tablea(6) /gen_proc('gwind_wave_mod',10)/
+data on388_tablea(7) /gen_proc('multi_grid_wave_mod',11)/
+data on388_tablea(8) /gen_proc('prob_st_surg',12)/
+data on388_tablea(9) /gen_proc('lfm_anal',19)/
+data on388_tablea(10) /gen_proc('snow_cov_anal',25)/
+data on388_tablea(11) /gen_proc('for_gen_field',30)/
+data on388_tablea(12) /gen_proc('val_add_post_proc_field',31)/
+data on388_tablea(13) /gen_proc('ngm',39)/
+data on388_tablea(14) /gen_proc('goi_gfs',42)/
+data on388_tablea(15) /gen_proc('goi_fnl',43)/
+data on388_tablea(16) /gen_proc('ssta',44)/
+data on388_tablea(17) /gen_proc('coast_ocm',45)/
+data on388_tablea(18) /gen_proc('hycom_glob',46)/
+data on388_tablea(19) /gen_proc('hycom_npb',47)/
+data on388_tablea(20) /gen_proc('hycom_nab',48)/
+data on388_tablea(21) /gen_proc('ozone_anal_tiros',49)/
+data on388_tablea(22) /gen_proc('ozone_anal_nimbus',52)/
+data on388_tablea(23) /gen_proc('lfm_fofm',53)/
+data on388_tablea(24) /gen_proc('roi',64)/
+data on388_tablea(25) /gen_proc('t80l18gfs',68)/
+data on388_tablea(26) /gen_proc('t80l18mrf',69)/
+data on388_tablea(27) /gen_proc('qlm',70)/
+data on388_tablea(28) /gen_proc('fogfm_opc',73)/
+data on388_tablea(29) /gen_proc('gulf_of_mex_wind_wave',74)/
+data on388_tablea(30) /gen_proc('gulf_of_alas_wind_wave',75)/
+data on388_tablea(31) /gen_proc('bias_corr_mrf',76)/
+data on388_tablea(32) /gen_proc('t126l28gfs',77)/
+data on388_tablea(33) /gen_proc('t126l28mrf',78)/
+data on388_tablea(34) /gen_proc('backup_from_prev_run',79)/
+data on388_tablea(35) /gen_proc('t62l28mrf',80)/
+data on388_tablea(36) /gen_proc('anal_gfs',81)/
+data on388_tablea(37) /gen_proc('anal_gdas',82)/
+data on388_tablea(38) /gen_proc('meso_nam12km',84)/
+data on388_tablea(39) /gen_proc('early_hur_wind_speed_prob',86)/
+data on388_tablea(40) /gen_proc('cac_ensem_fcsts_spect',87)/
+data on388_tablea(41) /gen_proc('nww3_owm',88)/
+data on388_tablea(42) /gen_proc('nmm_8km',89)/
+data on388_tablea(43) /gen_proc('t62l28extmrf',90)/
+data on388_tablea(44) /gen_proc('t62l28extgfs',91)/
+data on388_tablea(45) /gen_proc('t62l28mrffnl',92)/
+data on388_tablea(46) /gen_proc('t62l28gdasmrf',93)/
+data on388_tablea(47) /gen_proc('t170l42mrf',94)/
+data on388_tablea(48) /gen_proc('t126l42mrf',95)/
+data on388_tablea(49) /gen_proc('gfs_avn',96)/
+data on388_tablea(50) /gen_proc('cfs_t62l64_l40mom3',98)/
+data on388_tablea(51) /gen_proc('misc_test_id',99)/
+data on388_tablea(52) /gen_proc('ruc_sanal_60km_40n',100)/
+data on388_tablea(53) /gen_proc('core',101)/
+data on388_tablea(54) /gen_proc('rap',105)/
+data on388_tablea(55) /gen_proc('gefs',107)/
+data on388_tablea(56) /gen_proc('lamp',108)/
+data on388_tablea(57) /gen_proc('rtma',109)/
+data on388_tablea(58) /gen_proc('nam_15k',110)/
+data on388_tablea(59) /gen_proc('nam_gen_sref',111)/
+data on388_tablea(60) /gen_proc('wrf_nmm_ncep',112)/
+data on388_tablea(61) /gen_proc('prod_ncep_sref',113)/
+data on388_tablea(62) /gen_proc('naefs_prod_ncep_cmc',114)/
+data on388_tablea(63) /gen_proc('down_scal_gfs_nam_ext',115)/
+data on388_tablea(64) /gen_proc('wrf_em_ncar_arwrf',116)/
+data on388_tablea(65) /gen_proc('ice_conc_anal',120)/
+data on388_tablea(66) /gen_proc('wna_reg_wav_mod',121)/
+data on388_tablea(67) /gen_proc('alas_wat_reg_wav_mod',122)/
+data on388_tablea(68) /gen_proc('na_hurr_wav_mod',123)/
+data on388_tablea(69) /gen_proc('enp_reg_wav_mod',124)/
+data on388_tablea(70) /gen_proc('np_hurr_wav_mod',125)/
+data on388_tablea(71) /gen_proc('sea_ice_fcst_mod',126)/
+data on388_tablea(72) /gen_proc('lake_ice_fcst_mod',127)/
+data on388_tablea(73) /gen_proc('glob_oce_fcst_mod',128)/
+data on388_tablea(74) /gen_proc('godas',129)/
+data on388_tablea(75) /gen_proc('merge_fields_ruc_nam_gfs',130)/
+data on388_tablea(76) /gen_proc('great_lakes_wave_mod',131)/
+data on388_tablea(77) /gen_proc('narr',140)/
+data on388_tablea(78) /gen_proc('ldafs',141)/
+data on388_tablea(79) /gen_proc('nwsrfs',150)/
+data on388_tablea(80) /gen_proc('nwsffgs',151)/
+data on388_tablea(81) /gen_proc('wsr_88d_s2_prec_anal',152)/
+data on388_tablea(82) /gen_proc('wsr_88d_s3_prec_anal',153)/
+data on388_tablea(83) /gen_proc('qpf_ncep',180)/
+data on388_tablea(84) /gen_proc('rfcqpf_ncep',181)/
+data on388_tablea(85) /gen_proc('rfcqpe_ncep',182)/
+data on388_tablea(86) /gen_proc('ndfd_ncep_hpc',183)/
+data on388_tablea(87) /gen_proc('ncwd_ncep_awc',190)/
+data on388_tablea(88) /gen_proc('cipap_ncep_awc',191)/
+data on388_tablea(89) /gen_proc('anal_ncep_awc',192)/
+data on388_tablea(90) /gen_proc('fcst_ncep_awc',193)/
+data on388_tablea(91) /gen_proc('cdas2',195)/
+data on388_tablea(92) /gen_proc('cdas2_regen',196)/
+data on388_tablea(93) /gen_proc('cdas',197)/
+data on388_tablea(94) /gen_proc('cdas_regen',198)/
+data on388_tablea(95) /gen_proc('cfsr_t382l64_l40mom4',199)/
+data on388_tablea(96) /gen_proc('cpc_man_fcst',200)/
+data on388_tablea(97) /gen_proc('cpc_auto_prod',201)/
+data on388_tablea(98) /gen_proc('epa_usne',210)/
+data on388_tablea(99) /gen_proc('epa_use',211)/
+data on388_tablea(100) /gen_proc('spc_man_fcst',215)/
+data on388_tablea(101) /gen_proc('ncep_opc_auto_prod',220)/
+data on388_tablea(102) /gen_proc('missing',255)/
+data on388_tablea(103) /gen_proc('ngac',117)/
+data on388_tablea(104) /gen_proc('hrrr',83)/
+data on388_tablea(105) /gen_proc('ncep_arl_dust',6)/
+data on388_tablea(106) /gen_proc('hrricane_mult_wave',13)/
+data on388_tablea(107) /gen_proc('extratropical_storm_surge',14)/
+data on388_tablea(108) /gen_proc('nearshore_wave_prediction',15)/
+data on388_tablea(109) /gen_proc('href',132)/
+data on388_tablea(110) /gen_proc('great_lakes_short_range_mod',133)/
+!
+!   Added new entries in tablea (06/27/2019)
+!
+data on388_tablea(111) /gen_proc('extra_trop_storm_surge',16)/
+data on388_tablea(112) /gen_proc('extra_trop_storm_surge_pacific',17)/
+data on388_tablea(113) /gen_proc('prob_extra_trop_storm_surge',18)/
+data on388_tablea(114) /gen_proc('linmit_fine_mesh_anal',19)/
+data on388_tablea(115) /gen_proc('extra_trop_storm_surge_micronesia',20)/
+data on388_tablea(116) /gen_proc('hur_weather_res_and_fcst',71)/
+data on388_tablea(117) /gen_proc('hur_non-hydro_multi',72)/
+!
+!   Added new entries in tablea (03/11/2021)
+!
+data on388_tablea(118) /gen_proc('rrfs',134)/
+!
+!   Added new entries in tablea (06/01/2021)
+!
+data on388_tablea(119) /gen_proc('hafs',135)/
 
 contains
   !
