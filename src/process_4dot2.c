@@ -112,23 +112,19 @@ compar(const struct TableEntry *pte1, const struct TableEntry *pte2)
 void
 open_and_read_4dot2(char *filename, f77int *iret)
 {
-
     struct TableEntry *pra;
-
-    char lfn[MXFNLEN+1], str[81], cflag, cub = '_';
-
+    char lfn[MXFNLEN + 1], str[81], cflag, cub = '_';
     size_t i;
-
     FILE *pfn;
 
-/*
-**  Copy the input filename into a local variable and check it for validity.
-**  This is especially important in case the filename was passed in as a
-**  string literal by the calling program or else doesn't have a trailing
-**  NULL character.
-*/
-    for (i = 0; (! isspace(filename[i]) && ! iscntrl(filename[i])); i++) {
-        if (i == MXFNLEN) {
+    /* Copy the input filename into a local variable and check it for
+     * validity.  This is especially important in case the filename
+     * was passed in as a * string literal by the calling program or
+     * else doesn't have a trailing * NULL character. */
+    for (i = 0; (! isspace(filename[i]) && ! iscntrl(filename[i])); i++)
+    {
+        if (i == MXFNLEN)
+        {
             *iret = (f77int) -1;
             return;
         }
@@ -136,27 +132,27 @@ open_and_read_4dot2(char *filename, f77int *iret)
     }
     lfn[i] = '\0';
 
-/*
-**  Open the file.
-*/
-    if ((pfn = fopen(lfn, "r")) == NULL) {
+    /* Open the file. */
+    if ((pfn = fopen(lfn, "r")) == NULL)
+    {
         *iret = (f77int) -2;
         printf("Can't open input file %s\n",lfn);
         return;
     }
 
-/*
-**  Read the file contents into an internal memory structure.  Memory will be
-**  allocated as needed for NUMALLOC entries at a time.
-*/
-    while (fgets(str, 80, pfn) != NULL) {
-        if (str[0] != '!') {    /* ignore comment lines */
-            if ((nentry % NUMALLOC) == 0) {
-/*
-**              Allocate additional memory.
-*/
+    /* Read the file contents into an internal memory structure.
+    *  Memory will be allocated as needed for NUMALLOC entries at a
+    *  time. */
+    while (fgets(str, 80, pfn) != NULL)
+    {
+        if (str[0] != '!')
+        {    /* ignore comment lines */
+            if ((nentry % NUMALLOC) == 0)
+            {
+                /* Allocate additional memory. */
                 pra = realloc(pe0, (NUMALLOC * sizeof(struct TableEntry)));
-                if (pra == NULL) {
+                if (pra == NULL)
+                {
                     *iret = (f77int) -3;
                     return;
                 }
@@ -172,20 +168,19 @@ open_and_read_4dot2(char *filename, f77int *iret)
         }
     }
 
-/*
-**  Close the file.
-*/
+    /* Close the file. */
     fclose (pfn);
 
     *iret = (f77int) 0;
 }
 
 /**
- * Sorts the contents of GRIB2 Code Table 4.2 within the internal memory
- * structure and writes the output to the file specified by filename. The
- * output file will be in a format suitable for subsequent reading via the
- * open_and_read_4dot2() function, so that this function does not need to be
- * called again prior to calling search_for_4dot2_entry().
+ * Sorts the contents of GRIB2 Code Table 4.2 within the internal
+ * memory structure and writes the output to the file specified by
+ * filename. The output file will be in a format suitable for
+ * subsequent reading via the open_and_read_4dot2() function, so that
+ * this function does not need to be called again prior to calling
+ * search_for_4dot2_entry().
  *
  * @param filename Filename to which to write the sorted
  * output. Directory prefixes or other local filesystem notation is
@@ -198,22 +193,18 @@ open_and_read_4dot2(char *filename, f77int *iret)
 void
 sort_and_write_4dot2(char *filename, f77int *iret)
 {
-#define MXFNLEN 120
-
     char lfn[MXFNLEN+1], str[MXG2MNEMP4], cflag;
-
     size_t i;
-
     FILE *pfn;
 
-/*
-**  Copy the filename into a local variable and check it for validity.
-**  This is especially important in case the filename was passed in as a
-**  string literal by the calling program or else doesn't have a trailing
-**  NULL character.
-*/
-    for (i = 0; (! isspace(filename[i]) && ! iscntrl(filename[i])); i++) {
-        if (i == MXFNLEN) {
+    /* Copy the filename into a local variable and check it for
+     * validity. This is especially important in case the filename
+     * was passed in as a string literal by the calling program or
+     * else doesn't have a trailing NULL character. */
+    for (i = 0; (! isspace(filename[i]) && ! iscntrl(filename[i])); i++)
+    {
+        if (i == MXFNLEN)
+        {
             *iret = (f77int) -1;
             return;
         }
@@ -221,25 +212,21 @@ sort_and_write_4dot2(char *filename, f77int *iret)
     }
     lfn[i] = '\0';
 
-/*
-**  Open the output file.
-*/
-    if ((pfn = fopen(lfn, "w")) == NULL) {
+    /* Open the output file. */
+    if ((pfn = fopen(lfn, "w")) == NULL)
+    {
         *iret = (f77int) -2;
         printf("Can't open output file %s\n",lfn);
         return;
     }
 
-/*
-**  Sort the entries within the internal memory structure.
-*/
+    /* Sort the entries within the internal memory structure. */
     qsort(pe0, nentry, sizeof(struct TableEntry),
           (int (*) (const void *, const void *)) compar);
 
-/*
-**  Write the sorted entries to the output file.
-*/
-    for (i = 0; i < nentry; i++) {
+    /* Write the sorted entries to the output file. */
+    for (i = 0; i < nentry; i++)
+    {
         strcpy(str, pe0[i].mnemonic);
         cflag = str[strlen(str)-1];
         str[strlen(str)-2] = '\0';
@@ -247,9 +234,8 @@ sort_and_write_4dot2(char *filename, f77int *iret)
                 pe0[i].discipline, pe0[i].category,
                 pe0[i].parameter, cflag, str);
     }
-/*
-**  Close the file.
-*/
+
+    /* Close the file. */
     fclose (pfn);
 
     *iret = (f77int) 0;
@@ -286,43 +272,39 @@ search_for_4dot2_entry(char nemo[MXG2MNEM], f77int *locflg,
                        f77int *iret)
 {
     unsigned short n = 0, n2 = 0;
-
     long llf;
-
     struct TableEntry key, *pbs;
-
     size_t ipt;
 
-/*
-**  Make a local copy of nemo.  Mnemonics may consist of any combination of
-**  alphanumeric, underscore and dash characters.
-*/
-    while ( (n < MXG2MNEM) &&
+    /* Make a local copy of nemo.  Mnemonics may consist of any
+     * combination of alphanumeric, underscore and dash characters. */
+    while ((n < MXG2MNEM) &&
             ((isalnum((int) nemo[n]) ||
-              (nemo[n] == '_') || (nemo[n] == '-'))) ) {
+              (nemo[n] == '_') || (nemo[n] == '-'))))
+    {
         key.mnemonic[n2++] = nemo[n++];
     }
 
-/*
-**  Append an underscore followed by the locflg in order to generate the
-**  mnemonic to search for.
-*/
+    /* Append an underscore followed by the locflg in order to
+     * generate the mnemonic to search for. */
     key.mnemonic[n2++] = '_';
     llf = (long) *locflg;
-    if (llf != 1) llf = 0;   /* default to using international entry unless
+    if (llf != 1)
+        llf = 0;   /* default to using international entry unless
                                 local is specified */
     sprintf(&key.mnemonic[n2], "%ld", llf);  /* trailing null will be automatically
                                                 appended by sprintf */
 
-/*
-**  Search for the mnemonic in the Code Table and return appropriate output values.
-*/
+    /* Search for the mnemonic in the Code Table and return
+     * appropriate output values. */
     pbs = bsearch(&key, pe0, nentry, sizeof(struct TableEntry),
                   (int (*) (const void *, const void *)) compar);
-    if (pbs == NULL) {
+    if (pbs == NULL)
+    {
         *iret = (f77int) -1;
     }
-    else {
+    else
+    {
         *iret = (f77int) 0;
         ipt = pbs - pe0;
         *disc = (f77int) pe0[ipt].discipline;
