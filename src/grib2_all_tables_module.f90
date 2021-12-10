@@ -1,30 +1,26 @@
+!> @file 
+!> @brief Define the variables in the derived data type discipline.
+!> @author Jun Wang @date 2012/01/25
+
+!>  @brief Define the variables in the derived data type discipline 
+!>  provided in Section 0.
+!>
+!> ### Program History Log
+!> Date | Programmer | Comments
+!> -----|------------|---------
+!> 12/04/2009 | V. Krishna Kumar | Creation
+!> 2012/01/25 | Jun Wang | Add template 4.44 and 4.48
+!> 2012/02/20 | Jun Wang | Add complex packing
+!> 2014/07/08 | Boi Vuong | Corrected Scaled value of second fixed surfaces in template 4.8 and Added generating process model HRRR
+!> 2015/01/09 | Boi Vuong | Added template 4.1, 411 and 4.12 and update code tables routines: get_g2_typeof ensfcst, get_g2_typeofderivefcst
+!> 2015/09/02 | Boi Vuong | Added 4 type of aerosols in table4_233 
+!> 2017/03/01 | Boi Vuong | Added generating process model (HREF and Great lake short range model in table on388_tablea  
+!> 2019/06/25 | Boi Vuong | Corrected tablec sub-center: Changed name: ncep_hpc to ncep_wpc; ncep_tpc to ncep_nhc; sec - swpc and aded new sub-center: esrl
+!> 2019/06/25 | Boi Vuong | 17 Added new entries in table4_3,table4_5 and added new table4_8,table4_9,table 4_201 Added generating process model table on388_tablea
+!> 2021/04/20 | Boi Vuong | Updated table 4.3, 4.5,4.7 and on388_tablea
+!>
+!> @author Jun Wang @date 2012/01/25
 module grib2_all_tables_module
-!
-!----------------module documentation block------------------------------------
-!  PURPOSE: Define the variables in the derived data type discipline 
-!  provided in Section 0
-!
-!  HISTORY: 12/04/2009 - Creation.                 V. Krishna Kumar
-!                                                  NCEP Central Operations
-!                                                  Systems Integration Branch
-!  revision log:
-!   2012/01/25   Jun Wang    Add template 4.44 and 4.48
-!   2012/02/20   Jun Wang    Add complex packing
-!   2014/07/08   Boi Vuong   Corrected Scaled value of second fixed surfaces 
-!                            in template 4.8 and Added generating process model HRRR
-!   2015/01/09   Boi Vuong   Added template 4.1, 411 and 4.12 and update code tables
-!                            routines: get_g2_typeof ensfcst, get_g2_typeofderivefcst
-!   2015/09/02   Boi Vuong   Added 4 type of aerosols in table4_233 
-!   2017/03/01   Boi Vuong   Added generating process model (HREF and Great lake 
-!                            short range model in table on388_tablea  
-!   2019/06/25   Boi Vuong   Corrected tablec sub-center:
-!                            Changed name: ncep_hpc to ncep_wpc; ncep_tpc to ncep_nhc;
-!                            sec - swpc and aded new sub-center: esrl - 17    
-!                            Added new entries in table4_3,table4_5 and added 
-!                            new table4_8,table4_9,table 4_201         
-!                            Added generating process model table on388_tablea
-!   2021/04/20   Boi Vuong   Updated table 4.3, 4.5,4.7 and on388_tablea 
-!------------------------------------------------------------------------------
 implicit none
 integer, parameter :: MAXSUBCEN=100
 integer, parameter :: MAXVER=100
@@ -2185,21 +2181,21 @@ contains
 !                             time_inc_betwn_succ_fld,ipdstmpl8)
 !   INPUT ARGUMENT LIST:
 !
-!	icatg - Parameter category (see Code Table 4.1)
-!	iparm - Parameter number (see Code Table 4.2)
-!	typ_gen_proc_key - Type of generating process (see Code Table 4.3)
-!	bckgnd_gen_proc_id - Background generating process identifier (defined by originating centre)
-!	gen_proc_or_mod_key - Analysis or forecast generating process identified (see Code ON388 Table A)
-!	hrs_obs_cutoff - Hours after reference time data cutoff (see Note 1)
-!	min_obs_cutoff - Minutes after reference time data cutoff
-!	unit_of_time_key - Indicator of unit of time range (see Code Table 4.4)
-!	fcst_time - Forecast time in units defined by octet 18 (see Note 2)
-!	lvl_type1 - Type of first fixed surface (see Code Table 4.5)
-!	scale_fac1 - Scale factor of first fixed surface
-!	scaled_val1 - Scaled value of first fixed surface
-!	lvl_type2 - Type of second fixed surfaced (see Code Table 4.5)
-!	scale_fac2 - Scale factor of second fixed surface
-!	scaled_val2 - Scaled value of second fixed surfaces
+!       icatg - Parameter category (see Code Table 4.1)
+!       iparm - Parameter number (see Code Table 4.2)
+!       typ_gen_proc_key - Type of generating process (see Code Table 4.3)
+!       bckgnd_gen_proc_id - Background generating process identifier (defined by originating centre)
+!       gen_proc_or_mod_key - Analysis or forecast generating process identified (see Code ON388 Table A)
+!       hrs_obs_cutoff - Hours after reference time data cutoff (see Note 1)
+!       min_obs_cutoff - Minutes after reference time data cutoff
+!       unit_of_time_key - Indicator of unit of time range (see Code Table 4.4)
+!       fcst_time - Forecast time in units defined by octet 18 (see Note 2)
+!       lvl_type1 - Type of first fixed surface (see Code Table 4.5)
+!       scale_fac1 - Scale factor of first fixed surface
+!       scaled_val1 - Scaled value of first fixed surface
+!       lvl_type2 - Type of second fixed surfaced (see Code Table 4.5)
+!       scale_fac2 - Scale factor of second fixed surface
+!       scaled_val2 - Scaled value of second fixed surfaces
 !       year_intvl - Year Time of end of overall time interval
 !       mon_intvl - Month Time of end of overall time interval
 !       day_intvl - Day Time of end of overall time interval

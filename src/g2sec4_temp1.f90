@@ -1,55 +1,39 @@
+!> @file 
+!> @brief Returns the Grib2 Section 4 Template 4.11 list for given keys. 
+!> @author Boi Vuong @date 2015-01-09
+
+!> This subroutine returns the Grib2 Section 4 Template 4.1 list for
+!> given keys PDT 4.1 - Individual ensemble forecast, control and
+!> perturbed, at a horizontal level or in a horizontal layer at a point
+!> in time.
+!>
+!> @param[in] icatg Parameter category (see Code table 4.1)
+!> @param[in] iparm Parameter number (see Code table 4.2)
+!> @param[in] typ_gen_proc_key Type of generating process (see Code table 4.3)
+!> @param[in] bckgnd_gen_proc_id Background generating process identifier (defined by originating centre)
+!> @param[in] gen_proc_or_mod_key Analysis or forecast generating process identified (see Code ON388 Table A)
+!> @param[in] hrs_obs_cutoff Hours of observational data cutoff after reference time (see Note)
+!> @param[in] min_obs_cutoff Minutes of observational data cutoff after reference time (see Note)
+!> @param[in] unit_of_time_key Indicator of unit of time range (see Code table 4.4)
+!> @param[in] fcst_time Forecast time in units defined by octet 18
+!> @param[in] lvl_type1 Type of first fixed surface (see Code table 4.5)
+!> @param[in] scale_fac1 Scale factor of first fixed surface
+!> @param[in] scaled_val1 Scaled value of first fixed surface
+!> @param[in] lvl_type2 Type of second fixed surfaced (see Code table 4.5)
+!> @param[in] scale_fac2 Scale factor of second fixed surface
+!> @param[in] scaled_val2 Scaled value of second fixed surfaces
+!> @param[in] type_ens_fcst_key Type of ensemble forecast (see Code table 4.6)
+!> @param[in] perturb_num Perturbation ensemble number
+!> @param[in] num_fcst_ens number of forecasts in ensemble
+!> @param[out] ipdstmpl1  GRIB2 PDS Template 4.1 listing
+!>
+!> @author Boi Vuong @date 2015-01-09
      subroutine g2sec4_temp1(icatg,iparm,typ_gen_proc_key,                         &
                              gen_proc_or_mod_key,hrs_obs_cutoff,min_obs_cutoff,    &
                              unit_of_time_key,fcst_time,lvl_type1,scale_fac1,      &
                              scaled_val1,lvl_type2,scale_fac2,scaled_val2,         &
                              type_ens_fcst_key,perturb_num,num_fcst_ens,           &
                              ipdstmpl1)
-!
-!$$$  SUBPROGRAM DOCUMENTATION BLOCK
-!                .      .    .                                       .
-! SUBPROGRAM:    g2sec4_temp1
-!   PRGMMR: Boi Vuong         ORG: W/SIB    DATE: 2015-01-09
-!
-! ABSTRACT: This subroutine returns the Grib2 Section 4 Template 4.1 list for given keys
-!           PDT 4.1 - Individual ensemble forecast, control and perturbed, at a
-!                     horizontal level or in a horizontal layer at a point in time.
-!
-! PROGRAM HISTORY LOG:
-! 2015-01-09  Boi Vuong
-!
-! USAGE:    CALL g2sec4_temp1(icatg,iparm,typ_gen_proc_key,gen_proc_or_mod_key,
-!                             hrs_obs_cutoff,min_obs_cutoff,unit_of_time_key,
-!                             fcst_time,lvl_type1,scale_fac1,scaled_val1,lvl_type2,
-!                             scale_fac2,scaled_val2,type_ens_fcst_key,perturb_num,
-!                             num_fcst_ens,ipdstmpl1)
-!   INPUT ARGUMENT LIST:
-!      icatg - Parameter category (see Code table 4.1)
-!      iparm - Parameter number (see Code table 4.2)
-!      typ_gen_proc_key - Type of generating process (see Code table 4.3)
-!      bckgnd_gen_proc_id - Background generating process identifier (defined by originating centre)
-!      gen_proc_or_mod_key - Analysis or forecast generating process identified (see Code ON388 Table A)
-!      hrs_obs_cutoff - Hours of observational data cutoff after reference time (see Note)
-!      min_obs_cutoff - Minutes of observational data cutoff after reference time (see Note)
-!      unit_of_time_key - Indicator of unit of time range (see Code table 4.4)
-!      fcst_time - Forecast time in units defined by octet 18
-!      lvl_type1 - Type of first fixed surface (see Code table 4.5)
-!      scale_fac1 - Scale factor of first fixed surface
-!      scaled_val1 - Scaled value of first fixed surface
-!      lvl_type2 - Type of second fixed surfaced (see Code table 4.5)
-!      scale_fac2 - Scale factor of second fixed surface
-!      scaled_val2 - Scaled value of second fixed surfaces
-!      type_ens_fcst_key - Type of ensemble forecast (see Code table 4.6)
-!      perturb_num - Perturbation ensemble number
-!      num_fcst_ens - number of forecasts in ensemble
-!
-!   OUTPUT ARRAY:
-!      ipdstmpl1  - GRIB2 PDS Template 4.1 listing
-!
-! ATTRIBUTES:
-!   LANGUAGE: Fortran 90
-!   MACHINE:  IBM SP
-!
-
      use grib2_all_tables_module
 
      integer(4),intent(in) :: icatg,iparm,hrs_obs_cutoff,min_obs_cutoff,       &
