@@ -1,5 +1,5 @@
-!> @file Returns the Grib2 Section 4 Template 4.11 list for given keys.
-!> @brief 
+!> @file 
+!> @brief Returns the Grib2 Section 4 Template 4.11 list for given keys.
 !> @author Boi Vuong @date 2015-01-09
 
 !> This subroutine returns the Grib2 Section 4 Template 4.11 list for
@@ -10,7 +10,6 @@
 !> @param[in] icatg Parameter category (see Code Table 4.1)
 !> @param[in] iparm Parameter number (see Code Table 4.2)
 !> @param[in] typ_gen_proc_key Type of generating process (see Code Table 4.3)
-!> @param[in] bckgnd_gen_proc_id Background generating process identifier (defined by originating centre)
 !> @param[in] gen_proc_or_mod_key Analysis or forecast generating process identified (see Code ON388 Table A)
 !> @param[in] hrs_obs_cutoff Hours after reference time data cutoff (see Note 1)
 !> @param[in] min_obs_cutoff Minutes after reference time data cutoff
