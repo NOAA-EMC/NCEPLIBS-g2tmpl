@@ -5,6 +5,8 @@
 !> This program reads params_grib2_tbl_new.text and writes the output
 !> file will be sorted with a format suitable for subsequent reading
 !> via the open_and_read_4dot2() function.
+!> Note: Copy params_grib2_tbl_new.text  to  params_grib2_tbl_new
+!> Before you run sort_params_grib2_tbl 
         Program  sort_params_grib2_tbl
         use grib2_all_tables_module
         integer idisc,icatg,iparm,locflg
