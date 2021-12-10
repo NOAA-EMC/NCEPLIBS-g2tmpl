@@ -9,21 +9,29 @@ Utilities for GRIB2 templates. This is part of the
 
 NCEP/EMC Developers
 
-Code Manager: Boi Vuong
+Code Manager: Ed Hartnett, Hang Lei
 
-## Status
+## History
 
-This library is deprecated and will not be included in the next
-release of NCEPLIBS. The functionality in this library will be
-migrated to the [NCEPLIBS-g2](https://github.com/NOAA-EMC/NCEPLIBS-g2)
-project.
+Version | Date | Notes
+--------|------|------
+1.0.0 | Dec  04 2009 | Original version
+1.1.0 | Jan  25 2012 | Add product template 4.44 and 4.48
+1.2.1 | Feb  20 2012 | Add complex packing
+1.2.2 | Jul  08 2014 | Corrected Scaled value of second fixed surfaces in template 4.8 and Added generating process model HRRR
+1.3.0 | Jan  09 2015 | Added product template 4.1, 4.11 and 4.12; Added code tables 4.6 (Type of Ensemble Forecast) and 4.7 (Derived Forecast); Added routines: get_g2_typeofensfcst, get_g2_typeofderivefcst
+1.4.0 | Aug  26 2015 | Added more parameters and updated table 4.2-0-20; Added 4 type of aerosols in table4_233
+1.5.0 | Mar  09 2017 | Added more parameters in grib2 table 4.2
+1.5.2 | Nov  10 2019 | fixed issues in error messages
+1.6.0 | Dec  11 2019 | Removed "qsort" in routine process_4dot2.c; Added more parameters
+1.10.0 | Apr  28 2021| Added more parameters; Added generating process ID for models: RRFS and CORE; Removed routine gdtsec3.f (obsolete)
 
 ## Installing
 
 ```
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=/path/to/install /path/to/NCEPLIBS-g2tmpl
+cmake ..
 make -j2
 make install
 ```
