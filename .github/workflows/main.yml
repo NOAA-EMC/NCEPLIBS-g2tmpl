@@ -9,8 +9,6 @@ jobs:
       CC: gcc-9
 
     steps:
-
-    steps:
     - name: install-dependencies
       run: |
         sudo apt-get update
