@@ -21,10 +21,20 @@ jobs:
         cd g2tmpl
         mkdir build 
         cd build
-        cmake ..
+        cmake -DCMAKE_C_FLAGS="-g -fprofile-abs-path -fprofile-arcs -ftest-coverage -O0 -fsanitize=address -Wall -Werror" ..
         make -j2
     
     - name: test
       run: |
         cd $GITHUB_WORKSPACE/g2tmpl/build
+        ctest --verbose --output-on-failure        
+        gcovr --root .. -v  --html-details --exclude ../tests --exclude CMakeFiles --print-summary -o test-coverage.html
 
+    - name: upload-test-coverage
+      uses: actions/upload-artifact@v2
+      with:
+        name: g2tmpl-test-coverage
+        path: |
+          g2tmpl/build/*.html
+          g2tmpl/build/*.css
+        
