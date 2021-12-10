@@ -22,8 +22,8 @@ endif()
 
 add_subdirectory(src)
 
-if (ENABLE_TESTS)
-  enable_testing()
+include(CTest)
+if(BUILD_TESTING)
   add_subdirectory(tests)
 endif()
 
