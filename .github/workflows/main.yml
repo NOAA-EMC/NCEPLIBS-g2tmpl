@@ -26,7 +26,7 @@ jobs:
         cd g2tmpl
         mkdir build 
         cd build
-        cmake -DENABLE_DOCS=ON -DCMAKE_C_FLAGS="-g -fprofile-abs-path -fprofile-arcs -ftest-coverage -O0 -fsanitize=address -Wall -Werror" -DCMAKE_Fortran_FLAGS="-g -fprofile-abs-path -fprofile-arcs -ftest-coverage -O0 -fsanitize=address -Wall -Werror" ..
+        cmake -DENABLE_DOCS=ON -DCMAKE_C_FLAGS="-g -fprofile-abs-path -fprofile-arcs -ftest-coverage -O0 -fsanitize=address -Wall -Werror" -DCMAKE_Fortran_FLAGS="-g -fprofile-abs-path -fprofile-arcs -ftest-coverage -O0 -fsanitize=address -Wall ..
         make -j2
     
     - name: test
