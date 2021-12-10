@@ -131,217 +131,217 @@ $(document).ready(function(){initNavTree('process__4dot2_8c_source.html',''); in
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">int</span> <a class="code" href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">compar</a>(<span class="keyword">const</span> <span class="keyword">struct</span> TableEntry *, <span class="keyword">const</span> <span class="keyword">struct</span> TableEntry *);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> <a class="code" href="process__4dot2_8c.html#afe7898eb18503a1c68d07703f40ced75">close_4dot2</a>(<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">   85</a></span>&#160;<a class="code" href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">compar</a>(<span class="keyword">const</span> <span class="keyword">struct</span> TableEntry *pte1, <span class="keyword">const</span> <span class="keyword">struct</span> TableEntry *pte2)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> strcmp(pte1-&gt;mnemonic, pte2-&gt;mnemonic);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">**  Define the remaining subprograms which will be called by user applications.</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="process__4dot2_8c.html#add8c6eeb0488ac4f8151dd33d13101eb">  116</a></span>&#160;<a class="code" href="process__4dot2_8c.html#add8c6eeb0488ac4f8151dd33d13101eb">open_and_read_4dot2</a>(<span class="keywordtype">char</span> *filename, <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *iret)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">struct </span>TableEntry *pra;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">char</span> lfn[<a class="code" href="process__4dot2_8c.html#adcb9ca74c59f88b5a3d6bd10c8095692">MXFNLEN</a>+1], str[81], cflag, cub = <span class="charliteral">&#39;_&#39;</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">size_t</span> i;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    FILE *pfn;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">**  Copy the input filename into a local variable and check it for validity.</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">**  This is especially important in case the filename was passed in as a</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">**  string literal by the calling program or else doesn&#39;t have a trailing</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">**  NULL character.</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">for</span> (i = 0; (! isspace(filename[i]) &amp;&amp; ! iscntrl(filename[i])); i++) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">if</span> (i == <a class="code" href="process__4dot2_8c.html#adcb9ca74c59f88b5a3d6bd10c8095692">MXFNLEN</a>) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -1;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        lfn[i] = filename[i];</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    lfn[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">**  Open the file.</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">if</span> ((pfn = fopen(lfn, <span class="stringliteral">&quot;r&quot;</span>)) == NULL) {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -2;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        printf(<span class="stringliteral">&quot;Can&#39;t open input file %s\n&quot;</span>,lfn);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">**  Read the file contents into an internal memory structure.  Memory will be</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">**  allocated as needed for NUMALLOC entries at a time.</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">while</span> (fgets(str, 80, pfn) != NULL) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span> (str[0] != <span class="charliteral">&#39;!&#39;</span>) {    <span class="comment">/* ignore comment lines */</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span> ((<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a> % <a class="code" href="process__4dot2_8c.html#a761b93a9b0cea663191152eb12d55ccb">NUMALLOC</a>) == 0) {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">**              Allocate additional memory.</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                pra = realloc(<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>, (<a class="code" href="process__4dot2_8c.html#a761b93a9b0cea663191152eb12d55ccb">NUMALLOC</a> * <span class="keyword">sizeof</span>(<span class="keyword">struct</span> TableEntry)));</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="keywordflow">if</span> (pra == NULL) {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -3;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a> = pra;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            sscanf(str, <span class="stringliteral">&quot;%d%d%d%*3c%c%*c%s&quot;</span>,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                   &amp;<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].discipline, &amp;<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].category,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                   &amp;<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].parameter, &amp;cflag,</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                   <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].mnemonic);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            strncat(<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].mnemonic, &amp;cub, 1);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            strncat(<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].mnemonic, &amp;cflag, 1);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>++;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">**  Close the file.</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    fclose (pfn);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">   84</a></span>&#160;<a class="code" href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">compar</a>(<span class="keyword">const</span> <span class="keyword">struct</span> TableEntry *pte1, <span class="keyword">const</span> <span class="keyword">struct</span> TableEntry *pte2)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> strcmp(pte1-&gt;mnemonic, pte2-&gt;mnemonic);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">**  Define the remaining subprograms which will be called by user applications.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="process__4dot2_8c.html#add8c6eeb0488ac4f8151dd33d13101eb">  113</a></span>&#160;<a class="code" href="process__4dot2_8c.html#add8c6eeb0488ac4f8151dd33d13101eb">open_and_read_4dot2</a>(<span class="keywordtype">char</span> *filename, <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *iret)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">struct </span>TableEntry *pra;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">char</span> lfn[<a class="code" href="process__4dot2_8c.html#adcb9ca74c59f88b5a3d6bd10c8095692">MXFNLEN</a>+1], str[81], cflag, cub = <span class="charliteral">&#39;_&#39;</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">size_t</span> i;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    FILE *pfn;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">**  Copy the input filename into a local variable and check it for validity.</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">**  This is especially important in case the filename was passed in as a</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">**  string literal by the calling program or else doesn&#39;t have a trailing</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">**  NULL character.</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">for</span> (i = 0; (! isspace(filename[i]) &amp;&amp; ! iscntrl(filename[i])); i++) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">if</span> (i == <a class="code" href="process__4dot2_8c.html#adcb9ca74c59f88b5a3d6bd10c8095692">MXFNLEN</a>) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -1;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        lfn[i] = filename[i];</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    lfn[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">**  Open the file.</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> ((pfn = fopen(lfn, <span class="stringliteral">&quot;r&quot;</span>)) == NULL) {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -2;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        printf(<span class="stringliteral">&quot;Can&#39;t open input file %s\n&quot;</span>,lfn);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">**  Read the file contents into an internal memory structure.  Memory will be</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">**  allocated as needed for NUMALLOC entries at a time.</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">while</span> (fgets(str, 80, pfn) != NULL) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">if</span> (str[0] != <span class="charliteral">&#39;!&#39;</span>) {    <span class="comment">/* ignore comment lines */</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">if</span> ((<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a> % <a class="code" href="process__4dot2_8c.html#a761b93a9b0cea663191152eb12d55ccb">NUMALLOC</a>) == 0) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">**              Allocate additional memory.</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                pra = realloc(<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>, (<a class="code" href="process__4dot2_8c.html#a761b93a9b0cea663191152eb12d55ccb">NUMALLOC</a> * <span class="keyword">sizeof</span>(<span class="keyword">struct</span> TableEntry)));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">if</span> (pra == NULL) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -3;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a> = pra;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            sscanf(str, <span class="stringliteral">&quot;%d%d%d%*3c%c%*c%s&quot;</span>,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                   &amp;<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].discipline, &amp;<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].category,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                   &amp;<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].parameter, &amp;cflag,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                   <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].mnemonic);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            strncat(<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].mnemonic, &amp;cub, 1);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            strncat(<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[<a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>].mnemonic, &amp;cflag, 1);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>++;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">**  Close the file.</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    fclose (pfn);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) 0;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) 0;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="process__4dot2_8c.html#ae7dec29e33a953e88c870eba778d1492">  204</a></span>&#160;<a class="code" href="process__4dot2_8c.html#ae7dec29e33a953e88c870eba778d1492">sort_and_write_4dot2</a>(<span class="keywordtype">char</span> *filename, <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *iret)</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#define MXFNLEN 120</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">char</span> lfn[<a class="code" href="process__4dot2_8c.html#adcb9ca74c59f88b5a3d6bd10c8095692">MXFNLEN</a>+1], str[<a class="code" href="process__4dot2_8c.html#afc878039e3b684ccbee0b09d3728d9eb">MXG2MNEMP4</a>], cflag;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">size_t</span> i;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    FILE *pfn;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">**  Copy the filename into a local variable and check it for validity.</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">**  This is especially important in case the filename was passed in as a</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">**  string literal by the calling program or else doesn&#39;t have a trailing</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">**  NULL character.</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">for</span> (i = 0; (! isspace(filename[i]) &amp;&amp; ! iscntrl(filename[i])); i++) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">if</span> (i == <a class="code" href="process__4dot2_8c.html#adcb9ca74c59f88b5a3d6bd10c8095692">MXFNLEN</a>) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -1;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        lfn[i] = filename[i];</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    lfn[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">**  Open the output file.</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">if</span> ((pfn = fopen(lfn, <span class="stringliteral">&quot;w&quot;</span>)) == NULL) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -2;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        printf(<span class="stringliteral">&quot;Can&#39;t open output file %s\n&quot;</span>,lfn);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">**  Sort the entries within the internal memory structure.</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    qsort(<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>, <a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> TableEntry),</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;          (<span class="keywordtype">int</span> (*) (<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *)) <a class="code" href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">compar</a>);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">**  Write the sorted entries to the output file.</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; <a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>; i++) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        strcpy(str, <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[i].mnemonic);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        cflag = str[strlen(str)-1];</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        str[strlen(str)-2] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        fprintf(pfn, <span class="stringliteral">&quot;%4d%4d%6d   %c %s\n&quot;</span>,</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[i].discipline, <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[i].category,</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[i].parameter, cflag, str);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">**  Close the file.</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    fclose (pfn);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) 0;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="process__4dot2_8c.html#a36793a517e6e09e3ec17fbec5f1e3a98">  291</a></span>&#160;<a class="code" href="process__4dot2_8c.html#a36793a517e6e09e3ec17fbec5f1e3a98">search_for_4dot2_entry</a>(<span class="keywordtype">char</span> nemo[<a class="code" href="process__4dot2_8c.html#a8b1a673bb7455ba2eee49d8fb521f3a9">MXG2MNEM</a>], <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *locflg,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                       <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *disc, <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *catg, <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *parm,</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                       <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *iret)</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> n = 0, n2 = 0;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordtype">long</span> llf;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">struct </span>TableEntry key, *pbs;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">size_t</span> ipt;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="comment">**  Make a local copy of nemo.  Mnemonics may consist of any combination of</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment">**  alphanumeric, underscore and dash characters.</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">while</span> ( (n &lt; <a class="code" href="process__4dot2_8c.html#a8b1a673bb7455ba2eee49d8fb521f3a9">MXG2MNEM</a>) &amp;&amp;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            ((isalnum((<span class="keywordtype">int</span>) nemo[n]) ||</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;              (nemo[n] == <span class="charliteral">&#39;_&#39;</span>) || (nemo[n] == <span class="charliteral">&#39;-&#39;</span>))) ) {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        key.mnemonic[n2++] = nemo[n++];</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="comment">**  Append an underscore followed by the locflg in order to generate the</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="comment">**  mnemonic to search for.</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    key.mnemonic[n2++] = <span class="charliteral">&#39;_&#39;</span>;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    llf = (long) *locflg;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">if</span> (llf != 1) llf = 0;   <span class="comment">/* default to using international entry unless</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">                                local is specified */</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    sprintf(&amp;key.mnemonic[n2], <span class="stringliteral">&quot;%ld&quot;</span>, llf);  <span class="comment">/* trailing null will be automatically</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">                                                appended by sprintf */</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">**  Search for the mnemonic in the Code Table and return appropriate output values.</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    pbs = bsearch(&amp;key, <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>, <a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> TableEntry),</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                  (<span class="keywordtype">int</span> (*) (<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *)) <a class="code" href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">compar</a>);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">if</span> (pbs == NULL) {</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -1;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="process__4dot2_8c.html#ae7dec29e33a953e88c870eba778d1492">  199</a></span>&#160;<a class="code" href="process__4dot2_8c.html#ae7dec29e33a953e88c870eba778d1492">sort_and_write_4dot2</a>(<span class="keywordtype">char</span> *filename, <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *iret)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#define MXFNLEN 120</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">char</span> lfn[<a class="code" href="process__4dot2_8c.html#adcb9ca74c59f88b5a3d6bd10c8095692">MXFNLEN</a>+1], str[<a class="code" href="process__4dot2_8c.html#afc878039e3b684ccbee0b09d3728d9eb">MXG2MNEMP4</a>], cflag;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">size_t</span> i;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    FILE *pfn;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">**  Copy the filename into a local variable and check it for validity.</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">**  This is especially important in case the filename was passed in as a</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">**  string literal by the calling program or else doesn&#39;t have a trailing</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">**  NULL character.</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">for</span> (i = 0; (! isspace(filename[i]) &amp;&amp; ! iscntrl(filename[i])); i++) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">if</span> (i == <a class="code" href="process__4dot2_8c.html#adcb9ca74c59f88b5a3d6bd10c8095692">MXFNLEN</a>) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -1;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        lfn[i] = filename[i];</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    lfn[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">**  Open the output file.</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">if</span> ((pfn = fopen(lfn, <span class="stringliteral">&quot;w&quot;</span>)) == NULL) {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -2;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        printf(<span class="stringliteral">&quot;Can&#39;t open output file %s\n&quot;</span>,lfn);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">**  Sort the entries within the internal memory structure.</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    qsort(<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>, <a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> TableEntry),</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;          (<span class="keywordtype">int</span> (*) (<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *)) <a class="code" href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">compar</a>);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">**  Write the sorted entries to the output file.</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; <a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>; i++) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        strcpy(str, <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[i].mnemonic);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        cflag = str[strlen(str)-1];</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        str[strlen(str)-2] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        fprintf(pfn, <span class="stringliteral">&quot;%4d%4d%6d   %c %s\n&quot;</span>,</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[i].discipline, <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[i].category,</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[i].parameter, cflag, str);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">**  Close the file.</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    fclose (pfn);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) 0;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno"><a class="line" href="process__4dot2_8c.html#a36793a517e6e09e3ec17fbec5f1e3a98">  284</a></span>&#160;<a class="code" href="process__4dot2_8c.html#a36793a517e6e09e3ec17fbec5f1e3a98">search_for_4dot2_entry</a>(<span class="keywordtype">char</span> nemo[<a class="code" href="process__4dot2_8c.html#a8b1a673bb7455ba2eee49d8fb521f3a9">MXG2MNEM</a>], <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *locflg,</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                       <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *disc, <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *catg, <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *parm,</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                       <a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *iret)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;{</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> n = 0, n2 = 0;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordtype">long</span> llf;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keyword">struct </span>TableEntry key, *pbs;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordtype">size_t</span> ipt;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">**  Make a local copy of nemo.  Mnemonics may consist of any combination of</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">**  alphanumeric, underscore and dash characters.</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">while</span> ( (n &lt; <a class="code" href="process__4dot2_8c.html#a8b1a673bb7455ba2eee49d8fb521f3a9">MXG2MNEM</a>) &amp;&amp;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            ((isalnum((<span class="keywordtype">int</span>) nemo[n]) ||</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;              (nemo[n] == <span class="charliteral">&#39;_&#39;</span>) || (nemo[n] == <span class="charliteral">&#39;-&#39;</span>))) ) {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        key.mnemonic[n2++] = nemo[n++];</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">**  Append an underscore followed by the locflg in order to generate the</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">**  mnemonic to search for.</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    key.mnemonic[n2++] = <span class="charliteral">&#39;_&#39;</span>;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    llf = (long) *locflg;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">if</span> (llf != 1) llf = 0;   <span class="comment">/* default to using international entry unless</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="comment">                                local is specified */</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    sprintf(&amp;key.mnemonic[n2], <span class="stringliteral">&quot;%ld&quot;</span>, llf);  <span class="comment">/* trailing null will be automatically</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="comment">                                                appended by sprintf */</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment">**  Search for the mnemonic in the Code Table and return appropriate output values.</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    pbs = bsearch(&amp;key, <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>, <a class="code" href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a>, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> TableEntry),</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                  (<span class="keywordtype">int</span> (*) (<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *)) <a class="code" href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">compar</a>);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">if</span> (pbs == NULL) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) -1;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) 0;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        ipt = pbs - <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        *disc = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[ipt].discipline;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        *catg = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[ipt].category;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        *parm = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[ipt].parameter;</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) 0;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        ipt = pbs - <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        *disc = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[ipt].discipline;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        *catg = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[ipt].category;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        *parm = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) <a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>[ipt].parameter;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    }</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno"><a class="line" href="process__4dot2_8c.html#afe7898eb18503a1c68d07703f40ced75">  351</a></span>&#160;<a class="code" href="process__4dot2_8c.html#afe7898eb18503a1c68d07703f40ced75">close_4dot2</a>(<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *iret)</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;{</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    free (<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) 0;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;}</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno"><a class="line" href="process__4dot2_8c.html#afe7898eb18503a1c68d07703f40ced75">  342</a></span>&#160;<a class="code" href="process__4dot2_8c.html#afe7898eb18503a1c68d07703f40ced75">close_4dot2</a>(<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a> *iret)</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;{</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    free (<a class="code" href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a>);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    *iret = (<a class="code" href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a>) 0;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}</div>
 <div class="ttc" id="aprocess__4dot2_8c_html_a297eeddc898582329f52e49d4b30700e"><div class="ttname"><a href="process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e">pe0</a></div><div class="ttdeci">struct TableEntry * pe0</div><div class="ttdoc">Table entry.</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00062">process_4dot2.c:62</a></div></div>
-<div class="ttc" id="aprocess__4dot2_8c_html_a36793a517e6e09e3ec17fbec5f1e3a98"><div class="ttname"><a href="process__4dot2_8c.html#a36793a517e6e09e3ec17fbec5f1e3a98">search_for_4dot2_entry</a></div><div class="ttdeci">void search_for_4dot2_entry(char nemo[MXG2MNEM], f77int *locflg, f77int *disc, f77int *catg, f77int *parm, f77int *iret)</div><div class="ttdoc">Searches for a specified mnemonic within the previously-opened GRIB2 Code Table 4....</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00291">process_4dot2.c:291</a></div></div>
+<div class="ttc" id="aprocess__4dot2_8c_html_a36793a517e6e09e3ec17fbec5f1e3a98"><div class="ttname"><a href="process__4dot2_8c.html#a36793a517e6e09e3ec17fbec5f1e3a98">search_for_4dot2_entry</a></div><div class="ttdeci">void search_for_4dot2_entry(char nemo[MXG2MNEM], f77int *locflg, f77int *disc, f77int *catg, f77int *parm, f77int *iret)</div><div class="ttdoc">Searches for a specified mnemonic within the previously-opened GRIB2 Code Table 4....</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00284">process_4dot2.c:284</a></div></div>
 <div class="ttc" id="aprocess__4dot2_8c_html_a5c4dfc0f91864103ff0e0e94eb361822"><div class="ttname"><a href="process__4dot2_8c.html#a5c4dfc0f91864103ff0e0e94eb361822">f77int</a></div><div class="ttdeci">int f77int</div><div class="ttdoc">On certain operating systems, the FORTRAN compiler appends an underscore to subprogram names in its o...</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00050">process_4dot2.c:50</a></div></div>
 <div class="ttc" id="aprocess__4dot2_8c_html_a761b93a9b0cea663191152eb12d55ccb"><div class="ttname"><a href="process__4dot2_8c.html#a761b93a9b0cea663191152eb12d55ccb">NUMALLOC</a></div><div class="ttdeci">#define NUMALLOC</div><div class="ttdoc">Allocate internal memory for table entries in chunks of 25000.</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00020">process_4dot2.c:20</a></div></div>
 <div class="ttc" id="aprocess__4dot2_8c_html_a79c2b98a28219018e41885beb0c784f7"><div class="ttname"><a href="process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7">nentry</a></div><div class="ttdeci">size_t nentry</div><div class="ttdoc">Number of entries.</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00065">process_4dot2.c:65</a></div></div>
 <div class="ttc" id="aprocess__4dot2_8c_html_a8b1a673bb7455ba2eee49d8fb521f3a9"><div class="ttname"><a href="process__4dot2_8c.html#a8b1a673bb7455ba2eee49d8fb521f3a9">MXG2MNEM</a></div><div class="ttdeci">#define MXG2MNEM</div><div class="ttdoc">Define the maximum length of a mnemonic in GRIB2 Code Table 4.2.</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00013">process_4dot2.c:13</a></div></div>
-<div class="ttc" id="aprocess__4dot2_8c_html_a8c7a1f1e806a2ba338de65da418431c8"><div class="ttname"><a href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">compar</a></div><div class="ttdeci">int compar(const struct TableEntry *, const struct TableEntry *)</div><div class="ttdoc">Define the internal comparison function for use with qsort and bsearch.</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00085">process_4dot2.c:85</a></div></div>
+<div class="ttc" id="aprocess__4dot2_8c_html_a8c7a1f1e806a2ba338de65da418431c8"><div class="ttname"><a href="process__4dot2_8c.html#a8c7a1f1e806a2ba338de65da418431c8">compar</a></div><div class="ttdeci">int compar(const struct TableEntry *, const struct TableEntry *)</div><div class="ttdoc">Define the internal comparison function for use with qsort and bsearch.</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00084">process_4dot2.c:84</a></div></div>
 <div class="ttc" id="aprocess__4dot2_8c_html_adcb9ca74c59f88b5a3d6bd10c8095692"><div class="ttname"><a href="process__4dot2_8c.html#adcb9ca74c59f88b5a3d6bd10c8095692">MXFNLEN</a></div><div class="ttdeci">#define MXFNLEN</div><div class="ttdoc">Max fn length.</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00023">process_4dot2.c:23</a></div></div>
-<div class="ttc" id="aprocess__4dot2_8c_html_add8c6eeb0488ac4f8151dd33d13101eb"><div class="ttname"><a href="process__4dot2_8c.html#add8c6eeb0488ac4f8151dd33d13101eb">open_and_read_4dot2</a></div><div class="ttdeci">void open_and_read_4dot2(char *, f77int *)</div><div class="ttdoc">Opens and reads the GRIB2 Code Table 4.2 into an internal memory structure.</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00116">process_4dot2.c:116</a></div></div>
-<div class="ttc" id="aprocess__4dot2_8c_html_ae7dec29e33a953e88c870eba778d1492"><div class="ttname"><a href="process__4dot2_8c.html#ae7dec29e33a953e88c870eba778d1492">sort_and_write_4dot2</a></div><div class="ttdeci">void sort_and_write_4dot2(char *, f77int *)</div><div class="ttdoc">Sorts the contents of GRIB2 Code Table 4.2 within the internal memory structure and writes the output...</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00204">process_4dot2.c:204</a></div></div>
+<div class="ttc" id="aprocess__4dot2_8c_html_add8c6eeb0488ac4f8151dd33d13101eb"><div class="ttname"><a href="process__4dot2_8c.html#add8c6eeb0488ac4f8151dd33d13101eb">open_and_read_4dot2</a></div><div class="ttdeci">void open_and_read_4dot2(char *, f77int *)</div><div class="ttdoc">Opens and reads the GRIB2 Code Table 4.2 into an internal memory structure.</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00113">process_4dot2.c:113</a></div></div>
+<div class="ttc" id="aprocess__4dot2_8c_html_ae7dec29e33a953e88c870eba778d1492"><div class="ttname"><a href="process__4dot2_8c.html#ae7dec29e33a953e88c870eba778d1492">sort_and_write_4dot2</a></div><div class="ttdeci">void sort_and_write_4dot2(char *, f77int *)</div><div class="ttdoc">Sorts the contents of GRIB2 Code Table 4.2 within the internal memory structure and writes the output...</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00199">process_4dot2.c:199</a></div></div>
 <div class="ttc" id="aprocess__4dot2_8c_html_afc878039e3b684ccbee0b09d3728d9eb"><div class="ttname"><a href="process__4dot2_8c.html#afc878039e3b684ccbee0b09d3728d9eb">MXG2MNEMP4</a></div><div class="ttdeci">#define MXG2MNEMP4</div><div class="ttdoc">Define the maximum length of a mnemonic in GRIB2 Code Table 4.2.</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00017">process_4dot2.c:17</a></div></div>
-<div class="ttc" id="aprocess__4dot2_8c_html_afe7898eb18503a1c68d07703f40ced75"><div class="ttname"><a href="process__4dot2_8c.html#afe7898eb18503a1c68d07703f40ced75">close_4dot2</a></div><div class="ttdeci">void close_4dot2(f77int *)</div><div class="ttdoc">This subroutine should be called one time at the end of the application program in order to free all ...</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00351">process_4dot2.c:351</a></div></div>
+<div class="ttc" id="aprocess__4dot2_8c_html_afe7898eb18503a1c68d07703f40ced75"><div class="ttname"><a href="process__4dot2_8c.html#afe7898eb18503a1c68d07703f40ced75">close_4dot2</a></div><div class="ttdeci">void close_4dot2(f77int *)</div><div class="ttdoc">This subroutine should be called one time at the end of the application program in order to free all ...</div><div class="ttdef"><b>Definition:</b> <a href="process__4dot2_8c_source.html#l00342">process_4dot2.c:342</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -26,7 +26,19 @@ var NAVTREE =
 [
   [ "NCEPLIBS-g2tmpl", "index.html", [
     [ "Introduction", "index.html#autotoc_md0", null ],
-    [ "GRIB2 Tables/Templates", "index.html#autotoc_md1", null ],
+    [ "History", "index.html#autotoc_md1", null ],
+    [ "GRIB2 Tables/Templates", "index.html#autotoc_md2", null ],
+    [ "Modules", "namespaces.html", [
+      [ "Modules List", "namespaces.html", "namespaces_dup" ],
+      [ "Module Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions/Subroutines", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
+      ] ]
+    ] ],
+    [ "Data Types List", "annotated.html", [
+      [ "Data Types List", "annotated.html", "annotated_dup" ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
@@ -42,7 +54,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"files.html"
+"annotated.html",
+"namespacegrib2__all__tables__module.html#structgrib2__all__tables__module_1_1type__of__gen__proc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

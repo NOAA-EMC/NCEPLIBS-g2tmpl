@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pe0_9',['pe0',['../process__4dot2_8c.html#a297eeddc898582329f52e49d4b30700e',1,'process_4dot2.c']]],
-  ['process_5f4dot2_2ec_10',['process_4dot2.c',['../process__4dot2_8c.html',1,'']]]
+  ['nentry_75',['nentry',['../process__4dot2_8c.html#a79c2b98a28219018e41885beb0c784f7',1,'process_4dot2.c']]],
+  ['numalloc_76',['NUMALLOC',['../process__4dot2_8c.html#a761b93a9b0cea663191152eb12d55ccb',1,'process_4dot2.c']]]
 ];
