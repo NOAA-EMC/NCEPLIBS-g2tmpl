@@ -3,8 +3,18 @@
 #
 # Kyle Gerheiser, Ed Hartnett
 
-#add_executable(g2tmpl_test g2tmpl_test.f90)
-#target_link_libraries(test_getfield g2_4)
-#add_test(test_getfield test_getfield)
+# Run each test.
+function(g2tmpl_test name)
+  add_executable(${name} ${name}.f90)
+  add_dependencies(${name} g2tmpl)
+  target_link_libraries(${name} PRIVATE g2tmpl)
+  add_test(NAME ${name} COMMAND ${name})
+endfunction()
+
+# The tests.
+g2tmpl_test(test_g2tmpl_pdt4_1)
+g2tmpl_test(test_g2tmpl_pdt4_8)
+g2tmpl_test(test_g2tmpl_pdt4_11)
+g2tmpl_test(test_g2tmpl_pdt4_12)
 
  
