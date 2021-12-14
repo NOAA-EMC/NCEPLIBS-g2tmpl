@@ -10,19 +10,17 @@ https://noaa-emc.github.io/NCEPLIBS-g2tmpl/. For the NCEP WMO GRIB2
 Documentation see
 https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/.
 
-NCEPLIBS-g2tmpl is used in all
-[FV3](https://github.com/NOAA-EMC/fv3atm) based applications, like
-[the Global Forecast System
-(GFS)](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast)
-V17, [Rapid Refresh Forecast System
-(RRFS)](https://gsl.noaa.gov/focus-areas/unified_forecast_system/rrfs),
-[Hurricane Analysis And Forecast System
-(HAFS)](https://hfip.org/hafs), and other applications like [the
-High-Resolution Rapid Refresh
-(HRRR)](https://rapidrefresh.noaa.gov/hrrr/), [Real-Time Mesoscale
-Analysis (RTMA)](https://www.nco.ncep.noaa.gov/pmb/products/rtma/),
-[North American Mesoscale Forecast System
-(NAM)](https://www.ncei.noaa.gov/products/weather-climate-models/north-american-mesoscale).
+NCEPLIBS-g2tmpl is used in:
+* [Unified Post-Processing (UPP)](https://github.com/NOAA-EMC/UPP)
+* [the Global Forecast System (GFS)](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast)
+V17
+* [Rapid Refresh Forecast System (RRFS)](https://gsl.noaa.gov/focus-areas/unified_forecast_system/rrfs)
+* [Hurricane Analysis And Forecast System (HAFS)](https://hfip.org/hafs)
+* [the High-Resolution Rapid Refresh (HRRR)](https://rapidrefresh.noaa.gov/hrrr/)
+* [Real-Time Mesoscale Analysis (RTMA)](https://www.nco.ncep.noaa.gov/pmb/products/rtma/)
+* [North American Mesoscale Forecast System (NAM)](https://www.ncei.noaa.gov/products/weather-climate-models/north-american-mesoscale)
+* [Weather Research and Forecasting Model (WRF)](https://www.mmm.ucar.edu/weather-research-and-forecasting-model)
+* all other NOAA [FV3](https://github.com/NOAA-EMC/fv3atm) based applications
 
 ## Authors
 
