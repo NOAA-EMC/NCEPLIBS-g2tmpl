@@ -11,6 +11,9 @@ project(
   VERSION ${pVersion}
   LANGUAGES C Fortran)
 
+# Determine whether or not to generate documentation.
+option(ENABLE_DOCS "Enable generation of doxygen-based documentation." OFF)
+
 if(NOT CMAKE_BUILD_TYPE MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)$")
   message(STATUS "Setting build type to 'Release' as none was specified.")
   set(CMAKE_BUILD_TYPE
@@ -20,16 +23,17 @@ if(NOT CMAKE_BUILD_TYPE MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)$")
     "MinSizeRel" "RelWithDebInfo")
 endif()
 
+# If the user wants documentation, find doxygen and add docs dir.
+if(ENABLE_DOCS)
+  find_package(Doxygen REQUIRED)
+  add_subdirectory(docs)  
+endif()
+
 add_subdirectory(src)
 
+# Add unit tests to the build.
 include(CTest)
 if(BUILD_TESTING)
   add_subdirectory(tests)
 endif()
 
-# Determine whether or not to generate documentation.
-option(ENABLE_DOCS "Enable generation of doxygen-based documentation." OFF)
-if(ENABLE_DOCS)
-  find_package(Doxygen REQUIRED)
-endif()
-add_subdirectory(docs)  
