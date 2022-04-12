@@ -742,6 +742,8 @@ module grib2_all_tables_module
   data table4_233(124) /type_of_aerosol('aerosol_hi_absorption',62022)/
   data table4_233(125) /type_of_aerosol('aerosol_lo_absorption',62023)/
   data table4_233(126) /type_of_aerosol('volcanic_ash',62025)/
+  ! Add new parameter (04/12/2022)
+  data table4_233(127) /type_of_aerosol('brown_carbon_dry',63034)/
   !
   !
   type type_of_orig_field_vals
