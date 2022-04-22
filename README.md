@@ -22,6 +22,14 @@ V17
 * [Weather Research and Forecasting Model (WRF)](https://www.mmm.ucar.edu/weather-research-and-forecasting-model)
 * many or all other NOAA [FV3](https://github.com/NOAA-EMC/fv3atm) based applications
 
+## Related NCEPLIBS Projects
+
+Repository | Notes
+-----------|------
+[NCEPLIBS-g2c](https://github.com/NOAA-EMC/NCEPLIBS-g2c) | C implementation of the GRIB 2 functions
+[NCEPLIBS-g2c](https://github.com/NOAA-EMC/NCEPLIBS-g2c) | C implementation of the GRIB 2 functions
+[NCEPLIBS-grib_util](https://github.com/NOAA-EMC/NCEPLIBS-grib_util) | A collection of GRIB1 and GRIB2 utilities
+
 ## Authors
 
 V. Krishna, Jun Wang, Boi Vuong, Jeff Ator, other NCEP/EMC Developers.
