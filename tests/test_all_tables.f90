@@ -1567,7 +1567,6 @@ program test_all_tables
   call get_g2_on388genproc('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 15
 
-
   print *, 'testing get_g2_typeoforigfieldvals'
   call get_g2_typeoforigfieldvals('fltng_pnt', val1, ierr)
   if (val1 .ne. 0) stop 16
@@ -1597,6 +1596,28 @@ program test_all_tables
   if (val1 .ne. 255) stop 16
   call get_g2_typeoforigfieldvals('xxx', val1, ierr)
   if (ierr .ne. 9) stop 16
+
+  print *, 'testing get_g2_ordofspcdiffvals'
+  call get_g2_ordofspcdiffvals('1st_ord_sptdiff', val1, ierr)
+  if (val1 .ne. 1) stop 17
+  call get_g2_ordofspcdiffvals('2nd_ord_sptdiff', val1, ierr)
+  if (val1 .ne. 2) stop 17
+  call get_g2_ordofspcdiffvals('missing', val1, ierr)
+  if (val1 .ne. 255) stop 17
+  call get_g2_ordofspcdiffvals('xxxx', val1, ierr)
+  if (ierr .ne. 9) stop 17
+
   
+  print *, 'testing get_g2_typeofcompression'
+  call get_g2_typeofcompression('lossless', val1, ierr)
+  if (val1 .ne. 0) stop 18
+  call get_g2_typeofcompression('lossy', val1, ierr)
+  if (val1 .ne. 1) stop 18
+  call get_g2_typeofcompression('missing', val1, ierr)
+  if (val1 .ne. 255) stop 18
+  call get_g2_typeofcompression('xxxxx', val1, ierr)
+  if (ierr .ne. 9) stop 18
+
+
   print *, 'SUCCESS!!'
 end program test_all_tables
