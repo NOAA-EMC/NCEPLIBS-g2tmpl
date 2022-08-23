@@ -626,6 +626,704 @@ program test_all_tables
   if (val1 .ne. 255) stop 12
   call get_g2_typeofintervals('xxx', val1, ierr)
   if (ierr .ne. 9) stop 12
+
+  print *, 'testing get_g2_typeofaerosol'
+  call get_g2_typeofaerosol('ozone', val1, ierr)
+  if (val1 .ne. 0) stop 13
+  call get_g2_typeofaerosol('water_vapor', val1, ierr)
+  if (val1 .ne. 1) stop 13
+  call get_g2_typeofaerosol('methane', val1, ierr)
+  if (val1 .ne. 2) stop 13
+  call get_g2_typeofaerosol('carbon_dioxide', val1, ierr)
+  if (val1 .ne. 3) stop 13
+  call get_g2_typeofaerosol('carbon_monoxide', val1, ierr)
+  if (val1 .ne. 4) stop 13
+  call get_g2_typeofaerosol('nitrogen_dioxide', val1, ierr)
+  if (val1 .ne. 5) stop 13
+  call get_g2_typeofaerosol('nitrous_oxide', val1, ierr)
+  if (val1 .ne. 6) stop 13
+  call get_g2_typeofaerosol('formaldehyde', val1, ierr)
+  if (val1 .ne. 7) stop 13
+  call get_g2_typeofaerosol('sulphur_dioxide', val1, ierr)
+  if (val1 .ne. 8) stop 13
+  call get_g2_typeofaerosol('ammonia', val1, ierr)
+  if (val1 .ne. 9) stop 13
+  call get_g2_typeofaerosol('ammonium', val1, ierr)
+  if (val1 .ne. 10) stop 13
+  call get_g2_typeofaerosol('nitrogen_monoxide', val1, ierr)
+  if (val1 .ne. 11) stop 13
+  call get_g2_typeofaerosol('atomic_oxygen', val1, ierr)
+  if (val1 .ne. 12) stop 13
+  call get_g2_typeofaerosol('nitrate_radical', val1, ierr)
+  if (val1 .ne. 13) stop 13
+  call get_g2_typeofaerosol('hydroperoxyl_radical', val1, ierr)
+  if (val1 .ne. 14) stop 13
+  call get_g2_typeofaerosol('dinitrogen_pentoxide', val1, ierr)
+  if (val1 .ne. 15) stop 13
+  call get_g2_typeofaerosol('nitrous_acid', val1, ierr)
+  if (val1 .ne. 16) stop 13
+  call get_g2_typeofaerosol('nitric_acid', val1, ierr)
+  if (val1 .ne. 17) stop 13
+  call get_g2_typeofaerosol('peroxynitric_acid', val1, ierr)
+  if (val1 .ne. 18) stop 13
+  call get_g2_typeofaerosol('hydrogen_peroxide', val1, ierr)
+  if (val1 .ne. 19) stop 13
+  call get_g2_typeofaerosol('molecular_hydrogen', val1, ierr)
+  if (val1 .ne. 20) stop 13
+  call get_g2_typeofaerosol('atomic_nitrogen', val1, ierr)
+  if (val1 .ne. 21) stop 13
+  call get_g2_typeofaerosol('sulphate', val1, ierr)
+  if (val1 .ne. 22) stop 13
+  call get_g2_typeofaerosol('radon', val1, ierr)
+  if (val1 .ne. 23) stop 13
+  call get_g2_typeofaerosol('elemental_mercury', val1, ierr)
+  if (val1 .ne. 24) stop 13
+  call get_g2_typeofaerosol('divalent_mercury', val1, ierr)
+  if (val1 .ne. 25) stop 13
+  call get_g2_typeofaerosol('atomic_chlorine', val1, ierr)
+  if (val1 .ne. 26) stop 13
+  call get_g2_typeofaerosol('chlorine_monoxide', val1, ierr)
+  if (val1 .ne. 27) stop 13
+  call get_g2_typeofaerosol('dichlorine_peroxide', val1, ierr)
+  if (val1 .ne. 28) stop 13
+  call get_g2_typeofaerosol('hypochlorous_acid', val1, ierr)
+  if (val1 .ne. 29) stop 13
+  call get_g2_typeofaerosol('chlorine_nitrate', val1, ierr)
+  if (val1 .ne. 30) stop 13
+  call get_g2_typeofaerosol('chlorine_dioxide', val1, ierr)
+  if (val1 .ne. 31) stop 13
+  call get_g2_typeofaerosol('atomic_bromide', val1, ierr)
+  if (val1 .ne. 32) stop 13
+  call get_g2_typeofaerosol('bromine_monoxide', val1, ierr)
+  if (val1 .ne. 33) stop 13
+  call get_g2_typeofaerosol('bromine_chloride', val1, ierr)
+  if (val1 .ne. 34) stop 13
+  call get_g2_typeofaerosol('hydrogen_bromide', val1, ierr)
+  if (val1 .ne. 35) stop 13
+  call get_g2_typeofaerosol('hypobromous_acid', val1, ierr)
+  if (val1 .ne. 36) stop 13
+  call get_g2_typeofaerosol('bromine_nitrate', val1, ierr)
+  if (val1 .ne. 37) stop 13
+  call get_g2_typeofaerosol('hydroxyl_radical', val1, ierr)
+  if (val1 .ne. 10000) stop 13
+  call get_g2_typeofaerosol('methyl_peroxy_radical', val1, ierr)
+  if (val1 .ne. 10001) stop 13
+  call get_g2_typeofaerosol('methyl_hydroperoxide', val1, ierr)
+  if (val1 .ne. 10002) stop 13
+  call get_g2_typeofaerosol('methanol', val1, ierr)
+  if (val1 .ne. 10004) stop 13
+  call get_g2_typeofaerosol('formic_acid', val1, ierr)
+  if (val1 .ne. 10005) stop 13
+  call get_g2_typeofaerosol('hydrogen_cyanide', val1, ierr)
+  if (val1 .ne. 10006) stop 13
+  call get_g2_typeofaerosol('aceto_nitrile', val1, ierr)
+  if (val1 .ne. 10007) stop 13
+  call get_g2_typeofaerosol('ethane', val1, ierr)
+  if (val1 .ne. 10008) stop 13
+  call get_g2_typeofaerosol('ethene', val1, ierr)
+  if (val1 .ne. 10009) stop 13
+  call get_g2_typeofaerosol('ethyne', val1, ierr)
+  if (val1 .ne. 10010) stop 13
+  call get_g2_typeofaerosol('ethanol', val1, ierr)
+  if (val1 .ne. 10011) stop 13
+  call get_g2_typeofaerosol('acetic_acid', val1, ierr)
+  if (val1 .ne. 10012) stop 13
+  call get_g2_typeofaerosol('peroxyacetyl_nitrate', val1, ierr)
+  if (val1 .ne. 10013) stop 13
+  call get_g2_typeofaerosol('propane', val1, ierr)
+  if (val1 .ne. 10014) stop 13
+  call get_g2_typeofaerosol('propene', val1, ierr)
+  if (val1 .ne. 10015) stop 13
+  call get_g2_typeofaerosol('butanes', val1, ierr)
+  if (val1 .ne. 10016) stop 13
+  call get_g2_typeofaerosol('isoprene', val1, ierr)
+  if (val1 .ne. 10017) stop 13
+  call get_g2_typeofaerosol('alpha_pinene', val1, ierr)
+  if (val1 .ne. 10018) stop 13
+  call get_g2_typeofaerosol('beta_pinene', val1, ierr)
+  if (val1 .ne. 10019) stop 13
+  call get_g2_typeofaerosol('limonene', val1, ierr)
+  if (val1 .ne. 10020) stop 13
+  call get_g2_typeofaerosol('benzene', val1, ierr)
+  if (val1 .ne. 10021) stop 13
+  call get_g2_typeofaerosol('toluene', val1, ierr)
+  if (val1 .ne. 10022) stop 13
+  call get_g2_typeofaerosol('xylene', val1, ierr)
+  if (val1 .ne. 10023) stop 13
+  call get_g2_typeofaerosol('dumethyl_sulphide', val1, ierr)
+  if (val1 .ne. 10500) stop 13
+  call get_g2_typeofaerosol('hydrogen_chloride', val1, ierr)
+  if (val1 .ne. 20001) stop 13
+  call get_g2_typeofaerosol('cfc-11', val1, ierr)
+  if (val1 .ne. 20002) stop 13
+  call get_g2_typeofaerosol('cfc-12', val1, ierr)
+  if (val1 .ne. 20003) stop 13
+  call get_g2_typeofaerosol('cfc-113', val1, ierr)
+  if (val1 .ne. 20004) stop 13
+  call get_g2_typeofaerosol('cfc-113a', val1, ierr)
+  if (val1 .ne. 20005) stop 13
+  call get_g2_typeofaerosol('cfc-114', val1, ierr)
+  if (val1 .ne. 20006) stop 13
+  call get_g2_typeofaerosol('cfc-115', val1, ierr)
+  if (val1 .ne. 20007) stop 13
+  call get_g2_typeofaerosol('hcfc-22', val1, ierr)
+  if (val1 .ne. 20008) stop 13
+  call get_g2_typeofaerosol('hcfc-141b', val1, ierr)
+  if (val1 .ne. 20009) stop 13
+  call get_g2_typeofaerosol('hcfc-142b', val1, ierr)
+  if (val1 .ne. 20010) stop 13
+  call get_g2_typeofaerosol('halon-1202', val1, ierr)
+  if (val1 .ne. 20011) stop 13
+  call get_g2_typeofaerosol('halon-1211', val1, ierr)
+  if (val1 .ne. 20012) stop 13
+  call get_g2_typeofaerosol('halon-1301', val1, ierr)
+  if (val1 .ne. 20013) stop 13
+  call get_g2_typeofaerosol('halon-2402', val1, ierr)
+  if (val1 .ne. 20014) stop 13
+  call get_g2_typeofaerosol('methyl_chloride', val1, ierr)
+  if (val1 .ne. 20015) stop 13
+  call get_g2_typeofaerosol('carbon_tetrachloride', val1, ierr)
+  if (val1 .ne. 20016) stop 13
+  call get_g2_typeofaerosol('hcc-140a', val1, ierr)
+  if (val1 .ne. 20017) stop 13
+  call get_g2_typeofaerosol('methyl_bromide', val1, ierr)
+  if (val1 .ne. 20018) stop 13
+  call get_g2_typeofaerosol('hexachlorocyclohexane', val1, ierr)
+  if (val1 .ne. 20019) stop 13
+  call get_g2_typeofaerosol('alpha_hexachlorocyclohexane', val1, ierr)
+  if (val1 .ne. 20020) stop 13
+  call get_g2_typeofaerosol('hexachlorobiphenyl', val1, ierr)
+  if (val1 .ne. 20021) stop 13
+  call get_g2_typeofaerosol('radioactive_pollutant', val1, ierr)
+  if (val1 .ne. 30000) stop 13
+  call get_g2_typeofaerosol('hox_radical', val1, ierr)
+  if (val1 .ne. 60000) stop 13
+  call get_g2_typeofaerosol('total_inorganic_org_peroxy_radicals', val1, ierr)
+  if (val1 .ne. 60001) stop 13
+  call get_g2_typeofaerosol('passive_ozone', val1, ierr)
+  if (val1 .ne. 60002) stop 13
+  call get_g2_typeofaerosol('nox_nitrogen', val1, ierr)
+  if (val1 .ne. 60003) stop 13
+  call get_g2_typeofaerosol('all_nitrogen_oxides', val1, ierr)
+  if (val1 .ne. 60004) stop 13
+  call get_g2_typeofaerosol('total_inorganic_chlorine', val1, ierr)
+  if (val1 .ne. 60005) stop 13
+  call get_g2_typeofaerosol('total_inorganic_bromine', val1, ierr)
+  if (val1 .ne. 60006) stop 13
+  call get_g2_typeofaerosol('total_inorganic_chlorine_noHclClono2Clox', val1, ierr)
+  if (val1 .ne. 60007) stop 13
+  call get_g2_typeofaerosol('total_inorganic_bromine_noHbrBrono2Brox', val1, ierr)
+  if (val1 .ne. 60008) stop 13
+  call get_g2_typeofaerosol('lumped_alkanes', val1, ierr)
+  if (val1 .ne. 60009) stop 13
+  call get_g2_typeofaerosol('lumped_alkenes', val1, ierr)
+  if (val1 .ne. 60010) stop 13
+  call get_g2_typeofaerosol('lumped_aromatic_comp', val1, ierr)
+  if (val1 .ne. 60011) stop 13
+  call get_g2_typeofaerosol('lumped_terpenes', val1, ierr)
+  if (val1 .ne. 60012) stop 13
+  call get_g2_typeofaerosol('non_methane_volatile_org_comp_carbon)', val1, ierr)
+  if (val1 .ne. 60013) stop 13
+  call get_g2_typeofaerosol('anthropogenic_non_methane_voiatile_org_comp_carbon', val1, ierr)
+  if (val1 .ne. 60014) stop 13
+  call get_g2_typeofaerosol('biogenic_non_methane_volatile_org_comp_carbon', val1, ierr)
+  if (val1 .ne. 60015) stop 13
+  call get_g2_typeofaerosol('lumped_oxygenated_hydrocarbon', val1, ierr)
+  if (val1 .ne. 60016) stop 13
+  call get_g2_typeofaerosol('total_aerosol', val1, ierr)
+  if (val1 .ne. 62000) stop 13
+  call get_g2_typeofaerosol('dust_dry', val1, ierr)
+  if (val1 .ne. 62001) stop 13
+  call get_g2_typeofaerosol('water_in_ambient', val1, ierr)
+  if (val1 .ne. 62002) stop 13
+  call get_g2_typeofaerosol('ammonium_dry', val1, ierr)
+  if (val1 .ne. 62003) stop 13
+  call get_g2_typeofaerosol('nitrate_dry', val1, ierr)
+  if (val1 .ne. 62004) stop 13
+  call get_g2_typeofaerosol('nitric_acid_trihydrate', val1, ierr)
+  if (val1 .ne. 62005) stop 13
+  call get_g2_typeofaerosol('sulphate_dry', val1, ierr)
+  if (val1 .ne. 62006) stop 13
+  call get_g2_typeofaerosol('mercury_dry', val1, ierr)
+  if (val1 .ne. 62007) stop 13
+  call get_g2_typeofaerosol('sea_salt_dry', val1, ierr)
+  if (val1 .ne. 62008) stop 13
+  call get_g2_typeofaerosol('black_carbon_dry', val1, ierr)
+  if (val1 .ne. 62009) stop 13
+  call get_g2_typeofaerosol('particulate_org_matter_dry', val1, ierr)
+  if (val1 .ne. 62010) stop 13
+  call get_g2_typeofaerosol('primary_particulate_org_matter_dry', val1, ierr)
+  if (val1 .ne. 62011) stop 13
+  call get_g2_typeofaerosol('secondary_particulate_org_matter_dry', val1, ierr)
+  if (val1 .ne. 62012) stop 13
+  call get_g2_typeofaerosol('missing', val1, ierr)
+  if (val1 .ne. 65535) stop 13
+  call get_g2_typeofaerosol('black_carbon_hydrophilic', val1, ierr)
+  if (val1 .ne. 62013) stop 13
+  call get_g2_typeofaerosol('black_carbon_hydrophobic', val1, ierr)
+  if (val1 .ne. 62014) stop 13
+  call get_g2_typeofaerosol('particulate_org_matter_hydrophilic', val1, ierr)
+  if (val1 .ne. 62015) stop 13
+  call get_g2_typeofaerosol('particulate_org_matter_hydrophobic', val1, ierr)
+  if (val1 .ne. 62016) stop 13
+  call get_g2_typeofaerosol('nitrate_hydrophilic', val1, ierr)
+  if (val1 .ne. 62017) stop 13
+  call get_g2_typeofaerosol('nitrate_hydrophobic', val1, ierr)
+  if (val1 .ne. 62018) stop 13
+  call get_g2_typeofaerosol('smoke_hi_absorption', val1, ierr)
+  if (val1 .ne. 62020) stop 13
+  call get_g2_typeofaerosol('smoke_lo_absorption', val1, ierr)
+  if (val1 .ne. 62021) stop 13
+  call get_g2_typeofaerosol('aerosol_hi_absorption', val1, ierr)
+  if (val1 .ne. 62022) stop 13
+  call get_g2_typeofaerosol('aerosol_lo_absorption', val1, ierr)
+  if (val1 .ne. 62023) stop 13
+  call get_g2_typeofaerosol('volcanic_ash', val1, ierr)
+  if (val1 .ne. 62025) stop 13
+  call get_g2_typeofaerosol('brown_carbon_dry', val1, ierr)
+  if (val1 .ne. 63034) stop 13
+  call get_g2_typeofaerosol('xxxx', val1, ierr)  
+  if (ierr .ne. 9) stop 13
+  
+  print *, 'testing get_g2_on388origincenters'
+  call get_g2_on388origincenters('melbourne1', val1, ierr)
+  if (val1 .ne. 1) stop 14
+  call get_g2_on388origincenters('melbourne2', val1, ierr)
+  if (val1 .ne. 2) stop 14
+  call get_g2_on388origincenters('melbourne3', val1, ierr)
+  if (val1 .ne. 3) stop 14
+  call get_g2_on388origincenters('moscow1', val1, ierr)
+  if (val1 .ne. 4) stop 14
+  call get_g2_on388origincenters('moscow2', val1, ierr)
+  if (val1 .ne. 5) stop 14
+  call get_g2_on388origincenters('moscow3', val1, ierr)
+  if (val1 .ne. 6) stop 14
+  call get_g2_on388origincenters('nws_ncep', val1, ierr)
+  if (val1 .ne. 7) stop 14
+  call get_g2_on388origincenters('nws_nwstg', val1, ierr)
+  if (val1 .ne. 8) stop 14
+  call get_g2_on388origincenters('nws_other', val1, ierr)
+  if (val1 .ne. 9) stop 14
+  call get_g2_on388origincenters('cairo1', val1, ierr)
+  if (val1 .ne. 10) stop 14
+  call get_g2_on388origincenters('cairo2', val1, ierr)
+  if (val1 .ne. 11) stop 14
+  call get_g2_on388origincenters('dakar1', val1, ierr)
+  if (val1 .ne. 12) stop 14
+  call get_g2_on388origincenters('dakar2', val1, ierr)
+  if (val1 .ne. 13) stop 14
+  call get_g2_on388origincenters('nairobi1', val1, ierr)
+  if (val1 .ne. 14) stop 14
+  call get_g2_on388origincenters('nairobi2', val1, ierr)
+  if (val1 .ne. 15) stop 14
+  call get_g2_on388origincenters('casablanca', val1, ierr)
+  if (val1 .ne. 16) stop 14
+  call get_g2_on388origincenters('tunis', val1, ierr)
+  if (val1 .ne. 17) stop 14
+  call get_g2_on388origincenters('tunis_casablanca1', val1, ierr)
+  if (val1 .ne. 18) stop 14
+  call get_g2_on388origincenters('tunis-casablanca2', val1, ierr)
+  if (val1 .ne. 19) stop 14
+  call get_g2_on388origincenters('las_palmas', val1, ierr)
+  if (val1 .ne. 20) stop 14
+  call get_g2_on388origincenters('algiers', val1, ierr)
+  if (val1 .ne. 21) stop 14
+  call get_g2_on388origincenters('acmad', val1, ierr)
+  if (val1 .ne. 22) stop 14
+  call get_g2_on388origincenters('mozambique', val1, ierr)
+  if (val1 .ne. 23) stop 14
+  call get_g2_on388origincenters('pretoria', val1, ierr)
+  if (val1 .ne. 24) stop 14
+  call get_g2_on388origincenters('la_reunion', val1, ierr)
+  if (val1 .ne. 25) stop 14
+  call get_g2_on388origincenters('khabarovsk1', val1, ierr)
+  if (val1 .ne. 26) stop 14
+  call get_g2_on388origincenters('khabarovsk2', val1, ierr)
+  if (val1 .ne. 27) stop 14
+  call get_g2_on388origincenters('new_delhi1', val1, ierr)
+  if (val1 .ne. 28) stop 14
+  call get_g2_on388origincenters('new_delhi2', val1, ierr)
+  if (val1 .ne. 29) stop 14
+  call get_g2_on388origincenters('novosibirsk1', val1, ierr)
+  if (val1 .ne. 30) stop 14
+  call get_g2_on388origincenters('novosibirsk2', val1, ierr)
+  if (val1 .ne. 31) stop 14
+  call get_g2_on388origincenters('tashkent', val1, ierr)
+  if (val1 .ne. 32) stop 14
+  call get_g2_on388origincenters('jeddah', val1, ierr)
+  if (val1 .ne. 33) stop 14
+  call get_g2_on388origincenters('jma_tokyo1', val1, ierr)
+  if (val1 .ne. 34) stop 14
+  call get_g2_on388origincenters('jma_tokyo2', val1, ierr)
+  if (val1 .ne. 35) stop 14
+  call get_g2_on388origincenters('bankok', val1, ierr)
+  if (val1 .ne. 36) stop 14
+  call get_g2_on388origincenters('ulan_bator', val1, ierr)
+  if (val1 .ne. 37) stop 14
+  call get_g2_on388origincenters('beijing1', val1, ierr)
+  if (val1 .ne. 38) stop 14
+  call get_g2_on388origincenters('beijing2', val1, ierr)
+  if (val1 .ne. 39) stop 14
+  call get_g2_on388origincenters('seoul', val1, ierr)
+  if (val1 .ne. 40) stop 14
+  call get_g2_on388origincenters('buenos_aires1', val1, ierr)
+  if (val1 .ne. 41) stop 14
+  call get_g2_on388origincenters('buenos_aires2', val1, ierr)
+  if (val1 .ne. 42) stop 14
+  call get_g2_on388origincenters('brasilia1', val1, ierr)
+  if (val1 .ne. 43) stop 14
+  call get_g2_on388origincenters('brasilia2', val1, ierr)
+  if (val1 .ne. 44) stop 14
+  call get_g2_on388origincenters('santiago', val1, ierr)
+  if (val1 .ne. 45) stop 14
+  call get_g2_on388origincenters('brazilian_inpe', val1, ierr)
+  if (val1 .ne. 46) stop 14
+  call get_g2_on388origincenters('columbia', val1, ierr)
+  if (val1 .ne. 47) stop 14
+  call get_g2_on388origincenters('ecuador', val1, ierr)
+  if (val1 .ne. 48) stop 14
+  call get_g2_on388origincenters('peru', val1, ierr)
+  if (val1 .ne. 49) stop 14
+  call get_g2_on388origincenters('venezuela', val1, ierr)
+  if (val1 .ne. 50) stop 14
+  call get_g2_on388origincenters('miami', val1, ierr)
+  if (val1 .ne. 51) stop 14
+  call get_g2_on388origincenters('tpc_nhc', val1, ierr)
+  if (val1 .ne. 52) stop 14
+  call get_g2_on388origincenters('cms_montreal1', val1, ierr)
+  if (val1 .ne. 53) stop 14
+  call get_g2_on388origincenters('cms_montreal2', val1, ierr)
+  if (val1 .ne. 54) stop 14
+  call get_g2_on388origincenters('san_francisco', val1, ierr)
+  if (val1 .ne. 55) stop 14
+  call get_g2_on388origincenters('arinc_center', val1, ierr)
+  if (val1 .ne. 56) stop 14
+  call get_g2_on388origincenters('usaf_gwc', val1, ierr)
+  if (val1 .ne. 57) stop 14
+  call get_g2_on388origincenters('us_navy_fnoc', val1, ierr)
+  if (val1 .ne. 58) stop 14
+  call get_g2_on388origincenters('noaa_fsl_boulder', val1, ierr)
+  if (val1 .ne. 59) stop 14
+  call get_g2_on388origincenters('ncar_boulder', val1, ierr)
+  if (val1 .ne. 60) stop 14
+  call get_g2_on388origincenters('service_argos', val1, ierr)
+  if (val1 .ne. 61) stop 14
+  call get_g2_on388origincenters('us_naval_ocean_off', val1, ierr)
+  if (val1 .ne. 62) stop 14
+  call get_g2_on388origincenters('honolulu', val1, ierr)
+  if (val1 .ne. 64) stop 14
+  call get_g2_on388origincenters('darwin1', val1, ierr)
+  if (val1 .ne. 65) stop 14
+  call get_g2_on388origincenters('darwin2', val1, ierr)
+  if (val1 .ne. 66) stop 14
+  call get_g2_on388origincenters('melbourne4', val1, ierr)
+  if (val1 .ne. 67) stop 14
+  call get_g2_on388origincenters('wellington1', val1, ierr)
+  if (val1 .ne. 69) stop 14
+  call get_g2_on388origincenters('wellington2', val1, ierr)
+  if (val1 .ne. 70) stop 14
+  call get_g2_on388origincenters('nadi', val1, ierr)
+  if (val1 .ne. 71) stop 14
+  call get_g2_on388origincenters('singapore', val1, ierr)
+  if (val1 .ne. 72) stop 14
+  call get_g2_on388origincenters('malaysia', val1, ierr)
+  if (val1 .ne. 73) stop 14
+  call get_g2_on388origincenters('ukmo_exeter1', val1, ierr)
+  if (val1 .ne. 74) stop 14
+  call get_g2_on388origincenters('ukmo_exeter2', val1, ierr)
+  if (val1 .ne. 75) stop 14
+  call get_g2_on388origincenters('moscow4', val1, ierr)
+  if (val1 .ne. 76) stop 14
+  call get_g2_on388origincenters('offenbach1', val1, ierr)
+  if (val1 .ne. 78) stop 14
+  call get_g2_on388origincenters('offenbach2', val1, ierr)
+  if (val1 .ne. 79) stop 14
+  call get_g2_on388origincenters('rome1', val1, ierr)
+  if (val1 .ne. 80) stop 14
+  call get_g2_on388origincenters('rome2', val1, ierr)
+  if (val1 .ne. 81) stop 14
+  call get_g2_on388origincenters('norrkoping1', val1, ierr)
+  if (val1 .ne. 82) stop 14
+  call get_g2_on388origincenters('norrkoping2', val1, ierr)
+  if (val1 .ne. 83) stop 14
+  call get_g2_on388origincenters('french_weather_toulouse1', val1, ierr)
+  if (val1 .ne. 84) stop 14
+  call get_g2_on388origincenters('french_weather_toulouse2', val1, ierr)
+  if (val1 .ne. 85) stop 14
+  call get_g2_on388origincenters('helsinki', val1, ierr)
+  if (val1 .ne. 86) stop 14
+  call get_g2_on388origincenters('belgrade', val1, ierr)
+  if (val1 .ne. 87) stop 14
+  call get_g2_on388origincenters('oslo', val1, ierr)
+  if (val1 .ne. 88) stop 14
+  call get_g2_on388origincenters('prague', val1, ierr)
+  if (val1 .ne. 89) stop 14
+  call get_g2_on388origincenters('episkopi', val1, ierr)
+  if (val1 .ne. 90) stop 14
+  call get_g2_on388origincenters('ankara', val1, ierr)
+  if (val1 .ne. 91) stop 14
+  call get_g2_on388origincenters('frankfurt_main', val1, ierr)
+  if (val1 .ne. 92) stop 14
+  call get_g2_on388origincenters('london', val1, ierr)
+  if (val1 .ne. 93) stop 14
+  call get_g2_on388origincenters('copenhagen', val1, ierr)
+  if (val1 .ne. 94) stop 14
+  call get_g2_on388origincenters('rota', val1, ierr)
+  if (val1 .ne. 95) stop 14
+  call get_g2_on388origincenters('athens', val1, ierr)
+  if (val1 .ne. 96) stop 14
+  call get_g2_on388origincenters('esa', val1, ierr)
+  if (val1 .ne. 97) stop 14
+  call get_g2_on388origincenters('ecmwf', val1, ierr)
+  if (val1 .ne. 98) stop 14
+  call get_g2_on388origincenters('de_bilt_netherlands', val1, ierr)
+  if (val1 .ne. 99) stop 14
+  call get_g2_on388origincenters('brazzaville', val1, ierr)
+  if (val1 .ne. 100) stop 14
+  call get_g2_on388origincenters('abidjan', val1, ierr)
+  if (val1 .ne. 101) stop 14
+  call get_g2_on388origincenters('libyan_arab_jamahiriya', val1, ierr)
+  if (val1 .ne. 102) stop 14
+  call get_g2_on388origincenters('madagascar', val1, ierr)
+  if (val1 .ne. 103) stop 14
+  call get_g2_on388origincenters('mauritius', val1, ierr)
+  if (val1 .ne. 104) stop 14
+  call get_g2_on388origincenters('niger', val1, ierr)
+  if (val1 .ne. 105) stop 14
+  call get_g2_on388origincenters('seychelles', val1, ierr)
+  if (val1 .ne. 106) stop 14
+  call get_g2_on388origincenters('uganda', val1, ierr)
+  if (val1 .ne. 107) stop 14
+  call get_g2_on388origincenters('tanzania', val1, ierr)
+  if (val1 .ne. 108) stop 14
+  call get_g2_on388origincenters('zimbabwe', val1, ierr)
+  if (val1 .ne. 109) stop 14
+  call get_g2_on388origincenters('hong_kong', val1, ierr)
+  if (val1 .ne. 110) stop 14
+  call get_g2_on388origincenters('afghanistan', val1, ierr)
+  if (val1 .ne. 111) stop 14
+  call get_g2_on388origincenters('bahrain', val1, ierr)
+  if (val1 .ne. 112) stop 14
+  call get_g2_on388origincenters('bangladesh', val1, ierr)
+  if (val1 .ne. 113) stop 14
+  call get_g2_on388origincenters('bhutan', val1, ierr)
+  if (val1 .ne. 114) stop 14
+  call get_g2_on388origincenters('cambodia', val1, ierr)
+  if (val1 .ne. 115) stop 14
+  call get_g2_on388origincenters('dprk', val1, ierr)
+  if (val1 .ne. 116) stop 14
+  call get_g2_on388origincenters('iran', val1, ierr)
+  if (val1 .ne. 117) stop 14
+  call get_g2_on388origincenters('iraq', val1, ierr)
+  if (val1 .ne. 118) stop 14
+  call get_g2_on388origincenters('kazakhstan', val1, ierr)
+  if (val1 .ne. 119) stop 14
+  call get_g2_on388origincenters('kuwait', val1, ierr)
+  if (val1 .ne. 120) stop 14
+  call get_g2_on388origincenters('kyrgyz_republic', val1, ierr)
+  if (val1 .ne. 121) stop 14
+  call get_g2_on388origincenters('lao_pdr', val1, ierr)
+  if (val1 .ne. 122) stop 14
+  call get_g2_on388origincenters('macao_china', val1, ierr)
+  if (val1 .ne. 123) stop 14
+  call get_g2_on388origincenters('maldives', val1, ierr)
+  if (val1 .ne. 124) stop 14
+  call get_g2_on388origincenters('myanmar', val1, ierr)
+  if (val1 .ne. 125) stop 14
+  call get_g2_on388origincenters('nepal', val1, ierr)
+  if (val1 .ne. 126) stop 14
+  call get_g2_on388origincenters('oman', val1, ierr)
+  if (val1 .ne. 127) stop 14
+  call get_g2_on388origincenters('pakistan', val1, ierr)
+  if (val1 .ne. 128) stop 14
+  call get_g2_on388origincenters('qatar', val1, ierr)
+  if (val1 .ne. 129) stop 14
+  call get_g2_on388origincenters('yemen', val1, ierr)
+  if (val1 .ne. 130) stop 14
+  call get_g2_on388origincenters('sri_lanka', val1, ierr)
+  if (val1 .ne. 131) stop 14
+  call get_g2_on388origincenters('tajikistan', val1, ierr)
+  if (val1 .ne. 132) stop 14
+  call get_g2_on388origincenters('turkmenistan', val1, ierr)
+  if (val1 .ne. 133) stop 14
+  call get_g2_on388origincenters('uae', val1, ierr)
+  if (val1 .ne. 134) stop 14
+  call get_g2_on388origincenters('uzbekistan', val1, ierr)
+  if (val1 .ne. 135) stop 14
+  call get_g2_on388origincenters('viet_nam ', val1, ierr)
+  if (val1 .ne. 136) stop 14
+  call get_g2_on388origincenters('bolivia', val1, ierr)
+  if (val1 .ne. 140) stop 14
+  call get_g2_on388origincenters('guyana', val1, ierr)
+  if (val1 .ne. 141) stop 14
+  call get_g2_on388origincenters('paraguay', val1, ierr)
+  if (val1 .ne. 142) stop 14
+  call get_g2_on388origincenters('suriname', val1, ierr)
+  if (val1 .ne. 143) stop 14
+  call get_g2_on388origincenters('uruguay', val1, ierr)
+  if (val1 .ne. 144) stop 14
+  call get_g2_on388origincenters('french_guyana', val1, ierr)
+  if (val1 .ne. 145) stop 14
+  call get_g2_on388origincenters('brazilian_navy_hydro_center', val1, ierr)
+  if (val1 .ne. 146) stop 14
+  call get_g2_on388origincenters('antigua_barbuda', val1, ierr)
+  if (val1 .ne. 150) stop 14
+  call get_g2_on388origincenters('bahamas', val1, ierr)
+  if (val1 .ne. 151) stop 14
+  call get_g2_on388origincenters('barbados', val1, ierr)
+  if (val1 .ne. 152) stop 14
+  call get_g2_on388origincenters('belize', val1, ierr)
+  if (val1 .ne. 153) stop 14
+  call get_g2_on388origincenters('british_caribbean_terr_center', val1, ierr)
+  if (val1 .ne. 154) stop 14
+  call get_g2_on388origincenters('san_jose', val1, ierr)
+  if (val1 .ne. 155) stop 14
+  call get_g2_on388origincenters('cuba', val1, ierr)
+  if (val1 .ne. 156) stop 14
+  call get_g2_on388origincenters('dominica', val1, ierr)
+  if (val1 .ne. 157) stop 14
+  call get_g2_on388origincenters('dominican_republic', val1, ierr)
+  if (val1 .ne. 158) stop 14
+  call get_g2_on388origincenters('el_salvador', val1, ierr)
+  if (val1 .ne. 159) stop 14
+  call get_g2_on388origincenters('us_noaa_nesdis', val1, ierr)
+  if (val1 .ne. 160) stop 14
+  call get_g2_on388origincenters('us_noaa_oar', val1, ierr)
+  if (val1 .ne. 161) stop 14
+  call get_g2_on388origincenters('guatemala', val1, ierr)
+  if (val1 .ne. 162) stop 14
+  call get_g2_on388origincenters('haiti', val1, ierr)
+  if (val1 .ne. 163) stop 14
+  call get_g2_on388origincenters('honduras', val1, ierr)
+  if (val1 .ne. 164) stop 14
+  call get_g2_on388origincenters('jamaica', val1, ierr)
+  if (val1 .ne. 165) stop 14
+  call get_g2_on388origincenters('mexico', val1, ierr)
+  if (val1 .ne. 166) stop 14
+  call get_g2_on388origincenters('netherlands_antilles_aruba', val1, ierr)
+  if (val1 .ne. 167) stop 14
+  call get_g2_on388origincenters('nicaragua', val1, ierr)
+  if (val1 .ne. 168) stop 14
+  call get_g2_on388origincenters('panama', val1, ierr)
+  if (val1 .ne. 169) stop 14
+  call get_g2_on388origincenters('saint_lucia', val1, ierr)
+  if (val1 .ne. 170) stop 14
+  call get_g2_on388origincenters('trinidad_tobago', val1, ierr)
+  if (val1 .ne. 171) stop 14
+  call get_g2_on388origincenters('french_departments', val1, ierr)
+  if (val1 .ne. 172) stop 14
+  call get_g2_on388origincenters('cook_islands', val1, ierr)
+  if (val1 .ne. 190) stop 14
+  call get_g2_on388origincenters('french_polynesia', val1, ierr)
+  if (val1 .ne. 191) stop 14
+  call get_g2_on388origincenters('tonga', val1, ierr)
+  if (val1 .ne. 192) stop 14
+  call get_g2_on388origincenters('vanuatu', val1, ierr)
+  if (val1 .ne. 193) stop 14
+  call get_g2_on388origincenters('brunei', val1, ierr)
+  if (val1 .ne. 194) stop 14
+  call get_g2_on388origincenters('indonesia', val1, ierr)
+  if (val1 .ne. 195) stop 14
+  call get_g2_on388origincenters('kiribati', val1, ierr)
+  if (val1 .ne. 196) stop 14
+  call get_g2_on388origincenters('federated_states_micronesia', val1, ierr)
+  if (val1 .ne. 197) stop 14
+  call get_g2_on388origincenters('new_caledonia', val1, ierr)
+  if (val1 .ne. 198) stop 14
+  call get_g2_on388origincenters('niue', val1, ierr)
+  if (val1 .ne. 199) stop 14
+  call get_g2_on388origincenters('papua_new_guinea', val1, ierr)
+  if (val1 .ne. 200) stop 14
+  call get_g2_on388origincenters('philippines', val1, ierr)
+  if (val1 .ne. 201) stop 14
+  call get_g2_on388origincenters('samoa', val1, ierr)
+  if (val1 .ne. 202) stop 14
+  call get_g2_on388origincenters('solomon_islands', val1, ierr)
+  if (val1 .ne. 203) stop 14
+  call get_g2_on388origincenters('frascati', val1, ierr)
+  if (val1 .ne. 210) stop 14
+  call get_g2_on388origincenters('lanion', val1, ierr)
+  if (val1 .ne. 211) stop 14
+  call get_g2_on388origincenters('lisboa', val1, ierr)
+  if (val1 .ne. 212) stop 14
+  call get_g2_on388origincenters('reykjavik', val1, ierr)
+  if (val1 .ne. 213) stop 14
+  call get_g2_on388origincenters('madrid', val1, ierr)
+  if (val1 .ne. 214) stop 14
+  call get_g2_on388origincenters('zurich', val1, ierr)
+  if (val1 .ne. 215) stop 14
+  call get_g2_on388origincenters('service_argos_toulouse_fr', val1, ierr)
+  if (val1 .ne. 216) stop 14
+  call get_g2_on388origincenters('bratislava', val1, ierr)
+  if (val1 .ne. 217) stop 14
+  call get_g2_on388origincenters('budapest', val1, ierr)
+  if (val1 .ne. 218) stop 14
+  call get_g2_on388origincenters('ljubljana', val1, ierr)
+  if (val1 .ne. 219) stop 14
+  call get_g2_on388origincenters('warsaw', val1, ierr)
+  if (val1 .ne. 220) stop 14
+  call get_g2_on388origincenters('zagreb', val1, ierr)
+  if (val1 .ne. 221) stop 14
+  call get_g2_on388origincenters('albania', val1, ierr)
+  if (val1 .ne. 222) stop 14
+  call get_g2_on388origincenters('armenia', val1, ierr)
+  if (val1 .ne. 223) stop 14
+  call get_g2_on388origincenters('austria', val1, ierr)
+  if (val1 .ne. 224) stop 14
+  call get_g2_on388origincenters('azerbaijan', val1, ierr)
+  if (val1 .ne. 225) stop 14
+  call get_g2_on388origincenters('belarus', val1, ierr)
+  if (val1 .ne. 226) stop 14
+  call get_g2_on388origincenters('belgium', val1, ierr)
+  if (val1 .ne. 227) stop 14
+  call get_g2_on388origincenters('bosnia_herzegovina', val1, ierr)
+  if (val1 .ne. 228) stop 14
+  call get_g2_on388origincenters('bulgaria', val1, ierr)
+  if (val1 .ne. 229) stop 14
+  call get_g2_on388origincenters('cyprus', val1, ierr)
+  if (val1 .ne. 230) stop 14
+  call get_g2_on388origincenters('estonia', val1, ierr)
+  if (val1 .ne. 231) stop 14
+  call get_g2_on388origincenters('georgia', val1, ierr)
+  if (val1 .ne. 232) stop 14
+  call get_g2_on388origincenters('dublin', val1, ierr)
+  if (val1 .ne. 233) stop 14
+  call get_g2_on388origincenters('israel', val1, ierr)
+  if (val1 .ne. 234) stop 14
+  call get_g2_on388origincenters('jordan', val1, ierr)
+  if (val1 .ne. 235) stop 14
+  call get_g2_on388origincenters('latvia', val1, ierr)
+  if (val1 .ne. 236) stop 14
+  call get_g2_on388origincenters('lebanon', val1, ierr)
+  if (val1 .ne. 237) stop 14
+  call get_g2_on388origincenters('lithuania', val1, ierr)
+  if (val1 .ne. 238) stop 14
+  call get_g2_on388origincenters('luxembourg', val1, ierr)
+  if (val1 .ne. 239) stop 14
+  call get_g2_on388origincenters('malta', val1, ierr)
+  if (val1 .ne. 240) stop 14
+  call get_g2_on388origincenters('monaco', val1, ierr)
+  if (val1 .ne. 241) stop 14
+  call get_g2_on388origincenters('romania', val1, ierr)
+  if (val1 .ne. 242) stop 14
+  call get_g2_on388origincenters('syrian_arab_republic', val1, ierr)
+  if (val1 .ne. 243) stop 14
+  call get_g2_on388origincenters('macedonia', val1, ierr)
+  if (val1 .ne. 244) stop 14
+  call get_g2_on388origincenters('ukraine', val1, ierr)
+  if (val1 .ne. 245) stop 14
+  call get_g2_on388origincenters('republic_moldova', val1, ierr)
+  if (val1 .ne. 246) stop 14
+  call get_g2_on388origincenters('eumetsat_op_cen', val1, ierr)
+  if (val1 .ne. 254) stop 14
+  call get_g2_on388origincenters('missing', val1, ierr)
+  if (val1 .ne. 255) stop 14
+  call get_g2_on388origincenters('ncsa_argentina', val1, ierr)
+  if (val1 .ne. 147) stop 14
+  call get_g2_on388origincenters('brazilian_decea', val1, ierr)
+  if (val1 .ne. 148) stop 14
+  call get_g2_on388origincenters('xxxx', val1, ierr)
+  if (ierr .ne. 9) stop 14
   
   print *, 'SUCCESS!!'
 end program test_all_tables
