@@ -8,7 +8,7 @@
 ! Boi Voung 12/27/19
 Program test_g2tmpl_pdt4_1
   use grib2_all_tables_module
-  integer(4) :: ipdstmpl1(18) 
+  integer(4) :: ipdstmpl1(18)
 
   integer(4) :: icatg,iparm,hrs_obs_cutoff,min_obs_cutoff,fcst_time, &
        scale_fac1,scaled_val1,scale_fac2,scaled_val2
@@ -30,7 +30,7 @@ Program test_g2tmpl_pdt4_1
   iparm=4
   typ_gen_proc_key='ens_fcst'
   gen_proc_or_mod_key='gefs'
-  hrs_obs_cutoff=0   
+  hrs_obs_cutoff=0
   min_obs_cutoff=0
   unit_of_time_key='hour'
   fcst_time=6
@@ -57,5 +57,5 @@ Program test_g2tmpl_pdt4_1
   do j = 1, ipdstmpllen
      if (ipdstmpl1(j) .ne. ipdstmpl1_old(j)) stop 2
   end do
-  
+
 end Program test_g2tmpl_pdt4_1

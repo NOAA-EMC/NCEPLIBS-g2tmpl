@@ -271,14 +271,14 @@ sort_and_write_4dot2(char *filename, f77int *iret)
  * for within table.
  * @param locflg Version of mnemonic to be returned, in case of
  * duplication within table:
- * - 0 international version (default)  
- * - 1 local version                    
- * @param disc Product discipline                    
- * @param catg Parameter category                    
- * @param parm Parameter number                      
- * @param iret Return code:                          
- * - 0 normal return                    
- * - -1 nemo not found within table for specified locflg version         
+ * - 0 international version (default)
+ * - 1 local version
+ * @param disc Product discipline
+ * @param catg Parameter category
+ * @param parm Parameter number
+ * @param iret Return code:
+ * - 0 normal return
+ * - -1 nemo not found within table for specified locflg version
  */
 void
 search_for_4dot2_entry(char nemo[MXG2MNEM], f77int *locflg,
