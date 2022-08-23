@@ -624,6 +624,8 @@ program test_all_tables
   if (val1 .ne. 11) stop 12
   call get_g2_typeofintervals('missing', val1, ierr)
   if (val1 .ne. 255) stop 12
+  call get_g2_typeofintervals('', val1, ierr)
+  if (val1 .ne. 255) stop 12
   call get_g2_typeofintervals('xxx', val1, ierr)
   if (ierr .ne. 9) stop 12
 
@@ -882,6 +884,8 @@ program test_all_tables
   if (val1 .ne. 62025) stop 13
   call get_g2_typeofaerosol('brown_carbon_dry', val1, ierr)
   if (val1 .ne. 63034) stop 13
+  call get_g2_typeofaerosol('', val1, ierr)
+  if (val1 .ne. 65535) stop 13
   call get_g2_typeofaerosol('xxxx', val1, ierr)  
   if (ierr .ne. 9) stop 13
   
