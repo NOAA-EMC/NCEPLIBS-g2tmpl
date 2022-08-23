@@ -129,7 +129,134 @@ program test_all_tables
   call get_g2_loctabversno('anal', val1, ierr)
   if (ierr .ne. 9) stop 3
   
+  print *, 'testing get_g2_sigreftime'
+  call get_g2_sigreftime('anal', val1, ierr)
+  if (val1 .ne. 0) stop 4
+  call get_g2_sigreftime('fcst', val1, ierr)
+  if (val1 .ne. 1) stop 4
+  call get_g2_sigreftime('vfcst', val1, ierr)
+  if (val1 .ne. 2) stop 4
+  call get_g2_sigreftime('obstime', val1, ierr)
+  if (val1 .ne. 3) stop 4
+  call get_g2_sigreftime('missing', val1, ierr)
+  if (val1 .ne. 255) stop 4
+  call get_g2_sigreftime('xxxx', val1, ierr)
+  if (ierr .ne. 9) stop 4
 
+  print *, 'testing get_g2_prodstatus'
+  call get_g2_prodstatus('oper', val1, ierr)
+  if (val1 .ne. 0) stop 5
+  call get_g2_prodstatus('oper_test', val1, ierr)
+  if (val1 .ne. 1) stop 5
+  call get_g2_prodstatus('res', val1, ierr)
+  if (val1 .ne. 2) stop 5
+  call get_g2_prodstatus('reanal', val1, ierr)
+  if (val1 .ne. 3) stop 5
+  call get_g2_prodstatus('tigge', val1, ierr)
+  if (val1 .ne. 4) stop 5
+  call get_g2_prodstatus('tigge_test', val1, ierr)
+  if (val1 .ne. 5) stop 5
+  call get_g2_prodstatus('missing', val1, ierr)
+  if (val1 .ne. 255) stop 5
+  call get_g2_prodstatus('s2s_oper', val1, ierr)
+  if (val1 .ne. 6) stop 5
+  call get_g2_prodstatus('s2s_test', val1, ierr)
+  if (val1 .ne. 7) stop 5
+  call get_g2_prodstatus('unens_rreanl', val1, ierr)
+  if (val1 .ne. 8) stop 5
+  call get_g2_prodstatus('unens_rreanl_test', val1, ierr)
+  if (val1 .ne. 9) stop 5
+  call get_g2_prodstatus('xxxx', val1, ierr)
+  if (ierr .ne. 9) stop 5
+
+  print *, 'testing get_g2_typeofdata'
+  call get_g2_typeofdata('anal', val1, ierr)
+  if (val1 .ne. 0) stop 6
+  call get_g2_typeofdata('fcst', val1, ierr)
+  if (val1 .ne. 1) stop 6
+  call get_g2_typeofdata('anal_fcst', val1, ierr)
+  if (val1 .ne. 2) stop 6
+  call get_g2_typeofdata('con_fcst', val1, ierr)
+  if (val1 .ne. 3) stop 6
+  call get_g2_typeofdata('per_fcst', val1, ierr)
+  if (val1 .ne. 4) stop 6
+  call get_g2_typeofdata('con_per_fcst', val1, ierr)
+  if (val1 .ne. 5) stop 6
+  call get_g2_typeofdata('proc_sat_obs', val1, ierr)
+  if (val1 .ne. 6) stop 6
+  call get_g2_typeofdata('proc_rad_obs', val1, ierr)
+  if (val1 .ne. 7) stop 6
+  call get_g2_typeofdata('event_prob', val1, ierr)
+  if (val1 .ne. 8) stop 6
+  call get_g2_typeofdata('missing', val1, ierr)
+  if (val1 .ne. 255) stop 6
+  ! Note that the file grib2_all_tables_module.f90 has 'experimental_products'.
+  call get_g2_typeofdata('experimental_product', val1, ierr)
+  if (val1 .ne. 192) stop 6
+  call get_g2_typeofdata('xxxx', val1, ierr)  
+  if (ierr .ne. 9) stop 6
+  
+  print *, 'testing get_g2_typeofgenproc'
+  call get_g2_typeofgenproc('anal', val1, ierr)
+  if (val1 .ne. 0) stop 7
+  call get_g2_typeofgenproc('init', val1, ierr)
+  if (val1 .ne. 1) stop 7
+  call get_g2_typeofgenproc('fcst', val1, ierr)
+  if (val1 .ne. 2) stop 7
+  call get_g2_typeofgenproc('bias_corr_fcst', val1, ierr)
+  if (val1 .ne. 3) stop 7
+  call get_g2_typeofgenproc('ens_fcst', val1, ierr)
+  if (val1 .ne. 4) stop 7
+  call get_g2_typeofgenproc('prob_fcst', val1, ierr)
+  if (val1 .ne. 5) stop 7
+  call get_g2_typeofgenproc('fcst_err', val1, ierr)
+  if (val1 .ne. 6) stop 7
+  call get_g2_typeofgenproc('anal_err', val1, ierr)
+  if (val1 .ne. 7) stop 7
+  call get_g2_typeofgenproc('obs', val1, ierr)
+  if (val1 .ne. 8) stop 7
+  call get_g2_typeofgenproc('clim', val1, ierr)
+  if (val1 .ne. 9) stop 7
+  call get_g2_typeofgenproc('prob_wt_fcst', val1, ierr)
+  if (val1 .ne. 10) stop 7
+  call get_g2_typeofgenproc('fcst_con_ind', val1, ierr)
+  if (val1 .ne. 192) stop 7
+  call get_g2_typeofgenproc('bias_corr_ens_fcst', val1, ierr)
+  if (val1 .ne. 11) stop 7
+  call get_g2_typeofgenproc('missing', val1, ierr)
+  if (val1 .ne. 255) stop 7
+  call get_g2_typeofgenproc('post_proc_anal', val1, ierr)
+  if (val1 .ne. 12) stop 7
+  call get_g2_typeofgenproc('post_proc_fcst', val1, ierr)
+  if (val1 .ne. 13) stop 7
+  call get_g2_typeofgenproc('nowcast', val1, ierr)
+  if (val1 .ne. 14) stop 7
+  call get_g2_typeofgenproc('hincsast', val1, ierr)
+  if (val1 .ne. 15) stop 7
+  call get_g2_typeofgenproc('physical_retrieval', val1, ierr)
+  if (val1 .ne. 16) stop 7
+  call get_g2_typeofgenproc('regression_analysis', val1, ierr)
+  if (val1 .ne. 17) stop 7
+  call get_g2_typeofgenproc('difference_two_forecasts', val1, ierr)
+  if (val1 .ne. 18) stop 7
+  call get_g2_typeofgenproc('prob_matched_mean', val1, ierr)
+  if (val1 .ne. 193) stop 7
+  call get_g2_typeofgenproc('neighborhood_prob', val1, ierr)
+  if (val1 .ne. 194) stop 7
+  call get_g2_typeofgenproc('bias_corrected_downscale', val1, ierr)
+  if (val1 .ne. 195) stop 7
+  call get_g2_typeofgenproc('perturbed_analysis', val1, ierr)
+  if (val1 .ne. 196) stop 7
+  call get_g2_typeofgenproc('ens_scale_prob', val1, ierr)
+  if (val1 .ne. 197) stop 7
+  call get_g2_typeofgenproc('post_dew_fcst', val1, ierr)
+  if (val1 .ne. 198) stop 7
+  call get_g2_typeofgenproc('ens_fcst_base', val1, ierr)
+  if (val1 .ne. 199) stop 7
+  call get_g2_typeofgenproc('local_prob_match_mean', val1, ierr)
+  if (val1 .ne. 200) stop 7
+  call get_g2_typeofgenproc('xxxx', val1, ierr)
+  if (ierr .ne. 9) stop 7
 
   print *, 'SUCCESS!!'
 end program test_all_tables
