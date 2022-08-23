@@ -5,10 +5,26 @@
 ! Ed Hartnett, 8/23/22
 program test_all_table_other
   use grib2_all_tables_module
+  implicit none
 
+  integer :: idisc, listsec0(2)
+
+  integer :: listsec1(13), i
 
   print *, 'Testing grib2_all_tables_module, expect and ignore error messages...'
-  print *, 'testing '
+  print *, 'testing g2sec0'
+  idisc = 42
+  call g2sec0(idisc, listsec0)
+  if (listsec0(1) .ne. 42 .or. listsec0(2) .ne. 2) stop 1
+  
+  print *, 'testing g2sec1'
+  call g2sec1('melbourne1', 'ncep_reanl', 'expt', 'local_tab_no', 'anal', 2022,  &
+       8, 23, 14, 45, 00, 'oper', 'anal', listsec1)
+  if (listsec1(1) .ne. 1 .or. listsec1(2) .ne. 1) stop 2
+  if (listsec1(3) .ne. 0 .or. listsec1(4) .ne. 0 .or. listsec1(5) .ne. 0) stop 2
+  if (listsec1(6) .ne. 2022 .or. listsec1(7) .ne. 8 .or. listsec1(8) .ne. 23) stop 2
+  if (listsec1(9) .ne. 14 .or. listsec1(10) .ne. 45 .or. listsec1(11) .ne. 0) stop 2
+  if (listsec1(12) .ne. 0 .or. listsec1(13) .ne. 0) stop 2
   
   print *, 'SUCCESS!!'
 end program test_all_table_other

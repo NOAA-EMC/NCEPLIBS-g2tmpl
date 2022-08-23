@@ -5,11 +5,12 @@
 ! Ed Hartnett, 8/23/22
 program test_all_tables
   use grib2_all_tables_module
-
-  character(len=20) :: key
+  implicit none
+  
   integer :: val1, ierr
 
-  print *, 'Testing grib2_all_tables_module, expect and ignore error messages...'
+  print *, 'Testing grib2_all_tables_module subroutines with key parameters...'
+  print *, '(Expect and ignore error messages.)'
 
   print *, 'testing get_g2_subcenters'
   call get_g2_subcenters('ncep_reanl', val1, ierr)
