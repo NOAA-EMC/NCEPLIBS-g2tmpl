@@ -502,5 +502,75 @@ program test_all_tables
   call get_g2_fixedsurfacetypes('xxx', val1, ierr)
   if (ierr .ne. 9) stop 9
 
+  print *, 'testing get_g2_statprocesstypes'
+  call get_g2_statprocesstypes('AVE', val1, ierr)
+  if (val1 .ne. 0) stop 9
+  call get_g2_statprocesstypes('ACM', val1, ierr)
+  if (val1 .ne. 1) stop 9
+  call get_g2_statprocesstypes('MAX', val1, ierr)
+  if (val1 .ne. 2) stop 9
+  call get_g2_statprocesstypes('MIN', val1, ierr)
+  if (val1 .ne. 3) stop 9
+  call get_g2_statprocesstypes('diff_end-beg', val1, ierr)
+  if (val1 .ne. 4) stop 9
+  call get_g2_statprocesstypes('rms', val1, ierr)
+  if (val1 .ne. 5) stop 9
+  call get_g2_statprocesstypes('std_devn', val1, ierr)
+  if (val1 .ne. 6) stop 9
+  call get_g2_statprocesstypes('covariance', val1, ierr)
+  if (val1 .ne. 7) stop 9
+  call get_g2_statprocesstypes('diff_beg-end', val1, ierr)
+  if (val1 .ne. 8) stop 9
+  call get_g2_statprocesstypes('ratio', val1, ierr)
+  if (val1 .ne. 9) stop 9
+  call get_g2_statprocesstypes('std_anomaly', val1, ierr)
+  if (val1 .ne. 10) stop 9
+  call get_g2_statprocesstypes('clim_mean', val1, ierr)
+  if (val1 .ne. 192) stop 9
+  call get_g2_statprocesstypes('ave_n_fcsts', val1, ierr)
+  if (val1 .ne. 193) stop 9
+  call get_g2_statprocesstypes('ave_n_unin_anal', val1, ierr)
+  if (val1 .ne. 194) stop 9
+  call get_g2_statprocesstypes('ave_fcst_acc_24', val1, ierr)
+  if (val1 .ne. 195) stop 9
+  call get_g2_statprocesstypes('ave_succ_fcst_acc', val1, ierr)
+  if (val1 .ne. 196) stop 9
+  call get_g2_statprocesstypes('ave_fcst_ave_24', val1, ierr)
+  if (val1 .ne. 197) stop 9
+  call get_g2_statprocesstypes('ave_succ_fcst_ave', val1, ierr)
+  if (val1 .ne. 198) stop 9
+  call get_g2_statprocesstypes('clim_ave_n_anal', val1, ierr)
+  if (val1 .ne. 199) stop 9
+  call get_g2_statprocesstypes('clim_ave_n_fcst', val1, ierr)
+  if (val1 .ne. 200) stop 9
+  call get_g2_statprocesstypes('clim_rms_diff', val1, ierr)
+  if (val1 .ne. 201) stop 9
+  call get_g2_statprocesstypes('clim_std_n_fcst', val1, ierr)
+  if (val1 .ne. 202) stop 9
+  call get_g2_statprocesstypes('clim_std_n_anal', val1, ierr)
+  if (val1 .ne. 203) stop 9
+  call get_g2_statprocesstypes('ave_fcst_acc_6', val1, ierr)
+  if (val1 .ne. 204) stop 9
+  call get_g2_statprocesstypes('ave_fcst_ave_6', val1, ierr)
+  if (val1 .ne. 205) stop 9
+  call get_g2_statprocesstypes('ave_fcst_acc_12', val1, ierr)
+  if (val1 .ne. 206) stop 9
+  call get_g2_statprocesstypes('ave_fcst_ave_12', val1, ierr)
+  if (val1 .ne. 207) stop 9
+  call get_g2_statprocesstypes('missing', val1, ierr)
+  if (val1 .ne. 255) stop 9
+  call get_g2_statprocesstypes('summation', val1, ierr)
+  if (val1 .ne. 11) stop 9
+  call get_g2_statprocesstypes('confidence_index', val1, ierr)
+  if (val1 .ne. 12) stop 9
+  call get_g2_statprocesstypes('quality_indicator', val1, ierr)
+  if (val1 .ne. 13) stop 9
+  call get_g2_statprocesstypes('variance', val1, ierr)
+  if (val1 .ne. 208) stop 9
+  call get_g2_statprocesstypes('confficient', val1, ierr)
+  if (val1 .ne. 209) stop 9
+  call get_g2_statprocesstypes('xxxxx', val1, ierr)
+  if (ierr .ne. 9) stop 9
+  
   print *, 'SUCCESS!!'
 end program test_all_tables
