@@ -1,5 +1,5 @@
-!> @file 
-!> @brief Returns the Grib2 Section 4 Template 4.11 list for given keys. 
+!> @file
+!> @brief Returns the Grib2 Section 4 Template 4.11 list for given keys.
 !> @author Boi Vuong @date 2015-01-09
 
 !> This subroutine returns the Grib2 Section 4 Template 4.12 list for
@@ -51,103 +51,103 @@
 !> @param[out] ipdstmpl12  GRIB2 PDS Template 4.12 listing
 !>
 !> @author Boi Vuong @date 2015-01-09
-     subroutine g2sec4_temp12(icatg,iparm,typ_gen_proc_key,gen_proc_or_mod_key,     &
-                             hrs_obs_cutoff,min_obs_cutoff,unit_of_time_key,        &
-                             fcst_time,lvl_type1,scale_fac1,scaled_val1,lvl_type2,  &
-                             scale_fac2,scaled_val2,derive_fcst_key,num_fcst_ens,   &
-                             year_intvl,mon_intvl,day_intvl,hour_intvl,min_intvl,   &
-                             sec_intvl,num_time_range,stat_miss_val,                &
-                             type_of_stat_proc,type_of_time_inc,stat_unit_time_key, &
-                             leng_time_range_stat,stat_unit_time_key_succ,          &
-                             time_inc_betwn_succ_fld,ipdstmpl12)
+subroutine g2sec4_temp12(icatg,iparm,typ_gen_proc_key,gen_proc_or_mod_key,     &
+     hrs_obs_cutoff,min_obs_cutoff,unit_of_time_key,        &
+     fcst_time,lvl_type1,scale_fac1,scaled_val1,lvl_type2,  &
+     scale_fac2,scaled_val2,derive_fcst_key,num_fcst_ens,   &
+     year_intvl,mon_intvl,day_intvl,hour_intvl,min_intvl,   &
+     sec_intvl,num_time_range,stat_miss_val,                &
+     type_of_stat_proc,type_of_time_inc,stat_unit_time_key, &
+     leng_time_range_stat,stat_unit_time_key_succ,          &
+     time_inc_betwn_succ_fld,ipdstmpl12)
 
-     use grib2_all_tables_module
+  use grib2_all_tables_module
 
-     integer(4),intent(in) :: icatg,iparm,hrs_obs_cutoff,min_obs_cutoff,fcst_time, &
-                              scale_fac1,scaled_val1,scale_fac2,scaled_val2
-     integer(4),intent(in) :: year_intvl,mon_intvl,day_intvl,hour_intvl,min_intvl, &
-                              sec_intvl,num_time_range,stat_miss_val, &
-                              leng_time_range_stat,time_inc_betwn_succ_fld
-     integer(4),intent(in)  :: num_fcst_ens
-!
-     character(len=*),intent(in) :: typ_gen_proc_key,gen_proc_or_mod_key, &
-                          unit_of_time_key,lvl_type1,lvl_type2,           &
-                          type_of_stat_proc,type_of_time_inc,             &
-                          stat_unit_time_key,stat_unit_time_key_succ,     &
-                          derive_fcst_key
-!
-     integer(4)               :: bckgnd_gen_proc_id    ! defined by the center
-!
-     integer(4),intent(inout) :: ipdstmpl12(31)        ! currently works only for n=1
-                                                       ! later on, this will be generalized
-!
-!-- local vars
-     integer(4) :: value,ierr
-!
-     bckgnd_gen_proc_id=0
-!
-     ipdstmpl12(1) = icatg
-     ipdstmpl12(2) = iparm
-!
-     call get_g2_typeofgenproc(typ_gen_proc_key,value,ierr)
-     ipdstmpl12(3) = value
-!
-     ipdstmpl12(4) = bckgnd_gen_proc_id
-!
-     call get_g2_on388genproc(gen_proc_or_mod_key,value,ierr)
-     ipdstmpl12(5) = value
-!
-     ipdstmpl12(6) = hrs_obs_cutoff
-     ipdstmpl12(7) = min_obs_cutoff
-!
-     call get_g2_unitoftimerange(unit_of_time_key,value,ierr)
-     ipdstmpl12(8) = value
-     ipdstmpl12(9) = fcst_time
-!
-     call get_g2_fixedsurfacetypes(lvl_type1,value,ierr)
-     ipdstmpl12(10) = value
-     ipdstmpl12(11) = scale_fac1
-     ipdstmpl12(12) = scaled_val1
-!
-     call get_g2_fixedsurfacetypes(lvl_type2,value,ierr)
-     ipdstmpl12(13) = value
-!
-     ipdstmpl12(14) = scale_fac2
-     ipdstmpl12(15) = scaled_val2
-!
-     call get_g2_typeofderivefcst(derive_fcst_key,value,ierr)
-     ipdstmpl12(16) = value
-!
-     ipdstmpl12(17) = num_fcst_ens
-!
-     ipdstmpl12(18) = year_intvl
-     ipdstmpl12(19) = mon_intvl
-     ipdstmpl12(20) = day_intvl
-     ipdstmpl12(21) = hour_intvl
-     ipdstmpl12(22) = min_intvl
-     ipdstmpl12(23) = sec_intvl
-!
-     ipdstmpl12(24) = num_time_range ! choose n=1 for this case
-     ipdstmpl12(25) = stat_miss_val  ! choose 0 for this case
-!
-     call get_g2_statprocesstypes(type_of_stat_proc,value,ierr)
-     ipdstmpl12(26) = value  ! types_of_stat_proc='accumulation'
-!
-     call get_g2_typeoftimeintervals(type_of_time_inc,value,ierr)
-     ipdstmpl12(27) = value  ! type_of_time_inc='same_start_time_fcst_fcst_time_inc'
-                            ! value = 2 (Successive times processed have same start
-                            !       time of forecast, forecast time is incremented)
-!
-     call get_g2_unitoftimerange(stat_unit_time_key,value,ierr)
-     ipdstmpl12(28) = value  ! stat_unit_time_key='hour'
-                            ! value = 1
-     ipdstmpl12(29) = leng_time_range_stat  ! value = 6
-!
-     call get_g2_unitoftimerange(stat_unit_time_key_succ,value,ierr)
-                            ! stat_unit_time_key_succ='missing'
-     ipdstmpl12(30) = value  ! value = 255
-!
-     ipdstmpl12(31) = time_inc_betwn_succ_fld   ! value = 0
-!
-     return
-     end
+  integer(4),intent(in) :: icatg,iparm,hrs_obs_cutoff,min_obs_cutoff,fcst_time, &
+       scale_fac1,scaled_val1,scale_fac2,scaled_val2
+  integer(4),intent(in) :: year_intvl,mon_intvl,day_intvl,hour_intvl,min_intvl, &
+       sec_intvl,num_time_range,stat_miss_val, &
+       leng_time_range_stat,time_inc_betwn_succ_fld
+  integer(4),intent(in)  :: num_fcst_ens
+  !
+  character(len=*),intent(in) :: typ_gen_proc_key,gen_proc_or_mod_key, &
+       unit_of_time_key,lvl_type1,lvl_type2,           &
+       type_of_stat_proc,type_of_time_inc,             &
+       stat_unit_time_key,stat_unit_time_key_succ,     &
+       derive_fcst_key
+  !
+  integer(4)               :: bckgnd_gen_proc_id    ! defined by the center
+  !
+  integer(4),intent(inout) :: ipdstmpl12(31)        ! currently works only for n=1
+  ! later on, this will be generalized
+  !
+  !-- local vars
+  integer(4) :: value,ierr
+  !
+  bckgnd_gen_proc_id=0
+  !
+  ipdstmpl12(1) = icatg
+  ipdstmpl12(2) = iparm
+  !
+  call get_g2_typeofgenproc(typ_gen_proc_key,value,ierr)
+  ipdstmpl12(3) = value
+  !
+  ipdstmpl12(4) = bckgnd_gen_proc_id
+  !
+  call get_g2_on388genproc(gen_proc_or_mod_key,value,ierr)
+  ipdstmpl12(5) = value
+  !
+  ipdstmpl12(6) = hrs_obs_cutoff
+  ipdstmpl12(7) = min_obs_cutoff
+  !
+  call get_g2_unitoftimerange(unit_of_time_key,value,ierr)
+  ipdstmpl12(8) = value
+  ipdstmpl12(9) = fcst_time
+  !
+  call get_g2_fixedsurfacetypes(lvl_type1,value,ierr)
+  ipdstmpl12(10) = value
+  ipdstmpl12(11) = scale_fac1
+  ipdstmpl12(12) = scaled_val1
+  !
+  call get_g2_fixedsurfacetypes(lvl_type2,value,ierr)
+  ipdstmpl12(13) = value
+  !
+  ipdstmpl12(14) = scale_fac2
+  ipdstmpl12(15) = scaled_val2
+  !
+  call get_g2_typeofderivefcst(derive_fcst_key,value,ierr)
+  ipdstmpl12(16) = value
+  !
+  ipdstmpl12(17) = num_fcst_ens
+  !
+  ipdstmpl12(18) = year_intvl
+  ipdstmpl12(19) = mon_intvl
+  ipdstmpl12(20) = day_intvl
+  ipdstmpl12(21) = hour_intvl
+  ipdstmpl12(22) = min_intvl
+  ipdstmpl12(23) = sec_intvl
+  !
+  ipdstmpl12(24) = num_time_range ! choose n=1 for this case
+  ipdstmpl12(25) = stat_miss_val  ! choose 0 for this case
+  !
+  call get_g2_statprocesstypes(type_of_stat_proc,value,ierr)
+  ipdstmpl12(26) = value  ! types_of_stat_proc='accumulation'
+  !
+  call get_g2_typeoftimeintervals(type_of_time_inc,value,ierr)
+  ipdstmpl12(27) = value  ! type_of_time_inc='same_start_time_fcst_fcst_time_inc'
+  ! value = 2 (Successive times processed have same start
+  !       time of forecast, forecast time is incremented)
+  !
+  call get_g2_unitoftimerange(stat_unit_time_key,value,ierr)
+  ipdstmpl12(28) = value  ! stat_unit_time_key='hour'
+  ! value = 1
+  ipdstmpl12(29) = leng_time_range_stat  ! value = 6
+  !
+  call get_g2_unitoftimerange(stat_unit_time_key_succ,value,ierr)
+  ! stat_unit_time_key_succ='missing'
+  ipdstmpl12(30) = value  ! value = 255
+  !
+  ipdstmpl12(31) = time_inc_betwn_succ_fld   ! value = 0
+  !
+  return
+end subroutine g2sec4_temp12

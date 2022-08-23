@@ -14,7 +14,7 @@ program  sort_params_grib2_tbl
   idisc=0
   icatg=0
   iparm=0
-  
+
   !    Opens and reads the GRIB2 Code Table 4.2 into an internal memory structure.
   !
   fl_nametbl='params_grib2_tbl_new'
@@ -22,9 +22,9 @@ program  sort_params_grib2_tbl
   if ( ierr .ne. 0 ) then
      print*, 'Couldnt open table file - return code was ',ierr
   endif
-  
+
   !    Sorts and writes the GRIB2 Code Table 4.2 to an output file.
-  
+
   fl_nametbl='params_grib2_tbl_new'
   call sort_and_write_4dot2( fl_nametbl, ierr )
   print *, ""
