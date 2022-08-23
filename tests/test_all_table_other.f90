@@ -14,6 +14,9 @@ program test_all_table_other
   integer :: ipdstmpl8(29)
   integer :: ipdstmpl8_expected(29) = (/0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 2022, &
        8, 23, 15, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0/)
+  integer :: ipdstmpl44(21)
+  integer :: ipdstmpl44_expected(21) = (/0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 2022, &
+       8, 23, 15, 28, 0/)
 
   print *, 'Testing grib2_all_tables_module, expect and ignore error messages...'
   print *, 'testing g2sec0'
@@ -45,6 +48,15 @@ program test_all_table_other
 !     print *, ipdstmpl8(i)
      if (ipdstmpl8(i) .ne. ipdstmpl8_expected(i)) stop 3
   end do
-  
+
+  print *, 'testing g2sec4_temp44'
+  call g2sec4_temp44(0, 0, 'ozone', typ_intvl_size,                  &
+       scale_fac1_size, scale_val1_size, scale_fac2_size,       &
+       scale_val2_size, typ_gen_proc_key,                      &
+       gen_proc_or_mod_key, hrs_obs_cutoff, min_obs_cutoff,     &
+       unit_of_time_key, fcst_time, lvl_type1, scale_fac1,       &
+       scaled_val1, lvl_type2, scale_fac2, scaled_val2,          &
+       ipdstmpl44)
+
   print *, 'SUCCESS!!'
 end program test_all_table_other
