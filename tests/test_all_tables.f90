@@ -10,6 +10,8 @@ program test_all_tables
   integer :: val1, ierr
 
   print *, 'Testing grib2_all_tables_module...'
+
+  print *, 'testing get_g2_subcenters'
   call get_g2_subcenters('ncep_reanl', val1, ierr)
   if (val1 .ne. 1) stop 1
   call get_g2_subcenters('ncep_ensem', val1, ierr)
@@ -44,6 +46,71 @@ program test_all_tables
   if (val1 .ne. 16) stop 1
   call get_g2_subcenters('xxxxx', val1, ierr)
   if (ierr .ne. 9) stop 1
+
+  print *, 'testing get_g2_versionno'
+  call get_g2_versionno('expt', val1, ierr)
+  if (val1 .ne. 0) stop 2
+  call get_g2_versionno('v2001', val1, ierr)
+  if (val1 .ne. 1) stop 2
+  call get_g2_versionno('v2003', val1, ierr)
+  if (val1 .ne. 2) stop 2
+  call get_g2_versionno('v2005', val1, ierr)
+  if (val1 .ne. 3) stop 2
+  call get_g2_versionno('v2007', val1, ierr)
+  if (val1 .ne. 4) stop 2
+  call get_g2_versionno('v2009', val1, ierr)
+  if (val1 .ne. 5) stop 2
+  call get_g2_versionno('v2010', val1, ierr)
+  if (val1 .ne. 6) stop 2
+  call get_g2_versionno('v052011', val1, ierr)
+  if (val1 .ne. 7) stop 2
+  call get_g2_versionno('v112011', val1, ierr)
+  if (val1 .ne. 8) stop 2
+  call get_g2_versionno('v052012', val1, ierr)
+  if (val1 .ne. 9) stop 2
+  call get_g2_versionno('v112012', val1, ierr)
+  if (val1 .ne. 10) stop 2
+  call get_g2_versionno('v052013', val1, ierr)
+  if (val1 .ne. 11) stop 2
+  call get_g2_versionno('v112013', val1, ierr)
+  if (val1 .ne. 12) stop 2
+  call get_g2_versionno('v052014', val1, ierr)
+  if (val1 .ne. 13) stop 2
+  call get_g2_versionno('v112014', val1, ierr)
+  if (val1 .ne. 14) stop 2
+  call get_g2_versionno('v052015', val1, ierr)
+  if (val1 .ne. 15) stop 2
+  call get_g2_versionno('v112015', val1, ierr)
+  if (val1 .ne. 16) stop 2
+  call get_g2_versionno('v052016', val1, ierr)
+  if (val1 .ne. 17) stop 2
+  call get_g2_versionno('v112016', val1, ierr)
+  if (val1 .ne. 18) stop 2
+  call get_g2_versionno('v052017', val1, ierr)
+  if (val1 .ne. 19) stop 2
+  call get_g2_versionno('v112017', val1, ierr)
+  if (val1 .ne. 20) stop 2
+  call get_g2_versionno('v052018', val1, ierr)
+  if (val1 .ne. 21) stop 2
+  call get_g2_versionno('v112018', val1, ierr)
+  if (val1 .ne. 22) stop 2
+  call get_g2_versionno('v052019', val1, ierr)
+  if (val1 .ne. 23) stop 2
+  call get_g2_versionno('v112019', val1, ierr)
+  if (val1 .ne. 24) stop 2
+  call get_g2_versionno('v052020', val1, ierr)
+  if (val1 .ne. 25) stop 2
+  call get_g2_versionno('v112020', val1, ierr)
+  if (val1 .ne. 26) stop 2
+  call get_g2_versionno('v052021', val1, ierr)
+  if (val1 .ne. 27) stop 2
+  call get_g2_versionno('v112021', val1, ierr)
+  if (val1 .ne. 28) stop 2
+  call get_g2_versionno('preoper', val1, ierr)
+  if (val1 .ne. 29) stop 2
+  call get_g2_versionno('xxx', val1, ierr)
+  if (ierr .ne. 9) stop 2
+
 
   print *, 'SUCCESS!!'
 end program test_all_tables
