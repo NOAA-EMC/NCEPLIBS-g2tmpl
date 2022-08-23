@@ -504,73 +504,128 @@ program test_all_tables
 
   print *, 'testing get_g2_statprocesstypes'
   call get_g2_statprocesstypes('AVE', val1, ierr)
-  if (val1 .ne. 0) stop 9
+  if (val1 .ne. 0) stop 10
   call get_g2_statprocesstypes('ACM', val1, ierr)
-  if (val1 .ne. 1) stop 9
+  if (val1 .ne. 1) stop 10
   call get_g2_statprocesstypes('MAX', val1, ierr)
-  if (val1 .ne. 2) stop 9
+  if (val1 .ne. 2) stop 10
   call get_g2_statprocesstypes('MIN', val1, ierr)
-  if (val1 .ne. 3) stop 9
+  if (val1 .ne. 3) stop 10
   call get_g2_statprocesstypes('diff_end-beg', val1, ierr)
-  if (val1 .ne. 4) stop 9
+  if (val1 .ne. 4) stop 10
   call get_g2_statprocesstypes('rms', val1, ierr)
-  if (val1 .ne. 5) stop 9
+  if (val1 .ne. 5) stop 10
   call get_g2_statprocesstypes('std_devn', val1, ierr)
-  if (val1 .ne. 6) stop 9
+  if (val1 .ne. 6) stop 10
   call get_g2_statprocesstypes('covariance', val1, ierr)
-  if (val1 .ne. 7) stop 9
+  if (val1 .ne. 7) stop 10
   call get_g2_statprocesstypes('diff_beg-end', val1, ierr)
-  if (val1 .ne. 8) stop 9
+  if (val1 .ne. 8) stop 10
   call get_g2_statprocesstypes('ratio', val1, ierr)
-  if (val1 .ne. 9) stop 9
+  if (val1 .ne. 9) stop 10
   call get_g2_statprocesstypes('std_anomaly', val1, ierr)
-  if (val1 .ne. 10) stop 9
+  if (val1 .ne. 10) stop 10
   call get_g2_statprocesstypes('clim_mean', val1, ierr)
-  if (val1 .ne. 192) stop 9
+  if (val1 .ne. 192) stop 10
   call get_g2_statprocesstypes('ave_n_fcsts', val1, ierr)
-  if (val1 .ne. 193) stop 9
+  if (val1 .ne. 193) stop 10
   call get_g2_statprocesstypes('ave_n_unin_anal', val1, ierr)
-  if (val1 .ne. 194) stop 9
+  if (val1 .ne. 194) stop 10
   call get_g2_statprocesstypes('ave_fcst_acc_24', val1, ierr)
-  if (val1 .ne. 195) stop 9
+  if (val1 .ne. 195) stop 10
   call get_g2_statprocesstypes('ave_succ_fcst_acc', val1, ierr)
-  if (val1 .ne. 196) stop 9
+  if (val1 .ne. 196) stop 10
   call get_g2_statprocesstypes('ave_fcst_ave_24', val1, ierr)
-  if (val1 .ne. 197) stop 9
+  if (val1 .ne. 197) stop 10
   call get_g2_statprocesstypes('ave_succ_fcst_ave', val1, ierr)
-  if (val1 .ne. 198) stop 9
+  if (val1 .ne. 198) stop 10
   call get_g2_statprocesstypes('clim_ave_n_anal', val1, ierr)
-  if (val1 .ne. 199) stop 9
+  if (val1 .ne. 199) stop 10
   call get_g2_statprocesstypes('clim_ave_n_fcst', val1, ierr)
-  if (val1 .ne. 200) stop 9
+  if (val1 .ne. 200) stop 10
   call get_g2_statprocesstypes('clim_rms_diff', val1, ierr)
-  if (val1 .ne. 201) stop 9
+  if (val1 .ne. 201) stop 10
   call get_g2_statprocesstypes('clim_std_n_fcst', val1, ierr)
-  if (val1 .ne. 202) stop 9
+  if (val1 .ne. 202) stop 10
   call get_g2_statprocesstypes('clim_std_n_anal', val1, ierr)
-  if (val1 .ne. 203) stop 9
+  if (val1 .ne. 203) stop 10
   call get_g2_statprocesstypes('ave_fcst_acc_6', val1, ierr)
-  if (val1 .ne. 204) stop 9
+  if (val1 .ne. 204) stop 10
   call get_g2_statprocesstypes('ave_fcst_ave_6', val1, ierr)
-  if (val1 .ne. 205) stop 9
+  if (val1 .ne. 205) stop 10
   call get_g2_statprocesstypes('ave_fcst_acc_12', val1, ierr)
-  if (val1 .ne. 206) stop 9
+  if (val1 .ne. 206) stop 10
   call get_g2_statprocesstypes('ave_fcst_ave_12', val1, ierr)
-  if (val1 .ne. 207) stop 9
+  if (val1 .ne. 207) stop 10
   call get_g2_statprocesstypes('missing', val1, ierr)
-  if (val1 .ne. 255) stop 9
+  if (val1 .ne. 255) stop 10
   call get_g2_statprocesstypes('summation', val1, ierr)
-  if (val1 .ne. 11) stop 9
+  if (val1 .ne. 11) stop 10
   call get_g2_statprocesstypes('confidence_index', val1, ierr)
-  if (val1 .ne. 12) stop 9
+  if (val1 .ne. 12) stop 10
   call get_g2_statprocesstypes('quality_indicator', val1, ierr)
-  if (val1 .ne. 13) stop 9
+  if (val1 .ne. 13) stop 10
   call get_g2_statprocesstypes('variance', val1, ierr)
-  if (val1 .ne. 208) stop 9
+  if (val1 .ne. 208) stop 10
   call get_g2_statprocesstypes('confficient', val1, ierr)
-  if (val1 .ne. 209) stop 9
+  if (val1 .ne. 209) stop 10
   call get_g2_statprocesstypes('xxxxx', val1, ierr)
-  if (ierr .ne. 9) stop 9
+  if (ierr .ne. 9) stop 10
+
+  print *, 'testing get_g2_typeoftimeintervals'
+  call get_g2_typeoftimeintervals('reserved', val1, ierr)
+  if (val1 .ne. 0) stop 11
+  call get_g2_typeoftimeintervals('same_fcst_time_start_time_fcst_inc', val1, ierr)
+  if (val1 .ne. 1) stop 11
+  call get_g2_typeoftimeintervals('same_start_time_fcst_fcst_time_inc', val1, ierr)
+  if (val1 .ne. 2) stop 11
+  call get_g2_typeoftimeintervals('start_time_fcst_inc_fcst_time_dec', val1, ierr)
+  if (val1 .ne. 3) stop 11
+  call get_g2_typeoftimeintervals('start_time_fcst_dec_fcst_time_inc', val1, ierr)
+  if (val1 .ne. 4) stop 11
+  call get_g2_typeoftimeintervals('fltng_time_betwn_fcst_time_end_time_intvl', val1, ierr)
+  if (val1 .ne. 5) stop 11
+  call get_g2_typeoftimeintervals('local1', val1, ierr)
+  if (val1 .ne. 192) stop 11
+  call get_g2_typeoftimeintervals('local2', val1, ierr)
+  if (val1 .ne. 193) stop 11
+  call get_g2_typeoftimeintervals('local3', val1, ierr)
+  if (val1 .ne. 194) stop 11
+  call get_g2_typeoftimeintervals('missing', val1, ierr)
+  if (val1 .ne. 255) stop 11
+  call get_g2_typeoftimeintervals('xxx', val1, ierr)
+  if (ierr .ne. 9) stop 11
+
+
+  print *, 'testing get_g2_typeofintervals'
+  call get_g2_typeofintervals('smaller_than_first_limit', val1, ierr)
+  if (val1 .ne. 0) stop 12
+  call get_g2_typeofintervals('greater_than_second_limit', val1, ierr)
+  if (val1 .ne. 1) stop 12
+  call get_g2_typeofintervals('between_first_second_limit_noincl2ndlmt', val1, ierr)
+  if (val1 .ne. 2) stop 12
+  call get_g2_typeofintervals('greater_than_first_limit', val1, ierr)
+  if (val1 .ne. 3) stop 12
+  call get_g2_typeofintervals('smaller_than_second_limit', val1, ierr)
+  if (val1 .ne. 4) stop 12
+  call get_g2_typeofintervals('smaller_or_equal_first_limit', val1, ierr)
+  if (val1 .ne. 5) stop 12
+  call get_g2_typeofintervals('greater_or_equal_second_limit', val1, ierr)
+  if (val1 .ne. 6) stop 12
+  call get_g2_typeofintervals('between_first_second_limit', val1, ierr)
+  if (val1 .ne. 7) stop 12
+  call get_g2_typeofintervals('greater_or_equal_first_limit', val1, ierr)
+  if (val1 .ne. 8) stop 12
+  call get_g2_typeofintervals('smaller_or_equal_second_limit', val1, ierr)
+  if (val1 .ne. 9) stop 12
+  call get_g2_typeofintervals('between_first_second_limit_noincl1stlmt', val1, ierr)
+  if (val1 .ne. 10) stop 12
+  call get_g2_typeofintervals('equall_to_first_limit', val1, ierr)
+  if (val1 .ne. 11) stop 12
+  call get_g2_typeofintervals('missing', val1, ierr)
+  if (val1 .ne. 255) stop 12
+  call get_g2_typeofintervals('xxx', val1, ierr)
+  if (ierr .ne. 9) stop 12
   
   print *, 'SUCCESS!!'
 end program test_all_tables
