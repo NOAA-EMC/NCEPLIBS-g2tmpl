@@ -1324,6 +1324,279 @@ program test_all_tables
   if (val1 .ne. 148) stop 14
   call get_g2_on388origincenters('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 14
+
+  print *, 'testing get_g2_on388genproc'
+  call get_g2_on388genproc('res', val1, ierr)
+  if (val1 .ne. 0) stop 15
+  call get_g2_on388genproc('uvim', val1, ierr)
+  if (val1 .ne. 2) stop 15
+  call get_g2_on388genproc('ncep_arl_tdm', val1, ierr)
+  if (val1 .ne. 3) stop 15
+  call get_g2_on388genproc('ncep_arl_smoke', val1, ierr)
+  if (val1 .ne. 4) stop 15
+  call get_g2_on388genproc('sat_der_prec_temp', val1, ierr)
+  if (val1 .ne. 5) stop 15
+  call get_g2_on388genproc('gwind_wave_mod', val1, ierr)
+  if (val1 .ne. 10) stop 15
+  call get_g2_on388genproc('multi_grid_wave_mod', val1, ierr)
+  if (val1 .ne. 11) stop 15
+  call get_g2_on388genproc('prob_st_surg', val1, ierr)
+  if (val1 .ne. 12) stop 15
+  call get_g2_on388genproc('lfm_anal', val1, ierr)
+  if (val1 .ne. 19) stop 15
+  call get_g2_on388genproc('snow_cov_anal', val1, ierr)
+  if (val1 .ne. 25) stop 15
+  call get_g2_on388genproc('for_gen_field', val1, ierr)
+  if (val1 .ne. 30) stop 15
+  call get_g2_on388genproc('val_add_post_proc_field', val1, ierr)
+  if (val1 .ne. 31) stop 15
+  call get_g2_on388genproc('ngm', val1, ierr)
+  if (val1 .ne. 39) stop 15
+  call get_g2_on388genproc('goi_gfs', val1, ierr)
+  if (val1 .ne. 42) stop 15
+  call get_g2_on388genproc('goi_fnl', val1, ierr)
+  if (val1 .ne. 43) stop 15
+  call get_g2_on388genproc('ssta', val1, ierr)
+  if (val1 .ne. 44) stop 15
+  call get_g2_on388genproc('coast_ocm', val1, ierr)
+  if (val1 .ne. 45) stop 15
+  call get_g2_on388genproc('hycom_glob', val1, ierr)
+  if (val1 .ne. 46) stop 15
+  call get_g2_on388genproc('hycom_npb', val1, ierr)
+  if (val1 .ne. 47) stop 15
+  call get_g2_on388genproc('hycom_nab', val1, ierr)
+  if (val1 .ne. 48) stop 15
+  call get_g2_on388genproc('ozone_anal_tiros', val1, ierr)
+  if (val1 .ne. 49) stop 15
+  call get_g2_on388genproc('ozone_anal_nimbus', val1, ierr)
+  if (val1 .ne. 52) stop 15
+  call get_g2_on388genproc('lfm_fofm', val1, ierr)
+  if (val1 .ne. 53) stop 15
+  call get_g2_on388genproc('roi', val1, ierr)
+  if (val1 .ne. 64) stop 15
+  call get_g2_on388genproc('t80l18gfs', val1, ierr)
+  if (val1 .ne. 68) stop 15
+  call get_g2_on388genproc('t80l18mrf', val1, ierr)
+  if (val1 .ne. 69) stop 15
+  call get_g2_on388genproc('qlm', val1, ierr)
+  if (val1 .ne. 70) stop 15
+  call get_g2_on388genproc('fogfm_opc', val1, ierr)
+  if (val1 .ne. 73) stop 15
+  call get_g2_on388genproc('gulf_of_mex_wind_wave', val1, ierr)
+  if (val1 .ne. 74) stop 15
+  call get_g2_on388genproc('gulf_of_alas_wind_wave', val1, ierr)
+  if (val1 .ne. 75) stop 15
+  call get_g2_on388genproc('bias_corr_mrf', val1, ierr)
+  if (val1 .ne. 76) stop 15
+  call get_g2_on388genproc('t126l28gfs', val1, ierr)
+  if (val1 .ne. 77) stop 15
+  call get_g2_on388genproc('t126l28mrf', val1, ierr)
+  if (val1 .ne. 78) stop 15
+  call get_g2_on388genproc('backup_from_prev_run', val1, ierr)
+  if (val1 .ne. 79) stop 15
+  call get_g2_on388genproc('t62l28mrf', val1, ierr)
+  if (val1 .ne. 80) stop 15
+  call get_g2_on388genproc('anal_gfs', val1, ierr)
+  if (val1 .ne. 81) stop 15
+  call get_g2_on388genproc('anal_gdas', val1, ierr)
+  if (val1 .ne. 82) stop 15
+  call get_g2_on388genproc('meso_nam12km', val1, ierr)
+  if (val1 .ne. 84) stop 15
+  call get_g2_on388genproc('early_hur_wind_speed_prob', val1, ierr)
+  if (val1 .ne. 86) stop 15
+  call get_g2_on388genproc('cac_ensem_fcsts_spect', val1, ierr)
+  if (val1 .ne. 87) stop 15
+  call get_g2_on388genproc('nww3_owm', val1, ierr)
+  if (val1 .ne. 88) stop 15
+  call get_g2_on388genproc('nmm_8km', val1, ierr)
+  if (val1 .ne. 89) stop 15
+  call get_g2_on388genproc('t62l28extmrf', val1, ierr)
+  if (val1 .ne. 90) stop 15
+  call get_g2_on388genproc('t62l28extgfs', val1, ierr)
+  if (val1 .ne. 91) stop 15
+  call get_g2_on388genproc('t62l28mrffnl', val1, ierr)
+  if (val1 .ne. 92) stop 15
+  call get_g2_on388genproc('t62l28gdasmrf', val1, ierr)
+  if (val1 .ne. 93) stop 15
+  call get_g2_on388genproc('t170l42mrf', val1, ierr)
+  if (val1 .ne. 94) stop 15
+  call get_g2_on388genproc('t126l42mrf', val1, ierr)
+  if (val1 .ne. 95) stop 15
+  call get_g2_on388genproc('gfs_avn', val1, ierr)
+  if (val1 .ne. 96) stop 15
+  call get_g2_on388genproc('cfs_t62l64_l40mom3', val1, ierr)
+  if (val1 .ne. 98) stop 15
+  call get_g2_on388genproc('misc_test_id', val1, ierr)
+  if (val1 .ne. 99) stop 15
+  call get_g2_on388genproc('ruc_sanal_60km_40n', val1, ierr)
+  if (val1 .ne. 100) stop 15
+  call get_g2_on388genproc('core', val1, ierr)
+  if (val1 .ne. 101) stop 15
+  call get_g2_on388genproc('rap', val1, ierr)
+  if (val1 .ne. 105) stop 15
+  call get_g2_on388genproc('gefs', val1, ierr)
+  if (val1 .ne. 107) stop 15
+  call get_g2_on388genproc('lamp', val1, ierr)
+  if (val1 .ne. 108) stop 15
+  call get_g2_on388genproc('rtma', val1, ierr)
+  if (val1 .ne. 109) stop 15
+  call get_g2_on388genproc('nam_15k', val1, ierr)
+  if (val1 .ne. 110) stop 15
+  call get_g2_on388genproc('nam_gen_sref', val1, ierr)
+  if (val1 .ne. 111) stop 15
+  call get_g2_on388genproc('wrf_nmm_ncep', val1, ierr)
+  if (val1 .ne. 112) stop 15
+  call get_g2_on388genproc('prod_ncep_sref', val1, ierr)
+  if (val1 .ne. 113) stop 15
+  call get_g2_on388genproc('naefs_prod_ncep_cmc', val1, ierr)
+  if (val1 .ne. 114) stop 15
+  call get_g2_on388genproc('down_scal_gfs_nam_ext', val1, ierr)
+  if (val1 .ne. 115) stop 15
+  call get_g2_on388genproc('wrf_em_ncar_arwrf', val1, ierr)
+  if (val1 .ne. 116) stop 15
+  call get_g2_on388genproc('ice_conc_anal', val1, ierr)
+  if (val1 .ne. 120) stop 15
+  call get_g2_on388genproc('wna_reg_wav_mod', val1, ierr)
+  if (val1 .ne. 121) stop 15
+  call get_g2_on388genproc('alas_wat_reg_wav_mod', val1, ierr)
+  if (val1 .ne. 122) stop 15
+  call get_g2_on388genproc('na_hurr_wav_mod', val1, ierr)
+  if (val1 .ne. 123) stop 15
+  call get_g2_on388genproc('enp_reg_wav_mod', val1, ierr)
+  if (val1 .ne. 124) stop 15
+  call get_g2_on388genproc('np_hurr_wav_mod', val1, ierr)
+  if (val1 .ne. 125) stop 15
+  call get_g2_on388genproc('sea_ice_fcst_mod', val1, ierr)
+  if (val1 .ne. 126) stop 15
+  call get_g2_on388genproc('lake_ice_fcst_mod', val1, ierr)
+  if (val1 .ne. 127) stop 15
+  call get_g2_on388genproc('glob_oce_fcst_mod', val1, ierr)
+  if (val1 .ne. 128) stop 15
+  call get_g2_on388genproc('godas', val1, ierr)
+  if (val1 .ne. 129) stop 15
+  call get_g2_on388genproc('merge_fields_ruc_nam_gfs', val1, ierr)
+  if (val1 .ne. 130) stop 15
+  call get_g2_on388genproc('great_lakes_wave_mod', val1, ierr)
+  if (val1 .ne. 131) stop 15
+  call get_g2_on388genproc('narr', val1, ierr)
+  if (val1 .ne. 140) stop 15
+  call get_g2_on388genproc('ldafs', val1, ierr)
+  if (val1 .ne. 141) stop 15
+  call get_g2_on388genproc('nwsrfs', val1, ierr)
+  if (val1 .ne. 150) stop 15
+  call get_g2_on388genproc('nwsffgs', val1, ierr)
+  if (val1 .ne. 151) stop 15
+  call get_g2_on388genproc('wsr_88d_s2_prec_anal', val1, ierr)
+  if (val1 .ne. 152) stop 15
+  call get_g2_on388genproc('wsr_88d_s3_prec_anal', val1, ierr)
+  if (val1 .ne. 153) stop 15
+  call get_g2_on388genproc('qpf_ncep', val1, ierr)
+  if (val1 .ne. 180) stop 15
+  call get_g2_on388genproc('rfcqpf_ncep', val1, ierr)
+  if (val1 .ne. 181) stop 15
+  call get_g2_on388genproc('rfcqpe_ncep', val1, ierr)
+  if (val1 .ne. 182) stop 15
+  call get_g2_on388genproc('ndfd_ncep_hpc', val1, ierr)
+  if (val1 .ne. 183) stop 15
+  call get_g2_on388genproc('ncwd_ncep_awc', val1, ierr)
+  if (val1 .ne. 190) stop 15
+  call get_g2_on388genproc('cipap_ncep_awc', val1, ierr)
+  if (val1 .ne. 191) stop 15
+  call get_g2_on388genproc('anal_ncep_awc', val1, ierr)
+  if (val1 .ne. 192) stop 15
+  call get_g2_on388genproc('fcst_ncep_awc', val1, ierr)
+  if (val1 .ne. 193) stop 15
+  call get_g2_on388genproc('cdas2', val1, ierr)
+  if (val1 .ne. 195) stop 15
+  call get_g2_on388genproc('cdas2_regen', val1, ierr)
+  if (val1 .ne. 196) stop 15
+  call get_g2_on388genproc('cdas', val1, ierr)
+  if (val1 .ne. 197) stop 15
+  call get_g2_on388genproc('cdas_regen', val1, ierr)
+  if (val1 .ne. 198) stop 15
+  call get_g2_on388genproc('cfsr_t382l64_l40mom4', val1, ierr)
+  if (val1 .ne. 199) stop 15
+  call get_g2_on388genproc('cpc_man_fcst', val1, ierr)
+  if (val1 .ne. 200) stop 15
+  call get_g2_on388genproc('cpc_auto_prod', val1, ierr)
+  if (val1 .ne. 201) stop 15
+  call get_g2_on388genproc('epa_usne', val1, ierr)
+  if (val1 .ne. 210) stop 15
+  call get_g2_on388genproc('epa_use', val1, ierr)
+  if (val1 .ne. 211) stop 15
+  call get_g2_on388genproc('spc_man_fcst', val1, ierr)
+  if (val1 .ne. 215) stop 15
+  call get_g2_on388genproc('ncep_opc_auto_prod', val1, ierr)
+  if (val1 .ne. 220) stop 15
+  call get_g2_on388genproc('missing', val1, ierr)
+  if (val1 .ne. 255) stop 15
+  call get_g2_on388genproc('ngac', val1, ierr)
+  if (val1 .ne. 117) stop 15
+  call get_g2_on388genproc('hrrr', val1, ierr)
+  if (val1 .ne. 83) stop 15
+  call get_g2_on388genproc('ncep_arl_dust', val1, ierr)
+  if (val1 .ne. 6) stop 15
+  call get_g2_on388genproc('hrricane_mult_wave', val1, ierr)
+  if (val1 .ne. 13) stop 15
+  call get_g2_on388genproc('extratropical_storm_surge', val1, ierr)
+  if (val1 .ne. 14) stop 15
+  call get_g2_on388genproc('nearshore_wave_prediction', val1, ierr)
+  if (val1 .ne. 15) stop 15
+  call get_g2_on388genproc('href', val1, ierr)
+  if (val1 .ne. 132) stop 15
+  call get_g2_on388genproc('great_lakes_short_range_mod', val1, ierr)
+  if (val1 .ne. 133) stop 15
+  call get_g2_on388genproc('extra_trop_storm_surge', val1, ierr)
+  if (val1 .ne. 16) stop 15
+  call get_g2_on388genproc('extra_trop_storm_surge_pacific', val1, ierr)
+  if (val1 .ne. 17) stop 15
+  call get_g2_on388genproc('prob_extra_trop_storm_surge', val1, ierr)
+  if (val1 .ne. 18) stop 15
+  call get_g2_on388genproc('linmit_fine_mesh_anal', val1, ierr)
+  if (val1 .ne. 19) stop 15
+  call get_g2_on388genproc('extra_trop_storm_surge_microne', val1, ierr)
+  if (val1 .ne. 20) stop 15
+  call get_g2_on388genproc('hur_weather_res_and_fcst', val1, ierr)
+  if (val1 .ne. 71) stop 15
+  call get_g2_on388genproc('hur_non-hydro_multi', val1, ierr)
+  if (val1 .ne. 72) stop 15
+  call get_g2_on388genproc('rrfs', val1, ierr)
+  if (val1 .ne. 134) stop 15
+  call get_g2_on388genproc('hafs', val1, ierr)
+  if (val1 .ne. 135) stop 15
+  call get_g2_on388genproc('xxxx', val1, ierr)
+  if (ierr .ne. 9) stop 15
+
+
+  print *, 'testing get_g2_typeoforigfieldvals'
+  call get_g2_typeoforigfieldvals('fltng_pnt', val1, ierr)
+  if (val1 .ne. 0) stop 16
+  call get_g2_typeoforigfieldvals('integer', val1, ierr)
+  if (val1 .ne. 1) stop 16
+  call get_g2_typeoforigfieldvals('local1', val1, ierr)
+  if (val1 .ne. 192) stop 16
+  call get_g2_typeoforigfieldvals('local2', val1, ierr)
+  if (val1 .ne. 193) stop 16
+  call get_g2_typeoforigfieldvals('local3', val1, ierr)
+  if (val1 .ne. 194) stop 16
+  call get_g2_typeoforigfieldvals('local4', val1, ierr)
+  if (val1 .ne. 195) stop 16
+  call get_g2_typeoforigfieldvals('local5', val1, ierr)
+  if (val1 .ne. 196) stop 16
+  call get_g2_typeoforigfieldvals('local6', val1, ierr)
+  if (val1 .ne. 197) stop 16
+  call get_g2_typeoforigfieldvals('local7', val1, ierr)
+  if (val1 .ne. 198) stop 16
+  call get_g2_typeoforigfieldvals('local8', val1, ierr)
+  if (val1 .ne. 199) stop 16
+  call get_g2_typeoforigfieldvals('local9', val1, ierr)
+  if (val1 .ne. 200) stop 16
+  call get_g2_typeoforigfieldvals('local10', val1, ierr)
+  if (val1 .ne. 201) stop 16
+  call get_g2_typeoforigfieldvals('missing', val1, ierr)
+  if (val1 .ne. 255) stop 16
+  call get_g2_typeoforigfieldvals('xxx', val1, ierr)
+  if (ierr .ne. 9) stop 16
   
   print *, 'SUCCESS!!'
 end program test_all_tables
