@@ -9,7 +9,7 @@ program test_all_tables
   character(len=20) :: key
   integer :: val1, ierr
 
-  print *, 'Testing grib2_all_tables_module...'
+  print *, 'Testing grib2_all_tables_module, expect and ignore error messages...'
 
   print *, 'testing get_g2_subcenters'
   call get_g2_subcenters('ncep_reanl', val1, ierr)
@@ -110,6 +110,25 @@ program test_all_tables
   if (val1 .ne. 29) stop 2
   call get_g2_versionno('xxx', val1, ierr)
   if (ierr .ne. 9) stop 2
+
+  print *, 'get_g2_loctabversno'
+  call get_g2_loctabversno('local_tab_no', val1, ierr)
+  if (val1 .ne. 0) stop 3
+  call get_g2_loctabversno('local_tab_yes1', val1, ierr)
+  if (val1 .ne. 1) stop 3
+  call get_g2_loctabversno('local_tab_yes2', val1, ierr)
+  if (val1 .ne. 2) stop 3
+  call get_g2_loctabversno('local_tab_yes3', val1, ierr)
+  if (val1 .ne. 3) stop 3
+  call get_g2_loctabversno('local_tab_yes4', val1, ierr)
+  if (val1 .ne. 4) stop 3
+  call get_g2_loctabversno('local_tab_yes5', val1, ierr)
+  if (val1 .ne. 5) stop 3
+  call get_g2_loctabversno('missing', val1, ierr)
+  if (val1 .ne. 255) stop 3
+  call get_g2_loctabversno('anal', val1, ierr)
+  if (ierr .ne. 9) stop 3
+  
 
 
   print *, 'SUCCESS!!'
