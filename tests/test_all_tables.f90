@@ -1606,7 +1606,6 @@ program test_all_tables
   if (val1 .ne. 255) stop 17
   call get_g2_ordofspcdiffvals('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 17
-
   
   print *, 'testing get_g2_typeofcompression'
   call get_g2_typeofcompression('lossless', val1, ierr)
@@ -1618,6 +1617,31 @@ program test_all_tables
   call get_g2_typeofcompression('xxxxx', val1, ierr)
   if (ierr .ne. 9) stop 18
 
+  print *, 'testing get_g2_sec5packingmethod'
+  call get_g2_sec5packingmethod('simple_packing', val1, ierr)
+  if (val1 .ne. 0) stop 19
+  call get_g2_sec5packingmethod('maxtric_simple_packing', val1, ierr)
+  if (val1 .ne. 1) stop 19
+  call get_g2_sec5packingmethod('complex_packing', val1, ierr)
+  if (val1 .ne. 2) stop 19
+  call get_g2_sec5packingmethod('complex_packing_spatial_diff', val1, ierr)
+  if (val1 .ne. 3) stop 19
+  call get_g2_sec5packingmethod('ieee_floating_point', val1, ierr)
+  if (val1 .ne. 4) stop 19
+  call get_g2_sec5packingmethod('jpeg2000', val1, ierr)
+  if (val1 .ne. 40) stop 19
+  call get_g2_sec5packingmethod('png', val1, ierr)
+  if (val1 .ne. 41) stop 19
+  call get_g2_sec5packingmethod('spectral_simple_packing', val1, ierr)
+  if (val1 .ne. 50) stop 19
+  call get_g2_sec5packingmethod('spectral_complex_packing', val1, ierr)
+  if (val1 .ne. 51) stop 19
+  call get_g2_sec5packingmethod('simple_packing_log_preprcs', val1, ierr)
+  if (val1 .ne. 61) stop 19
+  call get_g2_sec5packingmethod('run_length_packing_lvl_val', val1, ierr)
+  if (val1 .ne. 200) stop 19
+  call get_g2_sec5packingmethod('xxxxx', val1, ierr)
+  if (ierr .ne. 9) stop 19
 
   print *, 'SUCCESS!!'
 end program test_all_tables
