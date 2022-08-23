@@ -258,5 +258,249 @@ program test_all_tables
   call get_g2_typeofgenproc('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 7
 
+  print *, 'testing get_g2_unitoftimerange'
+  call get_g2_unitoftimerange('minute', val1, ierr)
+  if (val1 .ne. 0) stop 8
+  call get_g2_unitoftimerange('hour', val1, ierr)
+  if (val1 .ne. 1) stop 8
+  call get_g2_unitoftimerange('day', val1, ierr)
+  if (val1 .ne. 2) stop 8
+  call get_g2_unitoftimerange('month', val1, ierr)
+  if (val1 .ne. 3) stop 8
+  call get_g2_unitoftimerange('year', val1, ierr)
+  if (val1 .ne. 4) stop 8
+  call get_g2_unitoftimerange('decade', val1, ierr)
+  if (val1 .ne. 5) stop 8
+  call get_g2_unitoftimerange('normal_30y', val1, ierr)
+  if (val1 .ne. 6) stop 8
+  call get_g2_unitoftimerange('century', val1, ierr)
+  if (val1 .ne. 7) stop 8
+  call get_g2_unitoftimerange('3hours', val1, ierr)
+  if (val1 .ne. 10) stop 8
+  call get_g2_unitoftimerange('6hours', val1, ierr)
+  if (val1 .ne. 11) stop 8
+  call get_g2_unitoftimerange('12hours', val1, ierr)
+  if (val1 .ne. 12) stop 8
+  call get_g2_unitoftimerange('second', val1, ierr)
+  if (val1 .ne. 13) stop 8
+  call get_g2_unitoftimerange('missing', val1, ierr)
+  if (val1 .ne. 255) stop 8
+  call get_g2_unitoftimerange('xxx', val1, ierr)
+  if (ierr .ne. 9) stop 8
+
+  print *, 'testing get_g2_fixedsurfacetypes'
+  call get_g2_fixedsurfacetypes('surface', val1, ierr)
+  if (val1 .ne. 1) stop 9
+  call get_g2_fixedsurfacetypes('cloud_base', val1, ierr)
+  if (val1 .ne. 2) stop 9
+  call get_g2_fixedsurfacetypes('cloud_top', val1, ierr)
+  if (val1 .ne. 3) stop 9
+  call get_g2_fixedsurfacetypes('0C_isotherm', val1, ierr)
+  if (val1 .ne. 4) stop 9
+  call get_g2_fixedsurfacetypes('lvl_of_adiab_cond_from_sfc', val1, ierr)
+  if (val1 .ne. 5) stop 9
+  call get_g2_fixedsurfacetypes('max_wind', val1, ierr)
+  if (val1 .ne. 6) stop 9
+  call get_g2_fixedsurfacetypes('tropopause', val1, ierr)
+  if (val1 .ne. 7) stop 9
+  call get_g2_fixedsurfacetypes('top_of_atmos', val1, ierr)
+  if (val1 .ne. 8) stop 9
+  call get_g2_fixedsurfacetypes('sea_bottom', val1, ierr)
+  if (val1 .ne. 9) stop 9
+  call get_g2_fixedsurfacetypes('entire_atmos', val1, ierr)
+  if (val1 .ne. 10) stop 9
+  call get_g2_fixedsurfacetypes('cb_base', val1, ierr)
+  if (val1 .ne. 11) stop 9
+  call get_g2_fixedsurfacetypes('cb_top', val1, ierr)
+  if (val1 .ne. 12) stop 9
+  call get_g2_fixedsurfacetypes('isothermal', val1, ierr)
+  if (val1 .ne. 20) stop 9
+  call get_g2_fixedsurfacetypes('isobaric_sfc', val1, ierr)
+  if (val1 .ne. 100) stop 9
+  call get_g2_fixedsurfacetypes('mean_sea_lvl', val1, ierr)
+  if (val1 .ne. 101) stop 9
+  call get_g2_fixedsurfacetypes('spec_alt_above_mean_sea_lvl', val1, ierr)
+  if (val1 .ne. 102) stop 9
+  call get_g2_fixedsurfacetypes('spec_hgt_lvl_above_grnd', val1, ierr)
+  if (val1 .ne. 103) stop 9
+  call get_g2_fixedsurfacetypes('sigma_lvl', val1, ierr)
+  if (val1 .ne. 104) stop 9
+  call get_g2_fixedsurfacetypes('hybrid_lvl', val1, ierr)
+  if (val1 .ne. 105) stop 9
+  call get_g2_fixedsurfacetypes('depth_bel_land_sfc', val1, ierr)
+  if (val1 .ne. 106) stop 9
+  call get_g2_fixedsurfacetypes('isentropic_lvl', val1, ierr)
+  if (val1 .ne. 107) stop 9
+  call get_g2_fixedsurfacetypes('spec_pres_above_grnd', val1, ierr)
+  if (val1 .ne. 108) stop 9
+  call get_g2_fixedsurfacetypes('pot_vort_sfc', val1, ierr)
+  if (val1 .ne. 109) stop 9
+  call get_g2_fixedsurfacetypes('eta_lvl', val1, ierr)
+  if (val1 .ne. 111) stop 9
+  call get_g2_fixedsurfacetypes('mixed_lyr_depth', val1, ierr)
+  if (val1 .ne. 117) stop 9
+  call get_g2_fixedsurfacetypes('depth_below_sea_lvl', val1, ierr)
+  if (val1 .ne. 160) stop 9
+  call get_g2_fixedsurfacetypes('entire_atmos_single_lyr', val1, ierr)
+  if (val1 .ne. 200) stop 9
+  call get_g2_fixedsurfacetypes('entire_ocean_single_lyr', val1, ierr)
+  if (val1 .ne. 201) stop 9
+  call get_g2_fixedsurfacetypes('hghst_trop_frz_lvl', val1, ierr)
+  if (val1 .ne. 204) stop 9
+  call get_g2_fixedsurfacetypes('grid_scale_cloud_bot_lvl', val1, ierr)
+  if (val1 .ne. 206) stop 9
+  call get_g2_fixedsurfacetypes('grid_scale_cloud_top_lvl', val1, ierr)
+  if (val1 .ne. 207) stop 9
+  call get_g2_fixedsurfacetypes('bound_lyr_cloud_bot_lvl', val1, ierr)
+  if (val1 .ne. 209) stop 9
+  call get_g2_fixedsurfacetypes('bound_lyr_cloud_top_lvl', val1, ierr)
+  if (val1 .ne. 210) stop 9
+  call get_g2_fixedsurfacetypes('bound_lyr_cloud_lyr', val1, ierr)
+  if (val1 .ne. 211) stop 9
+  call get_g2_fixedsurfacetypes('low_cloud_bot_lvl', val1, ierr)
+  if (val1 .ne. 212) stop 9
+  call get_g2_fixedsurfacetypes('low_cloud_top_lvl', val1, ierr)
+  if (val1 .ne. 213) stop 9
+  call get_g2_fixedsurfacetypes('low_cloud_lyr', val1, ierr)
+  if (val1 .ne. 214) stop 9
+  call get_g2_fixedsurfacetypes('cloud_ceilng', val1, ierr)
+  if (val1 .ne. 215) stop 9
+  call get_g2_fixedsurfacetypes('planetary_bound_lyr', val1, ierr)
+  if (val1 .ne. 220) stop 9
+  call get_g2_fixedsurfacetypes('lyr_betwn_2hybrid_lvls', val1, ierr)
+  if (val1 .ne. 221) stop 9
+  call get_g2_fixedsurfacetypes('mid_cloud_bot_lvl', val1, ierr)
+  if (val1 .ne. 222) stop 9
+  call get_g2_fixedsurfacetypes('mid_cloud_top_lvl', val1, ierr)
+  if (val1 .ne. 223) stop 9
+  call get_g2_fixedsurfacetypes('mid_cloud_lyr', val1, ierr)
+  if (val1 .ne. 224) stop 9
+  call get_g2_fixedsurfacetypes('high_cloud_bot_lvl', val1, ierr)
+  if (val1 .ne. 232) stop 9
+  call get_g2_fixedsurfacetypes('high_cloud_top_lvl', val1, ierr)
+  if (val1 .ne. 233) stop 9
+  call get_g2_fixedsurfacetypes('high_cloud_lyr', val1, ierr)
+  if (val1 .ne. 234) stop 9
+  call get_g2_fixedsurfacetypes('ocean_isotherm_lvl', val1, ierr)
+  if (val1 .ne. 235) stop 9
+  call get_g2_fixedsurfacetypes('lyr_betwn_2depths_below_ocean_sfc', val1, ierr)
+  if (val1 .ne. 236) stop 9
+  call get_g2_fixedsurfacetypes('bot_of_ocean_mix_lyr', val1, ierr)
+  if (val1 .ne. 237) stop 9
+  call get_g2_fixedsurfacetypes('bot_of_ocean_isoth_lyr', val1, ierr)
+  if (val1 .ne. 238) stop 9
+  call get_g2_fixedsurfacetypes('lyr_ocean_sfc_26c_ocean_isotherm_lvl', val1, ierr)
+  if (val1 .ne. 239) stop 9
+  call get_g2_fixedsurfacetypes('ocean_mix_lyr', val1, ierr)
+  if (val1 .ne. 240) stop 9
+  call get_g2_fixedsurfacetypes('ordered_seq_of_data', val1, ierr)
+  if (val1 .ne. 241) stop 9
+  call get_g2_fixedsurfacetypes('convective_cloud_bot_lvl', val1, ierr)
+  if (val1 .ne. 242) stop 9
+  call get_g2_fixedsurfacetypes('convective_cloud_top_lvl', val1, ierr)
+  if (val1 .ne. 243) stop 9
+  call get_g2_fixedsurfacetypes('convective_cloud_lyr', val1, ierr)
+  if (val1 .ne. 244) stop 9
+  call get_g2_fixedsurfacetypes('lwst_lvl_of_wet_bulb_zero', val1, ierr)
+  if (val1 .ne. 245) stop 9
+  call get_g2_fixedsurfacetypes('max_equiv_pot_temp_lvl', val1, ierr)
+  if (val1 .ne. 246) stop 9
+  call get_g2_fixedsurfacetypes('equil_lvl', val1, ierr)
+  if (val1 .ne. 247) stop 9
+  call get_g2_fixedsurfacetypes('shall_convective_cloud_bot_lvl', val1, ierr)
+  if (val1 .ne. 248) stop 9
+  call get_g2_fixedsurfacetypes('shall_convective_cloud_top_lvl', val1, ierr)
+  if (val1 .ne. 249) stop 9
+  call get_g2_fixedsurfacetypes('deep_convective_cloud_bot_lvl', val1, ierr)
+  if (val1 .ne. 251) stop 9
+  call get_g2_fixedsurfacetypes('deep_convective_cloud_top_lvl', val1, ierr)
+  if (val1 .ne. 252) stop 9
+  call get_g2_fixedsurfacetypes('lwst_bot_lvl_of_supercooled_liq_water_lyr', val1, ierr)
+  if (val1 .ne. 253) stop 9
+  call get_g2_fixedsurfacetypes('hghst_top_lvl_of_supercooled_liq_water_lyr', val1, ierr)
+  if (val1 .ne. 254) stop 9
+  call get_g2_fixedsurfacetypes('missing', val1, ierr)
+  if (val1 .ne. 255) stop 9
+  call get_g2_fixedsurfacetypes('hybrid_height_lvl', val1, ierr)
+  if (val1 .ne. 118) stop 9
+  call get_g2_fixedsurfacetypes('hybrid_pres_lvl', val1, ierr)
+  if (val1 .ne. 119) stop 9
+  call get_g2_fixedsurfacetypes('gen_vertical_height_coor', val1, ierr)
+  if (val1 .ne. 150) stop 9
+  call get_g2_fixedsurfacetypes('depth_below_water_lvl', val1, ierr)
+  if (val1 .ne. 161) stop 9
+  call get_g2_fixedsurfacetypes('lake_or_river_bottom', val1, ierr)
+  if (val1 .ne. 162) stop 9
+  call get_g2_fixedsurfacetypes('bottom_of_sediment_layer', val1, ierr)
+  if (val1 .ne. 163) stop 9
+  call get_g2_fixedsurfacetypes('bottom_of_therm_sediment_layer', val1, ierr)
+  if (val1 .ne. 164) stop 9
+  call get_g2_fixedsurfacetypes('bottom_of_sediment_layer_thermal_wave', val1, ierr)
+  if (val1 .ne. 165) stop 9
+  call get_g2_fixedsurfacetypes('maxing_layer', val1, ierr)
+  if (val1 .ne. 166) stop 9
+  call get_g2_fixedsurfacetypes('bottom_root_zone', val1, ierr)
+  if (val1 .ne. 167) stop 9
+  call get_g2_fixedsurfacetypes('topsfc_ice_onsealakeriver', val1, ierr)
+  if (val1 .ne. 174) stop 9
+  call get_g2_fixedsurfacetypes('topsfc_ice_unsnow_onsealakeriver', val1, ierr)
+  if (val1 .ne. 175) stop 9
+  call get_g2_fixedsurfacetypes('bottomsfc_ice_onsealakeriver', val1, ierr)
+  if (val1 .ne. 176) stop 9
+  call get_g2_fixedsurfacetypes('deep_soil', val1, ierr)
+  if (val1 .ne. 177) stop 9
+  call get_g2_fixedsurfacetypes('topsfc_glacierice_inlandice', val1, ierr)
+  if (val1 .ne. 179) stop 9
+  call get_g2_fixedsurfacetypes('deepinland_glacierice', val1, ierr)
+  if (val1 .ne. 180) stop 9
+  call get_g2_fixedsurfacetypes('gridtile_landfrac', val1, ierr)
+  if (val1 .ne. 181) stop 9
+  call get_g2_fixedsurfacetypes('gridtile_waterfrac', val1, ierr)
+  if (val1 .ne. 182) stop 9
+  call get_g2_fixedsurfacetypes('gridtile_icefrac_onsealakeriver', val1, ierr)
+  if (val1 .ne. 183) stop 9
+  call get_g2_fixedsurfacetypes('gridtile_glacierice_inland_icefrac', val1, ierr)
+  if (val1 .ne. 184) stop 9
+  call get_g2_fixedsurfacetypes('lowest_level_vertical_icc', val1, ierr)
+  if (val1 .ne. 13) stop 9
+  call get_g2_fixedsurfacetypes('level_free_convection', val1, ierr)
+  if (val1 .ne. 14) stop 9
+  call get_g2_fixedsurfacetypes('covection_conden_level', val1, ierr)
+  if (val1 .ne. 15) stop 9
+  call get_g2_fixedsurfacetypes('level_neutral_buoy', val1, ierr)
+  if (val1 .ne. 16) stop 9
+  call get_g2_fixedsurfacetypes('soil_level', val1, ierr)
+  if (val1 .ne. 151) stop 9
+  call get_g2_fixedsurfacetypes('lowest_mass_den', val1, ierr)
+  if (val1 .ne. 21) stop 9
+  call get_g2_fixedsurfacetypes('highest_mass_den', val1, ierr)
+  if (val1 .ne. 22) stop 9
+  call get_g2_fixedsurfacetypes('lowest_air_con', val1, ierr)
+  if (val1 .ne. 23) stop 9
+  call get_g2_fixedsurfacetypes('highest_air_con', val1, ierr)
+  if (val1 .ne. 24) stop 9
+  call get_g2_fixedsurfacetypes('highest_rref', val1, ierr)
+  if (val1 .ne. 25) stop 9
+  call get_g2_fixedsurfacetypes('log_hyb_lev', val1, ierr)
+  if (val1 .ne. 113) stop 9
+  call get_g2_fixedsurfacetypes('snow_lev', val1, ierr)
+  if (val1 .ne. 114) stop 9
+  call get_g2_fixedsurfacetypes('sigma_hi_lev', val1, ierr)
+  if (val1 .ne. 115) stop 9
+  call get_g2_fixedsurfacetypes('ocean_model_level', val1, ierr)
+  if (val1 .ne. 168) stop 9
+  call get_g2_fixedsurfacetypes('ocean_level_water_density', val1, ierr)
+  if (val1 .ne. 169) stop 9
+  call get_g2_fixedsurfacetypes('ocean_level_water_potential_temp', val1, ierr)
+  if (val1 .ne. 170) stop 9
+  call get_g2_fixedsurfacetypes('eff_layer_top_level', val1, ierr)
+  if (val1 .ne. 216) stop 9
+  call get_g2_fixedsurfacetypes('eff_layer_bottom_level', val1, ierr)
+  if (val1 .ne. 217) stop 9
+  call get_g2_fixedsurfacetypes('eff_layer', val1, ierr)
+  if (val1 .ne. 218) stop 9
+  call get_g2_fixedsurfacetypes('xxx', val1, ierr)
+  if (ierr .ne. 9) stop 9
+
   print *, 'SUCCESS!!'
 end program test_all_tables
