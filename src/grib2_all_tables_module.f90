@@ -1192,17 +1192,17 @@ contains
   !> - 9 = key not found
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_subcenters(key,value,ierr)
+  subroutine get_g2_subcenters(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXSUBCEN
+    do n=1, MAXSUBCEN
        if (trim(tablec(n)%subcenkey).eq.trim(key)) then
           value=tablec(n)%subcenval
           return
        endif
     enddo
-    print *,'get_g2_subcenters key: ', key,   &
+    print *, 'get_g2_subcenters key: ', key,   &
          ' not found in ON-388 table C'
     ierr=9
     return
@@ -1216,17 +1216,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_versionno(key,value,ierr)
+  subroutine get_g2_versionno(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXVER
+    do n=1, MAXVER
        if (trim(table1_0(n)%verskey).eq.trim(key)) then
           value=table1_0(n)%versval
           return
        endif
     enddo
-    print *,'get_g2_versionno key: ', key,   &
+    print *, 'get_g2_versionno key: ', key,   &
          ' not found in table 1.0'
     ierr=9
     return
@@ -1240,17 +1240,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_loctabversno(key,value,ierr)
+  subroutine get_g2_loctabversno(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXLOCVER
+    do n=1, MAXLOCVER
        if (trim(table1_1(n)%locverskey).eq.trim(key)) then
           value=table1_1(n)%locversval
           return
        endif
     enddo
-    print *,'get_g2_loctabversno key: ', key,   &
+    print *, 'get_g2_loctabversno key: ', key,   &
          ' not found in table 1.1'
     ierr=9
     return
@@ -1264,18 +1264,18 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_sigreftime(key,value,ierr)
+  subroutine get_g2_sigreftime(key, value, ierr)
     !     integer, parameter :: MAXREFTIME=15
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXREFTIME
+    do n=1, MAXREFTIME
        if (trim(table1_2(n)%sigrefkey).eq.trim(key)) then
           value=table1_2(n)%sigrefval
           return
        endif
     enddo
-    print *,'get_g2_sigreftime key: ', key,   &
+    print *, 'get_g2_sigreftime key: ', key,   &
          ' not found in table 1.2'
     ierr=9
     return
@@ -1289,17 +1289,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_prodstatus(key,value,ierr)
+  subroutine get_g2_prodstatus(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXPRODSTATUS
+    do n=1, MAXPRODSTATUS
        if (trim(table1_3(n)%prodstatuskey).eq.trim(key)) then
           value=table1_3(n)%prodstatusval
           return
        endif
     enddo
-    print *,'get_g2_prodstatus key: ', key,   &
+    print *, 'get_g2_prodstatus key: ', key,   &
          ' not found in table 1.3'
     ierr=9
     return
@@ -1313,17 +1313,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_typeofdata(key,value,ierr)
+  subroutine get_g2_typeofdata(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFDATA
+    do n=1, MAXTYPEOFDATA
        if (trim(table1_4(n)%typeofdatakey).eq.trim(key)) then
           value=table1_4(n)%typeofdataval
           return
        endif
     enddo
-    print *,'get_g2_typeofdata key: ', key,   &
+    print *, 'get_g2_typeofdata key: ', key,   &
          ' not found in table 1.4'
     ierr=9
     return
@@ -1337,17 +1337,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_typeofgenproc(key,value,ierr)
+  subroutine get_g2_typeofgenproc(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFGENPROC
+    do n=1, MAXTYPEOFGENPROC
        if (trim(table4_3(n)%typeofgenprockey).eq.trim(key)) then
           value=table4_3(n)%typeofgenprocval
           return
        endif
     enddo
-    print *,'get_g2_typeofgenproc key}: ', key,   &
+    print *, 'get_g2_typeofgenproc key}: ', key,   &
          ' not found in table 4.3'
     ierr=9
     return
@@ -1361,11 +1361,11 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_unitoftimerange(key,value,ierr)
+  subroutine get_g2_unitoftimerange(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXUNITOFTIMERANGE
+    do n=1, MAXUNITOFTIMERANGE
        if (trim(table4_4(n)%unitoftimerangekey).eq.trim(key)) then
           value=table4_4(n)%unitoftimerangeval
           return
@@ -1373,7 +1373,7 @@ contains
     enddo
 
     value=255
-    print *,'get_g2_unitoftimerange key: ', key,   &
+    print *, 'get_g2_unitoftimerange key: ', key,   &
          ' not found in table 4.4'
     ierr=9
     return
@@ -1387,11 +1387,11 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_fixedsurfacetypes(key,value,ierr)
+  subroutine get_g2_fixedsurfacetypes(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXFIXEDSURFACETYPES
+    do n=1, MAXFIXEDSURFACETYPES
        if (trim(table4_5(n)%fixedsurfacetypeskey).eq.trim(key)) then
           value=table4_5(n)%fixedsurfacetypesval
           return
@@ -1399,7 +1399,7 @@ contains
     enddo
 
     value=table4_5(66)%fixedsurfacetypesval
-    !           print *,'get_g2_fixedsurfacetypes key: ', trim(key), value,  &
+    !           print *, 'get_g2_fixedsurfacetypes key: ', trim(key), value,  &
     !                   ' not found in table 4.5'
     !           ierr=9
     return
@@ -1408,7 +1408,7 @@ contains
   !> This subroutine returns the corresponding GRIB2 - Type of statistica
   !> processing
   !>   value for a given short key name based on Table 4.10 of Section 4 Octets 47 (template 8)
-  !>   60 (temp 9), 48 (temp 10), 50 (temp 11), 49 (temp 12), 81 (temp 13), 77 (temp 14), 27 (temp 1001),
+  !>   60 (temp 9), 48 (temp 10), 50 (temp 11), 49 (temp 12), 81 (temp 13), 77 (temp 14), 27 (temp 1001), 
   !>   25 (temp 1002) and 39 (temp 1101)
   !>
   !> @param[in] key - GRIB2 character short key for type of statistical processing from Table 4.10
@@ -1416,19 +1416,19 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_statprocesstypes(key,value,ierr)
-    character(len=*),intent(in) :: key
-    !    integer,intent(out) :: value,ierr
-    integer :: value,ierr
+  subroutine get_g2_statprocesstypes(key, value, ierr)
+    character(len=*), intent(in) :: key
+    !    integer, intent(out) :: value, ierr
+    integer :: value, ierr
     integer :: n
     !
-    do n=1,MAXSTATPROCESSTYPES
+    do n=1, MAXSTATPROCESSTYPES
        if (trim(table4_10(n)%statprocesstypeskey).eq.key) then
           value=table4_10(n)%statprocesstypesval
           return
        endif
     enddo
-    print *,'get_g2_statprocesstypes key: ', key,   &
+    print *, 'get_g2_statprocesstypes key: ', key,   &
          ' not found in table 4.10'
     ierr=9
     return
@@ -1436,7 +1436,7 @@ contains
   !>
   !> This subroutine returns the corresponding GRIB2 - Type of time intervals
   !>   value for a given short key name based on Table 4.11 of Section 4 Octets 48 (template 8)
-  !>   61 (temp 9), 49 (temp 10), 51 (temp 11), 50 (temp 12), 82 (temp 13), 78 (tem p 14), 28 (temp 1001),
+  !>   61 (temp 9), 49 (temp 10), 51 (temp 11), 50 (temp 12), 82 (temp 13), 78 (tem p 14), 28 (temp 1001), 
   !>   and 40 (temp 1101)
   !>
   !> @param[in] key - GRIB2 character short key for type of statistical processing from Table 4.11
@@ -1444,17 +1444,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-04-03
-  subroutine get_g2_typeoftimeintervals(key,value,ierr)
+  subroutine get_g2_typeoftimeintervals(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFTIMEINTVLS
+    do n=1, MAXTYPEOFTIMEINTVLS
        if (trim(table4_11(n)%typeoftimeintervalskey).eq.key) then
           value=table4_11(n)%typeoftimeintervalsval
           return
        endif
     enddo
-    print *,'get_g2_typeoftimeintervals key: ', key,   &
+    print *, 'get_g2_typeoftimeintervals key: ', key,   &
          ' not found in table 4.11'
     ierr=9
     return
@@ -1462,18 +1462,18 @@ contains
   !>
   !> This subroutine returns the corresponding GRIB2 - Type of intervals
   !>   value for a given short key name based on Table 4.91 of Section 4 Octets 14 (template 44)
-  !>   14 (temp 45), 14 (temp 46), 15 (temp 47),14 and 25 (temp 48)
+  !>   14 (temp 45), 14 (temp 46), 15 (temp 47), 14 and 25 (temp 48)
   !>
   !> @param[in] key - GRIB2 character short key for type of intervals from Table 4.91
   !> @param[out] value - corresponding GRIB2 value from Table 4.91
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-04-03
-  subroutine get_g2_typeofintervals(key,value,ierr)
+  subroutine get_g2_typeofintervals(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFINTVLS
+    do n=1, MAXTYPEOFINTVLS
        if (trim(table4_91(n)%typeofintervalskey).eq.trim(key)) then
           value=table4_91(n)%typeofintervalsval
           return
@@ -1484,7 +1484,7 @@ contains
        value=255
        return
     endif
-    print *,'get_g2_typeofintervals key: ', key,   &
+    print *, 'get_g2_typeofintervals key: ', key,   &
          ' not found in table 4.91'
     ierr=9
     return
@@ -1492,7 +1492,7 @@ contains
   !>
   !> This subroutine returns the corresponding GRIB2 - Type of aerosol
   !>   value for a given short key name based on Table 4.233 of Section 4 Octets 12-13
-  !>   (template 44), 12-13 (temp 45), 12-13 (temp 46), 13-14 (temp 47),
+  !>   (template 44), 12-13 (temp 45), 12-13 (temp 46), 13-14 (temp 47), 
   !>   12-13 (temp 48)
   !>
   !> @param[in] key - GRIB2 character short key for type of aerosol from Table 4.233
@@ -1500,11 +1500,11 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-04-03
-  subroutine get_g2_typeofaerosol(key,value,ierr)
+  subroutine get_g2_typeofaerosol(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFAEROSOL
+    do n=1, MAXTYPEOFAEROSOL
        if (trim(table4_233(n)%typeofaerosolkey).eq.trim(key)) then
           value=table4_233(n)%typeofaerosolval
           return
@@ -1515,7 +1515,7 @@ contains
        value=65535
        return
     endif
-    print *,'get_g2_typeofaerosol key: ', key,   &
+    print *, 'get_g2_typeofaerosol key: ', key,   &
          ' not found in table 4.233'
     ierr=9
     return
@@ -1530,17 +1530,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_on388origincenters(key,value,ierr)
+  subroutine get_g2_on388origincenters(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXORIGINCENTERS
+    do n=1, MAXORIGINCENTERS
        if (trim(on388_table0(n)%origincenterskey).eq.trim(key)) then
           value=on388_table0(n)%origincentersval
           return
        endif
     enddo
-    print *,'get_g2_on388origincenters key: ', key,   &
+    print *, 'get_g2_on388origincenters key: ', key,   &
          ' not found in ON-388 - table 0'
     ierr=9
     return
@@ -1555,17 +1555,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
-  subroutine get_g2_on388genproc(key,value,ierr)
+  subroutine get_g2_on388genproc(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXGENPROC
+    do n=1, MAXGENPROC
        if (trim(on388_tablea(n)%genprockey).eq.trim(key)) then
           value=on388_tablea(n)%genprocval
           return
        endif
     enddo
-    print *,'get_g2_on388genproc key: ', key,   &
+    print *, 'get_g2_on388genproc key: ', key,   &
          ' not found in ON-388 - table A'
     ierr=9
     return
@@ -1579,18 +1579,18 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-08
-  subroutine get_g2_typeoforigfieldvals(key,value,ierr)
+  subroutine get_g2_typeoforigfieldvals(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFORIGFIELDVAL
+    do n=1, MAXTYPEOFORIGFIELDVAL
        if (trim(table5_1(n)%typeoforigfieldvalskey).eq.trim(key)) then
           value=table5_1(n)%typeoforigfieldvals
           return
        endif
     enddo
 
-    print *,'get_g2_typeoforigfieldvals key: ', key,   &
+    print *, 'get_g2_typeoforigfieldvals key: ', key,   &
          ' not found in table 5.1'
     ierr=9
     return
@@ -1605,17 +1605,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author J.Wang                   ORG: NCEP/EMC    @date 2012-02-20
-  subroutine get_g2_ordofspcdiffvals(key,value,ierr)
+  subroutine get_g2_ordofspcdiffvals(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXORDOFSPTDIFF
+    do n=1, MAXORDOFSPTDIFF
        if (trim(table5_6(n)%ordofsptdiffkey).eq.trim(key)) then
           value=table5_6(n)%ordofsptdiffvals
           return
        endif
     enddo
-    print *,'get_g2_ordofsptdiffvals key: ', key,   &
+    print *, 'get_g2_ordofsptdiffvals key: ', key,   &
          ' not found in table 5.6'
     ierr=9
     value=1
@@ -1630,17 +1630,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-08
-  subroutine get_g2_typeofcompression(key,value,ierr)
+  subroutine get_g2_typeofcompression(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFCOMPRESSION
+    do n=1, MAXTYPEOFCOMPRESSION
        if (trim(table5_40(n)%typeofcompressionkey).eq.trim(key)) then
           value=table5_40(n)%typeofcompressionvals
           return
        endif
     enddo
-    print *,'get_g2_typeofcompression key: ', key,   &
+    print *, 'get_g2_typeofcompression key: ', key,   &
          ' not found in table 5.40'
     ierr=9
     return
@@ -1658,17 +1658,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-08
-  subroutine get_g2_sec5packingmethod(key,value,ierr)
+  subroutine get_g2_sec5packingmethod(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFPACKINGMETHOD
+    do n=1, MAXTYPEOFPACKINGMETHOD
        if (trim(table5_0(n)%packingmethodkey).eq.trim(key)) then
           value=table5_0(n)%packingmethodvals
           return
        endif
     enddo
-    print *,'get_g2_sec5packingmethod key: ', key,   &
+    print *, 'get_g2_sec5packingmethod key: ', key,   &
          ' not found in table 5.0'
     ierr=9
     return
@@ -1683,7 +1683,7 @@ contains
   !> - listsec0(2)  - Edition number - 2 for GRIB2
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-01
-  subroutine g2sec0(idisc,listsec0)
+  subroutine g2sec0(idisc, listsec0)
     integer :: idisc
     integer :: listsec0(2)
     !
@@ -1709,33 +1709,33 @@ contains
   !> @param[out] listsec1 - GRIB2 Section 1 Identification Section values array
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-01
-  subroutine g2sec1(origin_key,subcen_key,vers_key,lvers_key,sigreftime_key,refyear_val, &
-       refmon_val,refday_val,refhour_val,refmin_val,refsec_val,prodstatus_key, &
-       typeofdata_key,listsec1)
-    !    integer,intent(inout) :: listsec1(13)
+  subroutine g2sec1(origin_key, subcen_key, vers_key, lvers_key, sigreftime_key, refyear_val, &
+       refmon_val, refday_val, refhour_val, refmin_val, refsec_val, prodstatus_key, &
+       typeofdata_key, listsec1)
+    !    integer, intent(inout) :: listsec1(13)
     integer :: listsec1(13)
-    integer :: refyear_val,refmon_val,refday_val,refhour_val,refmin_val,refsec_val
-    character(len=*) :: origin_key,subcen_key,vers_key,lvers_key,  &
-         sigreftime_key,prodstatus_key,typeofdata_key
+    integer :: refyear_val, refmon_val, refday_val, refhour_val, refmin_val, refsec_val
+    character(len=*) :: origin_key, subcen_key, vers_key, lvers_key,  &
+         sigreftime_key, prodstatus_key, typeofdata_key
     !
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     !
-    call get_g2_on388origincenters(origin_key,value,ierr)
+    call get_g2_on388origincenters(origin_key, value, ierr)
     listsec1(1) = value
     !
-    call get_g2_subcenters(subcen_key,value,ierr)
+    call get_g2_subcenters(subcen_key, value, ierr)
     listsec1(2) = value
     !
-    call get_g2_versionno(vers_key,value,ierr)
+    call get_g2_versionno(vers_key, value, ierr)
     listsec1(3) = value
     !
-    call get_g2_loctabversno(lvers_key,value,ierr)
+    call get_g2_loctabversno(lvers_key, value, ierr)
     listsec1(4) = value
     !
-    call get_g2_sigreftime(sigreftime_key,value,ierr)
+    call get_g2_sigreftime(sigreftime_key, value, ierr)
     listsec1(5) = value
     !
-    ! Set the time yyyy,mm,dd,hh,min,sec
+    ! Set the time yyyy, mm, dd, hh, min, sec
     !
     listsec1(6) = refyear_val
     listsec1(7) = refmon_val
@@ -1744,10 +1744,10 @@ contains
     listsec1(10) = refmin_val
     listsec1(11) = refsec_val
     !
-    call get_g2_prodstatus(prodstatus_key,value,ierr)
+    call get_g2_prodstatus(prodstatus_key, value, ierr)
     listsec1(12) = value
     !
-    call get_g2_typeofdata(typeofdata_key,value,ierr)
+    call get_g2_typeofdata(typeofdata_key, value, ierr)
     listsec1(13) = value
     !
   end subroutine g2sec1
@@ -1773,22 +1773,22 @@ contains
   !> @param[out] ipdstmpl0 - GRIB2 PDS Template 4.0 listing
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-01
-  subroutine g2sec4_temp0(icatg,iparm,typ_gen_proc_key,                         &
-       gen_proc_or_mod_key,hrs_obs_cutoff,min_obs_cutoff,    &
-       unit_of_time_key,fcst_time,lvl_type1,scale_fac1,      &
-       scaled_val1,lvl_type2,scale_fac2,scaled_val2,         &
+  subroutine g2sec4_temp0(icatg, iparm, typ_gen_proc_key,                         &
+       gen_proc_or_mod_key, hrs_obs_cutoff, min_obs_cutoff,    &
+       unit_of_time_key, fcst_time, lvl_type1, scale_fac1,      &
+       scaled_val1, lvl_type2, scale_fac2, scaled_val2,         &
        ipdstmpl0)
-    integer(4),intent(in) :: icatg,iparm,hrs_obs_cutoff,min_obs_cutoff,         &
-         fcst_time,scale_fac1,scaled_val1,scale_fac2,scaled_val2
-    !     integer(4),intent(inout)  :: bckgnd_gen_proc_id    ! defined by the center
+    integer(4), intent(in) :: icatg, iparm, hrs_obs_cutoff, min_obs_cutoff,         &
+         fcst_time, scale_fac1, scaled_val1, scale_fac2, scaled_val2
+    !     integer(4), intent(inout)  :: bckgnd_gen_proc_id    ! defined by the center
     !
-    character(len=*),intent(in) :: typ_gen_proc_key,gen_proc_or_mod_key,       &
-         unit_of_time_key,lvl_type1,lvl_type2
+    character(len=*), intent(in) :: typ_gen_proc_key, gen_proc_or_mod_key,       &
+         unit_of_time_key, lvl_type1, lvl_type2
     !
-    integer(4),intent(inout)  :: ipdstmpl0(15)
+    integer(4), intent(inout)  :: ipdstmpl0(15)
     !
     !local vars
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     integer(4) :: bckgnd_gen_proc_id    ! defined by the center
     !
     bckgnd_gen_proc_id=0    ! defined by the center
@@ -1796,27 +1796,27 @@ contains
     ipdstmpl0(1) = icatg
     ipdstmpl0(2) = iparm
     !
-    call get_g2_typeofgenproc(typ_gen_proc_key,value,ierr)
+    call get_g2_typeofgenproc(typ_gen_proc_key, value, ierr)
     ipdstmpl0(3) = value
     !
     ipdstmpl0(4) = bckgnd_gen_proc_id
     !
-    call get_g2_on388genproc(gen_proc_or_mod_key,value,ierr)
+    call get_g2_on388genproc(gen_proc_or_mod_key, value, ierr)
     ipdstmpl0(5) = value
     !
     ipdstmpl0(6) = hrs_obs_cutoff
     ipdstmpl0(7) = min_obs_cutoff
     !
-    call get_g2_unitoftimerange(unit_of_time_key,value,ierr)
+    call get_g2_unitoftimerange(unit_of_time_key, value, ierr)
     ipdstmpl0(8) = value
     ipdstmpl0(9) = fcst_time
     !
-    call get_g2_fixedsurfacetypes(lvl_type1,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type1, value, ierr)
     ipdstmpl0(10) = value
     ipdstmpl0(11) = scale_fac1
     ipdstmpl0(12) = scaled_val1
     !
-    call get_g2_fixedsurfacetypes(lvl_type2,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type2, value, ierr)
     ipdstmpl0(13) = value
     !
     ipdstmpl0(14) = scale_fac2
@@ -1870,66 +1870,66 @@ contains
   !>                              is done, in units defined by the previous octet
   !> @param[in] stat_unit_time_key_succ - Indicator of unit of time for the increment between the
   !>                                 successive fields used (see Code table 4.4)
-  !> @param[in] time_inc_betwn_succ_fld - Time increment between successive fields,
+  !> @param[in] time_inc_betwn_succ_fld - Time increment between successive fields, 
   !>                                  in units defined by the previous octet (see Notes 3 & 4)
   !> @param[out] ipdstmpl8 - GRIB2 PDS Template 4.8 listing
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-01
-  subroutine g2sec4_temp8(icatg,iparm,typ_gen_proc_key,gen_proc_or_mod_key,     &
-       hrs_obs_cutoff,min_obs_cutoff,unit_of_time_key,       &
-       fcst_time,lvl_type1,scale_fac1,scaled_val1,lvl_type2, &
-       scale_fac2,scaled_val2,year_intvl,                    &
-       mon_intvl,day_intvl,hour_intvl,min_intvl,sec_intvl,   &
-       num_time_range,stat_miss_val,type_of_stat_proc,       &
-       type_of_time_inc,stat_unit_time_key,                  &
-       leng_time_range_stat,stat_unit_time_key_succ,         &
-       time_inc_betwn_succ_fld,ipdstmpl8)
+  subroutine g2sec4_temp8(icatg, iparm, typ_gen_proc_key, gen_proc_or_mod_key,     &
+       hrs_obs_cutoff, min_obs_cutoff, unit_of_time_key,       &
+       fcst_time, lvl_type1, scale_fac1, scaled_val1, lvl_type2, &
+       scale_fac2, scaled_val2, year_intvl,                    &
+       mon_intvl, day_intvl, hour_intvl, min_intvl, sec_intvl,   &
+       num_time_range, stat_miss_val, type_of_stat_proc,       &
+       type_of_time_inc, stat_unit_time_key,                  &
+       leng_time_range_stat, stat_unit_time_key_succ,         &
+       time_inc_betwn_succ_fld, ipdstmpl8)
     !
-    integer(4),intent(in) :: icatg,iparm,hrs_obs_cutoff,min_obs_cutoff,fcst_time, &
-         scale_fac1,scaled_val1,scale_fac2,scaled_val2
-    integer(4),intent(in) :: year_intvl,mon_intvl,day_intvl,hour_intvl,min_intvl, &
-         sec_intvl,num_time_range,stat_miss_val, &
-         leng_time_range_stat,time_inc_betwn_succ_fld
+    integer(4), intent(in) :: icatg, iparm, hrs_obs_cutoff, min_obs_cutoff, fcst_time, &
+         scale_fac1, scaled_val1, scale_fac2, scaled_val2
+    integer(4), intent(in) :: year_intvl, mon_intvl, day_intvl, hour_intvl, min_intvl, &
+         sec_intvl, num_time_range, stat_miss_val, &
+         leng_time_range_stat, time_inc_betwn_succ_fld
     !
-    character(len=*),intent(in) :: typ_gen_proc_key,gen_proc_or_mod_key, &
-         unit_of_time_key,lvl_type1,lvl_type2, &
-         type_of_stat_proc,type_of_time_inc, &
-         stat_unit_time_key,stat_unit_time_key_succ
+    character(len=*), intent(in) :: typ_gen_proc_key, gen_proc_or_mod_key, &
+         unit_of_time_key, lvl_type1, lvl_type2, &
+         type_of_stat_proc, type_of_time_inc, &
+         stat_unit_time_key, stat_unit_time_key_succ
     !
     integer(4)               :: bckgnd_gen_proc_id    ! defined by the center
     !
-    integer(4),intent(inout) :: ipdstmpl8(29)         ! currently works only for n=1
+    integer(4), intent(inout) :: ipdstmpl8(29)         ! currently works only for n=1
     ! later on, this will be generalized
     !
     !-- local vars
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     !
     bckgnd_gen_proc_id=0
     !
     ipdstmpl8(1) = icatg
     ipdstmpl8(2) = iparm
     !
-    call get_g2_typeofgenproc(typ_gen_proc_key,value,ierr)
+    call get_g2_typeofgenproc(typ_gen_proc_key, value, ierr)
     ipdstmpl8(3) = value
     !
     ipdstmpl8(4) = bckgnd_gen_proc_id
     !
-    call get_g2_on388genproc(gen_proc_or_mod_key,value,ierr)
+    call get_g2_on388genproc(gen_proc_or_mod_key, value, ierr)
     ipdstmpl8(5) = value
     !
     ipdstmpl8(6) = hrs_obs_cutoff
     ipdstmpl8(7) = min_obs_cutoff
     !
-    call get_g2_unitoftimerange(unit_of_time_key,value,ierr)
+    call get_g2_unitoftimerange(unit_of_time_key, value, ierr)
     ipdstmpl8(8) = value
     ipdstmpl8(9) = fcst_time
     !
-    call get_g2_fixedsurfacetypes(lvl_type1,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type1, value, ierr)
     ipdstmpl8(10) = value
     ipdstmpl8(11) = scale_fac1
     ipdstmpl8(12) = scaled_val1
     !
-    call get_g2_fixedsurfacetypes(lvl_type2,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type2, value, ierr)
     ipdstmpl8(13) = value
     !
     ipdstmpl8(14) = scale_fac2
@@ -1944,20 +1944,20 @@ contains
     ipdstmpl8(22) = num_time_range ! choose n=1 for this case
     ipdstmpl8(23) = stat_miss_val  ! choose 0 for this case
     !
-    call get_g2_statprocesstypes(type_of_stat_proc,value,ierr)
+    call get_g2_statprocesstypes(type_of_stat_proc, value, ierr)
     ipdstmpl8(24) = value  ! types_of_stat_proc='accumulation'
     !
-    call get_g2_typeoftimeintervals(type_of_time_inc,value,ierr)
+    call get_g2_typeoftimeintervals(type_of_time_inc, value, ierr)
     ipdstmpl8(25) = value  ! type_of_time_inc='same_start_time_fcst_fcst_time_inc'
     ! value = 2 (Successive times processed have same start
     !       time of forecast, forecast time is incremented)
     !
-    call get_g2_unitoftimerange(stat_unit_time_key,value,ierr)
+    call get_g2_unitoftimerange(stat_unit_time_key, value, ierr)
     ipdstmpl8(26) = value  ! stat_unit_time_key='hour'
     ! value = 1
     ipdstmpl8(27) = leng_time_range_stat  ! value = 6
     !
-    call get_g2_unitoftimerange(stat_unit_time_key_succ,value,ierr)
+    call get_g2_unitoftimerange(stat_unit_time_key_succ, value, ierr)
     ! stat_unit_time_key_succ='missing'
     ipdstmpl8(28) = value  ! value = 255
     !
@@ -1992,63 +1992,63 @@ contains
   !> @param[out] ipdstmpl44 - GRIB2 PDS Template 4.44 listing
   !>
   !>   @author J. WANG                  ORG: NCEP/EMC  @date 2012-01-25
-  subroutine g2sec4_temp44(icatg,iparm,aer_type,typ_intvl_size,                 &
-       scale_fac1_size,scale_val1_size,scale_fac2_size,      &
-       scale_val2_size,typ_gen_proc_key,                     &
-       gen_proc_or_mod_key,hrs_obs_cutoff,min_obs_cutoff,    &
-       unit_of_time_key,fcst_time,lvl_type1,scale_fac1,      &
-       scaled_val1,lvl_type2,scale_fac2,scaled_val2,         &
+  subroutine g2sec4_temp44(icatg, iparm, aer_type, typ_intvl_size, &
+       scale_fac1_size, scale_val1_size, scale_fac2_size, &
+       scale_val2_size, typ_gen_proc_key, &
+       gen_proc_or_mod_key, hrs_obs_cutoff, min_obs_cutoff, &
+       unit_of_time_key, fcst_time, lvl_type1, scale_fac1, &
+       scaled_val1, lvl_type2, scale_fac2, scaled_val2, &
        ipdstmpl44)
-    integer(4),intent(in) :: icatg,iparm,hrs_obs_cutoff,min_obs_cutoff,         &
-         scale_fac1_size,scale_fac2_size,                              &
-         fcst_time,scale_fac1,scaled_val1, scale_fac2,scaled_val2
-    real,intent(in) :: scale_val1_size,scale_val2_size
+    integer(4), intent(in) :: icatg, iparm, hrs_obs_cutoff, min_obs_cutoff, &
+         scale_fac1_size, scale_fac2_size, &
+         fcst_time, scale_fac1, scaled_val1, scale_fac2, scaled_val2
+    real, intent(in) :: scale_val1_size, scale_val2_size
     !
-    character(len=*),intent(in) :: aer_type,typ_intvl_size,typ_gen_proc_key,    &
-         gen_proc_or_mod_key,unit_of_time_key,lvl_type1,lvl_type2
+    character(len=*), intent(in) :: aer_type, typ_intvl_size, typ_gen_proc_key, &
+         gen_proc_or_mod_key, unit_of_time_key, lvl_type1, lvl_type2
     !
-    integer(4),intent(inout)  :: ipdstmpl44(21)
+    integer(4), intent(inout)  :: ipdstmpl44(21)
     !
     !local vars
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     integer(4) :: bckgnd_gen_proc_id    ! defined by the center
     !
-    bckgnd_gen_proc_id=0    ! defined by the center
+    bckgnd_gen_proc_id = 0    ! defined by the center
     !
     ipdstmpl44(1) = icatg
     ipdstmpl44(2) = iparm
     !
-    call get_g2_typeofaerosol(aer_type,value,ierr)
+    call get_g2_typeofaerosol(aer_type, value, ierr)
     ipdstmpl44(3) = value
     !
-    call get_g2_typeofintervals(typ_intvl_size,value,ierr)
+    call get_g2_typeofintervals(typ_intvl_size, value, ierr)
     ipdstmpl44(4) = value
     ipdstmpl44(5) = scale_fac1_size
     ipdstmpl44(6) = scale_val1_size
     ipdstmpl44(7) = scale_fac2_size
     ipdstmpl44(8) = scale_val2_size
     !
-    call get_g2_typeofgenproc(typ_gen_proc_key,value,ierr)
+    call get_g2_typeofgenproc(typ_gen_proc_key, value, ierr)
     ipdstmpl44(9) = value
     !
     ipdstmpl44(10) = bckgnd_gen_proc_id
     !
-    call get_g2_on388genproc(gen_proc_or_mod_key,value,ierr)
+    call get_g2_on388genproc(gen_proc_or_mod_key, value, ierr)
     ipdstmpl44(11) = value
     !
     ipdstmpl44(12) = hrs_obs_cutoff
     ipdstmpl44(13) = min_obs_cutoff
     !
-    call get_g2_unitoftimerange(unit_of_time_key,value,ierr)
+    call get_g2_unitoftimerange(unit_of_time_key, value, ierr)
     ipdstmpl44(14) = value
     ipdstmpl44(15) = fcst_time
     !
-    call get_g2_fixedsurfacetypes(lvl_type1,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type1, value, ierr)
     ipdstmpl44(16) = value
     ipdstmpl44(17) = scale_fac1
     ipdstmpl44(18) = scaled_val1
     !
-    call get_g2_fixedsurfacetypes(lvl_type2,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type2, value, ierr)
     ipdstmpl44(19) = value
     !
     ipdstmpl44(20) = scale_fac2
@@ -2088,32 +2088,32 @@ contains
   !> @param[out] ipdstmpl48 - GRIB2 PDS Template 4.48 listing
   !>
   !>   @author J. WANG                  ORG: NCEP/EMC  @date 2012-01-25
-  subroutine g2sec4_temp48(icatg,iparm,aer_type,typ_intvl_size,                 &
-       scale_fac1_size,scale_val1_size,scale_fac2_size,      &
-       scale_val2_size,typ_intvl_wavelength,                 &
-       scale_fac1_wavelength,scale_val1_wavelength,          &
-       scale_fac2_wavelength,scale_val2_wavelength,          &
+  subroutine g2sec4_temp48(icatg, iparm, aer_type, typ_intvl_size,                 &
+       scale_fac1_size, scale_val1_size, scale_fac2_size,      &
+       scale_val2_size, typ_intvl_wavelength,                 &
+       scale_fac1_wavelength, scale_val1_wavelength,          &
+       scale_fac2_wavelength, scale_val2_wavelength,          &
        typ_gen_proc_key, gen_proc_or_mod_key,                &
-       hrs_obs_cutoff,min_obs_cutoff,                        &
-       unit_of_time_key,fcst_time,lvl_type1,scale_fac1,      &
-       scaled_val1,lvl_type2,scale_fac2,scaled_val2,         &
+       hrs_obs_cutoff, min_obs_cutoff,                        &
+       unit_of_time_key, fcst_time, lvl_type1, scale_fac1,      &
+       scaled_val1, lvl_type2, scale_fac2, scaled_val2,         &
        ipdstmpl48)
-    integer(4),intent(in) :: icatg,iparm,hrs_obs_cutoff,min_obs_cutoff,         &
-         scale_fac1_size,scale_fac2_size, scale_fac1_wavelength,       &
+    integer(4), intent(in) :: icatg, iparm, hrs_obs_cutoff, min_obs_cutoff,         &
+         scale_fac1_size, scale_fac2_size, scale_fac1_wavelength,       &
          scale_fac2_wavelength,                                        &
-         fcst_time,scale_fac1,scaled_val1,                             &
-         scale_fac2,scaled_val2
-    real,intent(in) :: scale_val1_size,scale_val2_size,scale_val1_wavelength,   &
+         fcst_time, scale_fac1, scaled_val1,                             &
+         scale_fac2, scaled_val2
+    real, intent(in) :: scale_val1_size, scale_val2_size, scale_val1_wavelength,   &
          scale_val2_wavelength
     !
-    character(len=*),intent(in) :: aer_type,typ_intvl_size,                     &
-         typ_intvl_wavelength,typ_gen_proc_key,                        &
-         gen_proc_or_mod_key,unit_of_time_key,lvl_type1,lvl_type2
+    character(len=*), intent(in) :: aer_type, typ_intvl_size,                     &
+         typ_intvl_wavelength, typ_gen_proc_key,                        &
+         gen_proc_or_mod_key, unit_of_time_key, lvl_type1, lvl_type2
     !
-    integer(4),intent(inout)  :: ipdstmpl48(26)
+    integer(4), intent(inout)  :: ipdstmpl48(26)
     !
     !local vars
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     integer(4) :: bckgnd_gen_proc_id    ! defined by the center
     !
     bckgnd_gen_proc_id=0    ! defined by the center
@@ -2121,44 +2121,44 @@ contains
     ipdstmpl48(1) = icatg
     ipdstmpl48(2) = iparm
     !
-    call get_g2_typeofaerosol(aer_type,value,ierr)
+    call get_g2_typeofaerosol(aer_type, value, ierr)
     ipdstmpl48(3) = value
     !
-    call get_g2_typeofintervals(typ_intvl_size,value,ierr)
+    call get_g2_typeofintervals(typ_intvl_size, value, ierr)
     ipdstmpl48(4) = value
     ipdstmpl48(5) = scale_fac1_size
     ipdstmpl48(6) = nint(scale_val1_size)
     ipdstmpl48(7) = scale_fac2_size
     ipdstmpl48(8) = nint(scale_val2_size)
     !
-    call get_g2_typeofintervals(typ_intvl_wavelength,value,ierr)
+    call get_g2_typeofintervals(typ_intvl_wavelength, value, ierr)
     ipdstmpl48(9) = value
     ipdstmpl48(10) = scale_fac1_wavelength
     ipdstmpl48(11) = nint(scale_val1_wavelength)
     ipdstmpl48(12) = scale_fac2_wavelength
     ipdstmpl48(13) = nint(scale_val2_wavelength)
     !
-    call get_g2_typeofgenproc(typ_gen_proc_key,value,ierr)
+    call get_g2_typeofgenproc(typ_gen_proc_key, value, ierr)
     ipdstmpl48(14) = value
     !
     ipdstmpl48(15) = bckgnd_gen_proc_id
     !
-    call get_g2_on388genproc(gen_proc_or_mod_key,value,ierr)
+    call get_g2_on388genproc(gen_proc_or_mod_key, value, ierr)
     ipdstmpl48(16) = value
     !
     ipdstmpl48(17) = hrs_obs_cutoff
     ipdstmpl48(18) = min_obs_cutoff
     !
-    call get_g2_unitoftimerange(unit_of_time_key,value,ierr)
+    call get_g2_unitoftimerange(unit_of_time_key, value, ierr)
     ipdstmpl48(19) = value
     ipdstmpl48(20) = fcst_time
     !
-    call get_g2_fixedsurfacetypes(lvl_type1,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type1, value, ierr)
     ipdstmpl48(21) = value
     ipdstmpl48(22) = scale_fac1
     ipdstmpl48(23) = scaled_val1
     !
-    call get_g2_fixedsurfacetypes(lvl_type2,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type2, value, ierr)
     ipdstmpl48(24) = value
     !
     ipdstmpl48(25) = scale_fac2
@@ -2175,17 +2175,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author Boi Vuong         ORG: W/SIB     @date 2015-01-09
-  subroutine get_g2_typeofensfcst(key,value,ierr)
+  subroutine get_g2_typeofensfcst(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFENSFCST
+    do n=1, MAXTYPEOFENSFCST
        if (trim(table4_6(n)%typeofensfcstkey).eq.trim(key)) then
           value=table4_6(n)%typeofensfcstval
           return
        endif
     enddo
-    print *,'get_g2_typeofensfcst key: ', key,   &
+    print *, 'get_g2_typeofensfcst key: ', key,   &
          ' not found in table 4.6'
     ierr=9
     return
@@ -2199,17 +2199,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author Boi Vuong         ORG: W/SIB     @date 2015-01-09
-  subroutine get_g2_typeofderivefcst(key,value,ierr)
+  subroutine get_g2_typeofderivefcst(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFDERIVEFCST
+    do n=1, MAXTYPEOFDERIVEFCST
        if (trim(table4_7(n)%typeofderivefcstkey).eq.trim(key)) then
           value=table4_7(n)%typeofderivefcstval
           return
        endif
     enddo
-    print *,'get_g2_typeofderivefcst key: ', key,   &
+    print *, 'get_g2_typeofderivefcst key: ', key,   &
          ' not found in table 4.7'
     ierr=9
     return
@@ -2236,11 +2236,11 @@ contains
   !> - ifield5(5): type of original field values (See Code Table 5.1)
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-01
-  subroutine g2sec5_temp0(dec_scale_fac,bin_scale_fac,tlnumbits,ifield5)
-    integer(4),intent(in) :: bin_scale_fac,dec_scale_fac,tlnumbits
-    integer(4),intent(out) :: ifield5(5)
+  subroutine g2sec5_temp0(dec_scale_fac, bin_scale_fac, tlnumbits, ifield5)
+    integer(4), intent(in) :: bin_scale_fac, dec_scale_fac, tlnumbits
+    integer(4), intent(out) :: ifield5(5)
     !     character(len=50) :: type_of_field
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     !
     ifield5(1) = 0 ! Any value. Will be later overwritten
     ifield5(2) = bin_scale_fac
@@ -2250,7 +2250,7 @@ contains
     !
   end subroutine g2sec5_temp0
   !>
-  !> This subroutine returns the section 5 list array with a given binary,
+  !> This subroutine returns the section 5 list array with a given binary, 
   !>    and decimal scale factor from GRIB2 - GRID Template 5.2 Grid point data -
   !>    complex packing
   !>
@@ -2265,12 +2265,12 @@ contains
   !>             spatial differencing
   !>
   !>   @author J.Wang                   ORG: W/EMC    @date 2012-02-20
-  subroutine g2sec5_temp2(dec_scale_fac,bin_scale_fac,ifield5)
+  subroutine g2sec5_temp2(dec_scale_fac, bin_scale_fac, ifield5)
     !
-    integer(4),intent(inout)  :: ifield5(16)
-    integer(4),intent(in) :: dec_scale_fac,bin_scale_fac
+    integer(4), intent(inout)  :: ifield5(16)
+    integer(4), intent(in) :: dec_scale_fac, bin_scale_fac
     !
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     !
     ifield5=0
     ifield5(1) = 0 ! Any value. Will be later overwritten
@@ -2279,7 +2279,7 @@ contains
     !
   end subroutine g2sec5_temp2
   !>
-  !> This subroutine returns the section 5 list array with a given binary,
+  !> This subroutine returns the section 5 list array with a given binary, 
   !>    and decimal scale factor from GRIB2 - GRID Template 5.3 Grid point data -
   !>    complex packing with spatial difference
   !>
@@ -2295,27 +2295,27 @@ contains
   !>             spatial differencing
   !>
   !>   @author J.Wang                   ORG: W/EMC    @date 2012-02-20
-  subroutine g2sec5_temp3(dec_scale_fac,bin_scale_fac,order_of_sptdiff,   &
+  subroutine g2sec5_temp3(dec_scale_fac, bin_scale_fac, order_of_sptdiff,   &
        ifield5)
     !
-    integer(4),intent(in) :: dec_scale_fac,bin_scale_fac
-    character(*),intent(in) :: order_of_sptdiff
-    integer(4),intent(out) :: ifield5(18)
+    integer(4), intent(in) :: dec_scale_fac, bin_scale_fac
+    character(*), intent(in) :: order_of_sptdiff
+    integer(4), intent(out) :: ifield5(18)
     !
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     !
     ifield5=0
     ifield5(1) = 0 ! Any value. Will be later overwritten
     ifield5(2) = bin_scale_fac
     ifield5(3) = dec_scale_fac
     !
-    call get_g2_ordofspcdiffvals(order_of_sptdiff,value,ierr)
+    call get_g2_ordofspcdiffvals(order_of_sptdiff, value, ierr)
     ifield5(17) = value
     !
   end subroutine g2sec5_temp3
   !>
   !> This subroutine returns the section 5 list array for a given decimal
-  !>   scale factor (D),type of original field value (Table 5.40) and type of compression used
+  !>   scale factor (D), type of original field value (Table 5.40) and type of compression used
   !>   from GRIB2 - GRID Template 5.40 Grid point data - JPEG 2000 Code Stream Format
   !>
   !> PROGRAM HISTORY LOG:
@@ -2340,18 +2340,18 @@ contains
   !>                                         Otherwise, set to missing (see Note 3)
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-01
-  subroutine g2sec5_temp40(dec_scale_fac,bin_scale_fac,tlnumbits,                   &
-       type_of_compression,ifield5)
+  subroutine g2sec5_temp40(dec_scale_fac, bin_scale_fac, tlnumbits,                   &
+       type_of_compression, ifield5)
     !
-    integer(4),intent(in) :: bin_scale_fac,dec_scale_fac,tlnumbits
-    character(*),intent(in) :: type_of_compression
-    integer(4),intent(inout) :: ifield5(7)
+    integer(4), intent(in) :: bin_scale_fac, dec_scale_fac, tlnumbits
+    character(*), intent(in) :: type_of_compression
+    integer(4), intent(inout) :: ifield5(7)
     !
     !--- local variable
-    integer(4) :: value,ierr
-    integer,parameter :: MAX_NUMBIT=16
+    integer(4) :: value, ierr
+    integer, parameter :: MAX_NUMBIT=16
     integer ibm
-    integer,allocatable   :: mg(:)
+    integer, allocatable   :: mg(:)
     !
     ifield5(1) = 0 ! Any value. Will be later overwritten
     ifield5(2) = bin_scale_fac
@@ -2359,10 +2359,10 @@ contains
     ifield5(4) = tlnumbits
     ifield5(5) = 0                  !g2lib assumes original data were reals
     !
-    !     call get_g2_typeoforigfieldvals(type_of_field,value,ierr)
+    !     call get_g2_typeoforigfieldvals(type_of_field, value, ierr)
     !     ifield5(5) = value
     !
-    call get_g2_typeofcompression(type_of_compression,value,ierr)
+    call get_g2_typeofcompression(type_of_compression, value, ierr)
     ifield5(6) = value
     !
     ifield5(7) = 255
@@ -2376,17 +2376,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author Boi Vuong         ORG: EMC/EIB    @date 2019-07-01
-  subroutine get_g2_typeofcluster(key,value,ierr)
+  subroutine get_g2_typeofcluster(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFCLUSTER
+    do n=1, MAXTYPEOFCLUSTER
        if (trim(table4_8(n)%typeofclusterkey).eq.trim(key)) then
           value=table4_8(n)%typeofclusterval
           return
        endif
     enddo
-    print *,'get_g2_typeofcluster key: ', key,   &
+    print *, 'get_g2_typeofcluster key: ', key,   &
          ' not found in table 4.8'
     ierr=9
     return
@@ -2400,17 +2400,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author Boi Vuong         ORG: EMC/EIB    @date 2019-07-01
-  subroutine get_g2_typeofprob(key,value,ierr)
+  subroutine get_g2_typeofprob(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFPROB
+    do n=1, MAXTYPEOFPROB
        if (trim(table4_9(n)%typeofprobkey).eq.trim(key)) then
           value=table4_9(n)%typeofprobval
           return
        endif
     enddo
-    print *,'get_g2_typeofprob key: ', key,   &
+    print *, 'get_g2_typeofprob key: ', key,   &
          ' not found in table 4.9'
     ierr=9
     return
@@ -2424,17 +2424,17 @@ contains
   !> @param[out] ierr error messages
   !>
   !> @author Boi Vuong @date 2019-07-01
-  subroutine get_g2_typeofprecip(key,value,ierr)
+  subroutine get_g2_typeofprecip(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFPRECIP
+    do n=1, MAXTYPEOFPRECIP
        if (trim(table4_201(n)%typeofprecipkey).eq.trim(key)) then
           value=table4_201(n)%typeofprecipval
           return
        endif
     enddo
-    print *,'get_g2_typeofprecip key: ', key,   &
+    print *, 'get_g2_typeofprecip key: ', key,  &
          ' not found in table 4.201'
     ierr=9
     return
