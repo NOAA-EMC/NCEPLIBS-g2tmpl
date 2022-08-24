@@ -1744,5 +1744,36 @@ program test_all_tables
   call get_g2_typeofprob('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 23
   
+  print *, 'testing get_g2_typeofprecip'
+  call get_g2_typeofprecip('reserved', val1, ierr)
+  if (val1 .ne. 0) stop 23
+  call get_g2_typeofprecip('rain', val1, ierr)
+  if (val1 .ne. 1) stop 23
+  call get_g2_typeofprecip('thunderstorm', val1, ierr)
+  if (val1 .ne. 2) stop 23
+  call get_g2_typeofprecip('freezing_rain', val1, ierr)
+  if (val1 .ne. 3) stop 23
+  call get_g2_typeofprecip('mixed_ice', val1, ierr)
+  if (val1 .ne. 4) stop 23
+  call get_g2_typeofprecip('snow', val1, ierr)
+  if (val1 .ne. 5) stop 23
+  call get_g2_typeofprecip('wet_snow', val1, ierr)
+  if (val1 .ne. 6) stop 23
+  call get_g2_typeofprecip('mixture_rain_snow', val1, ierr)
+  if (val1 .ne. 7) stop 23
+  call get_g2_typeofprecip('ice_pellets', val1, ierr)
+  if (val1 .ne. 8) stop 23
+  call get_g2_typeofprecip('graupel', val1, ierr)
+  if (val1 .ne. 9) stop 23
+  call get_g2_typeofprecip('hail', val1, ierr)
+  if (val1 .ne. 10) stop 23
+  call get_g2_typeofprecip('drizzle', val1, ierr)
+  if (val1 .ne. 11) stop 23
+  ! This entry is not working. See https://github.com/NOAA-EMC/NCEPLIBS-g2tmpl/issues/72.
+  ! call get_g2_typeofprecip('freezing_drizzle', val1, ierr)
+  ! if (val1 .ne. 12) stop 23
+  call get_g2_typeofprecip('xxxx', val1, ierr)
+  if (ierr .ne. 9) stop 23
+  
   print *, 'SUCCESS!!'
 end program test_all_tables

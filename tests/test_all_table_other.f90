@@ -20,6 +20,10 @@ program test_all_table_other
   integer :: ipdstmpl48(26)  
   integer :: ipdstmpl48_expected(26) = (/ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 10, 0, &
        12, 15, 16, 13, 18, 20, 20, 21, 100, 22, 23 /)
+  integer :: ifield5(16)  
+  integer :: ifield5_expected(16) = (/ 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 /)
+  integer :: ifield5_3(18)  
+  integer :: ifield5_3_expected(18) = (/ 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 /)
 
   print *, 'Testing grib2_all_tables_module, expect and ignore error messages...'
   print *, 'testing g2sec0'
@@ -49,7 +53,7 @@ program test_all_table_other
        0, ipdstmpl8)
   do i = 1, 29
 !     print *, ipdstmpl8(i)
-     if (ipdstmpl8(i) .ne. ipdstmpl8_expected(i)) stop 3
+     if (ipdstmpl8(i) .ne. ipdstmpl8_expected(i)) stop 4
   end do
 
   print *, 'testing g2sec4_temp44'
@@ -57,7 +61,7 @@ program test_all_table_other
        'gwind_wave_mod', 10, 11, '12hours', 13, 'mean_sea_lvl', 15, 16, 'sigma_lvl', 18, 19, ipdstmpl44)
   do i = 1, 21
      !print *, ipdstmpl44(i)
-     if (ipdstmpl44(i) .ne. ipdstmpl44_expected(i)) stop 4
+     if (ipdstmpl44(i) .ne. ipdstmpl44_expected(i)) stop 5
   end do
 
   print *, 'testing g2sec4_temp48'
@@ -66,8 +70,22 @@ program test_all_table_other
        'second', 18, 'isothermal', 20, 21, 'isobaric_sfc', 22, 23, ipdstmpl48)
   do i = 1, 26
      !print *, ipdstmpl48(i)
-     if (ipdstmpl48(i) .ne. ipdstmpl48_expected(i)) stop 4
+     if (ipdstmpl48(i) .ne. ipdstmpl48_expected(i)) stop 6
   end do
   
+  print *, 'testing g2sec5_temp2'
+  call g2sec5_temp2(0, 1, ifield5)  
+  do i = 1, 16
+     !print *, ifield5(i)
+     if (ifield5(i) .ne. ifield5_expected(i)) stop 7
+  end do
+
+  print *, 'testing g2sec5_temp3'
+  call g2sec5_temp3(0, 1, '1st_ord_sptdiff', ifield5_3)  
+  do i = 1, 18
+     !print *, ifield5_3(i)
+     if (ifield5_3(i) .ne. ifield5_3_expected(i)) stop 7
+  end do
+
   print *, 'SUCCESS!!'
 end program test_all_table_other
