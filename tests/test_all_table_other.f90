@@ -1,3 +1,4 @@
+
 ! This is a test for the NCEPLIBS-g2tmpl project.
 !
 ! This tests the grib2_all_tables_module code.
@@ -24,6 +25,8 @@ program test_all_table_other
   integer :: ifield5_expected(16) = (/ 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 /)
   integer :: ifield5_3(18)  
   integer :: ifield5_3_expected(18) = (/ 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 /)
+  integer :: ifield5_40(7)  
+  integer :: ifield5_40_expected(7) = (/ 0, 1, 0, 2, 0, 1, 255 /)
 
   print *, 'Testing grib2_all_tables_module, expect and ignore error messages...'
   print *, 'testing g2sec0'
@@ -84,7 +87,14 @@ program test_all_table_other
   call g2sec5_temp3(0, 1, '1st_ord_sptdiff', ifield5_3)  
   do i = 1, 18
      !print *, ifield5_3(i)
-     if (ifield5_3(i) .ne. ifield5_3_expected(i)) stop 7
+     if (ifield5_3(i) .ne. ifield5_3_expected(i)) stop 8
+  end do
+
+  print *, 'testing g2sec5_temp40'
+  call g2sec5_temp40(0, 1, 2, 'lossy', ifield5_40)  
+  do i = 1, 7
+     print *, ifield5_40(i)
+     if (ifield5_40(i) .ne. ifield5_40_expected(i)) stop 9
   end do
 
   print *, 'SUCCESS!!'
