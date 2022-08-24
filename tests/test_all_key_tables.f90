@@ -1713,6 +1713,36 @@ program test_all_tables
   if (val1 .ne. 204) stop 21
   call get_g2_typeofderivefcst('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 21
+
+  print *, 'testing get_g2_typeofcluster'
+  call get_g2_typeofcluster('anomoly_correlation', val1, ierr)
+  if (val1 .ne. 0) stop 22
+  call get_g2_typeofcluster('root_mean_square', val1, ierr)
+  if (val1 .ne. 01) stop 22
+  call get_g2_typeofcluster('xxx', val1, ierr)
+  if (ierr .ne. 9) stop 22
+  
+  print *, 'testing get_g2_typeofprob'
+  call get_g2_typeofprob('prob_below_lower_limit', val1, ierr)
+  if (val1 .ne. 0) stop 23
+  call get_g2_typeofprob('prob_above_upper_limit', val1, ierr)
+  if (val1 .ne. 1) stop 23
+  call get_g2_typeofprob('prob_between_upper_lower_limit', val1, ierr)
+  if (val1 .ne. 2) stop 23
+  call get_g2_typeofprob('prob_above_lower_limit', val1, ierr)
+  if (val1 .ne. 3) stop 23
+  call get_g2_typeofprob('prob_below_upper_limit', val1, ierr)
+  if (val1 .ne. 4) stop 23
+  call get_g2_typeofprob('prob_equal_lower_limit', val1, ierr)
+  if (val1 .ne. 5) stop 23
+  call get_g2_typeofprob('prob_above_normal_cat', val1, ierr)
+  if (val1 .ne. 6) stop 23
+  call get_g2_typeofprob('prob_near_normal_cat', val1, ierr)
+  if (val1 .ne. 7) stop 23
+  call get_g2_typeofprob('prob_below_normal_cat', val1, ierr)
+  if (val1 .ne. 8) stop 23
+  call get_g2_typeofprob('xxxx', val1, ierr)
+  if (ierr .ne. 9) stop 23
   
   print *, 'SUCCESS!!'
 end program test_all_tables
