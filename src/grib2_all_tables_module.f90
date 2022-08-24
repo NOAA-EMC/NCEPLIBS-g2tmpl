@@ -1992,19 +1992,19 @@ contains
   !> @param[out] ipdstmpl44 - GRIB2 PDS Template 4.44 listing
   !>
   !>   @author J. WANG                  ORG: NCEP/EMC  @date 2012-01-25
-  subroutine g2sec4_temp44(icatg, iparm, aer_type, typ_intvl_size,                  &
-       scale_fac1_size, scale_val1_size, scale_fac2_size,       &
-       scale_val2_size, typ_gen_proc_key,                      &
-       gen_proc_or_mod_key, hrs_obs_cutoff, min_obs_cutoff,     &
-       unit_of_time_key, fcst_time, lvl_type1, scale_fac1,       &
-       scaled_val1, lvl_type2, scale_fac2, scaled_val2,          &
+  subroutine g2sec4_temp44(icatg, iparm, aer_type, typ_intvl_size, &
+       scale_fac1_size, scale_val1_size, scale_fac2_size, &
+       scale_val2_size, typ_gen_proc_key, &
+       gen_proc_or_mod_key, hrs_obs_cutoff, min_obs_cutoff, &
+       unit_of_time_key, fcst_time, lvl_type1, scale_fac1, &
+       scaled_val1, lvl_type2, scale_fac2, scaled_val2, &
        ipdstmpl44)
-    integer(4), intent(in) :: icatg, iparm, hrs_obs_cutoff, min_obs_cutoff,          &
-         scale_fac1_size, scale_fac2_size,                               &
+    integer(4), intent(in) :: icatg, iparm, hrs_obs_cutoff, min_obs_cutoff, &
+         scale_fac1_size, scale_fac2_size, &
          fcst_time, scale_fac1, scaled_val1,  scale_fac2, scaled_val2
     real, intent(in) :: scale_val1_size, scale_val2_size
     !
-    character(len=*), intent(in) :: aer_type, typ_intvl_size, typ_gen_proc_key,     &
+    character(len=*), intent(in) :: aer_type, typ_intvl_size, typ_gen_proc_key, &
          gen_proc_or_mod_key, unit_of_time_key, lvl_type1, lvl_type2
     !
     integer(4), intent(inout)  :: ipdstmpl44(21)
@@ -2013,7 +2013,7 @@ contains
     integer(4) :: value, ierr
     integer(4) :: bckgnd_gen_proc_id    ! defined by the center
     !
-    bckgnd_gen_proc_id=0    ! defined by the center
+    bckgnd_gen_proc_id = 0    ! defined by the center
     !
     ipdstmpl44(1) = icatg
     ipdstmpl44(2) = iparm

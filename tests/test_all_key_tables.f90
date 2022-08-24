@@ -1648,5 +1648,71 @@ program test_all_tables
   call get_g2_sec5packingmethod('xxxxx', val1, ierr)
   if (ierr .ne. 9) stop 19
 
+  print *, 'testing get_g2_typeofensfcst'
+  call get_g2_typeofensfcst('unpert_hi_res_ctrl_fcst', val1, ierr)
+  if (val1 .ne. 0) stop 20
+  call get_g2_typeofensfcst('unpert_lo_res_ctrl_fcst', val1, ierr)
+  if (val1 .ne. 1) stop 20
+  call get_g2_typeofensfcst('neg_pert_fcst', val1, ierr)
+  if (val1 .ne. 2) stop 20
+  call get_g2_typeofensfcst('pos_pert_fcst', val1, ierr)
+  if (val1 .ne. 3) stop 20
+  call get_g2_typeofensfcst('multi_model_fcst', val1, ierr)
+  if (val1 .ne. 4) stop 20
+  call get_g2_typeofensfcst('pert_ens_member', val1, ierr)
+  if (val1 .ne. 192) stop 20
+  call get_g2_typeofensfcst('xxxx', val1, ierr)
+  if (ierr .ne. 9) stop 20
+
+  print *, 'testing get_g2_typeofderivefcst'
+  call get_g2_typeofderivefcst('unweighted_mean_all_mem', val1, ierr)
+  if (val1 .ne. 0) stop 21
+  call get_g2_typeofderivefcst('weighted_mean_all_mem', val1, ierr)
+  if (val1 .ne. 1) stop 21
+  call get_g2_typeofderivefcst('std_devn_res_cluster_mean', val1, ierr)
+  if (val1 .ne. 2) stop 21
+  call get_g2_typeofderivefcst('std_devn_res_cluster_mean_norm', val1, ierr)
+  if (val1 .ne. 3) stop 21
+  call get_g2_typeofderivefcst('spread_all_mem', val1, ierr)
+  if (val1 .ne. 4) stop 21
+  call get_g2_typeofderivefcst('large_anomaly_index', val1, ierr)
+  if (val1 .ne. 5) stop 21
+  call get_g2_typeofderivefcst('unweighted_mean_cluster', val1, ierr)
+  if (val1 .ne. 6) stop 21
+  call get_g2_typeofderivefcst('interquartile_range', val1, ierr)
+  if (val1 .ne. 7) stop 21
+  call get_g2_typeofderivefcst('min_all_ens_mem', val1, ierr)
+  if (val1 .ne. 8) stop 21
+  call get_g2_typeofderivefcst('max_all_ens_mem', val1, ierr)
+  if (val1 .ne. 9) stop 21
+  call get_g2_typeofderivefcst('unweighted_mode_all_mem', val1, ierr)
+  if (val1 .ne. 192) stop 21
+  call get_g2_typeofderivefcst('percentile_val_10', val1, ierr)
+  if (val1 .ne. 193) stop 21
+  call get_g2_typeofderivefcst('percentile_val_50', val1, ierr)
+  if (val1 .ne. 194) stop 21
+  call get_g2_typeofderivefcst('percentile_val_90', val1, ierr)
+  if (val1 .ne. 195) stop 21
+  call get_g2_typeofderivefcst('stat_decide_mem', val1, ierr)
+  if (val1 .ne. 196) stop 21
+  call get_g2_typeofderivefcst('clim_percentile', val1, ierr)
+  if (val1 .ne. 197) stop 21
+  call get_g2_typeofderivefcst('deviation_ens_mean', val1, ierr)
+  if (val1 .ne. 198) stop 21
+  call get_g2_typeofderivefcst('extream_forecast_index', val1, ierr)
+  if (val1 .ne. 199) stop 21
+  call get_g2_typeofderivefcst('equally_weighted_mean', val1, ierr)
+  if (val1 .ne. 200) stop 21
+  call get_g2_typeofderivefcst('percentile_value_5', val1, ierr)
+  if (val1 .ne. 201) stop 21
+  call get_g2_typeofderivefcst('percentile_value_25', val1, ierr)
+  if (val1 .ne. 202) stop 21
+  call get_g2_typeofderivefcst('percentile_value_75', val1, ierr)
+  if (val1 .ne. 203) stop 21
+  call get_g2_typeofderivefcst('percentile_value_95', val1, ierr)
+  if (val1 .ne. 204) stop 21
+  call get_g2_typeofderivefcst('xxxx', val1, ierr)
+  if (ierr .ne. 9) stop 21
+  
   print *, 'SUCCESS!!'
 end program test_all_tables
