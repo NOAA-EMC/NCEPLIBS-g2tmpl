@@ -1992,25 +1992,25 @@ contains
   !> @param[out] ipdstmpl44 - GRIB2 PDS Template 4.44 listing
   !>
   !>   @author J. WANG                  ORG: NCEP/EMC  @date 2012-01-25
-  subroutine g2sec4_temp44(icatg,iparm,aer_type,typ_intvl_size,                 &
-       scale_fac1_size,scale_val1_size,scale_fac2_size,      &
-       scale_val2_size,typ_gen_proc_key,                     &
-       gen_proc_or_mod_key,hrs_obs_cutoff,min_obs_cutoff,    &
-       unit_of_time_key,fcst_time,lvl_type1,scale_fac1,      &
-       scaled_val1,lvl_type2,scale_fac2,scaled_val2,         &
+  subroutine g2sec4_temp44(icatg, iparm, aer_type, typ_intvl_size,                  &
+       scale_fac1_size, scale_val1_size, scale_fac2_size,       &
+       scale_val2_size, typ_gen_proc_key,                      &
+       gen_proc_or_mod_key, hrs_obs_cutoff, min_obs_cutoff,     &
+       unit_of_time_key, fcst_time, lvl_type1, scale_fac1,       &
+       scaled_val1, lvl_type2, scale_fac2, scaled_val2,          &
        ipdstmpl44)
-    integer(4),intent(in) :: icatg,iparm,hrs_obs_cutoff,min_obs_cutoff,         &
-         scale_fac1_size,scale_fac2_size,                              &
-         fcst_time,scale_fac1,scaled_val1, scale_fac2,scaled_val2
-    real,intent(in) :: scale_val1_size,scale_val2_size
+    integer(4), intent(in) :: icatg, iparm, hrs_obs_cutoff, min_obs_cutoff,          &
+         scale_fac1_size, scale_fac2_size,                               &
+         fcst_time, scale_fac1, scaled_val1,  scale_fac2, scaled_val2
+    real, intent(in) :: scale_val1_size, scale_val2_size
     !
-    character(len=*),intent(in) :: aer_type,typ_intvl_size,typ_gen_proc_key,    &
-         gen_proc_or_mod_key,unit_of_time_key,lvl_type1,lvl_type2
+    character(len=*), intent(in) :: aer_type, typ_intvl_size, typ_gen_proc_key,     &
+         gen_proc_or_mod_key, unit_of_time_key, lvl_type1, lvl_type2
     !
-    integer(4),intent(inout)  :: ipdstmpl44(21)
+    integer(4), intent(inout)  :: ipdstmpl44(21)
     !
     !local vars
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     integer(4) :: bckgnd_gen_proc_id    ! defined by the center
     !
     bckgnd_gen_proc_id=0    ! defined by the center
@@ -2018,37 +2018,37 @@ contains
     ipdstmpl44(1) = icatg
     ipdstmpl44(2) = iparm
     !
-    call get_g2_typeofaerosol(aer_type,value,ierr)
+    call get_g2_typeofaerosol(aer_type, value, ierr)
     ipdstmpl44(3) = value
     !
-    call get_g2_typeofintervals(typ_intvl_size,value,ierr)
+    call get_g2_typeofintervals(typ_intvl_size, value, ierr)
     ipdstmpl44(4) = value
     ipdstmpl44(5) = scale_fac1_size
     ipdstmpl44(6) = scale_val1_size
     ipdstmpl44(7) = scale_fac2_size
     ipdstmpl44(8) = scale_val2_size
     !
-    call get_g2_typeofgenproc(typ_gen_proc_key,value,ierr)
+    call get_g2_typeofgenproc(typ_gen_proc_key, value, ierr)
     ipdstmpl44(9) = value
     !
     ipdstmpl44(10) = bckgnd_gen_proc_id
     !
-    call get_g2_on388genproc(gen_proc_or_mod_key,value,ierr)
+    call get_g2_on388genproc(gen_proc_or_mod_key, value, ierr)
     ipdstmpl44(11) = value
     !
     ipdstmpl44(12) = hrs_obs_cutoff
     ipdstmpl44(13) = min_obs_cutoff
     !
-    call get_g2_unitoftimerange(unit_of_time_key,value,ierr)
+    call get_g2_unitoftimerange(unit_of_time_key, value, ierr)
     ipdstmpl44(14) = value
     ipdstmpl44(15) = fcst_time
     !
-    call get_g2_fixedsurfacetypes(lvl_type1,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type1, value, ierr)
     ipdstmpl44(16) = value
     ipdstmpl44(17) = scale_fac1
     ipdstmpl44(18) = scaled_val1
     !
-    call get_g2_fixedsurfacetypes(lvl_type2,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type2, value, ierr)
     ipdstmpl44(19) = value
     !
     ipdstmpl44(20) = scale_fac2
@@ -2088,32 +2088,32 @@ contains
   !> @param[out] ipdstmpl48 - GRIB2 PDS Template 4.48 listing
   !>
   !>   @author J. WANG                  ORG: NCEP/EMC  @date 2012-01-25
-  subroutine g2sec4_temp48(icatg,iparm,aer_type,typ_intvl_size,                 &
-       scale_fac1_size,scale_val1_size,scale_fac2_size,      &
-       scale_val2_size,typ_intvl_wavelength,                 &
-       scale_fac1_wavelength,scale_val1_wavelength,          &
-       scale_fac2_wavelength,scale_val2_wavelength,          &
-       typ_gen_proc_key, gen_proc_or_mod_key,                &
-       hrs_obs_cutoff,min_obs_cutoff,                        &
-       unit_of_time_key,fcst_time,lvl_type1,scale_fac1,      &
-       scaled_val1,lvl_type2,scale_fac2,scaled_val2,         &
+  subroutine g2sec4_temp48(icatg, iparm, aer_type, typ_intvl_size,                  &
+       scale_fac1_size, scale_val1_size, scale_fac2_size,       &
+       scale_val2_size, typ_intvl_wavelength,                  &
+       scale_fac1_wavelength, scale_val1_wavelength,           &
+       scale_fac2_wavelength, scale_val2_wavelength,           &
+       typ_gen_proc_key,  gen_proc_or_mod_key,                 &
+       hrs_obs_cutoff, min_obs_cutoff,                         &
+       unit_of_time_key, fcst_time, lvl_type1, scale_fac1,       &
+       scaled_val1, lvl_type2, scale_fac2, scaled_val2,          &
        ipdstmpl48)
-    integer(4),intent(in) :: icatg,iparm,hrs_obs_cutoff,min_obs_cutoff,         &
-         scale_fac1_size,scale_fac2_size, scale_fac1_wavelength,       &
-         scale_fac2_wavelength,                                        &
-         fcst_time,scale_fac1,scaled_val1,                             &
-         scale_fac2,scaled_val2
-    real,intent(in) :: scale_val1_size,scale_val2_size,scale_val1_wavelength,   &
+    integer(4), intent(in) :: icatg, iparm, hrs_obs_cutoff, min_obs_cutoff,          &
+         scale_fac1_size, scale_fac2_size,  scale_fac1_wavelength,        &
+         scale_fac2_wavelength,                                         &
+         fcst_time, scale_fac1, scaled_val1,                              &
+         scale_fac2, scaled_val2
+    real, intent(in) :: scale_val1_size, scale_val2_size, scale_val1_wavelength,    &
          scale_val2_wavelength
     !
-    character(len=*),intent(in) :: aer_type,typ_intvl_size,                     &
-         typ_intvl_wavelength,typ_gen_proc_key,                        &
-         gen_proc_or_mod_key,unit_of_time_key,lvl_type1,lvl_type2
+    character(len=*), intent(in) :: aer_type, typ_intvl_size,                      &
+         typ_intvl_wavelength, typ_gen_proc_key,                         &
+         gen_proc_or_mod_key, unit_of_time_key, lvl_type1, lvl_type2
     !
-    integer(4),intent(inout)  :: ipdstmpl48(26)
+    integer(4), intent(inout)  :: ipdstmpl48(26)
     !
     !local vars
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     integer(4) :: bckgnd_gen_proc_id    ! defined by the center
     !
     bckgnd_gen_proc_id=0    ! defined by the center
@@ -2121,44 +2121,44 @@ contains
     ipdstmpl48(1) = icatg
     ipdstmpl48(2) = iparm
     !
-    call get_g2_typeofaerosol(aer_type,value,ierr)
+    call get_g2_typeofaerosol(aer_type, value, ierr)
     ipdstmpl48(3) = value
     !
-    call get_g2_typeofintervals(typ_intvl_size,value,ierr)
+    call get_g2_typeofintervals(typ_intvl_size, value, ierr)
     ipdstmpl48(4) = value
     ipdstmpl48(5) = scale_fac1_size
     ipdstmpl48(6) = nint(scale_val1_size)
     ipdstmpl48(7) = scale_fac2_size
     ipdstmpl48(8) = nint(scale_val2_size)
     !
-    call get_g2_typeofintervals(typ_intvl_wavelength,value,ierr)
+    call get_g2_typeofintervals(typ_intvl_wavelength, value, ierr)
     ipdstmpl48(9) = value
     ipdstmpl48(10) = scale_fac1_wavelength
     ipdstmpl48(11) = nint(scale_val1_wavelength)
     ipdstmpl48(12) = scale_fac2_wavelength
     ipdstmpl48(13) = nint(scale_val2_wavelength)
     !
-    call get_g2_typeofgenproc(typ_gen_proc_key,value,ierr)
+    call get_g2_typeofgenproc(typ_gen_proc_key, value, ierr)
     ipdstmpl48(14) = value
     !
     ipdstmpl48(15) = bckgnd_gen_proc_id
     !
-    call get_g2_on388genproc(gen_proc_or_mod_key,value,ierr)
+    call get_g2_on388genproc(gen_proc_or_mod_key, value, ierr)
     ipdstmpl48(16) = value
     !
     ipdstmpl48(17) = hrs_obs_cutoff
     ipdstmpl48(18) = min_obs_cutoff
     !
-    call get_g2_unitoftimerange(unit_of_time_key,value,ierr)
+    call get_g2_unitoftimerange(unit_of_time_key, value, ierr)
     ipdstmpl48(19) = value
     ipdstmpl48(20) = fcst_time
     !
-    call get_g2_fixedsurfacetypes(lvl_type1,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type1, value, ierr)
     ipdstmpl48(21) = value
     ipdstmpl48(22) = scale_fac1
     ipdstmpl48(23) = scaled_val1
     !
-    call get_g2_fixedsurfacetypes(lvl_type2,value,ierr)
+    call get_g2_fixedsurfacetypes(lvl_type2, value, ierr)
     ipdstmpl48(24) = value
     !
     ipdstmpl48(25) = scale_fac2
@@ -2175,17 +2175,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author Boi Vuong         ORG: W/SIB     @date 2015-01-09
-  subroutine get_g2_typeofensfcst(key,value,ierr)
+  subroutine get_g2_typeofensfcst(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFENSFCST
+    do n=1, MAXTYPEOFENSFCST
        if (trim(table4_6(n)%typeofensfcstkey).eq.trim(key)) then
           value=table4_6(n)%typeofensfcstval
           return
        endif
     enddo
-    print *,'get_g2_typeofensfcst key: ', key,   &
+    print *, 'get_g2_typeofensfcst key: ',  key,    &
          ' not found in table 4.6'
     ierr=9
     return
@@ -2199,17 +2199,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author Boi Vuong         ORG: W/SIB     @date 2015-01-09
-  subroutine get_g2_typeofderivefcst(key,value,ierr)
+  subroutine get_g2_typeofderivefcst(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFDERIVEFCST
+    do n=1, MAXTYPEOFDERIVEFCST
        if (trim(table4_7(n)%typeofderivefcstkey).eq.trim(key)) then
           value=table4_7(n)%typeofderivefcstval
           return
        endif
     enddo
-    print *,'get_g2_typeofderivefcst key: ', key,   &
+    print *, 'get_g2_typeofderivefcst key: ',  key,    &
          ' not found in table 4.7'
     ierr=9
     return
@@ -2236,11 +2236,11 @@ contains
   !> - ifield5(5): type of original field values (See Code Table 5.1)
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-01
-  subroutine g2sec5_temp0(dec_scale_fac,bin_scale_fac,tlnumbits,ifield5)
-    integer(4),intent(in) :: bin_scale_fac,dec_scale_fac,tlnumbits
-    integer(4),intent(out) :: ifield5(5)
+  subroutine g2sec5_temp0(dec_scale_fac, bin_scale_fac, tlnumbits, ifield5)
+    integer(4), intent(in) :: bin_scale_fac, dec_scale_fac, tlnumbits
+    integer(4), intent(out) :: ifield5(5)
     !     character(len=50) :: type_of_field
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     !
     ifield5(1) = 0 ! Any value. Will be later overwritten
     ifield5(2) = bin_scale_fac
@@ -2250,7 +2250,7 @@ contains
     !
   end subroutine g2sec5_temp0
   !>
-  !> This subroutine returns the section 5 list array with a given binary,
+  !> This subroutine returns the section 5 list array with a given binary, 
   !>    and decimal scale factor from GRIB2 - GRID Template 5.2 Grid point data -
   !>    complex packing
   !>
@@ -2265,12 +2265,12 @@ contains
   !>             spatial differencing
   !>
   !>   @author J.Wang                   ORG: W/EMC    @date 2012-02-20
-  subroutine g2sec5_temp2(dec_scale_fac,bin_scale_fac,ifield5)
+  subroutine g2sec5_temp2(dec_scale_fac, bin_scale_fac, ifield5)
     !
-    integer(4),intent(inout)  :: ifield5(16)
-    integer(4),intent(in) :: dec_scale_fac,bin_scale_fac
+    integer(4), intent(inout)  :: ifield5(16)
+    integer(4), intent(in) :: dec_scale_fac, bin_scale_fac
     !
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     !
     ifield5=0
     ifield5(1) = 0 ! Any value. Will be later overwritten
@@ -2279,7 +2279,7 @@ contains
     !
   end subroutine g2sec5_temp2
   !>
-  !> This subroutine returns the section 5 list array with a given binary,
+  !> This subroutine returns the section 5 list array with a given binary, 
   !>    and decimal scale factor from GRIB2 - GRID Template 5.3 Grid point data -
   !>    complex packing with spatial difference
   !>
@@ -2295,27 +2295,27 @@ contains
   !>             spatial differencing
   !>
   !>   @author J.Wang                   ORG: W/EMC    @date 2012-02-20
-  subroutine g2sec5_temp3(dec_scale_fac,bin_scale_fac,order_of_sptdiff,   &
+  subroutine g2sec5_temp3(dec_scale_fac, bin_scale_fac, order_of_sptdiff,    &
        ifield5)
     !
-    integer(4),intent(in) :: dec_scale_fac,bin_scale_fac
-    character(*),intent(in) :: order_of_sptdiff
-    integer(4),intent(out) :: ifield5(18)
+    integer(4), intent(in) :: dec_scale_fac, bin_scale_fac
+    character(*), intent(in) :: order_of_sptdiff
+    integer(4), intent(out) :: ifield5(18)
     !
-    integer(4) :: value,ierr
+    integer(4) :: value, ierr
     !
     ifield5=0
     ifield5(1) = 0 ! Any value. Will be later overwritten
     ifield5(2) = bin_scale_fac
     ifield5(3) = dec_scale_fac
     !
-    call get_g2_ordofspcdiffvals(order_of_sptdiff,value,ierr)
+    call get_g2_ordofspcdiffvals(order_of_sptdiff, value, ierr)
     ifield5(17) = value
     !
   end subroutine g2sec5_temp3
   !>
   !> This subroutine returns the section 5 list array for a given decimal
-  !>   scale factor (D),type of original field value (Table 5.40) and type of compression used
+  !>   scale factor (D), type of original field value (Table 5.40) and type of compression used
   !>   from GRIB2 - GRID Template 5.40 Grid point data - JPEG 2000 Code Stream Format
   !>
   !> PROGRAM HISTORY LOG:
@@ -2335,23 +2335,23 @@ contains
   !>             (see Note 2)
   !> - ifield5(5): type of original field values (See Code Table 5.1)
   !> - ifield5(6): type of compression used (See Code Table 5.40)
-  !> - ifield5(7): target compression ration, M:1 (with respect to the bit-depth
+  !> - ifield5(7): target compression ration,  M:1 (with respect to the bit-depth
   !>             specified in octet 20), when octet 22 indicates Lossy Compression.
   !>                                         Otherwise, set to missing (see Note 3)
   !>
   !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2010-03-01
-  subroutine g2sec5_temp40(dec_scale_fac,bin_scale_fac,tlnumbits,                   &
-       type_of_compression,ifield5)
+  subroutine g2sec5_temp40(dec_scale_fac, bin_scale_fac, tlnumbits,                    &
+       type_of_compression, ifield5)
     !
-    integer(4),intent(in) :: bin_scale_fac,dec_scale_fac,tlnumbits
-    character(*),intent(in) :: type_of_compression
-    integer(4),intent(inout) :: ifield5(7)
+    integer(4), intent(in) :: bin_scale_fac, dec_scale_fac, tlnumbits
+    character(*), intent(in) :: type_of_compression
+    integer(4), intent(inout) :: ifield5(7)
     !
     !--- local variable
-    integer(4) :: value,ierr
-    integer,parameter :: MAX_NUMBIT=16
+    integer(4) :: value, ierr
+    integer, parameter :: MAX_NUMBIT=16
     integer ibm
-    integer,allocatable   :: mg(:)
+    integer, allocatable   :: mg(:)
     !
     ifield5(1) = 0 ! Any value. Will be later overwritten
     ifield5(2) = bin_scale_fac
@@ -2359,10 +2359,10 @@ contains
     ifield5(4) = tlnumbits
     ifield5(5) = 0                  !g2lib assumes original data were reals
     !
-    !     call get_g2_typeoforigfieldvals(type_of_field,value,ierr)
+    !     call get_g2_typeoforigfieldvals(type_of_field, value, ierr)
     !     ifield5(5) = value
     !
-    call get_g2_typeofcompression(type_of_compression,value,ierr)
+    call get_g2_typeofcompression(type_of_compression, value, ierr)
     ifield5(6) = value
     !
     ifield5(7) = 255
@@ -2376,17 +2376,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author Boi Vuong         ORG: EMC/EIB    @date 2019-07-01
-  subroutine get_g2_typeofcluster(key,value,ierr)
+  subroutine get_g2_typeofcluster(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFCLUSTER
+    do n=1, MAXTYPEOFCLUSTER
        if (trim(table4_8(n)%typeofclusterkey).eq.trim(key)) then
           value=table4_8(n)%typeofclusterval
           return
        endif
     enddo
-    print *,'get_g2_typeofcluster key: ', key,   &
+    print *, 'get_g2_typeofcluster key: ',  key,    &
          ' not found in table 4.8'
     ierr=9
     return
@@ -2400,17 +2400,17 @@ contains
   !> @param[out] ierr - error messages
   !>
   !>   @author Boi Vuong         ORG: EMC/EIB    @date 2019-07-01
-  subroutine get_g2_typeofprob(key,value,ierr)
+  subroutine get_g2_typeofprob(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFPROB
+    do n=1, MAXTYPEOFPROB
        if (trim(table4_9(n)%typeofprobkey).eq.trim(key)) then
           value=table4_9(n)%typeofprobval
           return
        endif
     enddo
-    print *,'get_g2_typeofprob key: ', key,   &
+    print *, 'get_g2_typeofprob key: ',  key,    &
          ' not found in table 4.9'
     ierr=9
     return
@@ -2424,17 +2424,17 @@ contains
   !> @param[out] ierr error messages
   !>
   !> @author Boi Vuong @date 2019-07-01
-  subroutine get_g2_typeofprecip(key,value,ierr)
+  subroutine get_g2_typeofprecip(key, value, ierr)
     character(len=*) :: key
-    integer :: value,n,ierr
+    integer :: value, n, ierr
     !
-    do n=1,MAXTYPEOFPRECIP
+    do n=1, MAXTYPEOFPRECIP
        if (trim(table4_201(n)%typeofprecipkey).eq.trim(key)) then
           value=table4_201(n)%typeofprecipval
           return
        endif
     enddo
-    print *,'get_g2_typeofprecip key: ', key,   &
+    print *, 'get_g2_typeofprecip key: ',  key,   &
          ' not found in table 4.201'
     ierr=9
     return

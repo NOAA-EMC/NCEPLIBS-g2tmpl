@@ -15,8 +15,8 @@ program test_all_table_other
   integer :: ipdstmpl8_expected(29) = (/0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 2022, &
        8, 23, 15, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0/)
   integer :: ipdstmpl44(21)
-  integer :: ipdstmpl44_expected(21) = (/0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 2022, &
-       8, 23, 15, 28, 0/)
+  integer :: ipdstmpl44_expected(21) = (/ 0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 10, 11, 12, 13, &
+       101, 15, 16, 104, 18, 19 /)
 
   print *, 'Testing grib2_all_tables_module, expect and ignore error messages...'
   print *, 'testing g2sec0'
@@ -50,13 +50,12 @@ program test_all_table_other
   end do
 
   print *, 'testing g2sec4_temp44'
-  call g2sec4_temp44(0, 0, 'ozone', typ_intvl_size,                  &
-       scale_fac1_size, scale_val1_size, scale_fac2_size,       &
-       scale_val2_size, typ_gen_proc_key,                      &
-       gen_proc_or_mod_key, hrs_obs_cutoff, min_obs_cutoff,     &
-       unit_of_time_key, fcst_time, lvl_type1, scale_fac1,       &
-       scaled_val1, lvl_type2, scale_fac2, scaled_val2,          &
-       ipdstmpl44)
+  call g2sec4_temp44(0, 1, 'methane', 'greater_than_first_limit', 4, 5.0, 6, 7.0, 'obs', &
+       'gwind_wave_mod', 10, 11, '12hours', 13, 'mean_sea_lvl', 15, 16, 'sigma_lvl', 18, 19, ipdstmpl44)
+  do i = 1, 21
+     !print *, ipdstmpl44(i)
+     if (ipdstmpl44(i) .ne. ipdstmpl44_expected(i)) stop 4
+  end do
 
   print *, 'SUCCESS!!'
 end program test_all_table_other
