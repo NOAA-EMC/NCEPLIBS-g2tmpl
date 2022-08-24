@@ -23,6 +23,8 @@ program test_all_table_other
        12, 15, 16, 13, 18, 20, 20, 21, 100, 22, 23 /)
   integer :: ifield5(16)  
   integer :: ifield5_expected(16) = (/ 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 /)
+  integer :: ifield5_0(5)  
+  integer :: ifield5_0_expected(5) = (/ 0, 1, 0, 2, 0 /)
   integer :: ifield5_3(18)  
   integer :: ifield5_3_expected(18) = (/ 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 /)
   integer :: ifield5_40(7)  
@@ -76,6 +78,13 @@ program test_all_table_other
      if (ipdstmpl48(i) .ne. ipdstmpl48_expected(i)) stop 6
   end do
   
+  print *, 'testing g2sec5_temp0'
+  call g2sec5_temp0(0, 1, 2, ifield5_0)  
+  do i = 1, 5
+     !print *, ifield5_0(i)
+     if (ifield5_0(i) .ne. ifield5_0_expected(i)) stop 7
+  end do
+
   print *, 'testing g2sec5_temp2'
   call g2sec5_temp2(0, 1, ifield5)  
   do i = 1, 16
@@ -93,7 +102,7 @@ program test_all_table_other
   print *, 'testing g2sec5_temp40'
   call g2sec5_temp40(0, 1, 2, 'lossy', ifield5_40)  
   do i = 1, 7
-     print *, ifield5_40(i)
+     !print *, ifield5_40(i)
      if (ifield5_40(i) .ne. ifield5_40_expected(i)) stop 9
   end do
 
