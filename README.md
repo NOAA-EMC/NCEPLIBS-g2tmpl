@@ -2,7 +2,8 @@
 
 # The NCEPLIBS-g2tmpl Library
 
-Utilities for GRIB2 templates. This is part of the
+This library contians functions which serve up the GRIB2 codes and
+template information. This is part of the
 [NCEPLIBS](https://github.com/NOAA-EMC/NCEPLIBS) project.
 
 For more detailed documentation see
