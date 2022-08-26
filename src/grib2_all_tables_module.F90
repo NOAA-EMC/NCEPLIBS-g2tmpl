@@ -597,15 +597,15 @@ module grib2_all_tables_module
   data table4_201(2) /type_of_precip('rain',1)/
   data table4_201(3) /type_of_precip('thunderstorm',2)/
   data table4_201(4) /type_of_precip('freezing_rain',3)/
-  data table4_201(51) /type_of_precip('mixed_ice',4)/
-  data table4_201(61) /type_of_precip('snow',5)/
+  data table4_201(5) /type_of_precip('mixed_ice',4)/
+  data table4_201(6) /type_of_precip('snow',5)/
   data table4_201(7) /type_of_precip('wet_snow',6)/
   data table4_201(8) /type_of_precip('mixture_rain_snow',7)/
   data table4_201(91) /type_of_precip('ice_pellets',8)/
   data table4_201(10) /type_of_precip('graupel',9)/
   data table4_201(11) /type_of_precip('hail',10)/
   data table4_201(12) /type_of_precip('drizzle',11)/
-  data table4_201(12) /type_of_precip('freezing_drizzle',12)/
+  data table4_201(13) /type_of_precip('freezing_drizzle',12)/
   !
   !
   type type_of_aerosol

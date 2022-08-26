@@ -1769,9 +1769,8 @@ program test_all_tables
   if (val1 .ne. 10) stop 23
   call get_g2_typeofprecip('drizzle', val1, ierr)
   if (val1 .ne. 11) stop 23
-  ! This entry is not working. See https://github.com/NOAA-EMC/NCEPLIBS-g2tmpl/issues/72.
-  ! call get_g2_typeofprecip('freezing_drizzle', val1, ierr)
-  ! if (val1 .ne. 12) stop 23
+  call get_g2_typeofprecip('freezing_drizzle', val1, ierr)
+  if (val1 .ne. 12) stop 23
   call get_g2_typeofprecip('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 23
   
