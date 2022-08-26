@@ -1,6 +1,6 @@
 ! This is a test for the NCEPLIBS-g2tmpl project.
 !
-! This tests the grib2_all_tables_module code.
+! This tests the grib2_all_tables_module code which involved key lookups.
 !
 ! Ed Hartnett, 8/23/22
 program test_all_tables
