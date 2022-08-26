@@ -5,7 +5,7 @@
 
 # Run each test.
 function(g2tmpl_test name)
-  add_executable(${name} ${name}.f90)
+  add_executable(${name} ${name}.F90)
   add_dependencies(${name} g2tmpl)
   target_link_libraries(${name} PRIVATE g2tmpl)
   add_test(NAME ${name} COMMAND ${name})

@@ -28,8 +28,8 @@ elseif(CMAKE_C_COMPILER_ID MATCHES "^(GNU|Clang|AppleClang)$")
 endif()
 
 # These are the library source files in Fortran and C.
-set(fortran_src g2sec4_temp11.f90 g2sec4_temp1.f90
-                grib2_all_tables_module.f90 g2sec4_temp12.f90 )
+set(fortran_src g2sec4_temp11.F90 g2sec4_temp1.F90
+                grib2_all_tables_module.F90 g2sec4_temp12.F90 )
 set(c_src process_4dot2.c)
 
 set(lib_name ${PROJECT_NAME})
@@ -49,7 +49,7 @@ target_include_directories(${lib_name} PUBLIC
   $<INSTALL_INTERFACE:include>)
 
 # Build the executable.
-add_executable(sort_params_grib2_tbl sort_params_grib2_tbl.f90)
+add_executable(sort_params_grib2_tbl sort_params_grib2_tbl.F90)
 target_link_libraries(sort_params_grib2_tbl ${lib_name})
 
 # Install the library.
