@@ -1,0 +1,41 @@
+name: Linux
+on:
+  push:
+    branches:
+    - develop
+    paths-ignore:
+    - README.md
+  pull_request:
+    branches:
+    - develop
+    paths-ignore:
+    - README.md
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      FC: gfortran-9
+      CC: gcc-9
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+      with: 
+        path: g2tmpl
+        submodules: true
+
+    - name: build
+      run: |
+        cd g2tmpl
+        mkdir build 
+        cd build
+        cmake ..
+        make -j2
+    
+    - name: test
+      run: |
+        cd $GITHUB_WORKSPACE/g2tmpl/build
+        ctest --verbose --output-on-failure --rerun-failed 
+
+        
