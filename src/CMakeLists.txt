@@ -1,7 +1,7 @@
 # This is the CMake file for the src directory of the NCEPLIBS-g2tmpl
 # project.
 #
-# Kyle Gerheiser, Mark Potts
+# Kyle Gerheiser, Mark Potts 
 
 # This is for the Fortran to C code.
 add_compile_definitions(UNDERSCORE)
@@ -58,13 +58,13 @@ install(FILES params_grib2_tbl_new DESTINATION ${CMAKE_INSTALL_PREFIX}/share)
 install(
   TARGETS ${lib_name}
   EXPORT ${PROJECT_NAME}Exports
-  RUNTIME DESTINATION bin
-  LIBRARY DESTINATION lib
-  ARCHIVE DESTINATION lib)
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 ### Package config
 include(CMakePackageConfigHelpers)
-set(CONFIG_INSTALL_DESTINATION lib/cmake/${PROJECT_NAME})
+set(CONFIG_INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
 
 export(EXPORT ${PROJECT_NAME}Exports
   NAMESPACE ${PROJECT_NAME}::
