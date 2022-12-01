@@ -1,7 +1,7 @@
 # This is the CMake file for the src directory of the NCEPLIBS-g2tmpl
 # project.
 #
-# Kyle Gerheiser, Mark Potts
+# Kyle Gerheiser, Mark Potts 
 
 # This is for the Fortran to C code.
 add_compile_definitions(UNDERSCORE)
