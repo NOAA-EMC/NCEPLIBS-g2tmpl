@@ -18,15 +18,11 @@ defaults:
     shell: bash -leo pipefail {0}
 
 jobs:
-  intel-build-and-test:
+  Intel:
     runs-on: ubuntu-latest
     env:
       CC: icc
       FC: ifort
-      CXX: icpc
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
 
     steps:
 
@@ -54,7 +50,7 @@ jobs:
         mkdir build 
         cd build
         cmake ..
-        make -j2
+        make -j2 VERBOSE=1
     
     - name: test
       run: |

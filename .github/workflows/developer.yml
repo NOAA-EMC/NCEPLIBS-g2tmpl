@@ -12,7 +12,7 @@ on:
     - README.md
 
 jobs:
-  build:
+  developer:
     runs-on: ubuntu-latest
     env:
       FC: gfortran-9
@@ -37,7 +37,7 @@ jobs:
         mkdir build 
         cd build
         cmake -DENABLE_DOCS=ON -DCMAKE_C_FLAGS="-g -fprofile-abs-path -fprofile-arcs -ftest-coverage -O0 -fsanitize=address -Wall -Werror" -DCMAKE_Fortran_FLAGS="-g -fprofile-abs-path -fprofile-arcs -ftest-coverage -O0 -fsanitize=address -Wall" -DCMAKE_BUILD_TYPE=Debug ..
-        make -j2
+        make -j2 VERBOSE=1
     
     - name: test
       run: |
