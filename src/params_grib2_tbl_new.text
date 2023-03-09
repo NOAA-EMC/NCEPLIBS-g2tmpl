@@ -11,6 +11,7 @@
 !                                    new tables 4.2-3-2,3,4,and 6
 !2019-07-02         B. VUONG         Added more parameters 
 !2021-04-20         B. VUONG         Added more parameters 
+!2023-03-09         A. BENJAMIN      Added more parameters
 !
 !GRIB2 parameter table for all disciplines and categories
 !The fields in order are grib2_discipline  grib2_category 
@@ -929,6 +930,9 @@
    1   1   193   1 CPOFP
    1   1   194   1 PPFFG
    1   1   195   1 CWR
+!  Added more parameters 3/9/2023
+   1   1   196   1 QPFARI
+   1   1   196   1 QPFFFG
 !
 ! GRIB2 - TABLE 4.2-1-2 PARAMETERS FOR DISCIPLINE 1 CATEGORY 2
 !

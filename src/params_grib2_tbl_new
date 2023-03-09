@@ -709,6 +709,8 @@
    0   1   226   1 PWTHER
    0   1   219   1 QMAX
    0   1   220   1 QMIN
+   1   1   196   1 QPFARI
+   1   1   196   1 QPFFFG
    2   0   215   1 QREC
    0   1   218   1 QZ0
    0  16   201   1 RADARVIL
