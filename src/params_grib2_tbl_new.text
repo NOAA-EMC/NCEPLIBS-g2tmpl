@@ -12,6 +12,7 @@
 !2019-07-02         B. VUONG         Added more parameters 
 !2021-04-20         B. VUONG         Added more parameters 
 !2023-03-09         A. BENJAMIN      Added more parameters
+!2023-03-30         A. BENJAMIN      Added more parameters
 !
 !GRIB2 parameter table for all disciplines and categories
 !The fields in order are grib2_discipline  grib2_category 
@@ -1114,6 +1115,16 @@
    2   4     9   0 INFSINX
    2   4    10   0 FBUPINX
    2   4    11   0 FDSRTE
+! Added more parameters 3/30/2023
+   2   4    12   0 KRIDX
+   2   4    13   0 DRFACT
+   2   4    14   0 RATESPRD
+   2   4    15   0 FIREDIDX
+   2   4    16   0 SPRDCOMP
+   2   4    17   0 BURNIDX
+   2   4    18   0 IGNCOMP
+   2   4    19   0 ENRELCOM
+   2   4    26   0 WFIREPOT
 !
 !  Added new Discipline 2 category 5 in 8/26/2015
 !

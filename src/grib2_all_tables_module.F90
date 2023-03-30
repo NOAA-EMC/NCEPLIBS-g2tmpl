@@ -18,6 +18,7 @@
 !> 2019/06/25 | Boi Vuong | Corrected tablec sub-center: Changed name: ncep_hpc to ncep_wpc; ncep_tpc to ncep_nhc; sec - swpc and aded new sub-center: esrl
 !> 2019/06/25 | Boi Vuong | 17 Added new entries in table4_3,table4_5 and added new table4_8,table4_9,table 4_201 Added generating process model table on388_tablea
 !> 2021/04/20 | Boi Vuong | Updated table 4.3, 4.5,4.7 and on388_tablea
+!> 2023/03/30 | Andrew Benjamin | Added new entires to on388)_tablea
 !>
 !> @author Jun Wang @date 2012/01/25
 module grib2_all_tables_module
@@ -1179,6 +1180,12 @@ module grib2_all_tables_module
   !   Added new entries in tablea (06/01/2021)
   !
   data on388_tablea(119) /gen_proc('hafs',135)/
+  !
+  !   Added new enties in tablea (03/30/2023)
+  !
+  data on388_tablea(120) /gen_proc('extra_trop_storm_surge_atl_3d',21)/
+  data on388_tablea(121) /gen_proc('extra_trop_storm_surge_pac_3d',22)/
+  data on388_tablea(122) /gen_proc('extra_trop_storm_surge_micro_3d',23)/
 
 contains
   !
