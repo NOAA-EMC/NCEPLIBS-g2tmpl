@@ -44,7 +44,7 @@ Repository | Notes
 
 V. Krishna, Jun Wang, Boi Vuong, Jeff Ator, other NCEP/EMC Developers.
 
-Code Manager: [Hang Lei](mailto:hang.lei@noaa.gov). [Edward Hartnett](mailto:edward.hartnett@noaa.gov)
+Code Manager: [Hang Lei](mailto:hang.lei@noaa.gov), [Edward Hartnett](mailto:edward.hartnett@noaa.gov)
 
 ## Installing
 
