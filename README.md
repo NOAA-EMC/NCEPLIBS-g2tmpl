@@ -30,6 +30,8 @@ V17
 * [Weather Research and Forecasting Model (WRF)](https://www.mmm.ucar.edu/weather-research-and-forecasting-model)
 * many or all other NOAA [FV3](https://github.com/NOAA-EMC/fv3atm) based applications
 
+To submit bug reports, feature requests, or other code-related issues including installation and usage questions, please create a [GitHub issue](https://github.com/NOAA-EMC/NCEPLIBS-g2tmpl/issues). For general NCEPLIBS inquiries, contact [Edward Hartnett](mailto:edward.hartnett@noaa.gov) (secondary point of contact [Alex Richert](mailto:alexander.richert@noaa.gov)).
+
 ## Related NCEPLIBS Projects
 
 Repository | Notes
@@ -42,8 +44,7 @@ Repository | Notes
 
 V. Krishna, Jun Wang, Boi Vuong, Jeff Ator, other NCEP/EMC Developers.
 
-Code Manager : [Hang Lei](mailto:hang.lei@noaa.gov), [Ed
-Hartnett](mailto:edward.hartnett@noaa.gov)
+Code Manager: [Hang Lei](mailto:hang.lei@noaa.gov), [Edward Hartnett](mailto:edward.hartnett@noaa.gov)
 
 ## Installing
 
