@@ -11,6 +11,8 @@ project(
   VERSION ${pVersion}
   LANGUAGES C Fortran)
 
+include(GNUInstallDirs)
+
 # Determine whether or not to generate documentation.
 option(ENABLE_DOCS "Enable generation of doxygen-based documentation." OFF)
 
