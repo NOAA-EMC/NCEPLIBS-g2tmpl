@@ -87,6 +87,7 @@
    0  15     2   0 BRVEL
    0  15     0   0 BSWID
    4   3     0   0 BTOT
+   2   4    17   0 BURNIDX
    4   3     1   0 BVEC1
    4   3     2   0 BVEC2
    4   3     3   0 BVEC3
@@ -268,6 +269,7 @@
    0   5   192   1 DLWRF
    0   3    28   0 DMFLX
    0   0     6   0 DPT
+   2   4    13   0 DRFACT
    2   4     8   0 DRTCODE
    0  18    12   0 DRYDEP
    0  19   237   1 DRYTPROB
@@ -303,6 +305,7 @@
    0 191   197   1 ELONN
    0 191   193   1 ELON
    0   1   211   1 EMNP
+   2   4    19   0 ENRELCOM
    0   0     3   0 EPOT
    0  19   218   1 EPSR
   10   3   252   1 EROSNP
@@ -342,6 +345,7 @@
    0   1   228   1 FICEAC
    0   6    21   0 FICE
    0   6   199   1 FICE
+   2   4    15   0 FIREDIDX
    3   0     9   0 FIREDI
    2   4     1   0 FIREODT
    2   4     0   0 FIREOLK
@@ -441,6 +445,7 @@
    0  19   234   1 ICSEV
    1   2     5   0 ICTKIL
    2   0   207   1 ICWAT
+   2   4    18   0 IGNCOMP
    0   1    20   0 ILIQW
   10   0    27   0 IMFTSW
   10   0    26   0 IMFWW
@@ -459,6 +464,7 @@
    0  19   235   1 JFWPRB
   10   3   201   1 KENG
    0   7     3   0 KOX
+   2   4    12   0 KRIDX
   10   0    43   0 KSSEDW
    0   7     2   0 KX
    0   7   198   1 LAI
@@ -709,10 +715,13 @@
    0   1   226   1 PWTHER
    0   1   219   1 QMAX
    0   1   220   1 QMIN
+   1   1   196   1 QPFARI
+   1   1   196   1 QPFFFG
    2   0   215   1 QREC
    0   1   218   1 QZ0
    0  16   201   1 RADARVIL
    2   3   202   1 RADT
+   2   4    14   0 RATESPRD
    3   1     8   0 RAZA
    2   0    21   0 RCQ
    2   0   204   1 RCQ
@@ -955,6 +964,7 @@
    0   1   100   0 SPNCR
    0   1   101   0 SPNCS
    0   1    66   0 SPRATE
+   2   4    16   0 SPRDCOMP
    4   2     7   0 SPRDF
    3   0     3   0 SPWAT
    3   0     0   0 SRAD
@@ -1249,6 +1259,7 @@
    0   0    27   0 WETBT
    0  18    11   0 WETDEP
    0  20    75   0 WFIREFLX
+   2   4    26   0 WFIREPOT
    1   2     2   0 WFRACT
   10   0    59   0 WFWFSWEL
   10   0    60   0 WFWSSWEL
