@@ -16,9 +16,9 @@ defaults:
 jobs:
   Intel:
     runs-on: ubuntu-latest
-    env:
-      CC: icc
-      FC: ifort
+    strategy:
+      matrix:
+        compilers: ["CC=icc FC=ifort", "CC=icx FC=ifx"]
 
     steps:
 
@@ -45,7 +45,7 @@ jobs:
         cd g2tmpl
         mkdir build 
         cd build
-        cmake ..
+        ${{ matrix.compilers }} cmake ..
         make -j2 VERBOSE=1
     
     - name: test

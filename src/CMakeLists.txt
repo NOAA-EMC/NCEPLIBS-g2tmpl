@@ -13,7 +13,7 @@ elseif(UNIX)
 endif()
 
 # Set up flags for each compiler.
-if(CMAKE_C_COMPILER_ID MATCHES "^(Intel)$")
+if(CMAKE_C_COMPILER_ID MATCHES "^(Intel|IntelLLVM)$")
   set(CMAKE_C_FLAGS "-g ${CMAKE_C_FLAGS}")
   set(CMAKE_C_FLAGS_RELEASE "-O3")
   set(CMAKE_Fortran_FLAGS "-g ${CMAKE_Fortran_FLAGS}")
