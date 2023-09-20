@@ -1,4 +1,4 @@
-![Status](https://github.com/NOAA-EMC/NCEPLIBS-sp/workflows/Build%20and%20Test/badge.svg)
+![Status](https://github.com/NOAA-EMC/NCEPLIBS-g2tmpl/workflows/developer/badge.svg)
 
 # The NCEPLIBS-g2tmpl Library
 
