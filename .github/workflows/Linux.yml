@@ -11,12 +11,12 @@ jobs:
   Linux:
     runs-on: ubuntu-latest
     env:
-      FC: gfortran-9
-      CC: gcc-9
+      FC: gfortran
+      CC: gcc
 
     steps:
     - name: checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with: 
         path: g2tmpl
         submodules: true
@@ -26,12 +26,13 @@ jobs:
         cd g2tmpl
         mkdir build 
         cd build
-        cmake ..
+        cmake -DCMAKE_INSTALL_PREFIX=~/g2tmpl/install ..
         make -j2 VERBOSE=1
     
     - name: test
       run: |
         cd $GITHUB_WORKSPACE/g2tmpl/build
-        ctest --verbose --output-on-failure --rerun-failed 
+        ctest --verbose --output-on-failure --rerun-failed
+        make install
 
         
