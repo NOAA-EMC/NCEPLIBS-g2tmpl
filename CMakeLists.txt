@@ -1,6 +1,6 @@
 # This is the main CMake file for the NCEPLIBS-g2tmpl project.
 #
-# Kyle Gerheiser, Mark Potts
+# Kyle Gerheiser, Mark Potts, Ed Hartnett
 
 cmake_minimum_required(VERSION 3.15)
 
@@ -13,8 +13,9 @@ project(
 
 include(GNUInstallDirs)
 
-# Determine whether or not to generate documentation.
+# Handle user build options.
 option(ENABLE_DOCS "Enable generation of doxygen-based documentation." OFF)
+option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
 if(NOT CMAKE_BUILD_TYPE MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)$")
   message(STATUS "Setting build type to 'Release' as none was specified.")
