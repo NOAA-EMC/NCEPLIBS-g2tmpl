@@ -13,6 +13,7 @@ jobs:
     env:
       FC: gfortran
       CC: gcc
+    strategy:      
       matrix:
         config:
         - {
