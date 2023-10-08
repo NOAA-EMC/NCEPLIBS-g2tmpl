@@ -13,6 +13,14 @@ jobs:
     env:
       FC: gfortran
       CC: gcc
+      matrix:
+        config:
+        - {
+            options: "-DCMAKE_BUILD_TYPE=Debug"
+          }
+        - {
+            options: "-DBUILD_SHARED_LIBS=ON"
+          }
 
     steps:
     - name: checkout
@@ -26,13 +34,17 @@ jobs:
         cd g2tmpl
         mkdir build 
         cd build
-        cmake -DCMAKE_INSTALL_PREFIX=~/g2tmpl/install ..
+        cmake ${{ matrix.config.options }} -DCMAKE_INSTALL_PREFIX=~/g2tmpl/install ..
         make -j2 VERBOSE=1
     
     - name: test
       run: |
+        set -x
         cd $GITHUB_WORKSPACE/g2tmpl/build
         ctest --verbose --output-on-failure --rerun-failed
         make install
-
-        
+        if [ "${{ matrix.config.options }}" = "-DBUILD_SHARED_LIBS=ON" ]; then
+           ls -l ~/g2tmpl/install/lib/lib*.so || exit 1
+        else
+           ls -l ~/g2tmpl/install/lib/lib*.a || exit 1
+        fi
