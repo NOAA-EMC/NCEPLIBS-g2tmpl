@@ -21,7 +21,6 @@ jobs:
     strategy:
       matrix:
         os: ["ubuntu-latest"]
-#        pic_shared: ["+pic +shared", "+pic ~shared", "~pic", "~pic"]
         precision: ["precision=d", "precision=4", "precision=8"]
 
     runs-on: ${{ matrix.os }}
@@ -42,7 +41,6 @@ jobs:
         cp $GITHUB_WORKSPACE/g2tmpl/spack/package.py $SPACK_ROOT/var/spack/repos/builtin/packages/g2tmpl/package.py
         mv $GITHUB_WORKSPACE/g2tmpl $SPACK_ENV/g2tmpl
         spack develop --no-clone g2tmpl@develop
-#        spack add g2tmpl@develop%gcc@11 ${{ matrix.pic_shared }} ${{ matrix.precision }}
         spack add g2tmpl@develop%gcc@11 ${{ matrix.precision }}
         spack external find cmake gmake
         spack concretize
