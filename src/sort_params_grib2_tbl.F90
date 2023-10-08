@@ -1,10 +1,14 @@
 !> @file
 !> @brief Read and sort params_grib2_tbl_new.text.
-!> @author ???
+!> @author Jeff Ator, other NOAA programmers.
 
 !> This program reads params_grib2_tbl_new.text and writes the output
 !> file will be sorted with a format suitable for subsequent reading
 !> via the open_and_read_4dot2() function.
+!>
+!> For more info see
+!> https://github.com/NOAA-EMC/NCEPLIBS-g2tmpl/issues/40.
+!>
 !> @return 0 for sucess
 program  sort_params_grib2_tbl
   use grib2_all_tables_module
