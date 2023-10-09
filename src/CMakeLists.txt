@@ -36,7 +36,12 @@ set(lib_name ${PROJECT_NAME})
 set(module_dir ${CMAKE_CURRENT_BINARY_DIR}/include)
 
 # Add the library to the build.
-add_library(${lib_name} STATIC ${fortran_src} ${c_src})
+add_library(${lib_name} ${fortran_src} ${c_src})
+if(BUILD_SHARED_LIBS)
+  set_property(TARGET ${lib_name} PROPERTY POSITION_INDEPENDENT_CODE 1)
+  set_target_properties(${lib_name} PROPERTIES SOVERSION 0)  
+endif()
+
 
 # alias the library with a namespace so the lib can be used by add_subdirectory
 # and have its targets be the same as find_package
