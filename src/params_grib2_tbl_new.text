@@ -13,6 +13,9 @@
 !2021-04-20         B. VUONG         Added more parameters 
 !2023-03-09         A. BENJAMIN      Added more parameters
 !2023-03-30         A. BENJAMIN      Added more parameters
+!2023-10-19         A. BENJAMIN      Added more parameters and
+!                                    new tables 4.2-3-1,4-8,10-0,
+!                                    10-2,10-4
 !
 !GRIB2 parameter table for all disciplines and categories
 !The fields in order are grib2_discipline  grib2_category 
@@ -1176,6 +1179,8 @@
    3   1    27   0 BRFLF
    3   1    28   0 SPBRT
    3   1    29   0 SCRAD
+!  Added more parameters 10/19/2023
+   3   1    30   0 RFL04
 !  Added more parameters in 7/2/2019
    3   1    98   0 CCMPEMRR
    3   1    99   0 SDMPEMRR
@@ -1420,6 +1425,8 @@
    4   8     5   0 WHTCOR
    4   8     6   0 HELCOR
    4   8     7   0 MASK
+!  Added new parameter 10/19/2023
+   4   8     9   0 SICFL
 !
 ! GRIB2 - TABLE 4.2-4-9 PARAMETERS FOR DISCIPLINE 4 CATEGORY 9
 !
@@ -1496,7 +1503,36 @@
   10   0    62   0 WAVEFREW
   10   0    63   0 FREWWW
   10   0    64   0 FRWWTSW
-!  NCEP Local use
+! Added parameters 10/19/2023
+  10   0    65   0 PWPFSPAR
+  10   0    66   0 PWPSSPAR
+  10   0    67   0 PWPTSPAR
+  10   0    68   0 PWDFSPAR
+  10   0    69   0 PWDSSPAR
+  10   0    70   0 PWDTSPAR
+  10   0    71   0 PDWWAVE
+  10   0    72   0 PDTSWELL
+  10   0    73   0 WCAPFRAC
+  10   0    74   0 MDTSWEL
+  10   0    75   0 MDWWAVE
+  10   0    76   0 CHNCK
+  10   0    77   0 WAVESPSK
+  10   0    78   0 WAVEFMAG
+  10   0    79   0 WAVEFDIR
+  10   0    80   0 RWAVEAFW
+  10   0    81   0 FCVOCEAN 
+  10   0    82   0 AIRDENOC
+  10   0    83   0 NEFW
+  10   0    84   0 NSOCEAN
+  10   0    85   0 NEFOCEAN
+  10   0    86   0 SEVWAVE
+  10   0    87   0 WAVEMSLC
+  10   0    88   0 SPECWI
+  10   0    89   0 EFWS
+  10   0    90   0 USMFO
+  10   0    91   0 VSMFO
+  10   0    92   0 WAVETEFO
+  !  NCEP Local use
   10   0   192   1 WSTP
 !  Added parameter in 8/26/2015
   10   0   193   1 WLENG
@@ -1507,6 +1543,10 @@
   10   1     1   0 SPC
   10   1     2   0 UOGRD
   10   1     3   0 VOGRD
+! Added parameters 10/19/2023
+  10   1     4   0 RIPCOP
+  10   1     5   0 EASTCUR 
+  10   1     6   0 WESTCUR
 !  Added parameter in 7/2/2019
   10   1     4   0 RIPCOP
 !  NCEP Local use
@@ -1527,6 +1567,21 @@
   10   2     7   0 ICED
   10   2     8   0 ICETMP
   10   2     9   0 ICEPRS
+!  Added parameters 10/19/2023
+  10   2    10   0 ZVCICEP
+  10   2    11   0 MVCICEP
+  10   2    12   0 CICES
+  10   2    13   0 SNOWTSI
+  10   2    14   0 ALBDOICE
+  10   2    15   0 SICEVOL
+  10   2    16   0 SNVOLSI
+  10   2    17   0 SICEHC
+  10   2    18   0 SNSIHC
+  10   2    19   0 ICEFTHCK
+  10   2    20   0 ICEMPF
+  10   2    21   0 ICEMPD
+  10   2    22   0 ICEMPV
+  10   2    23   0 SIFTP
 !  Added more parameters in 8/26/2015
   10   2    10   0 ZVCICEP
   10   2    11   0 MVCICEP
@@ -1599,6 +1654,27 @@
   10   4    19   0 WATPDEN
   10   4    20   0 WATPDENA
   10   4    21   0 PRTSAL
+!  Added parameters 10/19/2023
+  10   4    22   0 WCHEATC
+  10   4    23   0 EASTWVEL
+  10   4    24   0 NRTHWVEL
+  10   4    25   0 XCOMPWV
+  10   4    26   0 YCOMPWV
+  10   4    27   0 UPWWVEL
+  10   4    28   0 VEDDYDIF
+  10   4    29   0 BPEH
+  10   4    30   0 FWFSW
+  10   4    31   0 FWFC
+  10   4    32   0 VSFSW
+  10   4    33   0 VSFC
+  10   4    34   0 SWTTNR
+  10   4    35   0 SWSTNR
+  10   4    36   0 SWTTP
+  10   4    37   0 SWSTP
+  10   4    38   0 ESWVP
+  10   4    39   0 NSWVP
+  10   4    40   0 SWTTBC
+  10   4    41   0 SWSTBC
 !  NCEP Local use
   10   4   192   1 WTMPC
   10   4   193   1 SALIN

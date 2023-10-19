@@ -24,8 +24,10 @@
    0   2    36   0 AFRWE
    0  20    50   0 AIA
    0  18    10   0 AIRCON
+  10   0    82   0 AIRDENOC
    2   0   208   1 AKHS
    2   0   209   1 AKMS
+  10   2    14   0 ALBDOICE
    0  19     1   0 ALBDO
    0  20   108   0 ALBGRD
    0  20   107   0 ALBSAT
@@ -79,6 +81,7 @@
    2   0   197   1 BMIXL
    0   7   201   1 BNEGELAY
    2   3     4   0 BOTLST
+  10   4    29   0 BPEH
    0   7   202   1 BPOSELAY
    0  15     1   0 BREF
    3   1    27   0 BRFLF
@@ -130,11 +133,13 @@
    0   1   193   1 CFRZR
    0  20    54   0 CGDRC
    0  20    53   0 CGPRC
+  10   0    76   0 CHNCK
   10   3     2   0 CH
    0  18    17   0 CIAIRC
    0  19   206   1 CICEL
    0   1    35   0 CICEP
    0   1   194   1 CICEP
+  10   2    12   0 CICES
   10   2    12   0 CICES
    0   6     0   0 CICE
    0  19   208   1 CIFLT
@@ -290,11 +295,14 @@
    0   2     9   0 DZDT
    0   7   207   1 E3KH
    3   2    11   0 EAODR
+  10   1     5   0 EASTCUR
+  10   4    23   0 EASTWVEL
    3   5     5   0 EBSDSSTS
    3   5     4   0 EBSSTSTD
    0  19    30   0 EDPARM
    0   7   204   1 EFHL
    0   3   222   1 EFSH
+  10   0    89   0 EFWS
    0   7     9   0 EHLX
    2   0   237   1 EIWATER
    4   2     1   0 ELCDEN
@@ -315,6 +323,7 @@
    3   1     0   0 ESTP
    3   1     4   0 ESTUGRD
    3   1     5   0 ESTVGRD
+  10   4    38   0 ESWVP
    0   2    32   0 ETACVV
   10   3   250   1 ETCWL
    4   3     4   0 ETOT
@@ -337,6 +346,7 @@
    2   4     3   0 FBAREA
    2   4    10   0 FBUPINX
    0   6    37   0 FCONPC
+  10   0    81   0 FCVOCEAN
    3   5     3   0 FDNSSTMP
    2   4    11   0 FDSRTE
    1   0     0   0 FFLDG
@@ -369,6 +379,8 @@
   10   3   204   1 FRZSPR
    0   1   121   0 FSNOWC
    0   6    36   0 FSTRPC
+  10   4    31   0 FWFC
+  10   4    30   0 FWFSW
    2   4     5   0 FWINX
    0   1    95   0 FZPRATE
    0  18     3   0 GDCES
@@ -429,7 +441,11 @@
    1   2     7   0 ICECIL
   10   2     0   0 ICEC
   10   2     7   0 ICED
+  10   2    19   0 ICEFTHCK
   10   2     6   0 ICEG
+  10   2    21   0 ICEMPD
+  10   2    20   0 ICEMPF
+  10   2    22   0 ICEMPV
   10   2     9   0 ICEPRS
    0  19    27   0 ICESC
    0  19    37   0 ICESEV
@@ -544,6 +560,8 @@
    0   1   112   0 MDLWGVA
    0   1   109   0 MDLWHVA
    0   1   115   0 MDLWSVA
+  10   0    74   0 MDTSWEL
+  10   0    75   0 MDWWAVE
    3   2    30   0 MEACST
    0   6   200   1 MFLUX
    0   2    26   0 MFLX
@@ -576,6 +594,7 @@
   10   4     1   0 MTHA
   10   4     0   0 MTHD
   10   2    11   0 MVCICEP
+  10   2    11   0 MVCICEP
   10   0    53   0 MWDFSWEL
   10   0    41   0 MWDIRW
   10   0    54   0 MWDSSWEL
@@ -604,6 +623,8 @@
    0   6    30   0 NDENCD
    2   0    31   0 NDVINX
    2   0   217   1 NDVI
+  10   0    85   0 NEFOCEAN
+  10   0    83   0 NEFW
    0 191   196   1 NLATN
    0 191   192   1 NLAT
    0   3   206   1 NLGSP
@@ -613,10 +634,13 @@
    0   5     0   0 NLWRS
    0   5     1   0 NLWRT
    3   1     6   0 NPIXU
+  10   4    24   0 NRTHWVEL
+  10   0    84   0 NSOCEAN
    0   4    11   0 NSWRFCS
    0   4     9   0 NSWRF
    0   4     0   0 NSWRS
    0   4     1   0 NSWRT
+  10   4    39   0 NSWVP
    4   4     6   0 NTRNFLUX
    0   2    37   0 NTSS
    0   1   106   0 NUMDG
@@ -659,6 +683,8 @@
    0   1   234   1 PCPDUR
    0  14   202   1 PDMAX1
    0  14   203   1 PDMAX24
+  10   0    72   0 PDTSWELL
+  10   0    71   0 PDWWAVE
   10   0    11   0 PERPW
    1   0    16   0 PERRATE
   10   0    13   0 PERSW
@@ -711,7 +737,13 @@
    0   1     3   0 PWAT
   10   0    46   0 PWAVEDIR
    0   1    30   0 PWCAT
+  10   0    68   0 PWDFSPAR
+  10   0    69   0 PWDSSPAR
+  10   0    70   0 PWDTSPAR
   10   0    34   0 PWPER
+  10   0    65   0 PWPFSPAR
+  10   0    66   0 PWPSSPAR
+  10   0    67   0 PWPTSPAR
    0   1   226   1 PWTHER
    0   1   219   1 QMAX
    0   1   220   1 QMIN
@@ -755,6 +787,7 @@
    0  15    10   0 RFCI
    0  15    13   0 RFGRPL
    0  15    14   0 RFHAIL
+   3   1    30   0 RFL04
    3   1     9   0 RFL06
    3   1    10   0 RFL08
    3   1    11   0 RFL16
@@ -768,6 +801,7 @@
    0   1    44   0 RIME
    0   1   203   1 RIME
   10   1     4   0 RIPCOP
+  10   1     4   0 RIPCOP
    0   7    12   0 RI
    0   7   194   1 RI
    2   3     6   0 RLYRS
@@ -779,6 +813,7 @@
    0 191   194   1 RTSEC
   10   3   206   1 RUNUP
    1   0    11   0 RVERSW
+  10   0    80   0 RWAVEAFW
    0   1    24   0 RWMR
    0  18    14   0 SACON
    0  20   100   0 SADEN
@@ -869,6 +904,7 @@
    1   2     4   0 SEDTMP
   10   3   207   1 SETUP
    0   1    62   0 SEVAP
+  10   0    86   0 SEVWAVE
    2   0   216   1 SFCRH
    2   0     1   0 SFCR
    2   0    34   0 SFCWRO
@@ -901,6 +937,10 @@
    0   1   108   0 SHTPRM
    0   7    13   0 SHWINX
   10   2     3   0 SICED
+  10   2    17   0 SICEHC
+  10   2    15   0 SICEVOL
+   4   8     9   0 SICFL
+  10   2    23   0 SIFTP
    4   9     1   0 SIGHAL
    0   7   209   1 SIGH
    4   9     2   0 SIGPAR
@@ -938,7 +978,10 @@
    0   1   201   1 SNOWC
    0   1   233   1 SNOWLR
    0  19   236   1 SNOWLVL
+  10   2    13   0 SNOWTSI
    0   1   222   1 SNOWT
+  10   2    18   0 SNSIHC
+  10   2    16   0 SNVOLSI
    2   3    25   0 SNWDEB
    2   3    27   0 SOILDEP
    2   3    21   0 SOILICE
@@ -956,6 +999,7 @@
    3   1    28   0 SPBRT
   10   1     1   0 SPC
    4   6     4   0 SPECIRR
+  10   0    88   0 SPECWI
    4   1     0   0 SPEED
    0   1     0   0 SPFH
   10   0    45   0 SPFTR
@@ -1018,6 +1062,12 @@
    3   1   194   1 SWQI
    0   4     6   0 SWRAD
    0  19   212   1 SWSALB
+  10   4    41   0 SWSTBC
+  10   4    35   0 SWSTNR
+  10   4    37   0 SWSTP
+  10   4    40   0 SWTTBC
+  10   4    34   0 SWTTNR
+  10   4    36   0 SWTTP
    0   6     1   0 TCDC
    0   0   204   1 TCHP
    0   1    81   0 TCICON
@@ -1153,7 +1203,9 @@
    0   7   197   1 UPHL
    2   3     2   0 UPLSM
    2   3     1   0 UPLST
+  10   4    27   0 UPWWVEL
    3   1   192   1 USCT
+  10   0    90   0 USMFO
   10   0    21   0 USSD
    0   2    27   0 USTM
    0   2   194   1 USTM
@@ -1176,6 +1228,7 @@
    0  14   195   1 VDFOZ
    0   2   208   1 VDFUA
    0   2   209   1 VDFVA
+  10   4    28   0 VEDDYDIF
    0   2   204   1 VEDH
    2   0   232   1 VEGMAX
    2   0   231   1 VEGMIN
@@ -1220,6 +1273,9 @@
    0   0    15   0 VPTMP
    0   2   224   1 VRATE
    3   1   193   1 VSCT
+  10   4    33   0 VSFC
+  10   4    32   0 VSFSW
+  10   0    91   0 VSMFO
    2   0    25   0 VSOILM
    2   3    16   0 VSOSM
   10   0    22   0 VSSD
@@ -1240,9 +1296,16 @@
   10   4    19   0 WATPDEN
   10   4    18   0 WATPTEMP
    2   0     5   0 WATR
+  10   0    79   0 WAVEFDIR
+  10   0    78   0 WAVEFMAG
   10   0    62   0 WAVEFREW
+  10   0    87   0 WAVEMSLC
+  10   0    77   0 WAVESPSK
+  10   0    92   0 WAVETEFO
+  10   0    73   0 WCAPFRAC
    2   0   223   1 WCCONV
    0   0    13   0 WCF
+  10   4    22   0 WCHEATC
    2   0   221   1 WCINC
    2   0   226   1 WCUFLX
    2   0   227   1 WCVFLX
@@ -1256,6 +1319,7 @@
   10   0    58   0 WDWTSWEL
    0   1    13   0 WEASD
   10   0    42   0 WESP
+  10   1     6   0 WESTCUR
    0   0    27   0 WETBT
    0  18    11   0 WETDEP
    0  20    75   0 WFIREFLX
@@ -1295,8 +1359,12 @@
    2   0   224   1 WVUFLX
    2   0   225   1 WVVFLX
   10   0    14   0 WWSDIR
+  10   4    25   0 XCOMPWV
    4   6     1   0 XLONG
    0   3    26   0 XPRES
    4   8     0   0 XRAYRAD
    4   6     2   0 XSHRT
+  10   4    26   0 YCOMPWV
   10   2    10   0 ZVCICEP
+  10   2    10   0 ZVCICEP
+   0   0     0   0 
