@@ -208,6 +208,53 @@
    0   1   119   0 UCSCLW
    0   1   120   0 UCSCIW
    0   1   121   0 FSNOWC
+!  Added more parameters 10/20/2023
+   0   1   122   0 PIIDX
+   0   1   123   0 DPTYPE
+   0   1   124   0 PSHOW
+   0   1   125   0 PBSNOW
+   0   1   126   0 PBLIZZ
+   0   1   127   0 ICEP
+   0   1   128   0 TSPRATE
+   0   1   129   0 ERADCW
+   0   1   130   0 ERADRAIN
+   0   1   131   0 ERADCICE
+   0   1   132   0 ERADSNOW
+   0   1   133   0 ERADGRL
+   0   1   134   0 ERADHAIL
+   0   1   135   0 ERADSLC
+   0   1   136   0 ERADSIC
+   0   1   137   0 ERATIOR
+   0   1   138   0 ERATIOCI
+   0   1   139   0 ERATIOS
+   0   1   140   0 ERATIOG
+   0   1   141   0 ERATIOH
+   0   1   142   0 ERATOSIC
+   0   1   143   0 PERATE
+   0   1   144   0 SRWATERC
+   0   1   145   0 SSNOWWC
+   0   1   146   0 CICEPR
+   0   1   147   0 CHPRECIP
+   0   1   148   0 SNOWERAT
+   0   1   149   0 CWATERMR
+   0   1   150   0 CEWVMF
+   0   1   151   0 CNWVMF
+   0   1   152   0 CECLWMF
+   0   1   153   0 CNCLWMF
+   0   1   154   0 CECIMF
+   0   1   155   0 CNCIMF
+   0   1   156   0 CERMF
+   0   1   157   0 CNRMF
+   0   1   158   0 CEFMF
+   0   1   159   0 CNSMF
+   0   1   160   0 CDWFMF
+   0   1   161   0 CDCLWMF
+   0   1   162   0 CDCIMF
+   0   1   163   0 CDRMF
+   0   1   164   0 CDSMF
+   0   1   165   0 CDTWMF
+   0   1   166   0 CWVF
+   0   1   167   0 TCSLW
 !  NCEP Local use
    0   1   192   1 CRAIN
    0   1   193   1 CFRZR
@@ -312,6 +359,19 @@
 !  Added more parameters in 7/2/2019
    0   2    45   0 UNDIV
    0   2    46   0 VORTADV
+!   Added parameters 10/20/2023
+   0   2    47   0 SFRHEAT
+   0   2    48   0 SFRMOIST
+   0   2    49   0 WINDSTR
+   0   2    50   0 EWINDSTR
+   0   2    51   0 NWINDSTR
+   0   2    52   0 UWINDSTR
+   0   2    53   0 VWINDSTR
+   0   2    54   0 NLSRLH
+   0   2    55   0 NLSRLM
+   0   2    56   0 UNWIND
+   0   2    57   0 VNWIND
+   0   2    58   0 TSFCSTR
 !  NCEP Local use
    0   2   192   1 VWSH
    0   2   193   1 MFLX
@@ -397,6 +457,21 @@
    0   3    30   0 DDRATE
 !  Added more parameters in 7/2/2019
    0   3    31   0 UCLSPRS
+!  Added parameters 10/20/2023
+   0   3    32   0 SWATERVP
+   0   3    33   0 GAMSL
+   0   3    34   0 GHARGRD
+   0   3    35   0 CDTMF
+   0   3    36   0 CETMF
+   0   3    37   0 CNTMF
+   0   3    38   0 SDFSO
+   0   3    39   0 CMATMOS
+   0   3    40   0 CEGFLUX
+   0   3    41   0 CNGFLUX
+   0   3    42   0 CDWGFLUX
+   0   3    43   0 CDGFLUX
+   0   3    44   0 HWBT
+   0   3    45   0 WOBT
 !  NCEP Local use
    0   3   192   1 MSLET
    0   3   193   1 5WAVH
@@ -456,6 +531,15 @@
 !  Added more parameters in 2/28/2017
    0   4    52   0 DSWRFCS
    0   4    53   0 USWRFCS
+!  Added more parameters 10/20/2023
+   0   4    54   0 DSWRFLX
+   0   4    55   0 UVALBDIF
+   0   4    56   0 UVALBDIR
+   0   4    57   0 UBALBDIRG
+   0   4    58   0 UVALBDIRI
+   0   4    59   0 UVBDIRV
+   0   4    60   0 PHOARFCS
+   0   4    61   0 DSWRFLXCS
 !  NCEP Local use
    0   4   192   1 DSWRF
    0   4   193   1 USWRF
@@ -485,6 +569,12 @@
    0   5     7   0 BRTEMP
 !  Added more parameters in 2/28/2017
    0   5     8   0 DLWRFCS
+!  Added new parameters 10/20/2023
+   0   5     9   0 NIRALBDIF
+   0   5    10   0 NIRALBDIR
+   0   5    11   0 NIRALBDIRG
+   0   5    12   0 NIRALBDIRI
+   0   5    13   0 NIRALBDIRV
 !  NCEP Local use
    0   5   192   1 DLWRF
    0   5   193   1 ULWRF
@@ -545,6 +635,9 @@
    0   6    47   0 VFRCWD
    0   6    48   0 VFRCICE
    0   6    49   0 VFRCIW
+! Added new parameters 10/20/2023
+   0   6    50   0 FOG
+   0   6    51   0 SUNFRAC
 !  NCEP Local use
    0   6   192   1 CDLYR
    0   6   193   1 CWORK
@@ -756,6 +849,15 @@
    0  19    36   0 PSNOWS
 !  Added more parameters in 12/03/2019
    0  19    37   0 ICESEV
+!  Added new parameters 10/20/23
+   0  19    38   0 SKYIDX
+   0  19    39   0 SEEINDEX
+   0  19    40   0 SNOWLVL
+   0  19    41   0 DBHEIGHT
+   0  19    42   0 TLBHEIGHT 
+   0  19    43   0 TLTHEIGH
+   0  19    44   0 MEANVGRTL
+   0  19    45   0 MINVGRTL
 !  NCEP Local use
    0  19   192   1 MXSALB
    0  19   193   1 SNFALB
@@ -819,6 +921,8 @@
    0  20    15   0 DDVEL
    0  20    16   0 MSSRDRYA
    0  20    17   0 MSSRWETA
+!  Added new parameters 10/20/2023
+   0  20    18   0 POTHPH
 !
    0  20    50   0 AIA
    0  20    51   0 CONAIR
@@ -848,6 +952,13 @@
    0  20    73   0 CBLCSRCP
    0  20    74   0 CIRERECP
    0  20    75   0 WFIREFLX
+!  Added new parameters 10/20/2023 
+   0  20    76   0 EMISFLX
+   0  20    77   0 SFCEFLX
+   0  20    78   0 CEMF 
+   0  20    79   0 CNMF
+   0  20    80   0 CDIVMF
+   0  20    81   0 CNETS 
 !
    0  20   100   0 SADEN
    0  20   101   0 ATMTK
