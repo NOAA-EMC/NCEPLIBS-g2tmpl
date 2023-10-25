@@ -216,20 +216,20 @@
    0   1   126   0 PBLIZZ
    0   1   127   0 ICEP
    0   1   128   0 TSPRATE
-   0   1   129   0 ERADCW
-   0   1   130   0 ERADRAIN
-   0   1   131   0 ERADCICE
-   0   1   132   0 ERADSNOW
-   0   1   133   0 ERADGRL
-   0   1   134   0 ERADHAIL
-   0   1   135   0 ERADSLC
-   0   1   136   0 ERADSIC
-   0   1   137   0 ERATIOR
-   0   1   138   0 ERATIOCI
-   0   1   139   0 ERATIOS
-   0   1   140   0 ERATIOG
-   0   1   141   0 ERATIOH
-   0   1   142   0 ERATOSIC
+   0   1   129   0 EFRCCWAT
+   0   1   130   0 EFRRAIN
+   0   1   131   0 EFRCICE
+   0   1   132   0 EFRSNOW
+   0   1   133   0 EFRGRL
+   0   1   134   0 EFRHAIL
+   0   1   135   0 EFRSLC
+   0   1   136   0 EFRSICEC
+   0   1   137   0 EFARRAIN
+   0   1   138   0 EFARCICE
+   0   1   139   0 EFARSNOW
+   0   1   140   0 EFARGRL
+   0   1   141   0 EFARHAIL
+   0   1   142   0 EFARSIC
    0   1   143   0 PERATE
    0   1   144   0 SRWATERC
    0   1   145   0 SSNOWWC
