@@ -16,6 +16,9 @@
 !2023-10-19         A. BENJAMIN      Added more parameters and
 !                                    new tables 4.2-3-1,4-8,10-0,
 !                                    10-2,10-4
+!2023-11-02         A. BENJAMIN      Added new parameters,
+!                                    fixed mislabeled params,
+!                                    match grib2 doc
 !
 !GRIB2 parameter table for all disciplines and categories
 !The fields in order are grib2_discipline  grib2_category 
@@ -61,6 +64,10 @@
 !  Added more parameters in 7/2/2019
    0   0    28   0 UCTMP
    0   0    29   0 TMPADV
+!  Added new parameters 11/2/2023
+   0   0    30   0 LHFLXE
+   0   0    31   0 LHFLXS
+   0   0    32   0 WETBPT
 !  NCEP Local use
    0   0   192   1 SNOHF
    0   0   193   1 TTRAD
@@ -77,6 +84,8 @@
    0   0   204   1 TCHP 
 !  Added more parameters on 02/25/2021
    0   0   205   1 ELMELT
+!  Added new parameters 11/2/2023
+   0   0   206   1 WETGLBT
 !   
 ! GRIB2 - TABLE 4.2-0-1 PARAMETERS FOR DISCIPLINE 0 CATEGORY 1
 !
@@ -413,6 +422,9 @@
    0   2   228   1 TOA50
    0   2   229   1 TOD50
    0   2   230   1 TOD90
+!  Added new parameters 11/2/2023
+   0   2   231   1 TPWDIR
+   0   2   232   1 TPWSPD
 !  Added more parameters in 2/25/2021   
    0   2   233   1 ESHR
    0   2   234   1 UESH  
@@ -449,7 +461,8 @@
    0   3    23   0 GWD
    0   3    24   0 ASGSO
    0   3    25   0 NLPRES
-   0   3    26   0 XPRES
+!  Fixed 26 to match grib2 doc 11/2/2023
+   0   3    26   0 EXPRES
 !  Added more parameters in 2/28/2017
    0   3    27   0 UMFLX
    0   3    28   0 DMFLX
@@ -525,6 +538,7 @@
 !  Added more parameters in 2/28/2017
    0   4    13   0 DSWRFLX
    0   4    14   0 DIFSWRF
+   0   4    15   0 UUVEARTH
 !
    0   4    50   0 UVIUCS
    0   4    51   0 UVI
@@ -673,6 +687,8 @@
    0   7    18   0 FLXRN
 !  Added more parameters in 7/2/2019
    0   7    19   0 CONAPES
+!  Added new parameter 11/2/2023
+   0   7    20   0 TIIDEX
 !  NCEP Local use
    0   7   192   1 LFTX
    0   7   193   1 4LFTX
@@ -778,6 +794,8 @@
    0  17     2   0 CDGDLTFD
    0  17     3   0 CDCDLTFD
    0  17     4   0 TLGTFD
+!  Added new parameter 11/2/2023
+   0  17     5   0 SLNGPIDX
 !  NCEP Local use
    0  17   192   1 LTNG
 !
@@ -899,6 +917,8 @@
    0  19   236   1 SNOWLVL
    0  19   237   1 DRYTPROB
    0  19   238   1 ELLINX
+!  Added new parameter 11/2/2023
+   0  19   239   1 CWASP
 !
 ! GRIB2 - TABLE 4.2-0-20 PARAMETERS FOR DISCIPLINE 0 CATEGORY 20
 !
@@ -1047,7 +1067,7 @@
    1   1   195   1 CWR
 !  Added more parameters 3/9/2023
    1   1   196   1 QPFARI
-   1   1   196   1 QPFFFG
+   1   1   197   1 QPFFFG
 !
 ! GRIB2 - TABLE 4.2-1-2 PARAMETERS FOR DISCIPLINE 1 CATEGORY 2
 !
@@ -1066,6 +1086,8 @@
    1   2    12   0 SALTIL
 !  Added more parameters in 2/28/2017
    1   2    13   0 CSAFC
+!  Added new paramter 11/2/2023
+   1   2    14   0 LNDSNOWT
 !
 ! GRIB2 - TABLE 4.2-2-0 PARAMETERS FOR DISCIPLINE 2 CATEGORY 0
 !
@@ -1091,8 +1113,9 @@
 !   2   0    17   0 WILT          
    2   0    18   0 RCS
    2   0    19   0 RCT
-   2   0    20   0 RCSOL
-   2   0    21   0 RCQ
+! Swapped RCQ and RCSOL 11/02/2023
+   2   0    20   0 RCQ
+   2   0    21   0 RCSOL
 !  Parameter SOILD deprecated 12/03/2021
 !   2   0    22   0 SOILM
    2   0    23   0 CISOILW
@@ -1101,8 +1124,9 @@
    2   0    26   0 WILT
    2   0    27   0 VWILTM
    2   0    28   0 LEAINX
-   2   0    29   0 EVERF
-   2   0    30   0 DECF
+!  Fixed 29-30 to match grib2 doc 11/2/2023
+   2   0    29   0 EVGFC
+   2   0    30   0 DECFC
    2   0    31   0 NDVINX
    2   0    32   0 RDVEG
 !  Added more parameters in 8/26/2015
@@ -1275,6 +1299,9 @@
 !  Added new Discipline 2 category 5 in 8/26/2015
 !
 ! GRIB2 - TABLE 4.2-2-5 PARAMETERS FOR DISCIPLINE 2 CATEGORY 5
+!
+! Added new parameter 11/2/2023
+   2   5     0   0 GLACCOV
 !
    2   5     1   0 GLACTMP
 !
@@ -1518,7 +1545,11 @@
    4   2     7   0 SPRDF
    4   2     8   0 HPRIMF
    4   2     9   0 CRTFRQ
-   4   2    10   0 SCINT
+! adding new parameters 11/2/2023
+   4   2    10   0 MAXUFZ
+   4   2    11   0 PEAKH
+   4   2    12   0 PEAKDEN
+   4   2    13   0 EQSLABT
 !
 ! GRIB2 - TABLE 4.2-4-3 PARAMETERS FOR DISCIPLINE 4 CATEGORY 3
 !
@@ -1569,7 +1600,7 @@
    4   8     6   0 HELCOR
    4   8     7   0 MASK
 !  Added new parameter 10/19/2023
-   4   8     9   0 SICFL
+   4   8     8   0 SICFL
 !
 ! GRIB2 - TABLE 4.2-4-9 PARAMETERS FOR DISCIPLINE 4 CATEGORY 9
 !
@@ -1686,12 +1717,11 @@
   10   1     1   0 SPC
   10   1     2   0 UOGRD
   10   1     3   0 VOGRD
-! Added parameters 10/19/2023
-  10   1     4   0 RIPCOP
-  10   1     5   0 EASTCUR 
-  10   1     6   0 WESTCUR
 !  Added parameter in 7/2/2019
   10   1     4   0 RIPCOP
+! Added parameters 10/19/2023
+  10   1     5   0 EASTCUR
+  10   1     6   0 NRTHCUR
 !  NCEP Local use
   10   1   192   1 OMLU
   10   1   193   1 OMLV
@@ -1710,10 +1740,11 @@
   10   2     7   0 ICED
   10   2     8   0 ICETMP
   10   2     9   0 ICEPRS
-!  Added parameters 10/19/2023
+!  Added more parameters in 8/26/2015
   10   2    10   0 ZVCICEP
   10   2    11   0 MVCICEP
   10   2    12   0 CICES
+!  Added parameters 10/19/2023
   10   2    13   0 SNOWTSI
   10   2    14   0 ALBDOICE
   10   2    15   0 SICEVOL
@@ -1725,17 +1756,32 @@
   10   2    21   0 ICEMPD
   10   2    22   0 ICEMPV
   10   2    23   0 SIFTP
-!  Added more parameters in 8/26/2015
-  10   2    10   0 ZVCICEP
-  10   2    11   0 MVCICEP
-  10   2    12   0 CICES
-!
+  !
 ! GRIB2 - TABLE 4.2-10-3 PARAMETERS FOR DISCIPLINE 10 CATEGORY 3
 !
   10   3     0   0 WTMP
   10   3     1   0 DSLM
 !  Added more parameters in 2/28/2017
   10   3     2   0 CH
+!  Added new parameters in 10/30/2023
+  10   3     3   0 PRACTSAL
+  10   3     4   0 DWHFLUX
+  10   3     5   0 EASTWSS
+  10   3     6   0 NORTHWSS
+  10   3     7   0 XCOMPSS
+  10   3     8   0 YCOMPSS
+  10   3     9   0 THERCSSH
+  10   3    10   0 HALOCSSH
+  10   3    11   0 STERCSSH
+  10   3    12   0 SEASFLUX
+  10   3    13   0 NETUPWFLUX
+  10   3    14   0 ESURFWVEL
+  10   3    15   0 NSURFWVEL
+  10   3    16   0 XSURFWVEL
+  10   3    17   0 YSURFVWEL
+  10   3    18   0 HFLUXCOR
+  10   3    19   0 SSHGTPARM
+  10   3    20   0 DSLIBARCOR
 !  NCEP Local use
   10   3   192   1 SURGE
   10   3   193   1 ETSRG
@@ -1830,6 +1876,9 @@
 !
   10 191     0   0 IRTSEC
   10 191     1   0 MOSF
+! Added new parameters 10/30/2023
+  10 191     3   0 DSLOBS
+  10 191     4   0 BARDSF 
 !
 !  Added parameter in 8/26/2015
   10 191     3   0 DSLOBSO

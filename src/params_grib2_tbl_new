@@ -68,6 +68,7 @@
    3   1    13   0 ATMDIV
    0  20   101   0 ATMTK
    2   3   201   1 AVSFT
+  10 191     4   0 BARDSF
    2   3   200   1 BARET
   10   4     7   0 BATHY
   10   0    44   0 BENINX
@@ -161,7 +162,6 @@
    0   1   146   0 CICEPR
    0   1    35   0 CICEP
    0   1   194   1 CICEP
-  10   2    12   0 CICES
   10   2    12   0 CICES
    0   6     0   0 CICE
    0  19   208   1 CIFLT
@@ -270,6 +270,7 @@
    0  19    21   0 CTP
    0   6    16   0 CUEFI
    0   6   194   1 CUEFI
+   0  19   239   1 CWASP
    0   1   149   0 CWATERMR
    0   6     6   0 CWAT
    0   7   195   1 CWDI
@@ -284,7 +285,7 @@
    0  20    12   0 DDMFLX
    0   3    30   0 DDRATE
    0  20    15   0 DDVEL
-   2   0    30   0 DECF
+   2   0    30   0 DECFC
    0   3    14   0 DENALT
    0   3    10   0 DEN
    0   0     7   0 DEPR
@@ -320,9 +321,11 @@
    4   7     2   0 DSKDAY
    4   7     1   0 DSKINT
    4   7     3   0 DSKNGT
+  10   3    20   0 DSLIBARCOR
   10   3     1   0 DSLM
   10 191     3   0 DSLOBSO
    0 191     3   0 DSLOBS
+  10 191     3   0 DSLOBS
    0   4    52   0 DSWRFCS
    0   4    61   0 DSWRFLXCS
    0   4    13   0 DSWRFLX
@@ -332,11 +335,13 @@
    0   4   204   1 DTRF
    2   4     7   0 DUFMCODE
    0   4   194   1 DUVB
+  10   3     4   0 DWHFLUX
    0   4    12   0 DWUVR
    0   2     9   0 DZDT
    0   7   207   1 E3KH
    3   2    11   0 EAODR
   10   1     5   0 EASTCUR
+  10   3     5   0 EASTWSS
   10   4    23   0 EASTWVEL
    3   5     5   0 EBSDSSTS
    3   5     4   0 EBSSTSTD
@@ -373,6 +378,7 @@
    2   4    19   0 ENRELCOM
    0   0     3   0 EPOT
    0  19   218   1 EPSR
+   4   2    13   0 EQSLABT
   10   3   252   1 EROSNP
    1   0     3   0 ESCT
    0   2   233   1 ESHR
@@ -380,6 +386,7 @@
    3   1     0   0 ESTP
    3   1     4   0 ESTUGRD
    3   1     5   0 ESTVGRD
+  10   3    14   0 ESURFWVEL
   10   4    38   0 ESWVP
    0   2    32   0 ETACVV
   10   3   250   1 ETCWL
@@ -396,11 +403,12 @@
    4   3     5   0 EVEC1
    4   3     6   0 EVEC2
    4   3     7   0 EVEC3
-   2   0    29   0 EVERF
+   2   0    29   0 EVGFC
    0   1     6   0 EVP
    2   0   213   1 EWATR
    0   2    50   0 EWINDSTR
    0   2    39   0 EWTPARM
+   0   3    26   0 EXPRES
    4   6     5   0 F107
    2   4     3   0 FBAREA
    2   4    10   0 FBUPINX
@@ -456,6 +464,7 @@
    2   0    10   0 GFLUX
    2   0   193   1 GFLUX
    0   3    34   0 GHARGRD
+   2   5     0   0 GLACCOV
    2   5     1   0 GLACTMP
    0   3     9   0 GPA
    0   1    75   0 GPRATE
@@ -478,6 +487,7 @@
    0  19   198   1 HAILPROB
    0   1    73   0 HAILPR
    0   1    31   0 HAIL
+  10   3    10   0 HALOCSSH
    4   8     2   0 HARAD
    0  19   210   1 HAVNI
    0   6     5   0 HCDC
@@ -485,6 +495,7 @@
    0   6    27   0 HCONCT
    0   0    12   0 HEATX
    4   8     6   0 HELCOR
+  10   3    18   0 HFLUXCOR
    2   0    24   0 HFLUX
    0  20    62   0 HGTMD
    0   3   211   1 HGTN
@@ -573,6 +584,8 @@
    2   0    28   0 LEAINX
    0   7    10   0 LFTX
    0   7   192   1 LFTX
+   0   0    30   0 LHFLXE
+   0   0    31   0 LHFLXS
    0   0    10   0 LHTFL
    0   1   229   1 LICEAC
    0  13   195   1 LIPMF
@@ -581,6 +594,7 @@
    4   7     0   0 LMBINT
    0   3   210   1 LMH
    0   2   218   1 LMV
+   1   2    14   0 LNDSNOWT
    0   2   203   1 LOPP
    0   2   199   1 LOUV
    2   0    53   0 LOVEGCOV
@@ -620,6 +634,7 @@
    0   2    21   0 MAXGUST
    0  16   198   1 MAXREF
    0   1    27   0 MAXRH
+   4   2    10   0 MAXUFZ
    0   2   220   1 MAXUVV
    0   2   222   1 MAXUW
    0   1   245   1 MAXVIG
@@ -669,7 +684,6 @@
   10   4     1   0 MTHA
   10   4     0   0 MTHD
   10   2    11   0 MVCICEP
-  10   2    11   0 MVCICEP
   10   0    53   0 MWDFSWEL
   10   0    41   0 MWDIRW
   10   0    54   0 MWDSSWEL
@@ -701,6 +715,7 @@
    2   0    59   0 NECOFLUX
   10   0    85   0 NEFOCEAN
   10   0    83   0 NEFW
+  10   3    13   0 NETUPWFLUX
    0   5     9   0 NIRALBDIF
    0   5    11   0 NIRALBDIRG
    0   5    12   0 NIRALBDIRI
@@ -716,9 +731,12 @@
    0   5     5   0 NLWRF
    0   5     0   0 NLWRS
    0   5     1   0 NLWRT
+  10   3     6   0 NORTHWSS
    3   1     6   0 NPIXU
+  10   1     6   0 NRTHCUR
   10   4    24   0 NRTHWVEL
   10   0    84   0 NSOCEAN
+  10   3    15   0 NSURFWVEL
    0   4    11   0 NSWRFCS
    0   4     9   0 NSWRF
    0   4     0   0 NSWRS
@@ -771,6 +789,8 @@
    0  14   203   1 PDMAX24
   10   0    72   0 PDTSWELL
   10   0    71   0 PDWWAVE
+   4   2    12   0 PEAKDEN
+   4   2    11   0 PEAKH
    0   1   143   0 PERATE
    2   0    40   0 PERATE
   10   0    11   0 PERPW
@@ -804,6 +824,7 @@
    1   1   194   1 PPFFG
    0   1   231   1 PPINDX
    1   1     1   0 PPOSP
+  10   3     3   0 PRACTSAL
    0   1     7   0 PRATE
    4   0     4   0 PRATMP
    0  15     5   0 PREC
@@ -840,16 +861,16 @@
    0   1   219   1 QMAX
    0   1   220   1 QMIN
    1   1   196   1 QPFARI
-   1   1   196   1 QPFFFG
+   1   1   197   1 QPFFFG
    2   0   215   1 QREC
    0   1   218   1 QZ0
    0  16   201   1 RADARVIL
    2   3   202   1 RADT
    2   4    14   0 RATESPRD
    3   1     8   0 RAZA
-   2   0    21   0 RCQ
+   2   0    20   0 RCQ
    2   0   204   1 RCQ
-   2   0    20   0 RCSOL
+   2   0    21   0 RCSOL
    2   0   205   1 RCSOL
    2   0    18   0 RCS
    2   0   202   1 RCS
@@ -892,7 +913,6 @@
    0   1     1   0 RH
    0   1    44   0 RIME
    0   1   203   1 RIME
-  10   1     4   0 RIPCOP
   10   1     4   0 RIPCOP
    0   7    12   0 RI
    0   7   194   1 RI
@@ -980,7 +1000,6 @@
    3 192    68   0 SBTAHI9
    3   0     2   0 SBTMP
    0   7   210   1 SCCP
-   4   2    10   0 SCINT
    0   1    84   0 SCLIWC
    0   1    83   0 SCLLWC
    3   1    29   0 SCRAD
@@ -992,6 +1011,7 @@
    3   1    99   0 SDMPEMRR
    0   3    20   0 SDSGSO
    0   1    60   0 SDWE
+  10   3    12   0 SEASFLUX
    0  20    11   0 SEDMFLX
    1   2     3   0 SEDTK
    1   2     4   0 SEDTMP
@@ -1036,7 +1056,7 @@
   10   2     3   0 SICED
   10   2    17   0 SICEHC
   10   2    15   0 SICEVOL
-   4   8     9   0 SICFL
+   4   8     8   0 SICFL
   10   2    23   0 SIFTP
    4   9     1   0 SIGHAL
    0   7   209   1 SIGH
@@ -1051,6 +1071,7 @@
    0   1   230   1 SLACC
    0  19    23   0 SLDP
    3   0     4   0 SLFTI
+   0  17     5   0 SLNGPIDX
   10   3   202   1 SLTFL
    2   3   194   1 SLTYP
    0   6    34   0 SLWTC
@@ -1126,6 +1147,7 @@
    0   1    12   0 SRWEQ
    0  20   103   0 SSALBK
    0   3    22   0 SSGSO
+  10   3    19   0 SSHGTPARM
   10   3   195   1 SSHG
    3   5     2   0 SSKSSTMP
    3 192    62   0 SSMS1715
@@ -1141,6 +1163,7 @@
    2   0   211   1 SSTOR
   10   3   199   1 SSTT
    0   6    35   0 SSWTC
+  10   3    11   0 STERCSSH
    0  19   200   1 STORPROB
    0   7   208   1 STPC
    0   2     4   0 STRM
@@ -1215,6 +1238,7 @@
    0   0    20   0 TDCHT
    0   2    31   0 TDCMOM
    2   0    36   0 TFRCT
+  10   3     9   0 THERCSSH
    0   0   197   1 THFLX
    0   3    12   0 THICK
    0   6    10   0 THUNC
@@ -1223,6 +1247,7 @@
    0  18     7   0 TIACIP
    0  18     8   0 TIACRP
   10   3   251   1 TIDE
+   0   7    20   0 TIIDEX
    0   1   206   1 TIPD
    0  19    11   0 TKE
    0   1    90   0 TKMFLX
@@ -1249,6 +1274,8 @@
    2   0    37   0 TPERCT
    0  19   219   1 TPFI
    0   1    52   0 TPRATE
+   0   2   231   1 TPWDIR
+   0   2   232   1 TPWSPD
    0  20    13   0 TRANHH
    2   3    12   0 TRANSO
    2   0   230   1 TRANS
@@ -1332,6 +1359,7 @@
    0   4     8   0 USWRF
    0   4   193   1 USWRF
    0   4   205   1 UTRF
+   0   4    15   0 UUVEARTH
    0   4    55   0 UVALBDIF
    0   4    58   0 UVALBDIRI
    0   4    56   0 UVALBDIR
@@ -1445,10 +1473,11 @@
   10   0    58   0 WDWTSWEL
    0   1    13   0 WEASD
   10   0    42   0 WESP
-  10   1     6   0 WESTCUR
+   0   0    32   0 WETBPT
    0   0    27   0 WETBT
    2   0    45   0 WETCOV
    0  18    11   0 WETDEP
+   0   0   206   1 WETGLBT
    2   0    46   0 WETTYPE
    0  20    75   0 WFIREFLX
    2   4    26   0 WFIREPOT
@@ -1490,12 +1519,15 @@
    2   0   224   1 WVUFLX
    2   0   225   1 WVVFLX
   10   0    14   0 WWSDIR
+  10   3     7   0 XCOMPSS
   10   4    25   0 XCOMPWV
    4   6     1   0 XLONG
-   0   3    26   0 XPRES
    4   8     0   0 XRAYRAD
    4   6     2   0 XSHRT
+  10   3    16   0 XSURFWVEL
+  10   3     8   0 YCOMPSS
   10   4    26   0 YCOMPWV
+  10   3    17   0 YSURFVWEL
   10   2    10   0 ZVCICEP
-  10   2    10   0 ZVCICEP
+   0   0     0   0 
    0   0     0   0 
