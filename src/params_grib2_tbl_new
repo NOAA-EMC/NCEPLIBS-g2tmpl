@@ -307,6 +307,12 @@
   10   0    32   0 DIRWWW
    1   0     7   0 DISRS
    0   3     6   0 DIST
+   0  21    13   0 DIVENTFLUX
+   0  21    16   0 DIVKENGFLUX
+   0  21    14   0 DIVPOTFLUX
+   0  21    17   0 DIVTOTFLUX
+   0  21    18   0 DIVWENTFLUX
+   0  21    15   0 DIVWPOTFLUX
    0   5     8   0 DLWRFCS
    0   5     3   0 DLWRF
    0   5   192   1 DLWRF
@@ -341,6 +347,11 @@
    0   7   207   1 E3KH
    3   2    11   0 EAODR
   10   1     5   0 EASTCUR
+   0  21     5   0 EASTENTFLUX
+   0  21    19   0 EASTHFLUX
+   0  21     9   0 EASTKINFLUX
+   0  21     7   0 EASTPOTFLUX
+   0  21    11   0 EASTTOTFLUX
   10   3     5   0 EASTWSS
   10   4    23   0 EASTWVEL
    3   5     5   0 EBSDSSTS
@@ -376,6 +387,7 @@
    0  20    76   0 EMISFLX
    0   1   211   1 EMNP
    2   4    19   0 ENRELCOM
+   0  21     3   0 ENTHALPY
    0   0     3   0 EPOT
    0  19   218   1 EPSR
    4   2    13   0 EQSLABT
@@ -560,6 +572,7 @@
    3   5     0   0 ISSTMP
    0  19   235   1 JFWPRB
   10   3   201   1 KENG
+   0  21     1   0 KINENG
    0   7     3   0 KOX
    2   4    12   0 KRIDX
   10   0    43   0 KSSEDW
@@ -734,6 +747,11 @@
   10   3     6   0 NORTHWSS
    3   1     6   0 NPIXU
   10   1     6   0 NRTHCUR
+   0  21     6   0 NRTHENTFLUX
+   0  21    20   0 NRTHHFLUX
+   0  21    10   0 NRTHKINFLUX
+   0  21     8   0 NRTHPOTFLUX
+   0  21    12   0 NRTHTOTFLUX
   10   4    24   0 NRTHWVEL
   10   0    84   0 NSOCEAN
   10   3    15   0 NSURFWVEL
@@ -803,6 +821,7 @@
    0   4    60   0 PHOARFCS
    0   4    10   0 PHOTAR
    0   1   122   0 PIIDX
+   0  21    21   0 PILENERGY
    3   0     8   0 PIXST
    2   0   238   1 PLANTTR
    0   7     0   0 PLI
@@ -815,6 +834,7 @@
    2   3     9   0 POROS
    2   3   197   1 POROS
    0  20    18   0 POTHPH
+   0  21     0   0 POTINTENG
    0   0     2   0 POT
    0  14   199   1 POZO
    0  14   198   1 POZT
@@ -1268,6 +1288,7 @@
    0  19   197   1 TORPROB
    0   7     4   0 TOTALX
    0   1    80   0 TOTCON
+   0  21     2   0 TOTENG
    0  18    13   0 TOTLWD
    0  14     0   0 TOZNE
    0  14   197   1 TOZ
@@ -1444,6 +1465,7 @@
    0   2    25   0 VWSH
    0   2   192   1 VWSH
   10   4    17   0 WATDENA
+   0  21     4   0 WATENTHALPY
   10   4    16   0 WATERDEN
    2   0   236   1 WATERSA
   10   4    20   0 WATPDENA
