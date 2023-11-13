@@ -546,7 +546,7 @@
    0   4    52   0 DSWRFCS
    0   4    53   0 USWRFCS
 !  Added more parameters 10/20/2023
-   0   4    54   0 DSWRFLX
+   0   4    54   0 DNSWRFLX
    0   4    55   0 UVALBDIF
    0   4    56   0 UVALBDIR
    0   4    57   0 UBALBDIRG

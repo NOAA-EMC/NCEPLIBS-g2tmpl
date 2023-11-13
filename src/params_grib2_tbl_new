@@ -317,6 +317,7 @@
    0   5     3   0 DLWRF
    0   5   192   1 DLWRF
    0   3    28   0 DMFLX
+   0   4    54   0 DNSWRFLX
    0   1   123   0 DPTYPE
    0   0     6   0 DPT
    2   0    43   0 DRAINDIR
@@ -335,7 +336,6 @@
    0   4    52   0 DSWRFCS
    0   4    61   0 DSWRFLXCS
    0   4    13   0 DSWRFLX
-   0   4    54   0 DSWRFLX
    0   4     7   0 DSWRF
    0   4   192   1 DSWRF
    0   4   204   1 DTRF
