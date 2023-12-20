@@ -1820,7 +1820,7 @@
   10   0    95   0 TDMWAVE
   10   0    96   0 STMCREST
   10   0    97   0 STMWAVE
-  !  NCEP Local use
+!  NCEP Local use
   10   0   192   1 WSTP
 !  Added parameter in 8/26/2015
   10   0   193   1 WLENG
