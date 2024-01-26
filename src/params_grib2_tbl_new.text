@@ -1324,6 +1324,7 @@
    2   3   201   1 AVSFT
    2   3   202   1 RADT
    2   3   203   1 FLDCP
+   2   3   204   1 MSTAV
 !
 ! GRIB2 - TABLE 4.2-2-4 PARAMETERS FOR DISCIPLINE 2 CATEGORY 4
 !
@@ -2010,6 +2011,7 @@
 !
   10 191     0   0 IRTSEC
   10 191     1   0 MOSF
+!
 !  Added parameter in 8/26/2015
   10 191     3   0 DSLOBSO
 ! Added new parameters 10/30/2023
