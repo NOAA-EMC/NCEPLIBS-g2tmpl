@@ -1905,7 +1905,7 @@
   10   3    19   0 SSHGTPARM
   10   3    20   0 DSLIBARCOR
 ! Added new parameter 12/15/2023
-  10   3    21   0 SALIN
+  10   3    21   0 SALINITY
 !  NCEP Local use
   10   3   192   1 SURGE
   10   3   193   1 ETSRG
