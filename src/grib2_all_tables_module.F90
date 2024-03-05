@@ -19,6 +19,7 @@
 !> 2019/06/25 | Boi Vuong | 17 Added new entries in table4_3,table4_5 and added new table4_8,table4_9,table 4_201 Added generating process model table on388_tablea
 !> 2021/04/20 | Boi Vuong | Updated table 4.3, 4.5,4.7 and on388_tablea
 !> 2023/03/30 | Andrew Benjamin | Added new entires to on388)_tablea
+!> 2024/02/23 | Andrew Benjamin | Added new subcenter to on388)_tablec
 !>
 !> @author Jun Wang @date 2012/01/25
 module grib2_all_tables_module
@@ -101,6 +102,8 @@ module grib2_all_tables_module
   !   Added Sub-Center (06/26/2019)
   !
   data tablec(17) /subcenters('esrl',17)/
+  !   Added National Water Center Sub-Center (02/23/2024)
+  data tablec(18) /subcenters('nwc',18)/
 
   type version_no
      character(len=20) :: verskey
