@@ -2417,7 +2417,6 @@ contains
     integer(4), intent(in) :: bin_scale_fac, dec_scale_fac, tlnumbits
     integer(4), intent(out) :: ifield5(5)
     !     character(len=50) :: type_of_field
-    integer(4) :: value, ierr
     !
     ifield5(1) = 0 ! Any value. Will be later overwritten
     ifield5(2) = bin_scale_fac
@@ -2446,8 +2445,6 @@ contains
     !
     integer(4), intent(inout)  :: ifield5(16)
     integer(4), intent(in) :: dec_scale_fac, bin_scale_fac
-    !
-    integer(4) :: value, ierr
     !
     ifield5=0
     ifield5(1) = 0 ! Any value. Will be later overwritten
@@ -2527,8 +2524,6 @@ contains
     !--- local variable
     integer(4) :: value, ierr
     integer, parameter :: MAX_NUMBIT=16
-    integer ibm
-    integer, allocatable   :: mg(:)
     !
     ifield5(1) = 0 ! Any value. Will be later overwritten
     ifield5(2) = bin_scale_fac
