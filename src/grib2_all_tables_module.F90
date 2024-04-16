@@ -2066,11 +2066,14 @@ contains
     !
   end subroutine g2sec4_temp44
   !>
-  !> This subroutine returns the Grib2 Section 4 Template 4.0 list for given keys
-  !>           PDT 4.46 - Average, accumulation, and/or extreme values or other
-  !>                      statistically processed values at a horizontal level
-  !>                      or in a horizontal layer in a continuous or
-  !>                      non-continuous time interval for aerosol.
+  !> Returns the GRIB2 Section 4 Template 4.0 list.
+  !>
+  !> <pre>
+  !> PDT 4.46 - Average, accumulation, and/or extreme values or other
+  !>            statistically processed values at a horizontal level
+  !>            or in a horizontal layer in a continuous or
+  !>            non-continuous time interval for aerosol.
+  !> </pre>
   !>
   !> @param[in] icatg - Parameter category (see Code table 4.1)
   !> @param[in] iparm - Parameter number (see Code table 4.2)
@@ -2098,28 +2101,33 @@ contains
   !> @param[in] hour_intvl - Hour Time of end of overall time interval
   !> @param[in] min_intvl - Minute Time of end of overall time interval
   !> @param[in] sec_intvl - Second Time of end of overall time interval
-  !> @param[in] num_time_range - n number of time ranges specifications describing
-  !>                        the time intervals used to calculate the
-  !>                        statistically-processed field
-  !> @param[in] stat_miss_val - Total number of data values missing in statistical process
-  !>                       Specification of the outermost (or only) time range over
-  !>                       which statistical processing is done
-  !> @param[in] type_of_stat_proc - Statistical process used to calculate the processed
-  !>                           field from the field at each time increment during the
-  !>                           time range (see Code Table 4.10)
-  !> @param[in] type_of_time_inc - Type of time increment between successive fields
-  !>                          used in the statistical processing (see Code Table 4.11)
-  !> @param[in] stat_unit_time_key - Indicator of unit of time for time range over which
-  !>                            statistical processing is done (see Code Table 4.4)
-  !> @param[in] leng_time_range_stat - Length of the time range over which statistical processing
-  !>                              is done, in units defined by the previous octet
-  !> @param[in] stat_unit_time_key_succ - Indicator of unit of time for the increment between the
-  !>                                 successive fields used (see Code table 4.4)
-  !> @param[in] time_inc_betwn_succ_fld - Time increment between successive fields, 
-  !>                                  in units defined by the previous octet (see Notes 3 & 4)
+  !> @param[in] num_time_range - n number of time ranges
+  !> specifications describing the time intervals used to calculate
+  !> the statistically-processed field
+  !> @param[in] stat_miss_val - Total number of data values missing in
+  !> statistical process Specification of the outermost (or only) time
+  !> range over which statistical processing is done
+  !> @param[in] type_of_stat_proc - Statistical process used to
+  !> calculate the processed field from the field at each time
+  !> increment during the time range (see Code Table 4.10)
+  !> @param[in] type_of_time_inc - Type of time increment between
+  !> successive fields used in the statistical processing (see Code
+  !> Table 4.11)
+  !> @param[in] stat_unit_time_key - Indicator of unit of time for
+  !> time range over which statistical processing is done (see Code
+  !> Table 4.4)
+  !> @param[in] leng_time_range_stat - Length of the time range over
+  !> which statistical processing is done, in units defined by the
+  !> previous octet
+  !> @param[in] stat_unit_time_key_succ - Indicator of unit of time
+  !> for the increment between the successive fields used (see Code
+  !> table 4.4)
+  !> @param[in] time_inc_betwn_succ_fld - Time increment between
+  !> successive fields, in units defined by the previous octet (see
+  !> Notes 3 & 4)
   !> @param[out] ipdstmpl46 - GRIB2 PDS Template 4.46 listing
   !>
-  !>   @author E. JAMES                  ORG: NOAA/GSL  @date 2024-04-02
+  !> @author E. JAMES, NOAA/GSL  @date 2024-04-02
   subroutine g2sec4_temp46(icatg, iparm, aer_type, typ_intvl_size,                 &
        scale_fac1_size, scale_val1_size, scale_fac2_size,      &
        scale_val2_size, typ_gen_proc_key, gen_proc_or_mod_key, &
