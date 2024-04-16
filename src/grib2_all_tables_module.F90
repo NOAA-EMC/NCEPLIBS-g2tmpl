@@ -1401,6 +1401,7 @@ contains
     character(len=*) :: key
     integer :: value, n, ierr
     !
+    ierr = 0
     do n=1, MAXFIXEDSURFACETYPES
        if (trim(table4_5(n)%fixedsurfacetypeskey).eq.trim(key)) then
           value=table4_5(n)%fixedsurfacetypesval
@@ -1411,7 +1412,7 @@ contains
     value=table4_5(66)%fixedsurfacetypesval
     !           print *, 'get_g2_fixedsurfacetypes key: ', trim(key), value,  &
     !                   ' not found in table 4.5'
-    !           ierr=9
+    ierr=9
     return
   end subroutine get_g2_fixedsurfacetypes
   !>
