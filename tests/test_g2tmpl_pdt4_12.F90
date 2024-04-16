@@ -16,7 +16,7 @@ Program test_g2tmpl_pdt4_12
   integer(4) :: year_intvl,mon_intvl,day_intvl,hour_intvl,min_intvl, &
        sec_intvl,num_time_range,stat_miss_val, &
        leng_time_range_stat,time_inc_betwn_succ_fld
-  integer(4) :: perturb_num, num_fcst_ens
+  integer(4) :: num_fcst_ens
   !
   character(len=80) :: typ_gen_proc_key,gen_proc_or_mod_key, &
        unit_of_time_key,lvl_type1,lvl_type2,           &
@@ -24,7 +24,7 @@ Program test_g2tmpl_pdt4_12
        stat_unit_time_key,stat_unit_time_key_succ,     &
        type_derive_fcst_key
   !
-  integer(4) :: bckgnd_gen_proc_id    ! defined by the center
+  !integer(4) :: bckgnd_gen_proc_id    ! defined by the center
   !
 
   integer(4) :: ipdstmpl12_old(31)=(/0, 4, 4, 0, 107, 0, 0, 1, 6, &
