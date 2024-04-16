@@ -24,7 +24,7 @@ Program test_g2tmpl_pdt4_11
        stat_unit_time_key,stat_unit_time_key_succ,     &
        type_ens_fcst_key
   !
-  integer(4) :: bckgnd_gen_proc_id    ! defined by the center
+!  integer(4) :: bckgnd_gen_proc_id    ! defined by the center
   !
 
   integer(4) :: ipdstmpl11_old(32)=(/0, 4, 4, 0, 107, 0, 0, 1, 6,    &
