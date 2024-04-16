@@ -220,7 +220,7 @@ module grib2_all_tables_module
   data table1_4(8) /type_of_data('proc_rad_obs',7)/
   data table1_4(9) /type_of_data('event_prob',8)/
   data table1_4(10) /type_of_data('missing',255)/
-  data table1_4(11) /type_of_data('experimental_products',192)/
+  data table1_4(11) /type_of_data('experimental_product',192)/
   !
   !
   type type_of_gen_proc
@@ -1172,7 +1172,7 @@ module grib2_all_tables_module
   data on388_tablea(112) /gen_proc('extra_trop_storm_surge_pacific',17)/
   data on388_tablea(113) /gen_proc('prob_extra_trop_storm_surge',18)/
   data on388_tablea(114) /gen_proc('linmit_fine_mesh_anal',19)/
-  data on388_tablea(115) /gen_proc('extra_trop_storm_surge_micronesia',20)/
+  data on388_tablea(115) /gen_proc('extra_trop_storm_surge_microne',20)/
   data on388_tablea(116) /gen_proc('hur_weather_res_and_fcst',71)/
   data on388_tablea(117) /gen_proc('hur_non-hydro_multi',72)/
   !
@@ -1188,7 +1188,7 @@ module grib2_all_tables_module
   !
   data on388_tablea(120) /gen_proc('extra_trop_storm_surge_atl_3d',21)/
   data on388_tablea(121) /gen_proc('extra_trop_storm_surge_pac_3d',22)/
-  data on388_tablea(122) /gen_proc('extra_trop_storm_surge_micro_3d',23)/
+  data on388_tablea(122) /gen_proc('extra_trop_storm_surge_micro_3',23)/
 
 contains
   !
@@ -1401,6 +1401,7 @@ contains
     character(len=*) :: key
     integer :: value, n, ierr
     !
+    ierr = 0
     do n=1, MAXFIXEDSURFACETYPES
        if (trim(table4_5(n)%fixedsurfacetypeskey).eq.trim(key)) then
           value=table4_5(n)%fixedsurfacetypesval
@@ -2034,9 +2035,9 @@ contains
     call get_g2_typeofintervals(typ_intvl_size, value, ierr)
     ipdstmpl44(4) = value
     ipdstmpl44(5) = scale_fac1_size
-    ipdstmpl44(6) = scale_val1_size
+    ipdstmpl44(6) = int(scale_val1_size)
     ipdstmpl44(7) = scale_fac2_size
-    ipdstmpl44(8) = scale_val2_size
+    ipdstmpl44(8) = int(scale_val2_size)
     !
     call get_g2_typeofgenproc(typ_gen_proc_key, value, ierr)
     ipdstmpl44(9) = value
@@ -2417,7 +2418,6 @@ contains
     integer(4), intent(in) :: bin_scale_fac, dec_scale_fac, tlnumbits
     integer(4), intent(out) :: ifield5(5)
     !     character(len=50) :: type_of_field
-    integer(4) :: value, ierr
     !
     ifield5(1) = 0 ! Any value. Will be later overwritten
     ifield5(2) = bin_scale_fac
@@ -2446,8 +2446,6 @@ contains
     !
     integer(4), intent(inout)  :: ifield5(16)
     integer(4), intent(in) :: dec_scale_fac, bin_scale_fac
-    !
-    integer(4) :: value, ierr
     !
     ifield5=0
     ifield5(1) = 0 ! Any value. Will be later overwritten
@@ -2527,8 +2525,6 @@ contains
     !--- local variable
     integer(4) :: value, ierr
     integer, parameter :: MAX_NUMBIT=16
-    integer ibm
-    integer, allocatable   :: mg(:)
     !
     ifield5(1) = 0 ! Any value. Will be later overwritten
     ifield5(2) = bin_scale_fac
