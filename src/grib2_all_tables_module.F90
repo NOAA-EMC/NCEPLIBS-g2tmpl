@@ -1394,9 +1394,9 @@ contains
   !>
   !> @param[in] key - GRIB2 character short key for fixed surface types from Table 4.5
   !> @param[out] value - corresponding GRIB2 value from Table 4.5
-  !> @param[out] ierr - error messages
+  !> @param[out] ierr - 0 for success, 9 if key not found
   !>
-  !>   @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
+  !> @author V. Krishna Kumar         ORG: W/NP12    @date 2009-12-10
   subroutine get_g2_fixedsurfacetypes(key, value, ierr)
     character(len=*) :: key
     integer :: value, n, ierr
