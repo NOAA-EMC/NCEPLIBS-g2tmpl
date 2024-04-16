@@ -2034,9 +2034,9 @@ contains
     call get_g2_typeofintervals(typ_intvl_size, value, ierr)
     ipdstmpl44(4) = value
     ipdstmpl44(5) = scale_fac1_size
-    ipdstmpl44(6) = scale_val1_size
+    ipdstmpl44(6) = int(scale_val1_size)
     ipdstmpl44(7) = scale_fac2_size
-    ipdstmpl44(8) = scale_val2_size
+    ipdstmpl44(8) = int(scale_val2_size)
     !
     call get_g2_typeofgenproc(typ_gen_proc_key, value, ierr)
     ipdstmpl44(9) = value
