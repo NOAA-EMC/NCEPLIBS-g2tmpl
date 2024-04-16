@@ -1172,7 +1172,7 @@ module grib2_all_tables_module
   data on388_tablea(112) /gen_proc('extra_trop_storm_surge_pacific',17)/
   data on388_tablea(113) /gen_proc('prob_extra_trop_storm_surge',18)/
   data on388_tablea(114) /gen_proc('linmit_fine_mesh_anal',19)/
-  data on388_tablea(115) /gen_proc('extra_trop_storm_surge_micronesia',20)/
+  data on388_tablea(115) /gen_proc('extra_trop_storm_surge_microne',20)/
   data on388_tablea(116) /gen_proc('hur_weather_res_and_fcst',71)/
   data on388_tablea(117) /gen_proc('hur_non-hydro_multi',72)/
   !
@@ -1188,7 +1188,7 @@ module grib2_all_tables_module
   !
   data on388_tablea(120) /gen_proc('extra_trop_storm_surge_atl_3d',21)/
   data on388_tablea(121) /gen_proc('extra_trop_storm_surge_pac_3d',22)/
-  data on388_tablea(122) /gen_proc('extra_trop_storm_surge_micro_3d',23)/
+  data on388_tablea(122) /gen_proc('extra_trop_storm_surge_micro_3',23)/
 
 contains
   !
