@@ -220,7 +220,7 @@ module grib2_all_tables_module
   data table1_4(8) /type_of_data('proc_rad_obs',7)/
   data table1_4(9) /type_of_data('event_prob',8)/
   data table1_4(10) /type_of_data('missing',255)/
-  data table1_4(11) /type_of_data('experimental_products',192)/
+  data table1_4(11) /type_of_data('experimental_product',192)/
   !
   !
   type type_of_gen_proc
