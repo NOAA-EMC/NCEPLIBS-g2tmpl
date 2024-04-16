@@ -18,7 +18,7 @@ Program test_g2tmpl_pdt4_1
        unit_of_time_key,lvl_type1,lvl_type2,           &
        type_ens_fcst_key
 
-  integer(4) :: bckgnd_gen_proc_id    ! defined by the center
+!  integer(4) :: bckgnd_gen_proc_id    ! defined by the center
 
   integer(4) :: ipdstmpl1_old(18)=(/0, 4, 4, 0, 107, 0, 0, 1, 6, &
        103, 0, 2, 255, 0, 0, 3, 5, 10/)
