@@ -21,8 +21,8 @@ Program test_g2tmpl_pdt4_9
        type_of_stat_proc, type_of_time_inc, &
        stat_unit_time_key, stat_unit_time_key_succ
   
-  integer(4) :: ipdstmpl9_old(36)=(/ 2, 220, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, &
-       255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 /)
+  integer(4) :: ipdstmpl9_old(36)=(/ 2, 220, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, &
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 /)
   integer ipdsnum, ipdstmpllen, j
 
   print *, 'Testing g2sec4_temp9...' 
@@ -35,10 +35,10 @@ Program test_g2tmpl_pdt4_9
   min_obs_cutoff = 0
   unit_of_time_key = 'minute'
   fcst_time = 0
-  lvl_type1 = 'xxx'
+  lvl_type1 = 'surface'
   scale_fac1 = 0
   scaled_val1 = 0
-  lvl_type2 = 'xxx'
+  lvl_type2 = 'surface'
   scale_fac2 = 0
   scaled_val2 = 0
   prob_num = 0

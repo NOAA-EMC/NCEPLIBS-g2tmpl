@@ -1410,8 +1410,8 @@ contains
     enddo
 
     value=table4_5(66)%fixedsurfacetypesval
-    !           print *, 'get_g2_fixedsurfacetypes key: ', trim(key), value,  &
-    !                   ' not found in table 4.5'
+    print *, 'get_g2_fixedsurfacetypes key: ', trim(key), value,  &
+         ' not found in table 4.5'
     ierr=9
     return
   end subroutine get_g2_fixedsurfacetypes
