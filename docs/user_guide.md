@@ -227,5 +227,6 @@ This file updates the available parameters in GRIB2 tables.
 
 ### Documentation for Previous Versions of NCEPLIBS-g2tmpl
 
+* [NCEPLIBS-g2tmpl Version 1.11.0](ver-1.11.0/index.html)
 * [NCEPLIBS-g2tmpl Version 1.10.0](ver-1.10.0/index.html)
 
