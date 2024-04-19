@@ -8,7 +8,7 @@
 ! parameter category and parameter number in table 4.2.
 !
 ! Kyle Gerheiser, Edward Hartnett
-Program test_params_grib2_tbl_new
+program test_params_grib2_tbl_new
   use grib2_all_tables_module
   implicit none
   
