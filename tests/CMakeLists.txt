@@ -11,6 +11,11 @@ function(g2tmpl_test name)
   add_test(NAME ${name} COMMAND ${name})
 endfunction()
 
+# Copy the param file to test directory for test to find.
+set(PARAM_FILE params_grib2_tbl_new)
+message(STATUS "Copying file ${CMAKE_SOURCE_DIR}/src/${PARAM_FILE} to test directory.")
+FILE(COPY ${CMAKE_SOURCE_DIR}/src/${PARAM_FILE} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 # The tests.
 g2tmpl_test(test_g2tmpl_pdt4_1)
 g2tmpl_test(test_g2tmpl_pdt4_8)
