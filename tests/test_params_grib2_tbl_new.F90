@@ -7,12 +7,15 @@
 ! routine and write out the corresponding product discipline,
 ! parameter category and parameter number in table 4.2.
 !
-Program  params_grib2_tbl_new
+Program test_params_grib2_tbl_new
   use grib2_all_tables_module
+  implicit none
+  
   integer idisc,icatg,iparm,locflg
   character*255 fl_nametbl
   character(len=30) :: pname(200)=''
-  !
+  integer :: i, ierr
+
   pname(1)='UCTMP'
   pname(2)='TMPADV'
   pname(3)='STRPRATE'
@@ -67,5 +70,5 @@ Program  params_grib2_tbl_new
           ' ; parameter= ',iparm, ' in grib2 table 4.2 '
      print *, '    PASS    '
   end do
-  stop
-end Program params_grib2_tbl_new
+
+end Program test_params_grib2_tbl_new

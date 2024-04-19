@@ -20,5 +20,6 @@ g2tmpl_test(test_g2tmpl_pdt4_12)
 g2tmpl_test(test_g2tmpl_pdt4_46)
 g2tmpl_test(test_all_key_tables)
 g2tmpl_test(test_all_table_other)
+g2tmpl_test(test_params_grib2_tbl_new)
 
  
