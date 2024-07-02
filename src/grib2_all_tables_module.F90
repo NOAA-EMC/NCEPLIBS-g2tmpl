@@ -2532,7 +2532,10 @@ contains
   !> @param[in] lvl_type2 - Type of second fixed surfaced (see Code table 4.5)
   !> @param[in] scale_fac2 - Scale factor of second fixed surface
   !> @param[in] scaled_val2 - Scaled value of second fixed surfaces
-  !> @param[out] ipdstmpl49 - GRIB2 PDS Template 4.48 listing
+  !> @param[in] type_ens_fcst_key Type of ensemble forecast (see Code table 4.6)
+  !> @param[in] perturb_num Perturbation ensemble number
+  !> @param[in] num_fcst_ens number of forecasts in ensemble
+  !> @param[out] ipdstmpl49 - GRIB2 PDS Template 4.49 listing
   !>
   !> @author Edward Hartnett  @date 2024-07-02
   subroutine g2sec4_temp49(icatg, iparm, aer_type, typ_intvl_size,                 &
@@ -2544,6 +2547,7 @@ contains
        hrs_obs_cutoff, min_obs_cutoff,                        &
        unit_of_time_key, fcst_time, lvl_type1, scale_fac1,      &
        scaled_val1, lvl_type2, scale_fac2, scaled_val2,         &
+       type_ens_fcst_key, perturb_num, num_fcst_ens, &
        ipdstmpl49)
     
     integer(4), intent(in) :: icatg, iparm, hrs_obs_cutoff, min_obs_cutoff,         &
@@ -2551,12 +2555,14 @@ contains
          scale_fac2_wavelength,                                        &
          fcst_time, scale_fac1, scaled_val1,                             &
          scale_fac2, scaled_val2
+    integer(4),intent(in)  :: perturb_num, num_fcst_ens
     real, intent(in) :: scale_val1_size, scale_val2_size, scale_val1_wavelength,   &
          scale_val2_wavelength
 
     character(len=*), intent(in) :: aer_type, typ_intvl_size,                     &
          typ_intvl_wavelength, typ_gen_proc_key,                        &
-         gen_proc_or_mod_key, unit_of_time_key, lvl_type1, lvl_type2
+         gen_proc_or_mod_key, unit_of_time_key, lvl_type1, lvl_type2, &
+         type_ens_fcst_key
 
     integer(4), intent(inout)  :: ipdstmpl49(29)
 
@@ -2611,9 +2617,11 @@ contains
 
     ipdstmpl49(25) = scale_fac2
     ipdstmpl49(26) = scaled_val2
-    ipdstmpl49(27) = 0
-    ipdstmpl49(28) = 0
-    ipdstmpl49(29) = 0
+    
+    call get_g2_typeofensfcst(type_ens_fcst_key, value, ierr)
+    ipdstmpl49(27) = value
+    ipdstmpl49(28) = perturb_num
+    ipdstmpl49(29) = num_fcst_ens
 
   end subroutine g2sec4_temp49
 

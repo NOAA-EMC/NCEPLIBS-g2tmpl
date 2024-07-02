@@ -84,7 +84,8 @@ program test_all_table_other
   print *, 'testing g2sec4_temp49'
   call g2sec4_temp49(0, 1, 'methane', 'greater_than_first_limit', 4, 5.0, 6, 7.0, &
        'greater_or_equal_first_limit', 9, 10., 11, 12., 'prob_wt_fcst',  'prob_st_surg', 15, 16, &
-       'second', 18, 'isothermal', 20, 21, 'isobaric_sfc', 22, 23, ipdstmpl49)
+       'second', 18, 'isothermal', 20, 21, 'isobaric_sfc', 22, 23, &
+       'unpert_hi_res_ctrl_fcst', 0, 0, ipdstmpl49)
   do i = 1, 29
      print *, ipdstmpl49(i)
      if (ipdstmpl49(i) .ne. ipdstmpl49_expected(i)) stop 65
