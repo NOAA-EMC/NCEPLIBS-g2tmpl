@@ -21,6 +21,9 @@ program test_all_table_other
   integer :: ipdstmpl48(26)  
   integer :: ipdstmpl48_expected(26) = (/ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 10, 0, &
        12, 15, 16, 13, 18, 20, 20, 21, 100, 22, 23 /)
+  integer :: ipdstmpl49(26)  
+  integer :: ipdstmpl49_expected(26) = (/ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 10, 0, &
+       12, 15, 16, 13, 18, 20, 20, 21, 100, 22, 23 /)
   integer :: ifield5(16)  
   integer :: ifield5_expected(16) = (/ 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 /)
   integer :: ifield5_0(5)  
@@ -76,6 +79,15 @@ program test_all_table_other
   do i = 1, 26
      !print *, ipdstmpl48(i)
      if (ipdstmpl48(i) .ne. ipdstmpl48_expected(i)) stop 6
+  end do
+  
+  print *, 'testing g2sec4_temp49'
+  call g2sec4_temp49(0, 1, 'methane', 'greater_than_first_limit', 4, 5.0, 6, 7.0, &
+       'greater_or_equal_first_limit', 9, 10., 11, 12., 'prob_wt_fcst',  'prob_st_surg', 15, 16, &
+       'second', 18, 'isothermal', 20, 21, 'isobaric_sfc', 22, 23, ipdstmpl49)
+  do i = 1, 26
+     !print *, ipdstmpl49(i)
+     if (ipdstmpl49(i) .ne. ipdstmpl49_expected(i)) stop 6
   end do
   
   print *, 'testing g2sec5_temp0'
