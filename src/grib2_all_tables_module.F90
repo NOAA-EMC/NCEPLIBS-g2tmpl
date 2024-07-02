@@ -2390,7 +2390,7 @@ contains
     ipdstmpl46(35) = time_inc_betwn_succ_fld   ! value = 0
     !
   end subroutine g2sec4_temp46
-  !>
+
   !> This subroutine returns the Grib2 Section 4 Template 4.0 list for given keys
   !>           PDT 4.48 - Analysis or forecast at a horizontal level or in a
   !>                      horizontal layer at a point in time for aerosol.
@@ -2500,6 +2500,115 @@ contains
     ipdstmpl48(26) = scaled_val2
     !
   end subroutine g2sec4_temp48
+  !> This subroutine returns the Grib2 Section 4 Template 4.0 list for given keys
+  !>           PDT 4.48 - Analysis or forecast at a horizontal level or in a
+  !>                      horizontal layer at a point in time for aerosol.
+  !>
+  !> @param[in] icatg - Parameter category (see Code table 4.1)
+  !> @param[in] iparm - Parameter number (see Code table 4.2)
+  !> @param[in] aer_type - Aetosol type (see Code table 4.233)
+  !> @param[in] typ_intvl_size - Type of interval for first and second size (see Code table 4.91)
+  !> @param[in] scale_fac1_size - Scale factor of first size
+  !> @param[in] scale_val1_size - Scale value of first size in meters
+  !> @param[in] scale_fac2_size - Scale factor of second size
+  !> @param[in] scale_val2_size - Scale value of second size in meters
+  !> @param[in] typ_intvl_wavelength - Type of interval for first and second wavelength (see Code table 4.91)
+  !> @param[in] scale_fac1_wavelength - Scale factor of first wavelength
+  !> @param[in] scale_val1_wavelength - Scale value of first wavelength in meters
+  !> @param[in] scale_fac2_wavelength - Scale factor of second wavelength
+  !> @param[in] scale_val2_wavelength - Scale value of second wavelength in meters
+  !> @param[in] typ_gen_proc_key - Type of generating process (see Code table 4.3)
+  !> @param[in] gen_proc_or_mod_key - Analysis or forecast generating process identified (see Code ON388 Table A)
+  !> @param[in] hrs_obs_cutoff - Hours of observational data cutoff after reference time (see Note)
+  !> @param[in] min_obs_cutoff - Minutes of observational data cutoff after reference time (see Note)
+  !> @param[in] unit_of_time_key - Indicator of unit of time range (see Code table 4.4)
+  !> @param[in] fcst_time - Forecast time in units defined by octet 18
+  !> @param[in] lvl_type1 - Type of first fixed surface (see Code table 4.5)
+  !> @param[in] scale_fac1 - Scale factor of first fixed surface
+  !> @param[in] scaled_val1 - Scaled value of first fixed surface
+  !> @param[in] lvl_type2 - Type of second fixed surfaced (see Code table 4.5)
+  !> @param[in] scale_fac2 - Scale factor of second fixed surface
+  !> @param[in] scaled_val2 - Scaled value of second fixed surfaces
+  !> @param[out] ipdstmpl48 - GRIB2 PDS Template 4.48 listing
+  !>
+  !> @author Edward Hartnett  @date 2024-07-02
+  subroutine g2sec4_temp49(icatg, iparm, aer_type, typ_intvl_size,                 &
+       scale_fac1_size, scale_val1_size, scale_fac2_size,      &
+       scale_val2_size, typ_intvl_wavelength,                 &
+       scale_fac1_wavelength, scale_val1_wavelength,          &
+       scale_fac2_wavelength, scale_val2_wavelength,          &
+       typ_gen_proc_key, gen_proc_or_mod_key,                &
+       hrs_obs_cutoff, min_obs_cutoff,                        &
+       unit_of_time_key, fcst_time, lvl_type1, scale_fac1,      &
+       scaled_val1, lvl_type2, scale_fac2, scaled_val2,         &
+       ipdstmpl48)
+    integer(4), intent(in) :: icatg, iparm, hrs_obs_cutoff, min_obs_cutoff,         &
+         scale_fac1_size, scale_fac2_size, scale_fac1_wavelength,       &
+         scale_fac2_wavelength,                                        &
+         fcst_time, scale_fac1, scaled_val1,                             &
+         scale_fac2, scaled_val2
+    real, intent(in) :: scale_val1_size, scale_val2_size, scale_val1_wavelength,   &
+         scale_val2_wavelength
+    !
+    character(len=*), intent(in) :: aer_type, typ_intvl_size,                     &
+         typ_intvl_wavelength, typ_gen_proc_key,                        &
+         gen_proc_or_mod_key, unit_of_time_key, lvl_type1, lvl_type2
+    !
+    integer(4), intent(inout)  :: ipdstmpl48(26)
+    !
+    !local vars
+    integer(4) :: value, ierr
+    integer(4) :: bckgnd_gen_proc_id    ! defined by the center
+    !
+    bckgnd_gen_proc_id=0    ! defined by the center
+    !
+    ipdstmpl48(1) = icatg
+    ipdstmpl48(2) = iparm
+    !
+    call get_g2_typeofaerosol(aer_type, value, ierr)
+    ipdstmpl48(3) = value
+    !
+    call get_g2_typeofintervals(typ_intvl_size, value, ierr)
+    ipdstmpl48(4) = value
+    ipdstmpl48(5) = scale_fac1_size
+    ipdstmpl48(6) = nint(scale_val1_size)
+    ipdstmpl48(7) = scale_fac2_size
+    ipdstmpl48(8) = nint(scale_val2_size)
+    !
+    call get_g2_typeofintervals(typ_intvl_wavelength, value, ierr)
+    ipdstmpl48(9) = value
+    ipdstmpl48(10) = scale_fac1_wavelength
+    ipdstmpl48(11) = nint(scale_val1_wavelength)
+    ipdstmpl48(12) = scale_fac2_wavelength
+    ipdstmpl48(13) = nint(scale_val2_wavelength)
+    !
+    call get_g2_typeofgenproc(typ_gen_proc_key, value, ierr)
+    ipdstmpl48(14) = value
+    !
+    ipdstmpl48(15) = bckgnd_gen_proc_id
+    !
+    call get_g2_on388genproc(gen_proc_or_mod_key, value, ierr)
+    ipdstmpl48(16) = value
+    !
+    ipdstmpl48(17) = hrs_obs_cutoff
+    ipdstmpl48(18) = min_obs_cutoff
+    !
+    call get_g2_unitoftimerange(unit_of_time_key, value, ierr)
+    ipdstmpl48(19) = value
+    ipdstmpl48(20) = fcst_time
+    !
+    call get_g2_fixedsurfacetypes(lvl_type1, value, ierr)
+    ipdstmpl48(21) = value
+    ipdstmpl48(22) = scale_fac1
+    ipdstmpl48(23) = scaled_val1
+    !
+    call get_g2_fixedsurfacetypes(lvl_type2, value, ierr)
+    ipdstmpl48(24) = value
+    !
+    ipdstmpl48(25) = scale_fac2
+    ipdstmpl48(26) = scaled_val2
+    !
+  end subroutine g2sec4_temp49
   !
   !
   !> This subroutine returns the corresponding GRIB2 type of
