@@ -142,7 +142,11 @@ module grib2_all_tables_module
   data table1_0(27) /version_no('v112020',26)/
   data table1_0(28) /version_no('v052021',27)/
   data table1_0(29) /version_no('v112021',28)/
-  data table1_0(30) /version_no('preoper',29)/
+  data table1_0(30) /version_no('v052022',29)/
+  data table1_0(30) /version_no('v112022',30)/
+  data table1_0(30) /version_no('v062023',31)/
+  data table1_0(30) /version_no('v112023',32)/
+  data table1_0(30) /version_no('preoper',33)/
   !
   !
   type local_table_vers_no
