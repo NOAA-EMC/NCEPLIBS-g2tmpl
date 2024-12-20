@@ -289,6 +289,12 @@ module grib2_all_tables_module
   !
   data table4_3(29) /type_of_gen_proc('local_prob_match_mean',200)/
   !
+  !   Added Generating Process (12/20/2024)
+  !
+  data table4_3(30) /type_of_gen_proc('first_guess',19)/
+  data table4_3(31) /type_of_gen_proc('anal_inc',20)/
+  data table4_3(32) /type_of_gen_proc('init_inc',21)/
+  !
   !
   type unit_of_time_range
      character(len=30) :: unitoftimerangekey

@@ -276,6 +276,12 @@ program test_all_tables
   if (val1 .ne. 199) stop 7
   call get_g2_typeofgenproc('local_prob_match_mean', val1, ierr)
   if (val1 .ne. 200) stop 7
+  call get_g2_typeofgenproc('first_guess', val1, ierr)
+  if (val1 .ne. 19) stop 7
+  call get_g2_typeofgenproc('anal_inc', val1, ierr)
+  if (val1 .ne. 20) stop 7
+  call get_g2_typeofgenproc('init_inc', val1, ierr)
+  if (val1 .ne. 21) stop 7
   call get_g2_typeofgenproc('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 7
 
