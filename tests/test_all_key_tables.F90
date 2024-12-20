@@ -956,9 +956,11 @@ program test_all_tables
   call get_g2_typeofaerosol('volcanic_ash', val1, ierr)
   if (val1 .ne. 62025) stop 13
   call get_g2_typeofaerosol('brown_carbon_dry', val1, ierr)
-  if (val1 .ne. 63034) stop 13
+  if (val1 .ne. 62036) stop 13
   call get_g2_typeofaerosol('', val1, ierr)
   if (val1 .ne. 65535) stop 13
+  call get_g2_typeofaerosol('oxygen', val1, ierr)
+  if (val1 .ne. 38) stop 13
   call get_g2_typeofaerosol('xxxx', val1, ierr)  
   if (ierr .ne. 9) stop 13
   
