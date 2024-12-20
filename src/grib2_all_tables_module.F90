@@ -514,6 +514,10 @@ module grib2_all_tables_module
   data table4_7(22) /type_of_derive_fcst('percentile_value_75',203)/
   data table4_7(23) /type_of_derive_fcst('percentile_value_95',204)/
   !
+  !   Added type of derive forecast (12/20/2024)
+  !
+  data table4_7(24) /type_of_derive_fcst('var_all_ens_mem',10)/
+  !
   !
   !  Added Clustering Method Table 4.8 (06/26/2019)
   !

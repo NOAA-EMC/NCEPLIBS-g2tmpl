@@ -1777,6 +1777,8 @@ program test_all_tables
   if (val1 .ne. 203) stop 21
   call get_g2_typeofderivefcst('percentile_value_95', val1, ierr)
   if (val1 .ne. 204) stop 21
+  call get_g2_typeofderivefcst('var_all_ens_mem', val1, ierr)
+  if (val1 .ne. 10) stop 21
   call get_g2_typeofderivefcst('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 21
 
