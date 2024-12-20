@@ -53,3 +53,4 @@ jobs:
         path: |
           g2tmpl/build/*.html
           g2tmpl/build/*.css
+        
