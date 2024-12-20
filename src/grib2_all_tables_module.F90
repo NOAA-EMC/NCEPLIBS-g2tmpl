@@ -452,6 +452,7 @@ module grib2_all_tables_module
   data table4_5(115) /fixed_surface_types('ion_e_region_lev',33)/
   data table4_5(116) /fixed_surface_types('ion_f1_region_lev',34)/
   data table4_5(117) /fixed_surface_types('ion_f2_region_lev',35)/
+  data table4_5(118) /fixed_surface_types('sea_ice_lev',152)/
   !
   !
   type type_of_ens_fcst
