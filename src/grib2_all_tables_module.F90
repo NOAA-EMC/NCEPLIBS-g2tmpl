@@ -439,6 +439,12 @@ module grib2_all_tables_module
   data table4_5(105) /fixed_surface_types('eff_layer_bottom_level',217)/
   data table4_5(106) /fixed_surface_types('eff_layer',218)/
   !
+  !   Added fixed surface levels (12/20/2024)
+  !
+  data table4_5(106) /fixed_surface_types('dep_level_unstable_parcel_air',17)/
+  data table4_5(106) /fixed_surface_types('dep_level_mixed_parcel_air',18)/
+  data table4_5(106) /fixed_surface_types('lowest_cloud_cover',19)/
+  !
   !
   type type_of_ens_fcst
      character(len=50) :: typeofensfcstkey

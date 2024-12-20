@@ -526,6 +526,12 @@ program test_all_tables
   if (val1 .ne. 217) stop 9
   call get_g2_fixedsurfacetypes('eff_layer', val1, ierr)
   if (val1 .ne. 218) stop 9
+  call get_g2_fixedsurfacetypes('dep_level_unstable_parcel_air', val1, ierr)
+  if (val1 .ne. 17) stop 9
+  call get_g2_fixedsurfacetypes('dep_level_mixed_parcel_air', val1, ierr)
+  if (val1 .ne. 18) stop 9
+  call get_g2_fixedsurfacetypes('lowest_cloud_cover', val1, ierr)
+  if (val1 .ne. 19) stop 9
   call get_g2_fixedsurfacetypes('xxx', val1, ierr)
   if (ierr .ne. 9) stop 9
 
