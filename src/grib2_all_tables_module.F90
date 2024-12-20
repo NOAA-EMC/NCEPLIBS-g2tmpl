@@ -600,6 +600,12 @@ module grib2_all_tables_module
   data table4_10(32) /statistical_processing_types('variance',208)/
   data table4_10(33) /statistical_processing_types('confficient',209)/
   !
+  !   Added Statistical Processing Type (12/20/2024)
+  !
+  data table4_10(34) /statistical_processing_types('severity',100)/
+  data table4_10(35) /statistical_processing_types('mode',101)/
+  data table4_10(36) /statistical_processing_types('index_proc',102)/
+  !
   !
   type type_of_time_intervals
      character(len=80) :: typeoftimeintervalskey

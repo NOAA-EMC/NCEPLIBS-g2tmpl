@@ -636,6 +636,12 @@ program test_all_tables
   if (val1 .ne. 208) stop 10
   call get_g2_statprocesstypes('confficient', val1, ierr)
   if (val1 .ne. 209) stop 10
+  call get_g2_statprocesstypes('severity', val1, ierr)
+  if (val1 .ne. 100) stop 10
+  call get_g2_statprocesstypes('mode', val1, ierr)
+  if (val1 .ne. 101) stop 10
+  call get_g2_statprocesstypes('index_proc', val1, ierr)
+  if (val1 .ne. 102) stop 10
   call get_g2_statprocesstypes('xxxxx', val1, ierr)
   if (ierr .ne. 9) stop 10
 
