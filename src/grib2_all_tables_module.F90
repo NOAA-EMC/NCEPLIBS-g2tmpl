@@ -142,6 +142,9 @@ module grib2_all_tables_module
   data table1_0(27) /version_no('v112020',26)/
   data table1_0(28) /version_no('v052021',27)/
   data table1_0(29) /version_no('v112021',28)/
+  !
+  !   Added Version Number (12/20/2024)
+  !
   data table1_0(30) /version_no('v052022',29)/
   data table1_0(31) /version_no('v112022',30)/
   data table1_0(32) /version_no('v062023',31)/
@@ -180,9 +183,12 @@ module grib2_all_tables_module
   data table1_2(2) /sigreftime('fcst',1)/
   data table1_2(3) /sigreftime('vfcst',2)/
   data table1_2(4) /sigreftime('obstime',3)/
-  data table1_2(5) /sigreftime('local',4)/
-  data table1_2(6) /sigreftime('sim_start',5)/
-  data table1_2(7) /sigreftime('missing',255)/
+  data table1_2(5) /sigreftime('missing',255)/
+  !
+  !   Added Significance of Ref Time (12/20/2024)
+  !
+  data table1_2(6) /sigreftime('local',4)/
+  data table1_2(7) /sigreftime('sim_start',5)/
   !
   !
   type prod_status
@@ -206,6 +212,9 @@ module grib2_all_tables_module
   data table1_3(9) /prod_status('s2s_test',7)/
   data table1_3(10) /prod_status('unens_rreanl',8)/
   data table1_3(11) /prod_status('unens_rreanl_test',9)/
+  !
+  !   Added Production Status (12/20/2024)
+  !
   data table1_3(12) /prod_status('copernic_rreanl',10)/
   data table1_3(13) /prod_status('copernic_rreanl_test',11)/
   data table1_3(14) /prod_status('dest_earth',12)/
