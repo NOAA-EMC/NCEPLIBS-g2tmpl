@@ -441,9 +441,9 @@ module grib2_all_tables_module
   !
   !   Added fixed surface levels (12/20/2024)
   !
-  data table4_5(106) /fixed_surface_types('dep_level_unstable_parcel_air',17)/
-  data table4_5(106) /fixed_surface_types('dep_level_mixed_parcel_air',18)/
-  data table4_5(106) /fixed_surface_types('lowest_cloud_cover',19)/
+  data table4_5(107) /fixed_surface_types('dep_level_unstable_parcel_air',17)/
+  data table4_5(108) /fixed_surface_types('dep_level_mixed_parcel_air',18)/
+  data table4_5(109) /fixed_surface_types('lowest_cloud_cover',19)/
   !
   !
   type type_of_ens_fcst
