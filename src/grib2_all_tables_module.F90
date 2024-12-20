@@ -180,9 +180,9 @@ module grib2_all_tables_module
   data table1_2(2) /sigreftime('fcst',1)/
   data table1_2(3) /sigreftime('vfcst',2)/
   data table1_2(4) /sigreftime('obstime',3)/
-  data table1_2(4) /sigreftime('local',4)/
-  data table1_2(4) /sigreftime('sim_start',5)/
-  data table1_2(5) /sigreftime('missing',255)/
+  data table1_2(5) /sigreftime('local',4)/
+  data table1_2(6) /sigreftime('sim_start',5)/
+  data table1_2(7) /sigreftime('missing',255)/
   !
   !
   type prod_status
