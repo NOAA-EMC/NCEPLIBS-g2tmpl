@@ -550,6 +550,22 @@ program test_all_tables
   if (val1 .ne. 35) stop 9
   call get_g2_fixedsurfacetypes('sea_ice_lev', val1, ierr)
   if (val1 .ne. 152) stop 9
+  call get_g2_fixedsurfacetypes('ocean_level_vert_eddy_diffus', val1, ierr)
+  if (val1 .ne. 171) stop 9
+  call get_g2_fixedsurfacetypes('ocean_level_rho_diff', val1, ierr)
+  if (val1 .ne. 172) stop 9
+  call get_g2_fixedsurfacetypes('top_snow_over_sea_ice', val1, ierr)
+  if (val1 .ne. 173) stop 9
+  call get_g2_fixedsurfacetypes('roof_lev', val1, ierr)
+  if (val1 .ne. 185) stop 9
+  call get_g2_fixedsurfacetypes('wall_lev', val1, ierr)
+  if (val1 .ne. 186) stop 9
+  call get_g2_fixedsurfacetypes('road_lev', val1, ierr)
+  if (val1 .ne. 187) stop 9
+  call get_g2_fixedsurfacetypes('melt_pond_top_surf', val1, ierr)
+  if (val1 .ne. 188) stop 9
+  call get_g2_fixedsurfacetypes('melt_pond_bottom_surf', val1, ierr)
+  if (val1 .ne. 189) stop 9
   call get_g2_fixedsurfacetypes('xxx', val1, ierr)
   if (ierr .ne. 9) stop 9
 

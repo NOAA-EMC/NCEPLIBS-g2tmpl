@@ -456,6 +456,11 @@ module grib2_all_tables_module
   data table4_5(119) /fixed_surface_types('ocean_level_vert_eddy_diffus',171)/
   data table4_5(120) /fixed_surface_types('ocean_level_rho_diff',172)/
   data table4_5(121) /fixed_surface_types('top_snow_over_sea_ice',173)/
+  data table4_5(122) /fixed_surface_types('roof_lev',185)/
+  data table4_5(123) /fixed_surface_types('wall_lev',186)/
+  data table4_5(124) /fixed_surface_types('road_lev',187)/
+  data table4_5(125) /fixed_surface_types('melt_pond_top_surf',188)/
+  data table4_5(126) /fixed_surface_types('melt_pond_bottom_surf',189)/
   !
   !
   type type_of_ens_fcst
