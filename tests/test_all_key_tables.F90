@@ -536,6 +536,18 @@ program test_all_tables
   if (val1 .ne. 26) stop 9
   call get_g2_fixedsurfacetypes('conv_cloud_top', val1, ierr)
   if (val1 .ne. 27) stop 9
+  call get_g2_fixedsurfacetypes('spec_rad_centre_sun', val1, ierr)
+  if (val1 .ne. 30) stop 9
+  call get_g2_fixedsurfacetypes('solar_photosphere', val1, ierr)
+  if (val1 .ne. 31) stop 9
+  call get_g2_fixedsurfacetypes('ion_d_region_lev', val1, ierr)
+  if (val1 .ne. 32) stop 9
+  call get_g2_fixedsurfacetypes('ion_e_region_lev', val1, ierr)
+  if (val1 .ne. 33) stop 9
+  call get_g2_fixedsurfacetypes('ion_f1_region_lev', val1, ierr)
+  if (val1 .ne. 34) stop 9
+  call get_g2_fixedsurfacetypes('ion_f2_region_lev', val1, ierr)
+  if (val1 .ne. 35) stop 9
   call get_g2_fixedsurfacetypes('xxx', val1, ierr)
   if (ierr .ne. 9) stop 9
 

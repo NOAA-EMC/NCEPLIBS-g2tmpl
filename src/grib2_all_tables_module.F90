@@ -446,6 +446,12 @@ module grib2_all_tables_module
   data table4_5(109) /fixed_surface_types('lowest_cloud_cover',19)/
   data table4_5(110) /fixed_surface_types('conv_cloud_base',26)/
   data table4_5(111) /fixed_surface_types('conv_cloud_top',27)/
+  data table4_5(112) /fixed_surface_types('spec_rad_centre_sun',30)/
+  data table4_5(113) /fixed_surface_types('solar_photosphere',31)/
+  data table4_5(114) /fixed_surface_types('ion_d_region_lev',32)/
+  data table4_5(115) /fixed_surface_types('ion_e_region_lev',33)/
+  data table4_5(116) /fixed_surface_types('ion_f1_region_lev',34)/
+  data table4_5(117) /fixed_surface_types('ion_f2_region_lev',35)/
   !
   !
   type type_of_ens_fcst
