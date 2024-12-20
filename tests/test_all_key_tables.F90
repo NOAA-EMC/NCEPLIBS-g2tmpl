@@ -113,7 +113,7 @@ program test_all_tables
   if (val1 .ne. 30) stop 2
   call get_g2_versionno('v062023', val1, ierr)
   if (val1 .ne. 31) stop 2
-  call get_g2_versionno('v112022', val1, ierr)
+  call get_g2_versionno('v112023', val1, ierr)
   if (val1 .ne. 32) stop 2
   call get_g2_versionno('preoper', val1, ierr)
   if (val1 .ne. 33) stop 2
