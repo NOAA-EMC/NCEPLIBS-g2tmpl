@@ -4,7 +4,7 @@
 
 This document briefly describes the NCEPLIBS-g2tmpl library.
 
-## GRIB2 Tables/Templates
+# GRIB2 Tables/Templates
 
 NCO Provides documentation on WMO GRIB2 at
 https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/
@@ -15,9 +15,9 @@ descriptions of each template and code table information. This
 document can be found at https://codes.wmo.int/grib2/_codeflag (PDF
 and MSWord formats are available).
 
-## Editing Parameters in the GRIB2 Tables
+# Editing Parameters in the GRIB2 Tables
 
-### GRIB2 - TABLE 4.2-0-0 PARAMETERS FOR DISCIPLINE 0 CATEGORY 0
+## GRIB2 - TABLE 4.2-0-0 PARAMETERS FOR DISCIPLINE 0 CATEGORY 0
 
 GRIB2 parameter table for all disciplines and categories and parameter. These fields are 
 in order as below:
@@ -37,7 +37,7 @@ Where:
                  and 1 for the parameter from the NCEP local table)
 - Mnemonic         grib2_NCEP_mnemonic (locally defined at NCEP). 
 
-### Example
+## Example
 
 An entry of paramter TEMPERATURE in grib2 table 4.2
 
@@ -74,7 +74,7 @@ The procedures are following:
 </pre>
 4.  run the sort_params_grib2_tbl  manually to write output file which it will be sorted.
 
-## Adding New Generating Process ID or Model ID PDT in GRIB2 tables
+# Adding New Generating Process ID or Model ID PDT in GRIB2 tables
 
 The following variables are often requested by developers: parameters, model id or new
 grid id to add to NCEPGRIB2 tables.  Example:
@@ -159,7 +159,7 @@ Example:
          ==>   The output file is:  params_grib2_tbl_new   file
 5. We will give these two files: params_grib2_tbl_new.text  and params_grib2_tbl_new to developer for testing and UPP (code manager is Wen).
 
-### New Generating Process ID (see Code ON388 Table A) or  Product Definition Template.
+## New Generating Process ID (see Code ON388 Table A) or  Product Definition Template.
 
 (see PDT at https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-0.shtml)
            We need to modify the following files in g2tmpl library:
@@ -178,7 +178,7 @@ https://docs.google.com/document/d/1VK3j0K0CXRxaP7ZW-uJuyGKosVVAuIOkBBIafY2tzW0/
 Wen Meng)
 https://docs.google.com/document/d/1r2BQtAI33S_zCDh6Ko-aFW0kO79MYILspW31Bw4zE60/edit
 
-### Maintaining NCEP WMO GRIB2 DOCUMENTATION and Update GRIB2 library
+## Maintaining NCEP WMO GRIB2 DOCUMENTATION and Update GRIB2 library
 
 The NCEP WMO grib2 document is on NCO RZDM web site:
 https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/ WMO updates
