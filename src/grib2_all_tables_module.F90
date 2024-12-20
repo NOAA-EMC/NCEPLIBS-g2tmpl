@@ -206,6 +206,10 @@ module grib2_all_tables_module
   data table1_3(9) /prod_status('s2s_test',7)/
   data table1_3(10) /prod_status('unens_rreanl',8)/
   data table1_3(11) /prod_status('unens_rreanl_test',9)/
+  data table1_3(12) /prod_status('copernic_rreanl',10)/
+  data table1_3(13) /prod_status('copernic_rreanl_test',11)/
+  data table1_3(14) /prod_status('dest_earth',12)/
+  data table1_3(15) /prod_status('dest_earth_test',13)/
   !
   !
   type type_of_data

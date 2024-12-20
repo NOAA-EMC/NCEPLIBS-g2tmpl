@@ -179,6 +179,14 @@ program test_all_tables
   if (val1 .ne. 8) stop 5
   call get_g2_prodstatus('unens_rreanl_test', val1, ierr)
   if (val1 .ne. 9) stop 5
+  call get_g2_prodstatus('copernic_rreanl', val1, ierr)
+  if (val1 .ne. 10) stop 5
+  call get_g2_prodstatus('copernic_rreanl_test', val1, ierr)
+  if (val1 .ne. 11) stop 5
+  call get_g2_prodstatus('dest_earth', val1, ierr)
+  if (val1 .ne. 12) stop 5
+  call get_g2_prodstatus('dest_earth_test', val1, ierr)
+  if (val1 .ne. 13) stop 5
   call get_g2_prodstatus('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 5
 
