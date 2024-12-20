@@ -882,6 +882,11 @@ module grib2_all_tables_module
   data table5_0(10) /type_of_packingmethod('simple_packing_log_preprcs',61)/
   data table5_0(11) /type_of_packingmethod('run_length_packing_lvl_val',200)/
   !
+  !   Added Packing Method (12/20/2024)
+  !
+  data table5_0(12) /type_of_packingmethod('ccsds_lossless',42)/
+  data table5_0(13) /type_of_packingmethod('spectral_limited_area_complex',53)/
+  !
   !
   type origin_centers
      character(len=50) :: origincenterskey

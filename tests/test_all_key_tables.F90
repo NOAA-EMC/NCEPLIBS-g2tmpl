@@ -1719,6 +1719,10 @@ program test_all_tables
   if (val1 .ne. 61) stop 19
   call get_g2_sec5packingmethod('run_length_packing_lvl_val', val1, ierr)
   if (val1 .ne. 200) stop 19
+  call get_g2_sec5packingmethod('ccsds_lossless', val1, ierr)
+  if (val1 .ne. 42) stop 19
+  call get_g2_sec5packingmethod('spectral_limited_area_complex', val1, ierr)
+  if (val1 .ne. 53) stop 19
   call get_g2_sec5packingmethod('xxxxx', val1, ierr)
   if (ierr .ne. 9) stop 19
 
