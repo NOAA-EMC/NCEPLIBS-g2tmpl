@@ -444,6 +444,8 @@ module grib2_all_tables_module
   data table4_5(107) /fixed_surface_types('dep_level_unstable_parcel_air',17)/
   data table4_5(108) /fixed_surface_types('dep_level_mixed_parcel_air',18)/
   data table4_5(109) /fixed_surface_types('lowest_cloud_cover',19)/
+  data table4_5(110) /fixed_surface_types('conv_cloud_base',26)/
+  data table4_5(111) /fixed_surface_types('conv_cloud_top',27)/
   !
   !
   type type_of_ens_fcst
