@@ -147,6 +147,10 @@ program test_all_tables
   if (val1 .ne. 2) stop 4
   call get_g2_sigreftime('obstime', val1, ierr)
   if (val1 .ne. 3) stop 4
+  call get_g2_sigreftime('local', val1, ierr)
+  if (val1 .ne. 4) stop 4
+  call get_g2_sigreftime('sim_start', val1, ierr)
+  if (val1 .ne. 5) stop 4
   call get_g2_sigreftime('missing', val1, ierr)
   if (val1 .ne. 255) stop 4
   call get_g2_sigreftime('xxxx', val1, ierr)
