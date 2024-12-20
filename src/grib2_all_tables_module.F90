@@ -553,6 +553,10 @@ module grib2_all_tables_module
   data table4_9(8) /type_of_prob('prob_near_normal_cat',7)/
   data table4_9(9) /type_of_prob('prob_below_normal_cat',8)/
   !
+  !   Added Probability Type (12/20/2024)
+  !
+  data table4_9(10) /type_of_prob('prob_counts_cat_boolean',9)/
+  !
   !
   type statistical_processing_types
      character(len=80) :: statprocesstypeskey

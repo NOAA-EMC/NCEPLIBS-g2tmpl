@@ -1809,6 +1809,8 @@ program test_all_tables
   if (val1 .ne. 7) stop 23
   call get_g2_typeofprob('prob_below_normal_cat', val1, ierr)
   if (val1 .ne. 8) stop 23
+  call get_g2_typeofprob('prob_counts_cat_boolean', val1, ierr)
+  if (val1 .ne. 9) stop 23
   call get_g2_typeofprob('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 23
   
