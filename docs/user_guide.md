@@ -1,6 +1,6 @@
 @mainpage
 
-## Introduction
+# Introduction
 
 This document briefly describes the NCEPLIBS-g2tmpl library.
 
@@ -37,7 +37,7 @@ Where:
                  and 1 for the parameter from the NCEP local table)
 - Mnemonic         grib2_NCEP_mnemonic (locally defined at NCEP). 
 
-## Example
+### Example
 
 An entry of paramter TEMPERATURE in grib2 table 4.2
 
@@ -225,7 +225,7 @@ This file updates “Product Definition Templates” used in Section 4
 This file updates the available parameters in GRIB2 tables.
 * New file as needed (e.g., new compression, new feature, …)
 
-### Documentation for Previous Versions of NCEPLIBS-g2tmpl
+## Documentation for Previous Versions of NCEPLIBS-g2tmpl
 
 * [NCEPLIBS-g2tmpl Version 1.11.0](ver-1.11.0/index.html)
 * [NCEPLIBS-g2tmpl Version 1.10.0](ver-1.10.0/index.html)
