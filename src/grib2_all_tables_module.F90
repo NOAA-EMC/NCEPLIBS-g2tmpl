@@ -1270,6 +1270,14 @@ module grib2_all_tables_module
   data on388_tablea(120) /gen_proc('extra_trop_storm_surge_atl_3d',21)/
   data on388_tablea(121) /gen_proc('extra_trop_storm_surge_pac_3d',22)/
   data on388_tablea(122) /gen_proc('extra_trop_storm_surge_micro_3',23)/
+  !
+  !   Added new entries in tablea (12/20/2024)
+  !
+  data on388_tablea(123) /gen_proc('rtofs',85)/
+  data on388_tablea(124) /gen_proc('national_blend',104)/
+  data on388_tablea(125) /gen_proc('urma',118)/
+  data on388_tablea(126) /gen_proc('wam',119)/
+  data on388_tablea(127) /gen_proc('ccpa',184)/
 
 contains
   !

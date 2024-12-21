@@ -1655,6 +1655,22 @@ program test_all_tables
   if (val1 .ne. 134) stop 15
   call get_g2_on388genproc('hafs', val1, ierr)
   if (val1 .ne. 135) stop 15
+  call get_g2_on388genproc('extra_trop_storm_surge_atl_3d', val1, ierr)
+  if (val1 .ne. 21) stop 15
+  call get_g2_on388genproc('extra_trop_storm_surge_pac_3d', val1, ierr)
+  if (val1 .ne. 22) stop 15
+  call get_g2_on388genproc('extra_trop_storm_surge_micro_3', val1, ierr)
+  if (val1 .ne. 23) stop 15
+  call get_g2_on388genproc('rtofs', val1, ierr)
+  if (val1 .ne. 85) stop 15
+  call get_g2_on388genproc('national_blend', val1, ierr)
+  if (val1 .ne. 104) stop 15
+  call get_g2_on388genproc('urma', val1, ierr)
+  if (val1 .ne. 118) stop 15
+  call get_g2_on388genproc('wam', val1, ierr)
+  if (val1 .ne. 119) stop 15
+  call get_g2_on388genproc('ccpa', val1, ierr)
+  if (val1 .ne. 184) stop 15
   call get_g2_on388genproc('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 15
 
