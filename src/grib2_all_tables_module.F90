@@ -1118,6 +1118,15 @@ module grib2_all_tables_module
   data on388_table0(217) /origin_centers('ncsa_argentina',147)/
   data on388_table0(218) /origin_centers('brazilian_decea',148)/
   !
+  !       Added original center (12/20/2024)
+  !
+  data on388_table0(219) /origin_centers('nasa',173)/
+  data on388_table0(220) /origin_centers('isdm_meds',174)/
+  data on388_table0(221) /origin_centers('cimss',176)/
+  data on388_table0(222) /origin_centers('niwa',204)/
+  data on388_table0(223) /origin_centers('opera',247)/
+  data on388_table0(224) /origin_centers('cosmo',250)/
+  !
   !
   type gen_proc
      character(len=30) :: genprockey

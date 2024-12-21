@@ -1401,6 +1401,18 @@ program test_all_tables
   if (val1 .ne. 147) stop 14
   call get_g2_on388origincenters('brazilian_decea', val1, ierr)
   if (val1 .ne. 148) stop 14
+  call get_g2_on388origincenters('nasa', val1, ierr)
+  if (val1 .ne. 173) stop 14
+  call get_g2_on388origincenters('isdm_meds', val1, ierr)
+  if (val1 .ne. 174) stop 14
+  call get_g2_on388origincenters('cimss', val1, ierr)
+  if (val1 .ne. 176) stop 14
+  call get_g2_on388origincenters('niwa', val1, ierr)
+  if (val1 .ne. 204) stop 14
+  call get_g2_on388origincenters('opera', val1, ierr)
+  if (val1 .ne. 247) stop 14
+  call get_g2_on388origincenters('cosmo', val1, ierr)
+  if (val1 .ne. 250) stop 14
   call get_g2_on388origincenters('xxxx', val1, ierr)
   if (ierr .ne. 9) stop 14
 
