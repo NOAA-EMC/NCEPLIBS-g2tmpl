@@ -20,6 +20,7 @@
 !> 2021/04/20 | Boi Vuong | Updated table 4.3, 4.5,4.7 and on388_tablea
 !> 2023/03/30 | Andrew Benjamin | Added new entires to on388)_tablea
 !> 2024/02/23 | Andrew Benjamin | Added new subcenter to on388)_tablec
+!> 2024/12/20 | Alyson Stahl | Added multiple entries from 2024 WMO updates
 !>
 !> @author Jun Wang @date 2012/01/25
 module grib2_all_tables_module
