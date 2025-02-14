@@ -1140,6 +1140,9 @@
 !  NCEP Local use
    1   0   192   1 BGRUN
    1   0   193   1 SSRUN
+!  New parameters added 02/14/2025
+   1   0   194   1 FHO
+   1   0   196   1 AHD
 !
 ! GRIB2 - TABLE 4.2-1-1 PARAMETERS FOR DISCIPLINE 1 CATEGORY 1
 !

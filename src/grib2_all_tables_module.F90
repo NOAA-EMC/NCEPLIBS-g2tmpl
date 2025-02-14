@@ -21,6 +21,7 @@
 !> 2023/03/30 | Andrew Benjamin | Added new entires to on388)_tablea
 !> 2024/02/23 | Andrew Benjamin | Added new subcenter to on388)_tablec
 !> 2024/12/20 | Alyson Stahl | Added multiple entries from 2024 WMO updates
+!> 2025/02/14 | Andrew Benjamin | Added new processing ids to on388_tablea
 !>
 !> @author Jun Wang @date 2012/01/25
 module grib2_all_tables_module
@@ -1279,6 +1280,8 @@ module grib2_all_tables_module
   data on388_tablea(125) /gen_proc('urma',118)/
   data on388_tablea(126) /gen_proc('wam',119)/
   data on388_tablea(127) /gen_proc('ccpa',184)/
+  data on388_tablea(128) /gen_proc('fho_nwc',53)/
+  data on388_tablea(129) /gen_proc('ahd_nwc',54)/
 
 contains
   !
