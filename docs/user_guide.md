@@ -4,6 +4,25 @@
 
 This document briefly describes the NCEPLIBS-g2tmpl library.
 
+## Installation
+
+```
+git clone https://github.com/NOAA-EMC/NCEPLIBS-g2tmpl # or download a release from https://github.com/NOAA-EMC/NCEPLIBS-g2tmpl/releases
+cmake -DCMAKE_INSTALL_PREFIX=/path/to/install -S NCEPLIBS-g2tmpl -B NCEPLIBS-g2tmpl/build # <add'l CMake options>
+cmake --build NCEPLIBS-g2tmpl/build --parallel 4
+ctest --test-dir NCEPLIBS-g2tmpl/build --parallel 4 # <add'l CTest options>
+cmake --install NCEPLIBS-g2tmpl/build
+```
+
+The following CMake build options can be used to configure the build by setting them with `-D<OPTION>=<VALUE>`.
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| CMAKE_INSTALL_PREFIX | Installation path | /usr/local |
+| CMAKE_POSITION_INDEPENDENT_CODE | Enable position-independent code (PIC) for static build | OFF |
+| ENABLE_DOCS | Enable generation of doxygen-based documentation. | OFF |
+| BUILD_SHARED_LIBS | Build shared libraries | OFF |
+
 # GRIB2 Tables/Templates
 
 NCO Provides documentation on WMO GRIB2 at
