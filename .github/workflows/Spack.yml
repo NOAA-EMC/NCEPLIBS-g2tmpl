@@ -40,6 +40,7 @@ jobs:
         spack-compiler: gcc
         repo-cache-key-suffix: ${{ matrix.os }}-1
         spack-externals: cmake
+        use-common-build-cache: false
 
   # This job validates the Spack recipe by making sure each cmake build option is represented
   recipe-check:
