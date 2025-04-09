@@ -48,12 +48,12 @@ Code Manager: [Hang Lei](mailto:hang.lei@noaa.gov), [Edward Hartnett](mailto:edw
 
 ## Installing
 
-```
-mkdir build
-cd build
-cmake ..
-make -j2
-make install
+```console
+git clone https://github.com/NOAA-EMC/NCEPLIBS-g2tmpl # or download a release from https://github.com/NOAA-EMC/NCEPLIBS-g2tmpl/releases
+cmake -DCMAKE_INSTALL_PREFIX=/path/to/install -S NCEPLIBS-g2tmpl -B NCEPLIBS-g2tmpl/build # <add'l CMake options>
+cmake --build NCEPLIBS-g2tmpl/build --parallel 4
+ctest --test-dir NCEPLIBS-g2tmpl/build --parallel 4 # <add'l CTest options>
+cmake --install NCEPLIBS-g2tmpl/build
 ```
 
 ## Disclaimer
@@ -72,10 +72,3 @@ Commerce. The Department of Commerce seal and logo, or the seal and
 logo of a DOC bureau, shall not be used in any manner to imply
 endorsement of any commercial product or activity by DOC or the United
 States Government.
-
-
-
-
-
-
-
