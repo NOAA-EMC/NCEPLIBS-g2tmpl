@@ -56,6 +56,8 @@ ctest --test-dir NCEPLIBS-g2tmpl/build --parallel 4 # <add'l CTest options>
 cmake --install NCEPLIBS-g2tmpl/build
 ```
 
+NCEPLIBS-g2tmpl is also available through [Spack](https://spack.io) as '[g2tmpl](https://github.com/spack/spack/tree/develop/var/spack/repos/builtin/packages/g2tmpl)'.
+
 ## Disclaimer
 
 The United States Department of Commerce (DOC) GitHub project code is
