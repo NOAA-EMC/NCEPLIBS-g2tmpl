@@ -1294,7 +1294,7 @@ module grib2_all_tables_module
   !
   data on388_tablea(131) /gen_proc('gcafs',97)/
   !
-  !   Added new entries in tablea (08/19/2025)
+  !   Added new entries in tablea (09/09/2025)
   !
   data on388_tablea(132) /gen_proc('aigfs',137)/
   data on388_tablea(133) /gen_proc('aigefs',138)/
