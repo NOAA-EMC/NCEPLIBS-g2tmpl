@@ -17,8 +17,9 @@ jobs:
     runs-on: macos-latest
     env:
       FC: gfortran-12
-      CC: gcc-12
-
+      CC: clang   # ✅ use Apple's clang for C
+      CXX: clang++  # ✅ also set C++ compiler if needed
+      
     steps:
 
     - name: checkout
