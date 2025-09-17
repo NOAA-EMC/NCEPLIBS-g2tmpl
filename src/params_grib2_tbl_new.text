@@ -26,6 +26,7 @@
 !2025-05-14         B. BLAKE         Added new parameters
 !2025-06-11         B. BLAKE         Added new parameters
 !2025-08-04         B. BLAKE         Added new parameters
+!2025-09-17         B. BLAKE         Added new parameter
 !
 !
 !GRIB2 parameter table for all disciplines and categories
@@ -696,6 +697,8 @@
    0   6   199   1 FICE
    0   6   200   1 MFLUX
    0   6   201   1 SUNSD
+! Added new parameters on 09/17/2025
+   0   6   202   1 FOGLWC
 !
 ! GRIB2 - TABLE 4.2-0-7 PARAMETERS FOR DISCIPLINE 0 CATEGORY 7
 !
