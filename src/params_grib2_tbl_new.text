@@ -815,7 +815,7 @@
    0  15    15   0 HSR
    0  15    16   0 HSRHT
 !  Added new parameters on 10/1/2025
-   0  15    17   0 PRATE
+   0  15    17   0 PRATERAD
    0  15    18   0 RQI
    0  15    19   0 RDQF
 !  NCEP Local use
@@ -831,7 +831,7 @@
    0  16     4   0 REFD
    0  16     5   0 REFC
 !  Added new parameters on 10/1/2025
-   0  16     6   0 PRATEF
+   0  16     6   0 PRATEFRAD
 !  NCEP Local use
    0  16   192   1 REFZR
    0  16   193   1 REFZI

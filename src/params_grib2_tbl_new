@@ -1011,9 +1011,9 @@
    0   1   240   1 PRATE10MIN
    0   1   238   1 PRATE1MIN
    0   1   239   1 PRATE5MIN
-   0  16     6   0 PRATEF
+   0  16     6   0 PRATEFRAD
+   0  15    17   0 PRATERAD
    0   1     7   0 PRATE
-   0  15    17   0 PRATE
    4   0     4   0 PRATMP
    0  15     5   0 PREC
    0   3    13   0 PRESALT
