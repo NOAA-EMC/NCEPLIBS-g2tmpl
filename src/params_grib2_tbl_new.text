@@ -30,6 +30,7 @@
 !2025-10-01         B. BLAKE         Added new parameters, and
 !                                    new tables 4.2-2-7,4.2-20-4,
 !                                    4.2-20-5,4.2-191-0
+!2025-11-24         B. BLAKE         Added new parameters
 !
 !
 !GRIB2 parameter table for all disciplines and categories
@@ -279,6 +280,9 @@
 !  Added New Parameters 12/15/2023
    0   1   168   0 SSPFHW
    0   1   169   0 TCISSPFHW
+!  Added new parameters on 11/24/2025
+   0   1   170   0 MEANHAIL
+   0   1   171   0 MAXHAIL
 !  NCEP Local use
    0   1   192   1 CRAIN
    0   1   193   1 CFRZR
@@ -818,6 +822,8 @@
    0  15    17   0 PRATERAD
    0  15    18   0 RQI
    0  15    19   0 RDQF
+!  Added new parameters on 11/24/2025
+   0  15    20   0 LMAXPRATE
 !  NCEP Local use
 !  Added new parameters on 6/11/2025
    0  15   192   1 RADARVIL
@@ -832,6 +838,9 @@
    0  16     5   0 REFC
 !  Added new parameters on 10/1/2025
    0  16     6   0 PRATEFRAD
+!  Added new parameters on 11/24/2025
+   0  16     7   0 LMAXPRATEF
+   0  16     8   0 LMAXREF
 !  NCEP Local use
    0  16   192   1 REFZR
    0  16   193   1 REFZI
@@ -951,6 +960,8 @@
    0  19    50   0 CITEDR
 !  Added new parameters on 10/1/2025
    0  19    51   0 VISPCP
+!  Added new parameters on 11/24/2025
+   0  19    52   0 HAILKEF
 !  NCEP Local use
    0  19   192   1 MXSALB
    0  19   193   1 SNFALB
@@ -1018,6 +1029,8 @@
    0  20    17   0 MSSRWETA
 !  Added new parameters 10/20/2023
    0  20    18   0 POTHPH
+!  Added new parameters on 11/24/2025
+   0  20    19   0 LRATEOH
 !
    0  20    50   0 AIA
    0  20    51   0 CONAIR
@@ -1182,6 +1195,11 @@
    1   0    18   0 FLDPOW
    1   0    19   0 FLDPATHOW
    1   0    20   0 WATSURF
+!  Added new parameters on 11/24/2025
+   1   0    21   0 WSE
+   1   0    22   0 GRFR
+   1   0    23   0 RVERFLDPS
+   1   0    24   0 DARVERVEL
 !  NCEP Local use
    1   0   192   1 BGRUN
    1   0   193   1 SSRUN
@@ -1467,6 +1485,9 @@
    2   4    40   0 HGTINJ
    2   4    41   0 HGTPLUMEB
    2   4    42   0 HGTPLUMET
+!  Added new parameters on 11/24/2025
+   2   4    43   0 FDPROB
+   2   4    44   0 IGNLTNG
 !
 !  Added new Discipline 2 category 5 in 8/26/2015
 !
@@ -1930,11 +1951,14 @@
   10   0    97   0 STMWAVE
 !  New parameters added 07/17/2024
   10   0    98   0 GODAPEAK
-! Added new parameters on 10/1/2025
+!  Added new parameters on 10/1/2025
   10   0    99   0 BFI2D
   10   0   100   0 CTCORR
   10   0   101   0 WSTRICEX
   10   0   102   0 WSTRICEY
+!  Added new parameters on 11/24/2025
+  10   0   103   0 UASMF
+  10   0   104   0 VASMF
 !  NCEP Local use
   10   0   192   1 WSTP
 !  Added parameter in 8/26/2015
