@@ -187,6 +187,10 @@
   10   2    12   0 CICES
    0   6     0   0 CICE
    0  19   208   1 CIFLT
+   0  19   224   1 CIGHAIL
+   0  19   226   1 CIGSVR
+   0  19   223   1 CIGTOR
+   0  19   225   1 CIGWIND
    0   1    82   0 CIMIXR
    0  20    66   0 CINCLDSP
    0  20    69   0 CINCSLSP
@@ -314,6 +318,7 @@
    0   1    48   0 CWP
    1   1   195   1 CWR
    0   1   166   0 CWVF
+   1   0    24   0 DARVERVEL
    0  19    41   0 DBHEIGHT
   10   4   195   1 DBSS
   20   4     1   0 DBURSTHI
@@ -504,6 +509,7 @@
   10   0    81   0 FCVOCEAN
    2   4    32   0 FDLMC
    3   5     3   0 FDNSSTMP
+   2   4    43   0 FDPROB
    2   4    11   0 FDSRTE
    2   4    34   0 FDWMC
    1   0     0   0 FFLDG
@@ -593,6 +599,7 @@
    0   4     3   0 GRAD
    2   0    49   0 GRASSCOV
    0   7    17   0 GRDRN
+   1   0    22   0 GRFR
    0   1    32   0 GRLE
    2   0    60   0 GROSSFLUX
    3   6     1   0 GSOLEXP
@@ -606,6 +613,7 @@
    1   0     8   0 GWUPS
    0   1   236   1 HAILAC
   20   4    36   0 HAILHI
+   0  19    52   0 HAILKEF
    0   1    71   0 HAILMXR
    0  19   198   1 HAILPROB
    0   1    73   0 HAILPR
@@ -679,6 +687,7 @@
    1   2     5   0 ICTKIL
    2   0   207   1 ICWAT
    2   4    18   0 IGNCOMP
+   2   4    44   0 IGNLTNG
   20   4     9   0 IJFLDHI
    0   1    20   0 ILIQW
   10   0    27   0 IMFTSW
@@ -738,6 +747,9 @@
    2   3    10   0 LIQVSM
    2   4    27   0 LLFL
    0  15     4   0 LMAXBR
+   0  16     7   0 LMAXPRATEF
+   0  15    20   0 LMAXPRATE
+   0  16     8   0 LMAXREF
    4   7     0   0 LMBINT
    0   3   210   1 LMH
    0   2   218   1 LMV
@@ -750,6 +762,7 @@
    0  13   194   1 LPMTF
    0   3   201   1 LPSX
    0   3   202   1 LPSY
+   0  20    19   0 LRATEOH
    0   0   195   1 LRGHR
    0   1   217   1 LRGMR
    2   0   212   1 LSOIL
@@ -785,6 +798,7 @@
    0   1    28   0 MAXAH
    0   2   221   1 MAXDVV
    0   2    21   0 MAXGUST
+   0   1   171   0 MAXHAIL
    0  16   199   1 MAXREFC
    0  16   198   1 MAXREF
    0   1    27   0 MAXRH
@@ -805,6 +819,7 @@
   10   0    74   0 MDTSWEL
   10   0    75   0 MDWWAVE
    3   2    30   0 MEACST
+   0   1   170   0 MEANHAIL
    2   4    39   0 MEANHGTINJ
   20   0     1   0 MEANRTMP
    0  19    44   0 MEANVGRTL
@@ -1124,6 +1139,7 @@
   20   5     6   0 RUNOFFHI
   10   3   206   1 RUNUP
    1   2    21   0 RVERAR
+   1   0    23   0 RVERFLDPS
    1   2    20   0 RVERFR
    1   0    17   0 RVEROW
    1   0    11   0 RVERSW
@@ -1606,6 +1622,7 @@
    2   0    57   0 TYPLOVEG
    0   3    16   0 U-GWD
    0   3   194   1 U-GWD
+  10   0   103   0 UASMF
    0   4    57   0 UBALBDIRG
   10   1   194   1 UBARO
    0   3    31   0 UCLSPRS
@@ -1663,6 +1680,7 @@
    0   3   195   1 V-GWD
    0  19   232   1 VAFTD
    0   1     4   0 VAPP
+  10   0   104   0 VASMF
   10   1   195   1 VBARO
    0   4   200   1 VBDSF
    0   4   201   1 VDDSF
@@ -1805,6 +1823,7 @@
    0   3    45   0 WOBT
    2   0    42   0 WRDRATE
    2   0    33   0 WROD
+   1   0    21   0 WSE
   10   0   192   1 WSTP
   10   0   101   0 WSTRICEX
   10   0   102   0 WSTRICEY
