@@ -31,6 +31,7 @@
 !                                    new tables 4.2-2-7,4.2-20-4,
 !                                    4.2-20-5,4.2-191-0
 !2025-11-24         B. BLAKE         Added new parameters
+!2026-01-29         B. BLAKE         Added new parameters
 !
 !
 !GRIB2 parameter table for all disciplines and categories
@@ -994,6 +995,11 @@
    0  19   220   1 SVRTS
    0  19   221   1 PROCON
    0  19   222   1 CONVP
+!  Added new parameters on 1/29/2026
+   0  19   223   1 CIGTOR
+   0  19   224   1 CIGHAIL
+   0  19   225   1 CIGWIND
+   0  19   226   1 CIGSVR
    0  19   232   1 VAFTD
    0  19   233   1 ICPRB
    0  19   234   1 ICSEV

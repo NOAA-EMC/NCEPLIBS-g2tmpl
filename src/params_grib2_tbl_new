@@ -187,6 +187,10 @@
   10   2    12   0 CICES
    0   6     0   0 CICE
    0  19   208   1 CIFLT
+   0  19   224   1 CIGHAIL
+   0  19   226   1 CIGSVR
+   0  19   223   1 CIGTOR
+   0  19   225   1 CIGWIND
    0   1    82   0 CIMIXR
    0  20    66   0 CINCLDSP
    0  20    69   0 CINCSLSP
