@@ -6,6 +6,10 @@ on:
   pull_request:
     branches:
     - develop
+  schedule:
+    # Run monthly
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
 
 # Cancel in-progress workflows when pushing to a branch
 concurrency:
@@ -16,9 +20,9 @@ jobs:
   MacOS:
     runs-on: macos-latest
     env:
-      FC: gfortran-13
-      CC: clang   # ✅ use Apple's clang for C
-      CXX: clang++  # ✅ also set C++ compiler if needed
+      FC: gfortran-14
+      CC: clang
+      CXX: clang++
       
     steps:
 
