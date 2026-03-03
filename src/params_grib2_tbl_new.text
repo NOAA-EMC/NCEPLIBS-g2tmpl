@@ -32,6 +32,7 @@
 !                                    4.2-20-5,4.2-191-0
 !2025-11-24         B. BLAKE         Added new parameters
 !2026-01-29         B. BLAKE         Added new parameters
+!2026-03-03         B. BLAKE         Added new parameter
 !
 !
 !GRIB2 parameter table for all disciplines and categories
@@ -1382,6 +1383,8 @@
    2   0   237   1 EIWATER
    2   0   238   1 PLANTTR
    2   0   239   1 SOILSE
+!  Added new parameters on 3/3/2026
+   2   0   240   1 MIXL 
 !
 ! GRIB2 - TABLE 4.2-2-1 PARAMETERS FOR DISCIPLINE 2 CATEGORY 1
 !
