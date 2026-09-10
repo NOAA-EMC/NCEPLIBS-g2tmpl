@@ -32,6 +32,8 @@
 !                                    4.2-20-5,4.2-191-0
 !2025-11-24         B. BLAKE         Added new parameters
 !2026-01-29         B. BLAKE         Added new parameters
+!2026-03-03         B. BLAKE         Added new parameter
+!2026-06-11         B. BLAKE         Added new parameters
 !
 !
 !GRIB2 parameter table for all disciplines and categories
@@ -422,6 +424,8 @@
 !  Added new parameters on 10/1/2025
    0   2    68   0 CNVGUST
    0   2    69   0 TURBGUST
+!  Added new parameters on 6/11/2026
+   0   2    70   0 WINDERO
 !  NCEP Local use
    0   2   192   1 VWSH
    0   2   193   1 MFLX
@@ -742,6 +746,12 @@
 !  Added new parameters on 10/1/2025
    0   7    21   0 SSI
    0   7    22   0 RMOL
+!  Added new parameters on 6/11/2026
+   0   7    23   0 HLCYRM
+   0   7    24   0 HLCYLM
+   0   7    25   0 EFHL
+   0   7    26   0 EFHLRM
+   0   7    27   0 EFHLLM
 !  NCEP Local use
    0   7   192   1 LFTX
    0   7   193   1 4LFTX
@@ -1037,6 +1047,9 @@
    0  20    18   0 POTHPH
 !  Added new parameters on 11/24/2025
    0  20    19   0 LRATEOH
+!  Added new parameters on 6/11/2026
+   0  20    20   0 PHRATE
+   0  20    21   0 EMISPOT
 !
    0  20    50   0 AIA
    0  20    51   0 CONAIR
@@ -1382,6 +1395,8 @@
    2   0   237   1 EIWATER
    2   0   238   1 PLANTTR
    2   0   239   1 SOILSE
+!  Added new parameter on 3/3/2026
+   2   0   240   1 MIXL
 !
 ! GRIB2 - TABLE 4.2-2-1 PARAMETERS FOR DISCIPLINE 2 CATEGORY 1
 !
