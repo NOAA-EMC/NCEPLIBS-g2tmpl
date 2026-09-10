@@ -439,6 +439,9 @@
    0   1   139   0 EFARSNOW
    0  18    23   0 EFFDOSER
   20   0     5   0 EFFTEMP
+   0   7    27   0 EFHLLM
+   0   7    26   0 EFHLRM
+   0   7    25   0 EFHL
    0   7   204   1 EFHL
    0   1   129   0 EFRCCWAT
    0   1   131   0 EFRCICE
@@ -461,6 +464,7 @@
    0 191   197   1 ELONN
    0 191   193   1 ELON
    0  20    76   0 EMISFLX
+   0  20    21   0 EMISPOT
    2   0    62   0 EMISS
   10   0    93   0 EMIWAVE
    0   1   211   1 EMNP
@@ -641,6 +645,8 @@
    0  19    32   0 HIFREL
    2   4     2   0 HINDEX
    2   0    54   0 HIVEGCOV
+   0   7    24   0 HLCYLM
+   0   7    23   0 HLCYRM
    0   7     8   0 HLCY
    0  18    16   0 HMXACON
    2   7     0   0 HNETFLUX
@@ -831,6 +837,7 @@
    0  19    45   0 MINVGRTL
    0  19     3   0 MIXHT
    0  19   204   1 MIXLY
+   2   0   240   1 MIXL
    0   1     2   0 MIXR
   10   4    52   0 MLD
    0   7   212   1 MLFC
@@ -996,6 +1003,7 @@
    4   5     1   0 PHASE
    0   4    60   0 PHOARFCS
    0   4    10   0 PHOTAR
+   0  20    20   0 PHRATE
    0   1   122   0 PIIDX
    0  21    21   0 PILENERGY
    3   0     8   0 PIXST
@@ -1808,6 +1816,7 @@
    4   8     3   0 WHTRAD
    2   0    26   0 WILT
    2   0   201   1 WILT
+   0   2    70   0 WINDERO
    0   2    33   0 WINDF
   20   4    60   0 WINDHI
   20   3     2   0 WINDPCAP
