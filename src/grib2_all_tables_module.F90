@@ -25,6 +25,7 @@
 !> 2025/04/14 | Ben Blake | Added new processing id to on388_tablea
 !> 2025/08/19 | Ben Blake | Added new processing ids to on388_tablea
 !> 2025/09/09 | Ben Blake | Updated processing ids in on388_tablea
+!> 2026/09/10 | Ben Blake | Added new processing id to on388_tablea
 !>
 !> @author Jun Wang @date 2012/01/25
 module grib2_all_tables_module
@@ -1299,6 +1300,10 @@ module grib2_all_tables_module
   data on388_tablea(132) /gen_proc('aigfs',137)/
   data on388_tablea(133) /gen_proc('aigefs',138)/
   data on388_tablea(134) /gen_proc('hgefs',139)/
+  !
+  !   Added new entries in tablea (09/09/2025)
+  !
+  data on388_tablea(135) /gen_proc('sfs',106)/
 
 contains
   !
