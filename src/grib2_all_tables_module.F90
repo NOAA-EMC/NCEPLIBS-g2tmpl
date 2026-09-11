@@ -466,6 +466,7 @@ module grib2_all_tables_module
   data table4_5(124) /fixed_surface_types('road_lev',187)/
   data table4_5(125) /fixed_surface_types('melt_pond_top_surf',188)/
   data table4_5(126) /fixed_surface_types('melt_pond_bottom_surf',189)/
+  data table4_5(127) /fixed_surface_types('stratopause',36)/
   !
   !
   type type_of_ens_fcst
