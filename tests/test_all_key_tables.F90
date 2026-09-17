@@ -566,6 +566,8 @@ program test_all_tables
   if (val1 .ne. 188) stop 9
   call get_g2_fixedsurfacetypes('melt_pond_bottom_surf', val1, ierr)
   if (val1 .ne. 189) stop 9
+  call get_g2_fixedsurfacetypes('stratopause', val1, ierr)
+  if (val1 .ne. 36) stop 9
   call get_g2_fixedsurfacetypes('xxx', val1, ierr)
   if (ierr .ne. 9) stop 9
 
